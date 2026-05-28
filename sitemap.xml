@@ -1,9 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://www.encyclicum.ca/</loc>
-    <lastmod>2026-05-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
+  <url><loc>https://www.encyclicum.ca/</loc><lastmod>2026-05-28</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://www.encyclicum.ca/syntheses.html</loc><lastmod>2026-05-28</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.encyclicum.ca/rerum-novarum.html</loc><lastmod>2026-05-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.encyclicum.ca/quadragesimo-anno.html</loc><lastmod>2026-05-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.encyclicum.ca/mater-et-magistra.html</loc><lastmod>2026-05-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.encyclicum.ca/pacem-in-terris.html</loc><lastmod>2026-05-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.encyclicum.ca/gaudium-et-spes.html</loc><lastmod>2026-05-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.encyclicum.ca/populorum-progressio.html</loc><lastmod>2026-05-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.encyclicum.ca/octogesima-adveniens.html</loc><lastmod>2026-05-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.encyclicum.ca/laborem-exercens.html</loc><lastmod>2026-05-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.encyclicum.ca/sollicitudo-rei-socialis.html</loc><lastmod>2026-05-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.encyclicum.ca/centesimus-annus.html</loc><lastmod>2026-05-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.encyclicum.ca/caritas-in-veritate.html</loc><lastmod>2026-05-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.encyclicum.ca/magnifica-humanitas.html</loc><lastmod>2026-05-28</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
 </urlset>
