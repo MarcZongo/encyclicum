@@ -3,868 +3,681 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Encyclicum — La sagesse des papes, enfin accessible</title>
-<meta name="description" content="Encyclicum : une bibliothèque vivante des lettres encycliques pontificales, résumées, classées par thèmes et traduites en actions concrètes pour les chrétiens d'aujourd'hui. Bientôt en ligne.">
-<meta name="keywords" content="encycliques, papes, doctrine sociale, Église catholique, Vatican, foi, chrétiens, Rerum Novarum, Laudato Si, théologie">
-<meta name="author" content="Encyclicum">
-
-<!-- Open Graph / Réseaux sociaux -->
-<meta property="og:type" content="website">
-<meta property="og:title" content="Encyclicum — La sagesse des papes, enfin accessible">
-<meta property="og:description" content="Une bibliothèque vivante des encycliques pontificales : résumées, classées par thèmes, traduites en actions concrètes. Bientôt en ligne.">
-<meta property="og:url" content="https://encyclicum.ca">
-<meta property="og:locale" content="fr_CA">
-<meta property="og:site_name" content="Encyclicum">
-
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Encyclicum — La sagesse des papes, enfin accessible">
-<meta name="twitter:description" content="Une bibliothèque vivante des encycliques pontificales, traduites en actions concrètes pour les chrétiens d'aujourd'hui.">
-
-<link rel="canonical" href="https://encyclicum.ca">
-
-<!-- Polices : EB Garamond (serif classique élégant) + Cormorant (display) -->
+<title>Encyclicum — Synthèse thématique des encycliques papales</title>
+<meta name="description" content="Encyclicum recense et classe par thématique les principales lettres encycliques papales, de Rerum Novarum (1891) à Magnifica Humanitas (2026).">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
-
-<!-- Schema.org JSON-LD -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "Encyclicum",
-  "url": "https://encyclicum.ca",
-  "description": "Bibliothèque vivante des lettres encycliques pontificales, résumées, classées par thèmes et traduites en actions concrètes pour les chrétiens d'aujourd'hui.",
-  "inLanguage": "fr-CA"
-}
-</script>
-
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --night-deep: #0a1126;
-    --night: #121c3a;
-    --night-light: #1c3058;
-    --night-card: #16233f;
-    --gold: #c6a24b;
-    --gold-bright: #e4be69;
-    --gold-dark: #9b7d32;
-    --cream: #f8f5eb;
-    --cream-dim: #d2d2dc;
-    --grey-blue: #8291b4;
-    --serif-display: 'Cormorant Garamond', Georgia, serif;
-    --serif-body: 'EB Garamond', Georgia, serif;
+  :root{
+    --navy:#1B2A4A; --navy-deep:#141F38; --gold:#B8923E; --gold-light:#D4B468;
+    --cream:#FBF8F1; --paper:#FFFFFF; --ink:#23272E; --muted:#6B6356;
+    --line:#E5DDcc; --shadow:0 1px 3px rgba(27,42,74,.06),0 8px 30px rgba(27,42,74,.07);
   }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'EB Garamond',Georgia,serif;background:var(--cream);color:var(--ink);line-height:1.6;font-size:18px;-webkit-font-smoothing:antialiased;}
 
-  * { margin: 0; padding: 0; box-sizing: border-box; }
+  /* ---- Header ---- */
+  header{position:relative;background:linear-gradient(160deg,var(--navy-deep),var(--navy));color:#fff;padding:72px 24px 60px;overflow:hidden;}
+  header::before{content:"";position:absolute;inset:0;background-image:radial-gradient(circle at 1px 1px,rgba(212,180,104,.10) 1px,transparent 0);background-size:26px 26px;opacity:.6;}
+  header::after{content:"";position:absolute;left:50%;bottom:0;width:160px;height:3px;background:linear-gradient(90deg,transparent,var(--gold),transparent);transform:translateX(-50%);}
+  .head-inner{position:relative;max-width:1180px;margin:0 auto;text-align:center;}
+  .mark{font-family:'Cormorant Garamond',serif;font-size:13px;letter-spacing:.42em;text-transform:uppercase;color:var(--gold-light);margin-bottom:18px;font-weight:600;}
+  h1{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(46px,8vw,82px);line-height:.98;letter-spacing:.01em;}
+  h1 .cross{color:var(--gold-light);font-weight:400;}
+  .tagline{font-style:italic;font-size:clamp(18px,2.4vw,23px);color:#D9DBE4;margin-top:18px;font-weight:400;}
+  .span-dates{display:inline-flex;align-items:center;gap:14px;margin-top:26px;font-family:'Cormorant Garamond',serif;font-size:18px;letter-spacing:.04em;color:#fff;}
+  .span-dates b{color:var(--gold-light);font-weight:600;}
+  .span-dates .dash{width:46px;height:1px;background:var(--gold);opacity:.7;}
 
-  html { scroll-behavior: smooth; }
+  /* ---- Controls ---- */
+  .controls{position:sticky;top:0;z-index:20;background:rgba(251,248,241,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);padding:16px 24px;}
+  .controls-inner{max-width:1180px;margin:0 auto;display:flex;flex-wrap:wrap;gap:12px;align-items:center;}
+  .search{flex:1 1 260px;position:relative;}
+  .search input{width:100%;padding:11px 16px 11px 42px;border:1px solid var(--line);border-radius:8px;background:var(--paper);font-family:inherit;font-size:16px;color:var(--ink);transition:border-color .2s,box-shadow .2s;}
+  .search input:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(184,146,62,.13);}
+  .search svg{position:absolute;left:14px;top:50%;transform:translateY(-50%);width:17px;height:17px;color:var(--muted);}
+  select{padding:11px 14px;border:1px solid var(--line);border-radius:8px;background:var(--paper);font-family:inherit;font-size:15px;color:var(--ink);cursor:pointer;transition:border-color .2s;}
+  select:focus{outline:none;border-color:var(--gold);}
+  .count{font-size:14px;color:var(--muted);font-style:italic;margin-left:auto;white-space:nowrap;}
 
-  body {
-    font-family: var(--serif-body);
-    background: var(--night-deep);
-    color: var(--cream);
-    line-height: 1.6;
-    overflow-x: hidden;
-    position: relative;
-    min-height: 100vh;
-  }
+  /* ---- Intro ---- */
+  .intro{max-width:820px;margin:54px auto 10px;padding:0 24px;text-align:center;}
+  .intro p{font-size:20px;color:var(--muted);line-height:1.7;}
+  .intro .lead-cap::first-letter{font-family:'Cormorant Garamond',serif;font-size:62px;float:left;line-height:.8;padding:6px 12px 0 0;color:var(--gold);font-weight:600;}
 
-  /* Fond avec dégradé radial + texture étoilée */
-  body::before {
-    content: '';
-    position: fixed;
-    inset: 0;
-    background:
-      radial-gradient(ellipse at 50% 0%, rgba(28, 48, 88, 0.6), transparent 60%),
-      radial-gradient(ellipse at 20% 80%, rgba(198, 162, 75, 0.06), transparent 50%),
-      radial-gradient(ellipse at 85% 30%, rgba(198, 162, 75, 0.04), transparent 50%);
-    pointer-events: none;
-    z-index: 0;
-  }
+  /* ---- Main ---- */
+  main{max-width:1180px;margin:0 auto;padding:40px 24px 80px;}
+  .thematic{margin-bottom:54px;scroll-margin-top:90px;}
+  .sec-title{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(26px,3.6vw,36px);color:var(--navy);display:flex;align-items:center;gap:14px;padding-bottom:14px;margin-bottom:22px;border-bottom:2px solid var(--gold);letter-spacing:.01em;}
+  .sec-emoji{font-size:.85em;}
+  .sec-num{font-family:'EB Garamond',serif;font-size:.5em;color:#fff;background:var(--navy);width:34px;height:34px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-weight:500;flex-shrink:0;}
 
-  /* Petites étoiles dorées scintillantes */
-  .stars {
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    z-index: 0;
-  }
-  .star {
-    position: absolute;
-    background: var(--gold);
-    border-radius: 50%;
-    opacity: 0;
-    animation: twinkle 4s infinite ease-in-out;
-  }
-  @keyframes twinkle {
-    0%, 100% { opacity: 0; transform: scale(0.5); }
-    50% { opacity: 0.7; transform: scale(1); }
-  }
+  .table-wrap{background:var(--paper);border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);overflow:hidden;}
+  table{width:100%;border-collapse:collapse;}
+  thead th{background:var(--navy);color:#fff;font-family:'Cormorant Garamond',serif;font-weight:600;font-size:16px;letter-spacing:.06em;text-transform:uppercase;text-align:left;padding:14px 18px;}
+  tbody td{padding:14px 18px;border-top:1px solid var(--line);vertical-align:top;font-size:17px;}
+  tbody tr:nth-child(even){background:#FCFAF4;}
+  tbody tr:hover{background:#F6EFDD;transition:background .15s;}
+  .c-titre{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:600;font-size:19px;color:var(--navy);white-space:nowrap;}
+  .c-pape{color:var(--ink);white-space:nowrap;}
+  .c-annee{font-variant-numeric:tabular-nums;color:var(--muted);}
+  .c-contenu{color:#3A3E46;line-height:1.5;}
+  .badge{display:inline-block;font-size:12px;font-family:'EB Garamond',serif;letter-spacing:.03em;padding:3px 9px;border-radius:20px;white-space:nowrap;font-weight:500;}
+  .t-enc{background:#EAE2CC;color:#7A5E1E;}
+  .t-exh{background:#E3EAF0;color:#2C4E6B;}
+  .t-con{background:#E6E0EC;color:#54407A;}
+  .t-let{background:#E8E2DC;color:#6B5340;}
+  .row.hidden{display:none;}
+  .thematic.hidden{display:none;}
+  .no-results{text-align:center;padding:60px 20px;color:var(--muted);font-style:italic;font-size:20px;display:none;}
 
-  .container {
-    position: relative;
-    z-index: 1;
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 2rem;
-  }
+  /* ---- Footer ---- */
+  footer{background:var(--navy-deep);color:#C6CAD6;padding:50px 24px;text-align:center;}
+  footer .f-mark{font-family:'Cormorant Garamond',serif;font-size:26px;color:#fff;letter-spacing:.04em;margin-bottom:8px;}
+  footer .f-mark .cross{color:var(--gold-light);}
+  footer .note{max-width:760px;margin:18px auto 0;font-size:15px;line-height:1.7;color:#9CA2B3;font-style:italic;}
+  footer .dot{color:var(--gold);margin:0 8px;}
+  footer .copy{margin-top:24px;font-size:13px;color:#6F7589;letter-spacing:.03em;}
 
-  /* ============ CADRE DÉCORATIF ============ */
-  .frame {
-    position: fixed;
-    inset: 24px;
-    border: 1px solid rgba(198, 162, 75, 0.35);
-    pointer-events: none;
-    z-index: 2;
-  }
-  .frame::before {
-    content: '';
-    position: absolute;
-    inset: 6px;
-    border: 1px solid rgba(198, 162, 75, 0.15);
-  }
-  .frame-corner {
-    position: absolute;
-    width: 14px;
-    height: 14px;
-  }
-  .frame-corner::before,
-  .frame-corner::after {
-    content: '';
-    position: absolute;
-    background: var(--gold);
-  }
-  .frame-corner.tl { top: -7px; left: -7px; }
-  .frame-corner.tr { top: -7px; right: -7px; }
-  .frame-corner.bl { bottom: -7px; left: -7px; }
-  .frame-corner.br { bottom: -7px; right: -7px; }
-  .frame-corner::before { width: 14px; height: 1px; top: 7px; left: 0; }
-  .frame-corner::after { width: 1px; height: 14px; top: 0; left: 7px; }
-
-  @media (max-width: 600px) {
-    .frame { inset: 12px; }
-  }
-
-  /* ============ HERO ============ */
-  .hero {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 5rem 2rem 3rem;
-    position: relative;
-  }
-
-  .eyebrow {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    font-family: var(--serif-body);
-    font-size: 0.95rem;
-    letter-spacing: 0.35em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 2.5rem;
-    opacity: 0;
-    animation: fadeUp 1s ease forwards 0.2s;
-  }
-  .eyebrow::before,
-  .eyebrow::after {
-    content: '';
-    width: 40px;
-    height: 1px;
-    background: var(--gold);
-  }
-
-  /* Emblème */
-  .emblem {
-    width: 130px;
-    height: 130px;
-    margin-bottom: 2.5rem;
-    position: relative;
-    opacity: 0;
-    animation: fadeUp 1s ease forwards 0.4s, float 6s ease-in-out infinite 1.4s;
-  }
-  .emblem svg { width: 100%; height: 100%; }
-  @keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
-  }
-
-  .hero-title {
-    font-family: var(--serif-display);
-    font-size: clamp(2.8rem, 11vw, 7.5rem);
-    font-weight: 600;
-    letter-spacing: 0.03em;
-    line-height: 1;
-    color: var(--cream);
-    margin-bottom: 1.5rem;
-    opacity: 0;
-    animation: fadeUp 1.2s ease forwards 0.6s;
-    text-shadow: 0 2px 30px rgba(198, 162, 75, 0.15);
-  }
-
-  .title-divider {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
-    margin-bottom: 1.8rem;
-    opacity: 0;
-    animation: fadeUp 1s ease forwards 0.8s;
-  }
-  .title-divider .line {
-    width: 60px;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, var(--gold));
-  }
-  .title-divider .line.right {
-    background: linear-gradient(90deg, var(--gold), transparent);
-  }
-  .title-divider .diamond {
-    width: 8px;
-    height: 8px;
-    background: var(--gold);
-    transform: rotate(45deg);
-  }
-
-  .hero-tagline {
-    font-family: var(--serif-display);
-    font-size: clamp(1.5rem, 4vw, 2.4rem);
-    font-weight: 500;
-    font-style: italic;
-    color: var(--cream-dim);
-    margin-bottom: 0.5rem;
-    opacity: 0;
-    animation: fadeUp 1s ease forwards 1s;
-  }
-  .hero-tagline .accent {
-    color: var(--gold-bright);
-    font-weight: 600;
-  }
-
-  .hero-desc {
-    max-width: 620px;
-    font-size: 1.15rem;
-    color: var(--cream-dim);
-    margin: 1.8rem auto 0;
-    line-height: 1.7;
-    opacity: 0;
-    animation: fadeUp 1s ease forwards 1.2s;
-  }
-
-  /* Flèche scroll */
-  .scroll-hint {
-    position: absolute;
-    bottom: 2.5rem;
-    left: 50%;
-    transform: translateX(-50%);
-    color: var(--gold);
-    font-size: 1.5rem;
-    opacity: 0;
-    animation: fadeIn 1s ease forwards 2s, bounce 2s ease-in-out infinite 2.5s;
-  }
-  @keyframes bounce {
-    0%, 100% { transform: translateX(-50%) translateY(0); }
-    50% { transform: translateX(-50%) translateY(8px); }
-  }
-
-  /* ============ ANIMATIONS ============ */
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-  @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-  }
-
-  .reveal {
-    opacity: 0;
-    transform: translateY(40px);
-    transition: opacity 0.9s ease, transform 0.9s ease;
-  }
-  .reveal.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  /* Fallback : si JS échoue ou est désactivé, le contenu reste visible */
-  .no-js .reveal {
-    opacity: 1;
-    transform: none;
-  }
-
-  /* ============ SECTION PILIERS ============ */
-  .pillars {
-    padding: 6rem 0;
-    position: relative;
-  }
-  .section-head {
-    text-align: center;
-    margin-bottom: 4rem;
-  }
-  .section-eyebrow {
-    font-size: 0.85rem;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 1rem;
-  }
-  .section-title {
-    font-family: var(--serif-display);
-    font-size: clamp(2rem, 5vw, 3rem);
-    font-weight: 600;
-    color: var(--cream);
-    line-height: 1.2;
-  }
-  .section-title em {
-    font-style: italic;
-    color: var(--gold-bright);
-  }
-
-  .pillars-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-  }
-  .pillar {
-    background: linear-gradient(160deg, rgba(28, 48, 88, 0.4), rgba(18, 28, 58, 0.2));
-    border: 1px solid rgba(198, 162, 75, 0.2);
-    border-radius: 4px;
-    padding: 2.5rem 2rem;
-    text-align: center;
-    position: relative;
-    transition: transform 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
-  }
-  .pillar::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 50px;
-    height: 2px;
-    background: var(--gold);
-  }
-  .pillar:hover {
-    transform: translateY(-8px);
-    border-color: rgba(198, 162, 75, 0.5);
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
-  }
-  .pillar-num {
-    font-family: var(--serif-display);
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--gold);
-    margin-bottom: 0.5rem;
-  }
-  .pillar-line {
-    width: 30px;
-    height: 1px;
-    background: var(--gold-dark);
-    margin: 0.8rem auto 1.2rem;
-  }
-  .pillar-title {
-    font-family: var(--serif-display);
-    font-size: 1.7rem;
-    font-weight: 600;
-    color: var(--cream);
-    margin-bottom: 1rem;
-  }
-  .pillar-desc {
-    font-size: 1.02rem;
-    color: var(--cream-dim);
-    line-height: 1.6;
-  }
-
-  /* ============ STATS ============ */
-  .stats {
-    padding: 3rem 0 6rem;
-  }
-  .stats-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    max-width: 800px;
-    margin: 0 auto;
-  }
-  .stat {
-    text-align: center;
-    position: relative;
-  }
-  .stat:not(:last-child)::after {
-    content: '';
-    position: absolute;
-    right: -1rem;
-    top: 20%;
-    height: 60%;
-    width: 1px;
-    background: rgba(198, 162, 75, 0.3);
-  }
-  .stat-num {
-    font-family: var(--serif-display);
-    font-size: clamp(3rem, 8vw, 4.5rem);
-    font-weight: 700;
-    color: var(--gold-bright);
-    line-height: 1;
-  }
-  .stat-num .plus { font-size: 0.55em; color: var(--gold); vertical-align: super; }
-  .stat-label {
-    font-size: 0.8rem;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--cream-dim);
-    margin-top: 0.8rem;
-  }
-
-  /* ============ INSCRIPTION ============ */
-  .signup {
-    padding: 5rem 0 7rem;
-  }
-  .signup-card {
-    max-width: 720px;
-    margin: 0 auto;
-    background: linear-gradient(160deg, rgba(28, 48, 88, 0.5), rgba(18, 28, 58, 0.3));
-    border: 1px solid rgba(198, 162, 75, 0.35);
-    border-radius: 6px;
-    padding: 3.5rem 3rem;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-  }
-  .signup-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 3px;
-    background: linear-gradient(90deg, transparent, var(--gold), transparent);
-  }
-  .signup-eyebrow {
-    font-size: 0.8rem;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 1rem;
-  }
-  .signup-title {
-    font-family: var(--serif-display);
-    font-size: clamp(1.8rem, 4vw, 2.6rem);
-    font-weight: 600;
-    color: var(--cream);
-    line-height: 1.2;
-    margin-bottom: 1rem;
-  }
-  .signup-desc {
-    font-size: 1.1rem;
-    color: var(--cream-dim);
-    margin-bottom: 2.5rem;
-    line-height: 1.6;
-  }
-
-  .signup-form {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    max-width: 460px;
-    margin: 0 auto;
-  }
-  .form-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
-  }
-  .signup-form input,
-  .signup-form select {
-    width: 100%;
-    padding: 1rem 1.2rem;
-    background: rgba(10, 17, 38, 0.6);
-    border: 1px solid rgba(198, 162, 75, 0.25);
-    border-radius: 3px;
-    color: var(--cream);
-    font-family: var(--serif-body);
-    font-size: 1.05rem;
-    transition: border-color 0.3s ease, background 0.3s ease;
-  }
-  .signup-form input::placeholder { color: var(--grey-blue); }
-  .signup-form input:focus,
-  .signup-form select:focus {
-    outline: none;
-    border-color: var(--gold);
-    background: rgba(10, 17, 38, 0.9);
-  }
-  .signup-form select { color: var(--cream-dim); cursor: pointer; }
-  .signup-form select option { background: var(--night); color: var(--cream); }
-
-  .signup-btn {
-    margin-top: 0.5rem;
-    padding: 1.1rem 2rem;
-    background: var(--gold);
-    color: var(--night-deep);
-    border: 1px solid var(--gold);
-    border-radius: 3px;
-    font-family: var(--serif-body);
-    font-size: 1.05rem;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: all 0.3s ease;
-  }
-  .signup-btn:hover:not(:disabled) {
-    background: transparent;
-    color: var(--gold);
-  }
-  .signup-btn:disabled { opacity: 0.6; cursor: not-allowed; }
-
-  .consent {
-    display: flex;
-    align-items: flex-start;
-    gap: 0.6rem;
-    text-align: left;
-    font-size: 0.85rem;
-    color: var(--grey-blue);
-    line-height: 1.5;
-    margin-top: 0.3rem;
-  }
-  .consent input {
-    width: auto;
-    margin-top: 4px;
-    accent-color: var(--gold);
-    flex-shrink: 0;
-    cursor: pointer;
-  }
-
-  .signup-success {
-    display: none;
-    padding: 1rem 0;
-  }
-  .signup-success.active { display: block; }
-  .signup-success .check {
-    font-size: 3rem;
-    color: var(--gold);
-    margin-bottom: 1rem;
-  }
-  .signup-success h3 {
-    font-family: var(--serif-display);
-    font-size: 1.8rem;
-    color: var(--gold-bright);
-    margin-bottom: 0.8rem;
-  }
-  .signup-success p {
-    color: var(--cream-dim);
-    font-size: 1.05rem;
-    line-height: 1.6;
-  }
-  .signup-error {
-    display: none;
-    background: rgba(180, 60, 50, 0.15);
-    border: 1px solid rgba(200, 80, 70, 0.4);
-    border-radius: 3px;
-    padding: 0.9rem;
-    color: #e89080;
-    font-size: 0.95rem;
-    margin-bottom: 1rem;
-  }
-  .signup-error.active { display: block; }
-
-  /* ============ FOOTER ============ */
-  .footer {
-    padding: 3rem 0 4rem;
-    text-align: center;
-    border-top: 1px solid rgba(198, 162, 75, 0.15);
-  }
-  .footer-logo {
-    font-family: var(--serif-display);
-    font-size: 1.6rem;
-    font-weight: 600;
-    letter-spacing: 0.15em;
-    color: var(--cream);
-    margin-bottom: 0.8rem;
-  }
-  .footer-tagline {
-    font-style: italic;
-    color: var(--grey-blue);
-    font-size: 1rem;
-    margin-bottom: 1.5rem;
-  }
-  .footer-meta {
-    font-size: 0.85rem;
-    color: var(--grey-blue);
-    letter-spacing: 0.05em;
-  }
-  .footer-meta a { color: var(--gold); text-decoration: none; }
-  .footer-meta a:hover { color: var(--gold-bright); }
-
-  /* ============ RESPONSIVE ============ */
-  @media (max-width: 768px) {
-    .pillars-grid { grid-template-columns: 1fr; gap: 1.5rem; }
-    .stats-grid { gap: 1rem; }
-    .stat:not(:last-child)::after { display: none; }
-    .signup-card { padding: 2.5rem 1.5rem; }
-    .form-row { grid-template-columns: 1fr; }
-    .pillars { padding: 4rem 0; }
+  @media(max-width:680px){
+    body{font-size:16px;}
+    .count{width:100%;margin-left:0;}
+    thead{display:none;}
+    table,tbody,tr,td{display:block;width:100%;}
+    tbody tr{padding:14px 16px;border-top:1px solid var(--line);}
+    tbody td{padding:3px 0;border:none;font-size:16px;}
+    .c-titre{font-size:21px;white-space:normal;}
+    .c-pape::before{content:"Pape : ";color:var(--muted);font-style:italic;}
+    .c-annee::before{content:"Année : ";color:var(--muted);font-style:italic;}
+    .c-contenu{margin-top:6px;}
   }
 </style>
 </head>
 <body>
+<header>
+  <div class="head-inner">
+    <div class="mark">Doctrine &amp; Magistère pontifical</div>
+    <h1>Encyclicum<span class="cross"> &#10013;</span></h1>
+    <p class="tagline">Les lettres encycliques papales, synthétisées et classées par thème</p>
+    <div class="span-dates">
+      <span><b>Rerum Novarum</b> · 1891</span>
+      <span class="dash"></span>
+      <span><b>Magnifica Humanitas</b> · 2026</span>
+    </div>
+  </div>
+</header>
 
-<!-- Cadre décoratif -->
-<div class="frame">
-  <span class="frame-corner tl"></span>
-  <span class="frame-corner tr"></span>
-  <span class="frame-corner bl"></span>
-  <span class="frame-corner br"></span>
+<div class="controls">
+  <div class="controls-inner">
+    <div class="search">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+      <input type="text" id="search" placeholder="Rechercher un titre, un pape, un thème…">
+    </div>
+    <select id="filter-pape"><option value="">Tous les papes</option><option value="Léon XIII">Léon XIII</option><option value="Pie XI">Pie XI</option><option value="Concile Vatican II">Concile Vatican II</option><option value="Jean XXIII">Jean XXIII</option><option value="Paul VI">Paul VI</option><option value="Jean-Paul II">Jean-Paul II</option><option value="Benoît XVI">Benoît XVI</option><option value="François">François</option><option value="Léon XIV">Léon XIV</option><option value="Pie X">Pie X</option><option value="Pie XII">Pie XII</option><option value="Benoît XV">Benoît XV</option></select>
+    <select id="filter-type">
+      <option value="">Tous les types</option>
+      <option value="Encyclique">Encyclique</option>
+      <option value="Exhortation apostolique">Exhortation apostolique</option>
+      <option value="Lettre apostolique">Lettre apostolique</option>
+      <option value="Constitution conciliaire">Constitution conciliaire</option>
+    </select>
+    <span class="count" id="count"></span>
+  </div>
 </div>
 
-<!-- Étoiles scintillantes -->
-<div class="stars" id="stars"></div>
+<div class="intro">
+  <p class="lead-cap">Les encycliques sont des lettres solennelles adressées par le Pape aux évêques et aux fidèles du monde entier. Cette plateforme recense les principaux textes du magistère pontifical, de Léon XIII à Léon XIV, classés par grande thématique. Y figurent aussi quelques exhortations, lettres apostoliques et textes conciliaires majeurs, dont la nature est précisée par la colonne « Type ».</p>
+</div>
 
-<!-- ============ HERO ============ -->
-<section class="hero">
-  <div class="eyebrow">Bientôt en ligne</div>
+<main id="main">
 
-  <div class="emblem">
-    <svg viewBox="0 0 130 130" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="65" cy="65" r="54" fill="none" stroke="#c6a24b" stroke-width="2"/>
-      <circle cx="65" cy="65" r="47" fill="none" stroke="#e4be69" stroke-width="1"/>
-      <circle cx="65" cy="65" r="38" fill="none" stroke="#c6a24b" stroke-width="3"/>
-      <!-- Croix latine -->
-      <rect x="62.5" y="42" width="5" height="46" fill="#e4be69"/>
-      <rect x="52" y="54" width="26" height="5" fill="#e4be69"/>
-      <!-- Rayons -->
-      <g stroke="#9b7d32" stroke-width="2">
-        <line x1="65" y1="2" x2="65" y2="11"/>
-        <line x1="65" y1="119" x2="65" y2="128"/>
-        <line x1="2" y1="65" x2="11" y2="65"/>
-        <line x1="119" y1="65" x2="128" y2="65"/>
-        <line x1="20" y1="20" x2="26" y2="26"/>
-        <line x1="104" y1="104" x2="110" y2="110"/>
-        <line x1="20" y1="110" x2="26" y2="104"/>
-        <line x1="104" y1="26" x2="110" y2="20"/>
-      </g>
-    </svg>
-  </div>
-
-  <h1 class="hero-title">ENCYCLICUM</h1>
-
-  <div class="title-divider">
-    <span class="line"></span>
-    <span class="diamond"></span>
-    <span class="line right"></span>
-  </div>
-
-  <p class="hero-tagline">La sagesse des papes, <span class="accent">enfin accessible.</span></p>
-
-  <p class="hero-desc">
-    Une bibliothèque vivante des lettres encycliques pontificales — résumées,
-    classées par thèmes, et traduites en actions concrètes pour les chrétiens d'aujourd'hui.
-  </p>
-
-  <div class="scroll-hint">❧</div>
-</section>
-
-<!-- ============ PILIERS ============ -->
-<section class="pillars">
-  <div class="container">
-    <div class="section-head reveal">
-      <div class="section-eyebrow">Notre approche</div>
-      <h2 class="section-title">Trois clés pour <em>redécouvrir</em> l'enseignement de l'Église</h2>
-    </div>
-
-    <div class="pillars-grid">
-      <div class="pillar reveal">
-        <div class="pillar-num">I</div>
-        <div class="pillar-line"></div>
-        <h3 class="pillar-title">Résumés</h3>
-        <p class="pillar-desc">Chaque encyclique condensée en une synthèse claire et fidèle, accessible à tous — sans jargon théologique.</p>
+    <section class="thematic" data-section>
+      <h2 class="sec-title"><span class="sec-emoji">🏭</span><span class="sec-num">1</span>Doctrine sociale, travail et économie</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Titre</th><th>Pape</th><th>Année</th><th>Type</th><th>Contenu</th></tr>
+          </thead>
+          <tbody>
+        <tr class="row" data-pape="Léon XIII" data-annee="1891" data-type="Encyclique" data-search="rerum novarum léon xiii condition ouvrière, syndicats, justice sociale — acte fondateur de la doctrine sociale">
+          <td class="c-titre">Rerum Novarum</td>
+          <td class="c-pape">Léon XIII</td>
+          <td class="c-annee">1891</td>
+          <td class="c-type"><span class="badge t-enc">Encyclique</span></td>
+          <td class="c-contenu">Condition ouvrière, syndicats, justice sociale — acte fondateur de la doctrine sociale</td>
+        </tr>
+        <tr class="row" data-pape="Pie XI" data-annee="1931" data-type="Encyclique" data-search="quadragesimo anno pie xi 40e anniversaire de rerum novarum, reconstruction de l'ordre social">
+          <td class="c-titre">Quadragesimo Anno</td>
+          <td class="c-pape">Pie XI</td>
+          <td class="c-annee">1931</td>
+          <td class="c-type"><span class="badge t-enc">Encyclique</span></td>
+          <td class="c-contenu">40e anniversaire de Rerum Novarum, reconstruction de l'ordre social</td>
+        </tr>
+        <tr class="row" data-pape="Concile Vatican II" data-annee="1965" data-type="Constitution conciliaire" data-search="gaudium et spes concile vatican ii l'église dans le monde de ce temps (constitution pastorale)">
+          <td class="c-titre">Gaudium et Spes</td>
+          <td class="c-pape">Concile Vatican II</td>
+          <td class="c-annee">1965</td>
+          <td class="c-type"><span class="badge t-con">Constitution conciliaire</span></td>
+          <td class="c-contenu">L'Église dans le monde de ce temps (constitution pastorale)</td>
+        </tr>
+        <tr class="row" data-pape="Jean XXIII" data-annee="1961" data-type="Encyclique" data-search="mater et magistra jean xxiii christianisme et progrès social">
+          <td class="c-titre">Mater et Magistra</td>
+          <td class="c-pape">Jean XXIII</td>
+          <td class="c-annee">1961</td>
+          <td class="c-type"><span class="badge t-enc">Encyclique</span></td>
+          <td class="c-contenu">Christianisme et progrès social</td>
+        </tr>
+        <tr class="row" data-pape="Jean XXIII" data-annee="1963" data-type="Encyclique" data-search="pacem in terris jean xxiii paix entre les nations dans la vérité et la justice">
+          <td class="c-titre">Pacem in Terris</td>
+          <td class="c-pape">Jean XXIII</td>
+          <td class="c-annee">1963</td>
+          <td class="c-type"><span class="badge t-enc">Encyclique</span></td>
+          <td class="c-contenu">Paix entre les nations dans la vérité et la justice</td>
+        </tr>
+        <tr class="row" data-pape="Paul VI" data-annee="1967" data-type="Encyclique" data-search="populorum progressio paul vi développement des peuples">
+          <td class="c-titre">Populorum Progressio</td>
+          <td class="c-pape">Paul VI</td>
+          <td class="c-annee">1967</td>
+          <td class="c-type"><span class="badge t-enc">Encyclique</span></td>
+          <td class="c-contenu">Développement des peuples</td>
+        </tr>
+        <tr class="row" data-pape="Paul VI" data-annee="1971" data-type="Lettre apostolique" data-search="octogesima adveniens paul vi 80e anniversaire de rerum novarum, appel à l'action">
+          <td class="c-titre">Octogesima Adveniens</td>
+          <td class="c-pape">Paul VI</td>
+          <td class="c-annee">1971</td>
+          <td class="c-type"><span class="badge t-let">Lettre apostolique</span></td>
+          <td class="c-contenu">80e anniversaire de Rerum Novarum, appel à l'action</td>
+        </tr>
+        <tr class="row" data-pape="Jean-Paul II" data-annee="1981" data-type="Encyclique" data-search="laborem exercens jean-paul ii dignité du travail humain">
+          <td class="c-titre">Laborem Exercens</td>
+          <td class="c-pape">Jean-Paul II</td>
+          <td class="c-annee">1981</td>
+          <td class="c-type"><span class="badge t-enc">Encyclique</span></td>
+          <td class="c-contenu">Dignité du travail humain</td>
+        </tr>
+        <tr class="row" data-pape="Jean-Paul II" data-annee="1987" data-type="Encyclique" data-search="sollicitudo rei socialis jean-paul ii développement solidaire des peuples">
+          <td class="c-titre">Sollicitudo Rei Socialis</td>
+          <td class="c-pape">Jean-Paul II</td>
+          <td class="c-annee">1987</td>
+          <td class="c-type"><span class="badge t-enc">Encyclique</span></td>
+          <td class="c-contenu">Développement solidaire des peuples</td>
+        </tr>
+        <tr class="row" data-pape="Jean-Paul II" data-annee="1991" data-type="Encyclique" data-search="centesimus annus jean-paul ii centenaire de rerum novarum">
+          <td class="c-titre">Centesimus Annus</td>
+          <td class="c-pape">Jean-Paul II</td>
+          <td class="c-annee">1991</td>
+          <td class="c-type"><span class="badge t-enc">Encyclique</span></td>
+          <td class="c-contenu">Centenaire de Rerum Novarum</td>
+        </tr>
+        <tr class="row" data-pape="Benoît XVI" data-annee="2009" data-type="Encyclique" data-search="caritas in veritate benoît xvi développement humain intégral dans la charité et la vérité">
+          <td class="c-titre">Caritas in Veritate</td>
+          <td class="c-pape">Benoît XVI</td>
+          <td class="c-annee">2009</td>
+          <td class="c-type"><span class="badge t-enc">Encyclique</span></td>
+          <td class="c-contenu">Développement humain intégral dans la charité et la vérité</td>
+        </tr>
+          </tbody>
+        </table>
       </div>
-      <div class="pillar reveal">
-        <div class="pillar-num">II</div>
-        <div class="pillar-line"></div>
-        <h3 class="pillar-title">Thématiques</h3>
-        <p class="pillar-desc">Un classement par grands sujets : travail, famille, paix, économie, écologie, intelligence artificielle…</p>
+    </section>
+    <section class="thematic" data-section>
+      <h2 class="sec-title"><span class="sec-emoji">🌍</span><span class="sec-num">2</span>Écologie et environnement</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Titre</th><th>Pape</th><th>Année</th><th>Type</th><th>Contenu</th></tr>
+          </thead>
+          <tbody>
+        <tr class="row" data-pape="François" data-annee="2015" data-type="Encyclique" data-search="laudato si' françois sauvegarde de la maison commune">
+          <td class="c-titre">Laudato Si'</td>
+          <td class="c-pape">François</td>
+          <td class="c-annee">2015</td>
+          <td class="c-type"><span class="badge t-enc">Encyclique</span></td>
+          <td class="c-contenu">Sauvegarde de la maison commune</td>
+        </tr>
+        <tr class="row" data-pape="François" data-annee="2023" data-type="Exhortation apostolique" data-search="laudate deum françois crise climatique, suite de laudato si'">
+          <td class="c-titre">Laudate Deum</td>
+          <td class="c-pape">François</td>
+          <td class="c-annee">2023</td>
+          <td class="c-type"><span class="badge t-exh">Exhortation apostolique</span></td>
+          <td class="c-contenu">Crise climatique, suite de Laudato Si'</td>
+        </tr>
+          </tbody>
+        </table>
       </div>
-      <div class="pillar reveal">
-        <div class="pillar-num">III</div>
-        <div class="pillar-line"></div>
-        <h3 class="pillar-title">Actions</h3>
-        <p class="pillar-desc">Pour chaque texte, des pistes concrètes pour vivre aujourd'hui l'enseignement reçu, dans sa vie quotidienne.</p>
+    </section>
+    <section class="thematic" data-section>
+      <h2 class="sec-title"><span class="sec-emoji">🤖</span><span class="sec-num">3</span>Intelligence artificielle et dignité humaine</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Titre</th><th>Pape</th><th>Année</th><th>Type</th><th>Contenu</th></tr>
+          </thead>
+          <tbody>
+        <tr class="row" data-pape="Léon XIV" data-annee="2026" data-type="Encyclique" data-search="magnifica humanitas léon xiv protection de la personne humaine à l'ère de l'intelligence artificielle">
+          <td class="c-titre">Magnifica Humanitas</td>
+          <td class="c-pape">Léon XIV</td>
+          <td class="c-annee">2026</td>
+          <td class="c-type"><span class="badge t-enc">Encyclique</span></td>
+          <td class="c-contenu">Protection de la personne humaine à l'ère de l'intelligence artificielle</td>
+        </tr>
+          </tbody>
+        </table>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ STATS ============ -->
-<section class="stats">
-  <div class="container">
-    <div class="stats-grid reveal">
-      <div class="stat">
-        <div class="stat-num">300<span class="plus">+</span></div>
-        <div class="stat-label">Encycliques</div>
+    </section>
+    <section class="thematic" data-section>
+      <h2 class="sec-title"><span class="sec-emoji">✝️</span><span class="sec-num">4</span>Foi, théologie et vérité</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Titre</th><th>Pape</th><th>Année</th><th>Type</th><th>Contenu</th></tr>
+          </thead>
+          <tbody>
+        <tr class="row" data-pape="Léon XIII" data-annee="1879" data-type="Encyclique" data-search="aeterni patris léon xiii philosophie chrétienne, thomas d'aquin et la scolastique">
+          <td class="c-titre">Aeterni Patris</td>
+          <td class="c-pape">Léon XIII</td>
+          <td class="c-annee">1879</td>
+          <td class="c-type"><span class="badge t-enc">Encyclique</span></td>
+          <td class="c-contenu">Philosophie chrétienne, Thomas d'Aquin et la scolastique</td>
+        </tr>
+        <tr class="row" data-pape="Pie X" data-annee="1907" data-type="Encyclique" data-search="pascendi dominici gregis pie x condamnation du modernisme">
+          <td class="c-titre">Pascendi Dominici Gregis</td>
+          <td class="c-pape">Pie X</td>
+          <td class="c-annee">1907</td>
+          <td class="c-type"><span class="badge t-enc">Encyclique</span></td>
+          <td class="c-contenu">Condamnation du modernisme</td>
+        </tr>
+        <tr class="row" data-pape="Pie XII" data-annee="1950" data-type="Encyclique" data-search="humani generis pie xii erreurs menaçant les fondements de la doctrine catholique">
+          <td class="c-titre">Humani Generis</td>
+          <td class="c-pape">Pie XII</td>
+          <td class="c-annee">1950</td>
+          <td class="c-type"><span class="badge t-enc">Encyclique</span></td>
+          <td class="c-contenu">Erreurs menaçant les fondements de la doctrine catholique</td>
+        </tr>
+        <tr class="row" data-pape="Jean-Paul II" data-annee="1998" data-type="Encyclique" data-search="fides et ratio jean-paul ii relations entre la foi et la raison">
+          <td class="c-titre">Fides et Ratio</td>
+          <td class="c-pape">Jean-Paul II</td>
+          <td class="c-annee">1998</td>
+          <td class="c-type"><span class="badge t-enc">Encyclique</span></td>
+          <td class="c-contenu">Relations entre la foi et la raison</td>
+        </tr>
+        <tr class="row" data-pape="François" data-annee="2013" data-type="Encyclique" data-search="lumen fidei françois la lumière de la foi">
+          <td class="c-titre">Lumen Fidei</td>
+          <td class="c-pape">François</td>
+          <td class="c-annee">2013</td>
+          <td class="c-type"><span class="badge t-enc">Encyclique</span></td>
+          <td class="c-contenu">La lumière de la foi</td>
+        </tr>
+          </tbody>
+        </table>
       </div>
-      <div class="stat">
-        <div class="stat-num">40<span class="plus">+</span></div>
-        <div class="stat-label">Papes</div>
+    </section>
+    <section class="thematic" data-section>
+      <h2 class="sec-title"><span class="sec-emoji">❤️</span><span class="sec-num">5</span>Amour, charité et miséricorde</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Titre</th><th>Pape</th><th>Année</th><th>Type</th><th>Contenu</th></tr>
+          </thead>
+          <tbody>
+        <tr class="row" data-pape="Benoît XVI" data-annee="2006" data-type="Encyclique" data-search="deus caritas est benoît xvi l'amour chrétien et la charité">
+          <td class="c-titre">Deus Caritas Est</td>
+          <td class="c-pape">Benoît XVI</td>
+          <td class="c-annee">2006</td>
+          <td class="c-type"><span class="badge t-enc">Encyclique</span></td>
+          <td class="c-contenu">L'amour chrétien et la charité</td>
+        </tr>
+        <tr class="row" data-pape="François" data-annee="2024" data-type="Encyclique" data-search="dilexit nos françois dévotion au sacré-cœur de jésus">
+          <td class="c-titre">Dilexit Nos</td>
+          <td class="c-pape">François</td>
+          <td class="c-annee">2024</td>
+          <td class="c-type"><span class="badge t-enc">Encyclique</span></td>
+          <td class="c-contenu">Dévotion au Sacré-Cœur de Jésus</td>
+        </tr>
+        <tr class="row" data-pape="Léon XIV" data-annee="2025" data-type="Exhortation apostolique" data-search="dilexi te léon xiv l'amour pour les pauvres">
+          <td class="c-titre">Dilexi Te</td>
+          <td class="c-pape">Léon XIV</td>
+          <td class="c-annee">2025</td>
+          <td class="c-type"><span class="badge t-exh">Exhortation apostolique</span></td>
+          <td class="c-contenu">L'amour pour les pauvres</td>
+        </tr>
+          </tbody>
+        </table>
       </div>
-      <div class="stat">
-        <div class="stat-num">15<span class="plus">+</span></div>
-        <div class="stat-label">Thèmes majeurs</div>
+    </section>
+    <section class="thematic" data-section>
+      <h2 class="sec-title"><span class="sec-emoji">🌐</span><span class="sec-num">6</span>Fraternité, paix et relations humaines</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Titre</th><th>Pape</th><th>Année</th><th>Type</th><th>Contenu</th></tr>
+          </thead>
+          <tbody>
+        <tr class="row" data-pape="Jean XXIII" data-annee="1963" data-type="Encyclique" data-search="pacem in terris jean xxiii paix entre les nations (voir aussi section doctrine sociale)">
+          <td class="c-titre">Pacem in Terris</td>
+          <td class="c-pape">Jean XXIII</td>
+          <td class="c-annee">1963</td>
+          <td class="c-type"><span class="badge t-enc">Encyclique</span></td>
+          <td class="c-contenu">Paix entre les nations (voir aussi section Doctrine sociale)</td>
+        </tr>
+        <tr class="row" data-pape="Paul VI" data-annee="1967" data-type="Encyclique" data-search="populorum progressio paul vi fraternité entre les peuples (voir aussi section doctrine sociale)">
+          <td class="c-titre">Populorum Progressio</td>
+          <td class="c-pape">Paul VI</td>
+          <td class="c-annee">1967</td>
+          <td class="c-type"><span class="badge t-enc">Encyclique</span></td>
+          <td class="c-contenu">Fraternité entre les peuples (voir aussi section Doctrine sociale)</td>
+        </tr>
+        <tr class="row" data-pape="François" data-annee="2020" data-type="Encyclique" data-search="fratelli tutti françois fraternité et amitié sociale">
+          <td class="c-titre">Fratelli Tutti</td>
+          <td class="c-pape">François</td>
+          <td class="c-annee">2020</td>
+          <td class="c-type"><span class="badge t-enc">Encyclique</span></td>
+          <td class="c-contenu">Fraternité et amitié sociale</td>
+        </tr>
+          </tbody>
+        </table>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ INSCRIPTION ============ -->
-<section class="signup">
-  <div class="container">
-    <div class="signup-card reveal">
-      <div class="signup-eyebrow">Rejoignez la liste d'attente</div>
-      <h2 class="signup-title">Soyez les premiers à découvrir Encyclicum</h2>
-      <p class="signup-desc">
-        Inscrivez-vous pour être averti·e du lancement et accéder aux premiers
-        contenus en avant-première.
-      </p>
-
-      <div class="signup-error" id="signupError" role="alert"></div>
-
-      <div class="signup-success" id="signupSuccess" role="status" aria-live="polite">
-        <div class="check">✦</div>
-        <h3>Merci pour votre inscription !</h3>
-        <p>Vous serez parmi les premiers informés du lancement d'Encyclicum.<br>À très bientôt.</p>
+    </section>
+    <section class="thematic" data-section>
+      <h2 class="sec-title"><span class="sec-emoji">🧭</span><span class="sec-num">7</span>Éthique, morale et vie humaine</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Titre</th><th>Pape</th><th>Année</th><th>Type</th><th>Contenu</th></tr>
+          </thead>
+          <tbody>
+        <tr class="row" data-pape="Léon XIII" data-annee="1880" data-type="Encyclique" data-search="arcanum divinae léon xiii le mariage chrétien (précurseur de casti connubii et humanae vitae)">
+          <td class="c-titre">Arcanum Divinae</td>
+          <td class="c-pape">Léon XIII</td>
+          <td class="c-annee">1880</td>
+          <td class="c-type"><span class="badge t-enc">Encyclique</span></td>
+          <td class="c-contenu">Le mariage chrétien (précurseur de Casti Connubii et Humanae Vitae)</td>
+        </tr>
+        <tr class="row" data-pape="Pie XI" data-annee="1930" data-type="Encyclique" data-search="casti connubii pie xi le mariage chrétien">
+          <td class="c-titre">Casti Connubii</td>
+          <td class="c-pape">Pie XI</td>
+          <td class="c-annee">1930</td>
+          <td class="c-type"><span class="badge t-enc">Encyclique</span></td>
+          <td class="c-contenu">Le mariage chrétien</td>
+        </tr>
+        <tr class="row" data-pape="Paul VI" data-annee="1968" data-type="Encyclique" data-search="humanae vitae paul vi régulation des naissances">
+          <td class="c-titre">Humanae Vitae</td>
+          <td class="c-pape">Paul VI</td>
+          <td class="c-annee">1968</td>
+          <td class="c-type"><span class="badge t-enc">Encyclique</span></td>
+          <td class="c-contenu">Régulation des naissances</td>
+        </tr>
+        <tr class="row" data-pape="Jean-Paul II" data-annee="1993" data-type="Encyclique" data-search="veritatis splendor jean-paul ii l'enseignement moral de l'église">
+          <td class="c-titre">Veritatis Splendor</td>
+          <td class="c-pape">Jean-Paul II</td>
+          <td class="c-annee">1993</td>
+          <td class="c-type"><span class="badge t-enc">Encyclique</span></td>
+          <td class="c-contenu">L'enseignement moral de l'Église</td>
+        </tr>
+        <tr class="row" data-pape="Jean-Paul II" data-annee="1995" data-type="Encyclique" data-search="evangelium vitae jean-paul ii valeur et inviolabilité de la vie humaine">
+          <td class="c-titre">Evangelium Vitae</td>
+          <td class="c-pape">Jean-Paul II</td>
+          <td class="c-annee">1995</td>
+          <td class="c-type"><span class="badge t-enc">Encyclique</span></td>
+          <td class="c-contenu">Valeur et inviolabilité de la vie humaine</td>
+        </tr>
+          </tbody>
+        </table>
       </div>
+    </section>
+    <section class="thematic" data-section>
+      <h2 class="sec-title"><span class="sec-emoji">⛪</span><span class="sec-num">8</span>Ecclésiologie et Eucharistie</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Titre</th><th>Pape</th><th>Année</th><th>Type</th><th>Contenu</th></tr>
+          </thead>
+          <tbody>
+        <tr class="row" data-pape="Pie XII" data-annee="1943" data-type="Encyclique" data-search="mystici corporis pie xii l'église, corps mystique du christ">
+          <td class="c-titre">Mystici Corporis</td>
+          <td class="c-pape">Pie XII</td>
+          <td class="c-annee">1943</td>
+          <td class="c-type"><span class="badge t-enc">Encyclique</span></td>
+          <td class="c-contenu">L'Église, corps mystique du Christ</td>
+        </tr>
+        <tr class="row" data-pape="Pie XII" data-annee="1947" data-type="Encyclique" data-search="mediator dei pie xii la liturgie et le culte divin">
+          <td class="c-titre">Mediator Dei</td>
+          <td class="c-pape">Pie XII</td>
+          <td class="c-annee">1947</td>
+          <td class="c-type"><span class="badge t-enc">Encyclique</span></td>
+          <td class="c-contenu">La liturgie et le culte divin</td>
+        </tr>
+        <tr class="row" data-pape="Paul VI" data-annee="1964" data-type="Encyclique" data-search="ecclesiam suam paul vi la mission de l'église dans le monde">
+          <td class="c-titre">Ecclesiam Suam</td>
+          <td class="c-pape">Paul VI</td>
+          <td class="c-annee">1964</td>
+          <td class="c-type"><span class="badge t-enc">Encyclique</span></td>
+          <td class="c-contenu">La mission de l'Église dans le monde</td>
+        </tr>
+        <tr class="row" data-pape="Jean-Paul II" data-annee="2003" data-type="Encyclique" data-search="ecclesia de eucharistia jean-paul ii l'eucharistie dans sa relation à l'église">
+          <td class="c-titre">Ecclesia de Eucharistia</td>
+          <td class="c-pape">Jean-Paul II</td>
+          <td class="c-annee">2003</td>
+          <td class="c-type"><span class="badge t-enc">Encyclique</span></td>
+          <td class="c-contenu">L'Eucharistie dans sa relation à l'Église</td>
+        </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+    <section class="thematic" data-section>
+      <h2 class="sec-title"><span class="sec-emoji">🕊️</span><span class="sec-num">9</span>Œcuménisme et unité chrétienne</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Titre</th><th>Pape</th><th>Année</th><th>Type</th><th>Contenu</th></tr>
+          </thead>
+          <tbody>
+        <tr class="row" data-pape="Pie XI" data-annee="1928" data-type="Encyclique" data-search="mortalium animos pie xi sur l'unité religieuse (regard critique sur l'œcuménisme naissant)">
+          <td class="c-titre">Mortalium Animos</td>
+          <td class="c-pape">Pie XI</td>
+          <td class="c-annee">1928</td>
+          <td class="c-type"><span class="badge t-enc">Encyclique</span></td>
+          <td class="c-contenu">Sur l'unité religieuse (regard critique sur l'œcuménisme naissant)</td>
+        </tr>
+        <tr class="row" data-pape="Jean-Paul II" data-annee="1995" data-type="Encyclique" data-search="ut unum sint jean-paul ii l'engagement œcuménique">
+          <td class="c-titre">Ut Unum Sint</td>
+          <td class="c-pape">Jean-Paul II</td>
+          <td class="c-annee">1995</td>
+          <td class="c-type"><span class="badge t-enc">Encyclique</span></td>
+          <td class="c-contenu">L'engagement œcuménique</td>
+        </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+    <section class="thematic" data-section>
+      <h2 class="sec-title"><span class="sec-emoji">🌏</span><span class="sec-num">10</span>Mission et évangelisation</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Titre</th><th>Pape</th><th>Année</th><th>Type</th><th>Contenu</th></tr>
+          </thead>
+          <tbody>
+        <tr class="row" data-pape="Benoît XV" data-annee="1919" data-type="Lettre apostolique" data-search="maximum illud benoît xv les missions catholiques après la première guerre mondiale">
+          <td class="c-titre">Maximum Illud</td>
+          <td class="c-pape">Benoît XV</td>
+          <td class="c-annee">1919</td>
+          <td class="c-type"><span class="badge t-let">Lettre apostolique</span></td>
+          <td class="c-contenu">Les missions catholiques après la Première Guerre mondiale</td>
+        </tr>
+        <tr class="row" data-pape="Pie XII" data-annee="1951" data-type="Encyclique" data-search="evangelii praecones pie xii l'activité missionnaire">
+          <td class="c-titre">Evangelii Praecones</td>
+          <td class="c-pape">Pie XII</td>
+          <td class="c-annee">1951</td>
+          <td class="c-type"><span class="badge t-enc">Encyclique</span></td>
+          <td class="c-contenu">L'activité missionnaire</td>
+        </tr>
+        <tr class="row" data-pape="Jean-Paul II" data-annee="1990" data-type="Encyclique" data-search="redemptoris missio jean-paul ii la valeur permanente du précepte missionnaire">
+          <td class="c-titre">Redemptoris Missio</td>
+          <td class="c-pape">Jean-Paul II</td>
+          <td class="c-annee">1990</td>
+          <td class="c-type"><span class="badge t-enc">Encyclique</span></td>
+          <td class="c-contenu">La valeur permanente du précepte missionnaire</td>
+        </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+    <section class="thematic" data-section>
+      <h2 class="sec-title"><span class="sec-emoji">🙏</span><span class="sec-num">11</span>Dévotion mariale et spiritualité</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Titre</th><th>Pape</th><th>Année</th><th>Type</th><th>Contenu</th></tr>
+          </thead>
+          <tbody>
+        <tr class="row" data-pape="Léon XIII" data-annee="1883" data-type="Encyclique" data-search="supremi apostolatus léon xiii le rosaire">
+          <td class="c-titre">Supremi Apostolatus</td>
+          <td class="c-pape">Léon XIII</td>
+          <td class="c-annee">1883</td>
+          <td class="c-type"><span class="badge t-enc">Encyclique</span></td>
+          <td class="c-contenu">Le Rosaire</td>
+        </tr>
+        <tr class="row" data-pape="Léon XIII" data-annee="1889" data-type="Encyclique" data-search="quamquam pluries léon xiii la dévotion à saint joseph">
+          <td class="c-titre">Quamquam Pluries</td>
+          <td class="c-pape">Léon XIII</td>
+          <td class="c-annee">1889</td>
+          <td class="c-type"><span class="badge t-enc">Encyclique</span></td>
+          <td class="c-contenu">La dévotion à saint Joseph</td>
+        </tr>
+        <tr class="row" data-pape="Pie X" data-annee="1904" data-type="Encyclique" data-search="ad diem illum laetissimum pie x la dévotion à la vierge marie (cinquantenaire de l'immaculée conception)">
+          <td class="c-titre">Ad Diem Illum Laetissimum</td>
+          <td class="c-pape">Pie X</td>
+          <td class="c-annee">1904</td>
+          <td class="c-type"><span class="badge t-enc">Encyclique</span></td>
+          <td class="c-contenu">La dévotion à la Vierge Marie (cinquantenaire de l'Immaculée Conception)</td>
+        </tr>
+        <tr class="row" data-pape="Benoît XVI" data-annee="2007" data-type="Encyclique" data-search="spe salvi benoît xvi l'espérance chrétienne">
+          <td class="c-titre">Spe Salvi</td>
+          <td class="c-pape">Benoît XVI</td>
+          <td class="c-annee">2007</td>
+          <td class="c-type"><span class="badge t-enc">Encyclique</span></td>
+          <td class="c-contenu">L'espérance chrétienne</td>
+        </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+    <section class="thematic" data-section>
+      <h2 class="sec-title"><span class="sec-emoji">🏛️</span><span class="sec-num">12</span>Politique, État et liberté</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Titre</th><th>Pape</th><th>Année</th><th>Type</th><th>Contenu</th></tr>
+          </thead>
+          <tbody>
+        <tr class="row" data-pape="Léon XIII" data-annee="1881" data-type="Encyclique" data-search="diuturnum illud léon xiii l'origine du pouvoir civil">
+          <td class="c-titre">Diuturnum Illud</td>
+          <td class="c-pape">Léon XIII</td>
+          <td class="c-annee">1881</td>
+          <td class="c-type"><span class="badge t-enc">Encyclique</span></td>
+          <td class="c-contenu">L'origine du pouvoir civil</td>
+        </tr>
+        <tr class="row" data-pape="Léon XIII" data-annee="1885" data-type="Encyclique" data-search="immortale dei léon xiii la constitution chrétienne des états">
+          <td class="c-titre">Immortale Dei</td>
+          <td class="c-pape">Léon XIII</td>
+          <td class="c-annee">1885</td>
+          <td class="c-type"><span class="badge t-enc">Encyclique</span></td>
+          <td class="c-contenu">La constitution chrétienne des États</td>
+        </tr>
+        <tr class="row" data-pape="Léon XIII" data-annee="1888" data-type="Encyclique" data-search="libertas praestantissimum léon xiii la liberté humaine">
+          <td class="c-titre">Libertas Praestantissimum</td>
+          <td class="c-pape">Léon XIII</td>
+          <td class="c-annee">1888</td>
+          <td class="c-type"><span class="badge t-enc">Encyclique</span></td>
+          <td class="c-contenu">La liberté humaine</td>
+        </tr>
+        <tr class="row" data-pape="Pie XI" data-annee="1931" data-type="Encyclique" data-search="non abbiamo bisogno pie xi condamnation du fascisme italien">
+          <td class="c-titre">Non Abbiamo Bisogno</td>
+          <td class="c-pape">Pie XI</td>
+          <td class="c-annee">1931</td>
+          <td class="c-type"><span class="badge t-enc">Encyclique</span></td>
+          <td class="c-contenu">Condamnation du fascisme italien</td>
+        </tr>
+        <tr class="row" data-pape="Pie XI" data-annee="1937" data-type="Encyclique" data-search="mit brennender sorge pie xi condamnation du nazisme">
+          <td class="c-titre">Mit Brennender Sorge</td>
+          <td class="c-pape">Pie XI</td>
+          <td class="c-annee">1937</td>
+          <td class="c-type"><span class="badge t-enc">Encyclique</span></td>
+          <td class="c-contenu">Condamnation du nazisme</td>
+        </tr>
+        <tr class="row" data-pape="Pie XI" data-annee="1937" data-type="Encyclique" data-search="divini redemptoris pie xi condamnation du communisme athée">
+          <td class="c-titre">Divini Redemptoris</td>
+          <td class="c-pape">Pie XI</td>
+          <td class="c-annee">1937</td>
+          <td class="c-type"><span class="badge t-enc">Encyclique</span></td>
+          <td class="c-contenu">Condamnation du communisme athée</td>
+        </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+    <section class="thematic" data-section>
+      <h2 class="sec-title"><span class="sec-emoji">📚</span><span class="sec-num">13</span>Éducation et culture</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Titre</th><th>Pape</th><th>Année</th><th>Type</th><th>Contenu</th></tr>
+          </thead>
+          <tbody>
+        <tr class="row" data-pape="Pie XI" data-annee="1929" data-type="Encyclique" data-search="divini illius magistri pie xi l'éducation chrétienne de la jeunesse">
+          <td class="c-titre">Divini Illius Magistri</td>
+          <td class="c-pape">Pie XI</td>
+          <td class="c-annee">1929</td>
+          <td class="c-type"><span class="badge t-enc">Encyclique</span></td>
+          <td class="c-contenu">L'éducation chrétienne de la jeunesse</td>
+        </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  <div class="no-results" id="noResults">Aucun document ne correspond à votre recherche.</div>
+</main>
 
-      <form class="signup-form" id="signupForm" action="https://formspree.io/f/mlgzbqqo" method="POST">
-        <input type="hidden" name="_subject" value="📚 Nouvelle inscription liste d'attente - Encyclicum">
-        <input type="hidden" name="projet" value="Encyclicum - Liste d'attente lancement">
-
-        <div class="form-row">
-          <input type="text" name="prenom" placeholder="Prénom *" required autocomplete="given-name">
-          <input type="text" name="nom" placeholder="Nom" autocomplete="family-name">
-        </div>
-        <input type="email" name="email" placeholder="Votre courriel *" required autocomplete="email">
-        <select name="profil" aria-label="Votre profil">
-          <option value="">Vous êtes… (facultatif)</option>
-          <option>Fidèle / Pratiquant·e</option>
-          <option>Chercheur·se spirituel·le</option>
-          <option>Étudiant·e / Universitaire</option>
-          <option>Prêtre / Religieux·se</option>
-          <option>Agent·e pastoral·e / Catéchiste</option>
-          <option>Enseignant·e</option>
-          <option>Entrepreneur·e / Professionnel·le</option>
-          <option>Simplement curieux·se</option>
-          <option>Autre</option>
-        </select>
-
-        <label class="consent">
-          <input type="checkbox" name="consentement" value="oui" required>
-          <span>J'accepte de recevoir par courriel des nouvelles d'Encyclicum. Je peux me désinscrire à tout moment.</span>
-        </label>
-
-        <button type="submit" class="signup-btn">M'inscrire à la liste d'attente</button>
-      </form>
-    </div>
-  </div>
-</section>
-
-<!-- ============ FOOTER ============ -->
-<footer class="footer">
-  <div class="container">
-    <div class="footer-logo">ENCYCLICUM</div>
-    <div class="footer-tagline">La sagesse des papes, enfin accessible.</div>
-    <div class="footer-meta">
-      © <span id="year"></span> Encyclicum · <a href="https://encyclicum.ca">encyclicum.ca</a>
-    </div>
-  </div>
+<footer>
+  <div class="f-mark">Encyclicum<span class="cross"> &#10013;</span></div>
+  <p class="note">Ce recensement présente les textes les plus significatifs et n'est pas exhaustif. Les encycliques relèvent du magistère ordinaire et n'engagent pas, en elles-mêmes, l'infaillibilité pontificale.<span class="dot">·</span>Depuis Jean XXIII, plusieurs s'adressent également à « tous les hommes de bonne volonté ».</p>
+  <div class="copy">encyclicum.ca — Mise à jour : mai 2026</div>
 </footer>
 
 <script>
-  // Année dynamique
-  document.getElementById('year').textContent = new Date().getFullYear();
+  const search=document.getElementById('search');
+  const fPape=document.getElementById('filter-pape');
+  const fType=document.getElementById('filter-type');
+  const count=document.getElementById('count');
+  const rows=[...document.querySelectorAll('.row')];
+  const sections=[...document.querySelectorAll('[data-section]')];
+  const noResults=document.getElementById('noResults');
 
-  // Génération des étoiles scintillantes
-  (function() {
-    const starsContainer = document.getElementById('stars');
-    const count = 40;
-    for (let i = 0; i < count; i++) {
-      const star = document.createElement('div');
-      star.className = 'star';
-      const size = Math.random() * 2 + 1;
-      star.style.width = size + 'px';
-      star.style.height = size + 'px';
-      star.style.left = Math.random() * 100 + '%';
-      star.style.top = Math.random() * 100 + '%';
-      star.style.animationDelay = Math.random() * 4 + 's';
-      star.style.animationDuration = (Math.random() * 3 + 3) + 's';
-      starsContainer.appendChild(star);
-    }
-  })();
-
-  // Animation au scroll (reveal)
-  (function() {
-    const reveals = document.querySelectorAll('.reveal');
-    if (!('IntersectionObserver' in window)) {
-      // Pas de support : tout afficher
-      reveals.forEach(el => el.classList.add('visible'));
-      return;
-    }
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.15 });
-    reveals.forEach(el => observer.observe(el));
-
-    // Filet de sécurité : forcer l'affichage après 4s quoi qu'il arrive
-    setTimeout(() => {
-      reveals.forEach(el => el.classList.add('visible'));
-    }, 4000);
-  })();
-
-  // Soumission du formulaire via Formspree (AJAX)
-  (function() {
-    const form = document.getElementById('signupForm');
-    const success = document.getElementById('signupSuccess');
-    const error = document.getElementById('signupError');
-    if (!form) return;
-
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      const btn = form.querySelector('.signup-btn');
-      const originalText = btn.textContent;
-      btn.textContent = 'Envoi en cours…';
-      btn.disabled = true;
-      error.classList.remove('active');
-
-      try {
-        const response = await fetch(form.action, {
-          method: 'POST',
-          body: new FormData(form),
-          headers: { 'Accept': 'application/json' }
-        });
-
-        if (response.ok) {
-          form.style.display = 'none';
-          success.classList.add('active');
-          success.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        } else {
-          throw new Error('Erreur réseau');
-        }
-      } catch (err) {
-        error.textContent = '✗ Une erreur est survenue. Veuillez réessayer dans un instant.';
-        error.classList.add('active');
-        btn.textContent = originalText;
-        btn.disabled = false;
-      }
+  function apply(){
+    const q=search.value.trim().toLowerCase();
+    const p=fPape.value, t=fType.value;
+    let visible=0;
+    rows.forEach(r=>{
+      const okQ=!q||r.dataset.search.includes(q);
+      const okP=!p||r.dataset.pape===p;
+      const okT=!t||r.dataset.type===t;
+      const show=okQ&&okP&&okT;
+      r.classList.toggle('hidden',!show);
+      if(show)visible++;
     });
-  })();
+    sections.forEach(s=>{
+      const any=[...s.querySelectorAll('.row')].some(r=>!r.classList.contains('hidden'));
+      s.classList.toggle('hidden',!any);
+    });
+    noResults.style.display=visible?'none':'block';
+    count.textContent=visible+' document'+(visible>1?'s':'')+' affiché'+(visible>1?'s':'');
+  }
+  [search,fPape,fType].forEach(el=>el.addEventListener('input',apply));
+  apply();
 </script>
-
 </body>
 </html>
