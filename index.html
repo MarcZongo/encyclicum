@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Encyclicum — La sagesse des papes, enfin accessible</title>
+<meta name="description" content="Encyclicum : une bibliothèque vivante des lettres encycliques pontificales, résumées, classées par thèmes et traduites en actions concrètes pour les chrétiens d'aujourd'hui. Bientôt en ligne.">
+<meta name="keywords" content="encycliques, papes, doctrine sociale, Église catholique, Vatican, foi, chrétiens, Rerum Novarum, Laudato Si, théologie">
+<meta name="author" content="Encyclicum">
+
+<!-- Open Graph / Réseaux sociaux -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Encyclicum — La sagesse des papes, enfin accessible">
+<meta property="og:description" content="Une bibliothèque vivante des encycliques pontificales : résumées, classées par thèmes, traduites en actions concrètes. Bientôt en ligne.">
+<meta property="og:url" content="https://encyclicum.ca">
+<meta property="og:locale" content="fr_CA">
+<meta property="og:site_name" content="Encyclicum">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Encyclicum — La sagesse des papes, enfin accessible">
+<meta name="twitter:description" content="Une bibliothèque vivante des encycliques pontificales, traduites en actions concrètes pour les chrétiens d'aujourd'hui.">
+
+<link rel="canonical" href="https://encyclicum.ca">
+
+<!-- Polices : EB Garamond (serif classique élégant) + Cormorant (display) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+
+<!-- Schema.org JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Encyclicum",
+  "url": "https://encyclicum.ca",
+  "description": "Bibliothèque vivante des lettres encycliques pontificales, résumées, classées par thèmes et traduites en actions concrètes pour les chrétiens d'aujourd'hui.",
+  "inLanguage": "fr-CA"
+}
+</script>
+
+<style>
+  :root {
+    --night-deep: #0a1126;
+    --night: #121c3a;
+    --night-light: #1c3058;
+    --night-card: #16233f;
+    --gold: #c6a24b;
+    --gold-bright: #e4be69;
+    --gold-dark: #9b7d32;
+    --cream: #f8f5eb;
+    --cream-dim: #d2d2dc;
+    --grey-blue: #8291b4;
+    --serif-display: 'Cormorant Garamond', Georgia, serif;
+    --serif-body: 'EB Garamond', Georgia, serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--serif-body);
+    background: var(--night-deep);
+    color: var(--cream);
+    line-height: 1.6;
+    overflow-x: hidden;
+    position: relative;
+    min-height: 100vh;
+  }
+
+  /* Fond avec dégradé radial + texture étoilée */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 50% 0%, rgba(28, 48, 88, 0.6), transparent 60%),
+      radial-gradient(ellipse at 20% 80%, rgba(198, 162, 75, 0.06), transparent 50%),
+      radial-gradient(ellipse at 85% 30%, rgba(198, 162, 75, 0.04), transparent 50%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* Petites étoiles dorées scintillantes */
+  .stars {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+  }
+  .star {
+    position: absolute;
+    background: var(--gold);
+    border-radius: 50%;
+    opacity: 0;
+    animation: twinkle 4s infinite ease-in-out;
+  }
+  @keyframes twinkle {
+    0%, 100% { opacity: 0; transform: scale(0.5); }
+    50% { opacity: 0.7; transform: scale(1); }
+  }
+
+  .container {
+    position: relative;
+    z-index: 1;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  /* ============ CADRE DÉCORATIF ============ */
+  .frame {
+    position: fixed;
+    inset: 24px;
+    border: 1px solid rgba(198, 162, 75, 0.35);
+    pointer-events: none;
+    z-index: 2;
+  }
+  .frame::before {
+    content: '';
+    position: absolute;
+    inset: 6px;
+    border: 1px solid rgba(198, 162, 75, 0.15);
+  }
+  .frame-corner {
+    position: absolute;
+    width: 14px;
+    height: 14px;
+  }
+  .frame-corner::before,
+  .frame-corner::after {
+    content: '';
+    position: absolute;
+    background: var(--gold);
+  }
+  .frame-corner.tl { top: -7px; left: -7px; }
+  .frame-corner.tr { top: -7px; right: -7px; }
+  .frame-corner.bl { bottom: -7px; left: -7px; }
+  .frame-corner.br { bottom: -7px; right: -7px; }
+  .frame-corner::before { width: 14px; height: 1px; top: 7px; left: 0; }
+  .frame-corner::after { width: 1px; height: 14px; top: 0; left: 7px; }
+
+  @media (max-width: 600px) {
+    .frame { inset: 12px; }
+  }
+
+  /* ============ HERO ============ */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 5rem 2rem 3rem;
+    position: relative;
+  }
+
+  .eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-family: var(--serif-body);
+    font-size: 0.95rem;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 2.5rem;
+    opacity: 0;
+    animation: fadeUp 1s ease forwards 0.2s;
+  }
+  .eyebrow::before,
+  .eyebrow::after {
+    content: '';
+    width: 40px;
+    height: 1px;
+    background: var(--gold);
+  }
+
+  /* Emblème */
+  .emblem {
+    width: 130px;
+    height: 130px;
+    margin-bottom: 2.5rem;
+    position: relative;
+    opacity: 0;
+    animation: fadeUp 1s ease forwards 0.4s, float 6s ease-in-out infinite 1.4s;
+  }
+  .emblem svg { width: 100%; height: 100%; }
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+
+  .hero-title {
+    font-family: var(--serif-display);
+    font-size: clamp(2.8rem, 11vw, 7.5rem);
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    line-height: 1;
+    color: var(--cream);
+    margin-bottom: 1.5rem;
+    opacity: 0;
+    animation: fadeUp 1.2s ease forwards 0.6s;
+    text-shadow: 0 2px 30px rgba(198, 162, 75, 0.15);
+  }
+
+  .title-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1.8rem;
+    opacity: 0;
+    animation: fadeUp 1s ease forwards 0.8s;
+  }
+  .title-divider .line {
+    width: 60px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold));
+  }
+  .title-divider .line.right {
+    background: linear-gradient(90deg, var(--gold), transparent);
+  }
+  .title-divider .diamond {
+    width: 8px;
+    height: 8px;
+    background: var(--gold);
+    transform: rotate(45deg);
+  }
+
+  .hero-tagline {
+    font-family: var(--serif-display);
+    font-size: clamp(1.5rem, 4vw, 2.4rem);
+    font-weight: 500;
+    font-style: italic;
+    color: var(--cream-dim);
+    margin-bottom: 0.5rem;
+    opacity: 0;
+    animation: fadeUp 1s ease forwards 1s;
+  }
+  .hero-tagline .accent {
+    color: var(--gold-bright);
+    font-weight: 600;
+  }
+
+  .hero-desc {
+    max-width: 620px;
+    font-size: 1.15rem;
+    color: var(--cream-dim);
+    margin: 1.8rem auto 0;
+    line-height: 1.7;
+    opacity: 0;
+    animation: fadeUp 1s ease forwards 1.2s;
+  }
+
+  /* Flèche scroll */
+  .scroll-hint {
+    position: absolute;
+    bottom: 2.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--gold);
+    font-size: 1.5rem;
+    opacity: 0;
+    animation: fadeIn 1s ease forwards 2s, bounce 2s ease-in-out infinite 2.5s;
+  }
+  @keyframes bounce {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(8px); }
+  }
+
+  /* ============ ANIMATIONS ============ */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.9s ease, transform 0.9s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  /* Fallback : si JS échoue ou est désactivé, le contenu reste visible */
+  .no-js .reveal {
+    opacity: 1;
+    transform: none;
+  }
+
+  /* ============ SECTION PILIERS ============ */
+  .pillars {
+    padding: 6rem 0;
+    position: relative;
+  }
+  .section-head {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+  .section-eyebrow {
+    font-size: 0.85rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1rem;
+  }
+  .section-title {
+    font-family: var(--serif-display);
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 600;
+    color: var(--cream);
+    line-height: 1.2;
+  }
+  .section-title em {
+    font-style: italic;
+    color: var(--gold-bright);
+  }
+
+  .pillars-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+  .pillar {
+    background: linear-gradient(160deg, rgba(28, 48, 88, 0.4), rgba(18, 28, 58, 0.2));
+    border: 1px solid rgba(198, 162, 75, 0.2);
+    border-radius: 4px;
+    padding: 2.5rem 2rem;
+    text-align: center;
+    position: relative;
+    transition: transform 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+  }
+  .pillar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 2px;
+    background: var(--gold);
+  }
+  .pillar:hover {
+    transform: translateY(-8px);
+    border-color: rgba(198, 162, 75, 0.5);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+  }
+  .pillar-num {
+    font-family: var(--serif-display);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+  }
+  .pillar-line {
+    width: 30px;
+    height: 1px;
+    background: var(--gold-dark);
+    margin: 0.8rem auto 1.2rem;
+  }
+  .pillar-title {
+    font-family: var(--serif-display);
+    font-size: 1.7rem;
+    font-weight: 600;
+    color: var(--cream);
+    margin-bottom: 1rem;
+  }
+  .pillar-desc {
+    font-size: 1.02rem;
+    color: var(--cream-dim);
+    line-height: 1.6;
+  }
+
+  /* ============ STATS ============ */
+  .stats {
+    padding: 3rem 0 6rem;
+  }
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  .stat {
+    text-align: center;
+    position: relative;
+  }
+  .stat:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    right: -1rem;
+    top: 20%;
+    height: 60%;
+    width: 1px;
+    background: rgba(198, 162, 75, 0.3);
+  }
+  .stat-num {
+    font-family: var(--serif-display);
+    font-size: clamp(3rem, 8vw, 4.5rem);
+    font-weight: 700;
+    color: var(--gold-bright);
+    line-height: 1;
+  }
+  .stat-num .plus { font-size: 0.55em; color: var(--gold); vertical-align: super; }
+  .stat-label {
+    font-size: 0.8rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--cream-dim);
+    margin-top: 0.8rem;
+  }
+
+  /* ============ INSCRIPTION ============ */
+  .signup {
+    padding: 5rem 0 7rem;
+  }
+  .signup-card {
+    max-width: 720px;
+    margin: 0 auto;
+    background: linear-gradient(160deg, rgba(28, 48, 88, 0.5), rgba(18, 28, 58, 0.3));
+    border: 1px solid rgba(198, 162, 75, 0.35);
+    border-radius: 6px;
+    padding: 3.5rem 3rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .signup-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  }
+  .signup-eyebrow {
+    font-size: 0.8rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1rem;
+  }
+  .signup-title {
+    font-family: var(--serif-display);
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    font-weight: 600;
+    color: var(--cream);
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+  .signup-desc {
+    font-size: 1.1rem;
+    color: var(--cream-dim);
+    margin-bottom: 2.5rem;
+    line-height: 1.6;
+  }
+
+  .signup-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 460px;
+    margin: 0 auto;
+  }
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  .signup-form input,
+  .signup-form select {
+    width: 100%;
+    padding: 1rem 1.2rem;
+    background: rgba(10, 17, 38, 0.6);
+    border: 1px solid rgba(198, 162, 75, 0.25);
+    border-radius: 3px;
+    color: var(--cream);
+    font-family: var(--serif-body);
+    font-size: 1.05rem;
+    transition: border-color 0.3s ease, background 0.3s ease;
+  }
+  .signup-form input::placeholder { color: var(--grey-blue); }
+  .signup-form input:focus,
+  .signup-form select:focus {
+    outline: none;
+    border-color: var(--gold);
+    background: rgba(10, 17, 38, 0.9);
+  }
+  .signup-form select { color: var(--cream-dim); cursor: pointer; }
+  .signup-form select option { background: var(--night); color: var(--cream); }
+
+  .signup-btn {
+    margin-top: 0.5rem;
+    padding: 1.1rem 2rem;
+    background: var(--gold);
+    color: var(--night-deep);
+    border: 1px solid var(--gold);
+    border-radius: 3px;
+    font-family: var(--serif-body);
+    font-size: 1.05rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  .signup-btn:hover:not(:disabled) {
+    background: transparent;
+    color: var(--gold);
+  }
+  .signup-btn:disabled { opacity: 0.6; cursor: not-allowed; }
+
+  .consent {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+    text-align: left;
+    font-size: 0.85rem;
+    color: var(--grey-blue);
+    line-height: 1.5;
+    margin-top: 0.3rem;
+  }
+  .consent input {
+    width: auto;
+    margin-top: 4px;
+    accent-color: var(--gold);
+    flex-shrink: 0;
+    cursor: pointer;
+  }
+
+  .signup-success {
+    display: none;
+    padding: 1rem 0;
+  }
+  .signup-success.active { display: block; }
+  .signup-success .check {
+    font-size: 3rem;
+    color: var(--gold);
+    margin-bottom: 1rem;
+  }
+  .signup-success h3 {
+    font-family: var(--serif-display);
+    font-size: 1.8rem;
+    color: var(--gold-bright);
+    margin-bottom: 0.8rem;
+  }
+  .signup-success p {
+    color: var(--cream-dim);
+    font-size: 1.05rem;
+    line-height: 1.6;
+  }
+  .signup-error {
+    display: none;
+    background: rgba(180, 60, 50, 0.15);
+    border: 1px solid rgba(200, 80, 70, 0.4);
+    border-radius: 3px;
+    padding: 0.9rem;
+    color: #e89080;
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+  }
+  .signup-error.active { display: block; }
+
+  /* ============ FOOTER ============ */
+  .footer {
+    padding: 3rem 0 4rem;
+    text-align: center;
+    border-top: 1px solid rgba(198, 162, 75, 0.15);
+  }
+  .footer-logo {
+    font-family: var(--serif-display);
+    font-size: 1.6rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    color: var(--cream);
+    margin-bottom: 0.8rem;
+  }
+  .footer-tagline {
+    font-style: italic;
+    color: var(--grey-blue);
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  .footer-meta {
+    font-size: 0.85rem;
+    color: var(--grey-blue);
+    letter-spacing: 0.05em;
+  }
+  .footer-meta a { color: var(--gold); text-decoration: none; }
+  .footer-meta a:hover { color: var(--gold-bright); }
+
+  /* ============ RESPONSIVE ============ */
+  @media (max-width: 768px) {
+    .pillars-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+    .stats-grid { gap: 1rem; }
+    .stat:not(:last-child)::after { display: none; }
+    .signup-card { padding: 2.5rem 1.5rem; }
+    .form-row { grid-template-columns: 1fr; }
+    .pillars { padding: 4rem 0; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Cadre décoratif -->
+<div class="frame">
+  <span class="frame-corner tl"></span>
+  <span class="frame-corner tr"></span>
+  <span class="frame-corner bl"></span>
+  <span class="frame-corner br"></span>
+</div>
+
+<!-- Étoiles scintillantes -->
+<div class="stars" id="stars"></div>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="eyebrow">Bientôt en ligne</div>
+
+  <div class="emblem">
+    <svg viewBox="0 0 130 130" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="65" cy="65" r="54" fill="none" stroke="#c6a24b" stroke-width="2"/>
+      <circle cx="65" cy="65" r="47" fill="none" stroke="#e4be69" stroke-width="1"/>
+      <circle cx="65" cy="65" r="38" fill="none" stroke="#c6a24b" stroke-width="3"/>
+      <!-- Croix latine -->
+      <rect x="62.5" y="42" width="5" height="46" fill="#e4be69"/>
+      <rect x="52" y="54" width="26" height="5" fill="#e4be69"/>
+      <!-- Rayons -->
+      <g stroke="#9b7d32" stroke-width="2">
+        <line x1="65" y1="2" x2="65" y2="11"/>
+        <line x1="65" y1="119" x2="65" y2="128"/>
+        <line x1="2" y1="65" x2="11" y2="65"/>
+        <line x1="119" y1="65" x2="128" y2="65"/>
+        <line x1="20" y1="20" x2="26" y2="26"/>
+        <line x1="104" y1="104" x2="110" y2="110"/>
+        <line x1="20" y1="110" x2="26" y2="104"/>
+        <line x1="104" y1="26" x2="110" y2="20"/>
+      </g>
+    </svg>
+  </div>
+
+  <h1 class="hero-title">ENCYCLICUM</h1>
+
+  <div class="title-divider">
+    <span class="line"></span>
+    <span class="diamond"></span>
+    <span class="line right"></span>
+  </div>
+
+  <p class="hero-tagline">La sagesse des papes, <span class="accent">enfin accessible.</span></p>
+
+  <p class="hero-desc">
+    Une bibliothèque vivante des lettres encycliques pontificales — résumées,
+    classées par thèmes, et traduites en actions concrètes pour les chrétiens d'aujourd'hui.
+  </p>
+
+  <div class="scroll-hint">❧</div>
+</section>
+
+<!-- ============ PILIERS ============ -->
+<section class="pillars">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="section-eyebrow">Notre approche</div>
+      <h2 class="section-title">Trois clés pour <em>redécouvrir</em> l'enseignement de l'Église</h2>
+    </div>
+
+    <div class="pillars-grid">
+      <div class="pillar reveal">
+        <div class="pillar-num">I</div>
+        <div class="pillar-line"></div>
+        <h3 class="pillar-title">Résumés</h3>
+        <p class="pillar-desc">Chaque encyclique condensée en une synthèse claire et fidèle, accessible à tous — sans jargon théologique.</p>
+      </div>
+      <div class="pillar reveal">
+        <div class="pillar-num">II</div>
+        <div class="pillar-line"></div>
+        <h3 class="pillar-title">Thématiques</h3>
+        <p class="pillar-desc">Un classement par grands sujets : travail, famille, paix, économie, écologie, intelligence artificielle…</p>
+      </div>
+      <div class="pillar reveal">
+        <div class="pillar-num">III</div>
+        <div class="pillar-line"></div>
+        <h3 class="pillar-title">Actions</h3>
+        <p class="pillar-desc">Pour chaque texte, des pistes concrètes pour vivre aujourd'hui l'enseignement reçu, dans sa vie quotidienne.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STATS ============ -->
+<section class="stats">
+  <div class="container">
+    <div class="stats-grid reveal">
+      <div class="stat">
+        <div class="stat-num">300<span class="plus">+</span></div>
+        <div class="stat-label">Encycliques</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">40<span class="plus">+</span></div>
+        <div class="stat-label">Papes</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">15<span class="plus">+</span></div>
+        <div class="stat-label">Thèmes majeurs</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ INSCRIPTION ============ -->
+<section class="signup">
+  <div class="container">
+    <div class="signup-card reveal">
+      <div class="signup-eyebrow">Rejoignez la liste d'attente</div>
+      <h2 class="signup-title">Soyez les premiers à découvrir Encyclicum</h2>
+      <p class="signup-desc">
+        Inscrivez-vous pour être averti·e du lancement et accéder aux premiers
+        contenus en avant-première.
+      </p>
+
+      <div class="signup-error" id="signupError" role="alert"></div>
+
+      <div class="signup-success" id="signupSuccess" role="status" aria-live="polite">
+        <div class="check">✦</div>
+        <h3>Merci pour votre inscription !</h3>
+        <p>Vous serez parmi les premiers informés du lancement d'Encyclicum.<br>À très bientôt.</p>
+      </div>
+
+      <form class="signup-form" id="signupForm" action="https://formspree.io/f/mlgzbqqo" method="POST">
+        <input type="hidden" name="_subject" value="📚 Nouvelle inscription liste d'attente - Encyclicum">
+        <input type="hidden" name="projet" value="Encyclicum - Liste d'attente lancement">
+
+        <div class="form-row">
+          <input type="text" name="prenom" placeholder="Prénom *" required autocomplete="given-name">
+          <input type="text" name="nom" placeholder="Nom" autocomplete="family-name">
+        </div>
+        <input type="email" name="email" placeholder="Votre courriel *" required autocomplete="email">
+        <select name="profil" aria-label="Votre profil">
+          <option value="">Vous êtes… (facultatif)</option>
+          <option>Fidèle / Pratiquant·e</option>
+          <option>Chercheur·se spirituel·le</option>
+          <option>Étudiant·e / Universitaire</option>
+          <option>Prêtre / Religieux·se</option>
+          <option>Agent·e pastoral·e / Catéchiste</option>
+          <option>Enseignant·e</option>
+          <option>Entrepreneur·e / Professionnel·le</option>
+          <option>Simplement curieux·se</option>
+          <option>Autre</option>
+        </select>
+
+        <label class="consent">
+          <input type="checkbox" name="consentement" value="oui" required>
+          <span>J'accepte de recevoir par courriel des nouvelles d'Encyclicum. Je peux me désinscrire à tout moment.</span>
+        </label>
+
+        <button type="submit" class="signup-btn">M'inscrire à la liste d'attente</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-logo">ENCYCLICUM</div>
+    <div class="footer-tagline">La sagesse des papes, enfin accessible.</div>
+    <div class="footer-meta">
+      © <span id="year"></span> Encyclicum · <a href="https://encyclicum.ca">encyclicum.ca</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Année dynamique
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Génération des étoiles scintillantes
+  (function() {
+    const starsContainer = document.getElementById('stars');
+    const count = 40;
+    for (let i = 0; i < count; i++) {
+      const star = document.createElement('div');
+      star.className = 'star';
+      const size = Math.random() * 2 + 1;
+      star.style.width = size + 'px';
+      star.style.height = size + 'px';
+      star.style.left = Math.random() * 100 + '%';
+      star.style.top = Math.random() * 100 + '%';
+      star.style.animationDelay = Math.random() * 4 + 's';
+      star.style.animationDuration = (Math.random() * 3 + 3) + 's';
+      starsContainer.appendChild(star);
+    }
+  })();
+
+  // Animation au scroll (reveal)
+  (function() {
+    const reveals = document.querySelectorAll('.reveal');
+    if (!('IntersectionObserver' in window)) {
+      // Pas de support : tout afficher
+      reveals.forEach(el => el.classList.add('visible'));
+      return;
+    }
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    reveals.forEach(el => observer.observe(el));
+
+    // Filet de sécurité : forcer l'affichage après 4s quoi qu'il arrive
+    setTimeout(() => {
+      reveals.forEach(el => el.classList.add('visible'));
+    }, 4000);
+  })();
+
+  // Soumission du formulaire via Formspree (AJAX)
+  (function() {
+    const form = document.getElementById('signupForm');
+    const success = document.getElementById('signupSuccess');
+    const error = document.getElementById('signupError');
+    if (!form) return;
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const btn = form.querySelector('.signup-btn');
+      const originalText = btn.textContent;
+      btn.textContent = 'Envoi en cours…';
+      btn.disabled = true;
+      error.classList.remove('active');
+
+      try {
+        const response = await fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        });
+
+        if (response.ok) {
+          form.style.display = 'none';
+          success.classList.add('active');
+          success.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        } else {
+          throw new Error('Erreur réseau');
+        }
+      } catch (err) {
+        error.textContent = '✗ Une erreur est survenue. Veuillez réessayer dans un instant.';
+        error.classList.add('active');
+        btn.textContent = originalText;
+        btn.disabled = false;
+      }
+    });
+  })();
+</script>
+
+</body>
+</html>
