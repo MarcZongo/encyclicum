@@ -4,11 +4,16 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Synthèses approfondies — Encyclicum</title>
-<meta name="description" content="Synthèses approfondies de Rerum Novarum (Léon XIII, 1891) et Magnifica Humanitas (Léon XIV, 2026) : contexte, thèses, héritage, implications et actions concrètes.">
+<meta name="description" content="Toutes les synthèses approfondies des encycliques, exhortations et textes du magistère pontifical publiées sur Encyclicum.">
+<link rel="canonical" href="https://www.encyclicum.ca/syntheses.html">
+<meta property="og:title" content="Synthèses approfondies — Encyclicum">
+<meta property="og:description" content="Toutes les synthèses approfondies publiées sur Encyclicum.">
+<meta property="og:url" content="https://www.encyclicum.ca/syntheses.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
 <style>
+
   :root{
     --navy:#1B2A4A;--navy-deep:#141F38;--gold:#B8923E;--gold-light:#D4B468;
     --cream:#FBF8F1;--paper:#FFFFFF;--ink:#23272E;--muted:#6B6356;
@@ -16,66 +21,71 @@
   }
   *{margin:0;padding:0;box-sizing:border-box;}
   html{scroll-behavior:smooth;}
-  body{font-family:'EB Garamond',Georgia,serif;background:var(--cream);color:var(--ink);line-height:1.7;font-size:18px;-webkit-font-smoothing:antialiased;}
+  body{font-family:'EB Garamond',Georgia,serif;background:var(--cream);color:var(--ink);line-height:1.6;font-size:18px;-webkit-font-smoothing:antialiased;}
 
-  nav{position:sticky;top:0;z-index:50;background:var(--navy-deep);border-bottom:1px solid rgba(212,180,104,.25);}
-  .nav-inner{max-width:900px;margin:0 auto;display:flex;align-items:center;gap:8px;padding:11px 24px;flex-wrap:wrap;}
-  .nav-brand{font-family:'Cormorant Garamond',serif;font-size:23px;font-weight:600;color:#fff;letter-spacing:.04em;margin-right:auto;}
-  .nav-brand .cross{color:var(--gold-light);}
-  .nav a{font-size:14.5px;color:#C6CAD6;text-decoration:none;padding:6px 11px;border-radius:6px;transition:background .15s,color .15s;}
-  .nav a:hover{background:rgba(255,255,255,.08);color:#fff;}
 
-  header{position:relative;background:linear-gradient(160deg,var(--navy-deep),var(--navy));color:#fff;padding:64px 24px 54px;text-align:center;overflow:hidden;}
+  /* ---- Menu hamburger (partagé) ---- */
+  .ham-btn{position:fixed;top:18px;right:22px;z-index:200;width:48px;height:48px;border-radius:50%;background:var(--navy);color:#fff;border:1.5px solid rgba(212,180,104,.45);cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(27,42,74,.25);transition:transform .2s,background .2s,opacity .2s;}
+  .ham-btn:hover{background:var(--gold);transform:scale(1.05);}
+  .ham-btn svg{width:22px;height:22px;}
+  body.ham-open .ham-btn{opacity:0;pointer-events:none;}
+  .ham-overlay{position:fixed;inset:0;background:rgba(20,31,56,.55);backdrop-filter:blur(3px);z-index:198;opacity:0;pointer-events:none;transition:opacity .25s;}
+  .ham-overlay.open{opacity:1;pointer-events:auto;}
+  .ham-panel{position:fixed;top:0;right:0;height:100%;width:340px;max-width:88vw;background:linear-gradient(170deg,var(--navy-deep),var(--navy));color:#fff;z-index:199;transform:translateX(100%);transition:transform .32s cubic-bezier(.4,0,.2,1);box-shadow:-12px 0 40px rgba(0,0,0,.3);overflow-y:auto;}
+  .ham-panel.open{transform:translateX(0);}
+  .ham-panel::before{content:"";position:absolute;inset:0;background-image:radial-gradient(circle at 1px 1px,rgba(212,180,104,.07) 1px,transparent 0);background-size:22px 22px;pointer-events:none;}
+  .ham-head{position:relative;padding:30px 28px 22px;border-bottom:1px solid rgba(212,180,104,.2);}
+  .ham-close{position:absolute;top:18px;right:18px;width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.08);color:#fff;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s;}
+  .ham-close:hover{background:var(--gold);color:var(--navy-deep);}
+  .ham-close svg{width:18px;height:18px;}
+  .ham-brand{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:600;letter-spacing:.04em;}
+  .ham-brand .cross{color:var(--gold-light);}
+  .ham-tag{font-size:13px;color:var(--gold-light);font-style:italic;letter-spacing:.04em;margin-top:4px;}
+  .ham-links{position:relative;padding:18px 0 14px;list-style:none;}
+  .ham-links li a{display:flex;align-items:center;gap:14px;padding:14px 28px;color:#D9DBE4;text-decoration:none;font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:500;border-left:3px solid transparent;transition:all .15s;}
+  .ham-links li a:hover{background:rgba(255,255,255,.06);color:#fff;border-left-color:var(--gold);}
+  .ham-links li a.current{background:rgba(184,146,62,.13);color:#fff;border-left-color:var(--gold);}
+  .ham-links .em{font-size:20px;width:24px;text-align:center;}
+  .ham-divider{height:1px;background:rgba(212,180,104,.18);margin:8px 28px;}
+  .ham-cta{position:relative;margin:18px 28px 26px;display:block;background:var(--gold);color:var(--navy-deep);text-align:center;padding:13px;border-radius:30px;font-family:'Cormorant Garamond',serif;font-weight:600;font-size:18px;text-decoration:none;transition:background .2s;}
+  .ham-cta:hover{background:var(--gold-light);}
+  .ham-foot{position:relative;padding:18px 28px 28px;font-size:13px;color:#9CA2B3;font-style:italic;text-align:center;border-top:1px solid rgba(212,180,104,.15);}
+  .ham-foot a{color:var(--gold-light);text-decoration:none;}
+  body.ham-open{overflow:hidden;}
+
+
+  header{position:relative;background:linear-gradient(160deg,var(--navy-deep),var(--navy));color:#fff;padding:84px 24px 56px;text-align:center;overflow:hidden;}
   header::before{content:"";position:absolute;inset:0;background-image:radial-gradient(circle at 1px 1px,rgba(212,180,104,.10) 1px,transparent 0);background-size:26px 26px;opacity:.6;}
   header::after{content:"";position:absolute;left:50%;bottom:0;width:160px;height:3px;background:linear-gradient(90deg,transparent,var(--gold),transparent);transform:translateX(-50%);}
-  .head-inner{position:relative;max-width:760px;margin:0 auto;}
+  .head-inner{position:relative;max-width:820px;margin:0 auto;}
   .mark{font-family:'Cormorant Garamond',serif;font-size:13px;letter-spacing:.4em;text-transform:uppercase;color:var(--gold-light);margin-bottom:14px;font-weight:600;}
-  header h1{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(34px,6vw,52px);line-height:1.05;}
-  header p{font-style:italic;font-size:19px;color:#D9DBE4;margin-top:14px;}
+  header h1{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(38px,7vw,58px);line-height:1.05;}
+  header h1 .cross{color:var(--gold-light);}
+  header .lead{font-style:italic;font-size:19px;color:#D9DBE4;margin-top:16px;max-width:680px;margin-left:auto;margin-right:auto;line-height:1.7;}
 
-  .toc{max-width:760px;margin:36px auto 0;padding:0 24px;display:flex;gap:12px;flex-wrap:wrap;justify-content:center;}
-  .toc a{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:600;padding:9px 20px;border:1.5px solid var(--line);border-radius:30px;background:var(--paper);color:var(--navy);text-decoration:none;transition:all .18s;}
-  .toc a:hover{border-color:var(--gold);background:#FCF7EA;}
+  main{max-width:900px;margin:0 auto;padding:54px 24px 70px;}
+  .intro{text-align:center;margin-bottom:40px;}
+  .intro p{color:var(--muted);font-style:italic;font-size:17.5px;line-height:1.7;}
 
-  main{max-width:760px;margin:0 auto;padding:44px 24px 70px;}
-  article{margin-bottom:70px;scroll-margin-top:70px;}
+  .syn-list{display:flex;flex-direction:column;gap:18px;}
+  .syn-card{display:grid;grid-template-columns:auto 1fr;gap:24px;text-decoration:none;background:var(--paper);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);padding:28px;transition:transform .2s,box-shadow .2s,border-color .2s;position:relative;overflow:hidden;}
+  .syn-card::before{content:"";position:absolute;top:0;left:0;width:5px;height:100%;background:linear-gradient(180deg,var(--gold),var(--gold-light));}
+  .syn-card:hover{transform:translateY(-3px);box-shadow:0 12px 40px rgba(27,42,74,.13);border-color:var(--gold);}
+  .syn-em{font-size:42px;width:64px;height:64px;display:flex;align-items:center;justify-content:center;background:linear-gradient(160deg,#FCF7EA,#F6EFDD);border-radius:14px;flex-shrink:0;}
+  .syn-body h3{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:600;font-size:28px;color:var(--navy);margin-bottom:6px;}
+  .syn-meta{color:var(--gold);font-size:14px;letter-spacing:.04em;text-transform:uppercase;font-weight:600;margin-bottom:10px;display:flex;gap:6px;flex-wrap:wrap;}
+  .syn-dot{opacity:.5;}
+  .syn-theme{color:var(--muted);}
+  .syn-sujet{color:#3A3E46;font-size:17px;margin-bottom:10px;}
+  .syn-teaser{color:#3A3E46;font-size:16.5px;line-height:1.6;margin-bottom:14px;}
+  .syn-link{color:var(--navy);font-family:'Cormorant Garamond',serif;font-weight:600;font-size:17px;}
+  .syn-card:hover .syn-link{color:var(--gold);}
 
-  .art-title{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(32px,5.5vw,46px);color:var(--navy);font-style:italic;line-height:1.05;margin-bottom:6px;}
-  .art-sub{font-size:19px;color:var(--muted);font-style:italic;margin-bottom:26px;padding-bottom:20px;border-bottom:2px solid var(--gold);}
-
-  .one-line{background:linear-gradient(135deg,#FCF7EA,#F6EFDD);border-left:4px solid var(--gold);border-radius:0 10px 10px 0;padding:18px 24px;margin-bottom:28px;font-size:20px;font-style:italic;color:var(--navy);}
-
-  .idcard{background:var(--paper);border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);padding:22px 26px;margin-bottom:30px;}
-  .idcard dl{display:grid;grid-template-columns:auto 1fr;gap:7px 18px;font-size:16.5px;}
-  .idcard dt{font-family:'Cormorant Garamond',serif;font-weight:600;color:var(--gold);text-transform:uppercase;letter-spacing:.05em;font-size:13.5px;align-self:center;}
-  .idcard dd{color:var(--ink);}
-
-  h2.sec{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(24px,3.6vw,31px);color:var(--navy);margin:38px 0 14px;display:flex;align-items:center;gap:11px;}
-  h2.sec .n{font-size:.55em;color:#fff;background:var(--navy);width:30px;height:30px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-weight:500;flex-shrink:0;}
-  h3.sub{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:21px;color:var(--navy);margin:22px 0 6px;}
-  p{margin-bottom:15px;}
-  .lead::first-letter{font-family:'Cormorant Garamond',serif;font-size:58px;float:left;line-height:.78;padding:7px 11px 0 0;color:var(--gold);font-weight:600;}
-
-  blockquote{margin:20px 0;padding:16px 26px;border-left:3px solid var(--gold);background:#FCFAF4;font-style:italic;font-size:18.5px;color:#3A3E46;border-radius:0 8px 8px 0;}
-  blockquote .src{display:block;margin-top:8px;font-style:normal;font-size:14.5px;color:var(--muted);}
-
-  ul.these{list-style:none;margin:8px 0 18px;}
-  ul.these li{position:relative;padding:14px 18px 14px 50px;margin-bottom:12px;background:var(--paper);border:1px solid var(--line);border-radius:10px;box-shadow:var(--shadow);}
-  ul.these li .num{position:absolute;left:16px;top:14px;font-family:'Cormorant Garamond',serif;font-weight:700;font-size:22px;color:var(--gold);}
-  ul.these li strong{color:var(--navy);font-family:'Cormorant Garamond',serif;font-size:19px;}
-
-  ul.action{list-style:none;margin:8px 0 18px;}
-  ul.action li{position:relative;padding:9px 0 9px 32px;}
-  ul.action li::before{content:"✦";position:absolute;left:6px;top:9px;color:var(--gold);font-size:15px;}
-  .action-group{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:18px;color:var(--gold);margin:18px 0 4px;text-transform:uppercase;letter-spacing:.04em;}
-
-  .links-out{background:var(--navy);color:#fff;border-radius:12px;padding:22px 26px;margin-top:24px;}
-  .links-out h3{font-family:'Cormorant Garamond',serif;font-size:20px;margin-bottom:10px;color:var(--gold-light);}
-  .links-out a{color:#fff;text-decoration:underline;text-decoration-color:rgba(212,180,104,.5);}
-  .links-out a:hover{text-decoration-color:var(--gold-light);}
-  .links-out p{margin-bottom:7px;font-size:16px;color:#D9DBE4;}
-
-  .divider{text-align:center;color:var(--gold);font-size:24px;margin:10px 0 50px;letter-spacing:.5em;}
+  .coming{background:var(--paper);border:2px dashed var(--line);border-radius:14px;padding:32px;margin-top:30px;text-align:center;}
+  .coming h3{font-family:'Cormorant Garamond',serif;color:var(--navy);font-size:21px;font-weight:600;margin-bottom:8px;}
+  .coming p{color:var(--muted);font-style:italic;font-size:16px;}
+  .coming .future{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-top:14px;}
+  .coming .future span{font-size:14px;padding:5px 12px;background:#F6EFDD;color:#7A5E1E;border-radius:20px;font-style:italic;}
 
   footer{background:var(--navy-deep);color:#C6CAD6;padding:44px 24px;text-align:center;}
   footer .f-mark{font-family:'Cormorant Garamond',serif;font-size:24px;color:#fff;margin-bottom:8px;}
@@ -85,190 +95,108 @@
 
   @media(max-width:680px){
     body{font-size:16px;}
-    .idcard dl{grid-template-columns:1fr;gap:3px;}
-    .idcard dt{margin-top:10px;}
+    .syn-card{grid-template-columns:1fr;text-align:center;padding:24px;}
+    .syn-em{margin:0 auto;}
+    .syn-meta{justify-content:center;}
   }
 </style>
 </head>
 <body>
-<nav>
-  <div class="nav-inner">
-    <span class="nav-brand">Encyclicum<span class="cross"> &#10013;</span></span>
-    <a href="index.html">← Accueil</a>
-    <a href="#rerum">Rerum Novarum</a>
-    <a href="#magnifica">Magnifica Humanitas</a>
+
+<button class="ham-btn" id="hamBtn" aria-label="Ouvrir le menu">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+</button>
+<div class="ham-overlay" id="hamOverlay"></div>
+<aside class="ham-panel" id="hamPanel" aria-label="Menu principal">
+  <div class="ham-head">
+    <button class="ham-close" id="hamClose" aria-label="Fermer">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+    <div class="ham-brand">Encyclicum<span class="cross"> &#10013;</span></div>
+    <div class="ham-tag">La sagesse des papes, accessible</div>
   </div>
-</nav>
+  <ul class="ham-links">
+    <li><a href="index.html" class=""><span class="em">🏠</span>Accueil</a></li>
+    <li><a href="index.html#corpus" class=""><span class="em">📚</span>Corpus complet</a></li>
+    <li><a href="syntheses.html" class="current"><span class="em">📖</span>Synthèses approfondies</a></li>
+    <div class="ham-divider"></div>
+    <li><a href="index.html#fondateur" class=""><span class="em">👤</span>Le fondateur</a></li>
+    <li><a href="index.html#contact" class=""><span class="em">✉️</span>Nous écrire</a></li>
+  </ul>
+  <a href="index.html#don" class="ham-cta">&#10013;&nbsp; Faire un don</a>
+  <div class="ham-foot">
+    <a href="https://www.metanoia-strategie.ca" target="_blank" rel="noopener">MetanoIA Stratégie</a><br>
+    www.encyclicum.ca
+  </div>
+</aside>
+
 
 <header>
   <div class="head-inner">
     <div class="mark">Synthèses approfondies</div>
-    <h1>Les deux Léon, à 135 ans de distance</h1>
-    <p>De la révolution industrielle à la révolution de l'intelligence artificielle — l'Église face aux « choses nouvelles ».</p>
+    <h1>Synthèses<span class="cross"> &#10013;</span></h1>
+    <p class="lead">Au-delà du recensement par thème, des analyses détaillées de chaque texte majeur : contexte, thèses, citations, héritage, implications pour notre temps et pistes d'action concrètes.</p>
   </div>
 </header>
 
-<div class="toc">
-  <a href="#rerum">📜 Rerum Novarum (1891)</a>
-  <a href="#magnifica">🤖 Magnifica Humanitas (2026)</a>
-</div>
-
 <main>
-
-<!-- ============ RERUM NOVARUM ============ -->
-<article id="rerum">
-  <div class="art-title">Rerum Novarum</div>
-  <div class="art-sub">« Les choses nouvelles » — Léon XIII, 1891 · Sur la condition des ouvriers</div>
-
-  <div class="one-line">Face à la misère ouvrière de l'ère industrielle, l'Église affirme que le travailleur n'est pas une marchandise : il a droit à un salaire juste, à la propriété et à l'association — dans une société où ni l'État tout-puissant ni le marché sans frein ne doivent écraser la dignité de la personne.</div>
-
-  <div class="idcard">
-    <dl>
-      <dt>Titre</dt><dd><em>Rerum Novarum</em> (« Des choses nouvelles »)</dd>
-      <dt>Auteur</dt><dd>Pape Léon XIII</dd>
-      <dt>Date</dt><dd>15 mai 1891</dd>
-      <dt>Type</dt><dd>Lettre encyclique</dd>
-      <dt>Sujet</dt><dd>La condition des ouvriers (« question sociale »)</dd>
-      <dt>Portée</dt><dd>Acte fondateur de la doctrine sociale de l'Église</dd>
-    </dl>
+  <div class="intro">
+    <p>Une synthèse par texte, structurée en dix sections pour saisir l'essentiel et en tirer des fruits pour aujourd'hui. La collection s'enrichit progressivement.</p>
   </div>
 
-  <h2 class="sec"><span class="n">1</span>Contexte historique</h2>
-  <p class="lead">À la fin du XIX<sup>e</sup> siècle, l'Europe est transformée en profondeur par la révolution industrielle. L'exode rural jette des masses de paysans dans les usines des villes, où règnent des conditions de travail effroyables : journées interminables, salaires de misère, travail des enfants, absence de toute protection. Une nouvelle classe ouvrière, le prolétariat, vit dans une précarité extrême face à une bourgeoisie industrielle qui concentre les richesses.</p>
-  <p>Dans ce contexte explosif, deux grandes réponses idéologiques s'affrontent. D'un côté, le <strong>libéralisme économique</strong>, qui érige la liberté du marché et la libre concurrence en principes absolus, sans considération pour le sort des travailleurs. De l'autre, le <strong>socialisme</strong> — et bientôt le marxisme — qui propose la lutte des classes et l'abolition de la propriété privée. L'Église, jusque-là largement silencieuse sur ces questions économiques nouvelles, est sommée de prendre position. Léon XIII, élu en 1878, va le faire avec une autorité inédite.</p>
-
-  <h2 class="sec"><span class="n">2</span>Structure du document</h2>
-  <p>L'encyclique procède en trois temps. Elle <strong>réfute d'abord la solution socialiste</strong>, jugée injuste envers le travailleur et néfaste pour la société. Elle expose ensuite <strong>le rôle propre de l'Église</strong> dans la question sociale. Enfin, elle détaille les <strong>devoirs respectifs</strong> de chacun — l'État, les patrons, les ouvriers — et défend le droit d'association.</p>
-
-  <h2 class="sec"><span class="n">3</span>Thèses principales</h2>
-  <ul class="these">
-    <li><span class="num">1</span><strong>Le rejet du socialisme.</strong> Léon XIII réfute l'idée que la suppression de la propriété privée résoudrait la question sociale. Il défend au contraire le droit naturel de tout homme à posséder des biens, fruit de son travail — y compris, et surtout, pour l'ouvrier qui aspire à devenir propriétaire.</li>
-    <li><span class="num">2</span><strong>La dignité du travail et du travailleur.</strong> Le travail humain n'est pas une simple marchandise soumise à la loi de l'offre et de la demande. L'ouvrier est une personne, dotée d'une dignité que ni le patron ni l'État ne peuvent bafouer.</li>
-    <li><span class="num">3</span><strong>Le salaire juste.</strong> Un salaire n'est pas équitable du seul fait que l'ouvrier l'a accepté : il doit permettre au travailleur de vivre dignement et de faire vivre sa famille. C'est une exigence de justice, pas de simple contrat.</li>
-    <li><span class="num">4</span><strong>Le rôle de l'État.</strong> L'État n'est ni tout-puissant ni absent. Il a le devoir de protéger les plus faibles, de garantir le repos, de limiter le temps de travail et de défendre le bien commun — tout en respectant l'initiative privée et les corps intermédiaires.</li>
-    <li><span class="num">5</span><strong>Le droit d'association.</strong> Les ouvriers ont le droit naturel de se regrouper en associations et syndicats pour défendre leurs intérêts. Ce droit prépare l'essor du syndicalisme chrétien.</li>
-    <li><span class="num">6</span><strong>La collaboration plutôt que la lutte.</strong> Contre la lutte des classes, Léon XIII propose l'harmonie entre capital et travail : les deux sont nécessaires l'un à l'autre et doivent collaborer dans la justice et la charité.</li>
-  </ul>
-
-  <h2 class="sec"><span class="n">4</span>Citations marquantes</h2>
-  <blockquote>« Une fois la société modifiée, les ouvriers ne pourraient qu'y perdre. »<span class="src">Léon XIII, à propos des conséquences réelles du socialisme pour les travailleurs eux-mêmes.</span></blockquote>
-  <blockquote>« Ce serait pécher contre la justice que de ne pas payer un juste salaire. »<span class="src">Rerum Novarum — sur le devoir moral de l'employeur.</span></blockquote>
-
-  <h2 class="sec"><span class="n">5</span>Portée et héritage</h2>
-  <p>Rerum Novarum est unanimement considérée comme l'<strong>acte de naissance de la doctrine sociale de l'Église</strong>. Elle a ouvert une tradition d'enseignement social qui se poursuit sans interruption depuis plus d'un siècle, chaque pape majeur reprenant et actualisant son message à l'occasion de ses anniversaires : <em>Quadragesimo Anno</em> (Pie XI, 1931, pour les 40 ans), <em>Mater et Magistra</em> (Jean XXIII, 1961), <em>Octogesima Adveniens</em> (Paul VI, 1971), et surtout <em>Centesimus Annus</em> (Jean-Paul II, 1991, pour le centenaire).</p>
-  <p>Son influence dépasse l'Église : elle a inspiré le syndicalisme chrétien, les partis démocrates-chrétiens, et nourri la réflexion sur l'État-providence au XX<sup>e</sup> siècle.</p>
-
-  <h2 class="sec"><span class="n">6</span>Implications pour notre temps</h2>
-  <p>Plus de 130 ans après, les questions de Rerum Novarum restent étonnamment actuelles. La <strong>précarité du travail</strong> a changé de forme — ubérisation, travail des plateformes, contrats précaires — mais la question demeure : le travailleur est-il traité comme une personne ou comme une variable d'ajustement ? Le débat sur le <strong>salaire décent</strong>, sur les <strong>inégalités croissantes</strong>, sur le rôle de l'État face au marché, prolonge directement les intuitions de Léon XIII.</p>
-  <p>C'est précisément cette actualité que Léon XIV a voulu souligner en 2026 : la révolution numérique pose, à nouveaux frais, la même question fondamentale que la révolution industrielle.</p>
-
-  <h2 class="sec"><span class="n">7</span>Actions concrètes possibles</h2>
-  <div class="action-group">À l'échelle personnelle</div>
-  <ul class="action">
-    <li>S'interroger sur la justice de ses propres pratiques : comme employeur, comme consommateur, comme épargnant.</li>
-    <li>Privilégier, quand c'est possible, les entreprises et produits respectueux de la dignité des travailleurs.</li>
-  </ul>
-  <div class="action-group">À l'échelle communautaire</div>
-  <ul class="action">
-    <li>Soutenir ou rejoindre des associations qui défendent les droits des travailleurs précaires.</li>
-    <li>Promouvoir, en paroisse ou en entreprise, une culture du dialogue social plutôt que de l'affrontement.</li>
-  </ul>
-  <div class="action-group">À l'échelle sociale</div>
-  <ul class="action">
-    <li>S'engager pour des politiques garantissant un salaire et des conditions de travail dignes.</li>
-    <li>Porter une attention particulière aux nouvelles formes de précarité (travail des plateformes, sous-traitance).</li>
-  </ul>
-
-  <div class="links-out">
-    <h3>Pour aller plus loin</h3>
-    <p>Texte intégral : <a href="https://www.vatican.va/content/leo-xiii/fr/encyclicals/documents/hf_l-xiii_enc_15051891_rerum-novarum.html" target="_blank" rel="noopener">Rerum Novarum sur vatican.va</a></p>
-    <p>Textes liés : <em>Quadragesimo Anno</em> (1931) · <em>Centesimus Annus</em> (1991) · <em>Laborem Exercens</em> (1981) · <em>Magnifica Humanitas</em> (2026)</p>
-  </div>
-</article>
-
-<div class="divider">✦ ✦ ✦</div>
-
-<!-- ============ MAGNIFICA HUMANITAS ============ -->
-<article id="magnifica">
-  <div class="art-title">Magnifica Humanitas</div>
-  <div class="art-sub">« Magnifique humanité » — Léon XIV, 2026 · Sur la protection de la personne humaine à l'ère de l'intelligence artificielle</div>
-
-  <div class="one-line">Face à la révolution de l'intelligence artificielle, l'Église rappelle que la technologie n'est ni un mal ni un dieu : l'humanité doit choisir entre l'orgueil de Babel — dominer le monde par la puissance technique au mépris de la dignité — et la patience de Néhémie, qui rebâtit ensemble, en présence de Dieu, une coexistence fraternelle.</div>
-
-  <div class="idcard">
-    <dl>
-      <dt>Titre</dt><dd><em>Magnifica Humanitas</em> (« Magnifique humanité »)</dd>
-      <dt>Auteur</dt><dd>Pape Léon XIV</dd>
-      <dt>Signée</dt><dd>15 mai 2026 (135<sup>e</sup> anniv. de Rerum Novarum)</dd>
-      <dt>Publiée</dt><dd>25 mai 2026</dd>
-      <dt>Type</dt><dd>Lettre encyclique (première du pontificat)</dd>
-      <dt>Structure</dt><dd>Introduction, 5 chapitres (245 paragraphes), conclusion</dd>
-      <dt>Sujet</dt><dd>La protection de la personne humaine à l'ère de l'IA</dd>
-    </dl>
+  <div class="syn-list">
+    <a href="rerum-novarum.html" class="syn-card">
+      <div class="syn-em">📜</div>
+      <div class="syn-body">
+        <h3>Rerum Novarum</h3>
+        <div class="syn-meta"><span class="syn-pape">Léon XIII</span><span class="syn-dot">·</span><span>1891</span><span class="syn-dot">·</span><span class="syn-theme">Doctrine sociale, travail</span></div>
+        <p class="syn-sujet"><em>Sur la condition des ouvriers</em></p>
+        <p class="syn-teaser">L'acte fondateur de la doctrine sociale de l'Église. Face à la misère ouvrière, l'affirmation de la dignité du travailleur, du salaire juste et du droit d'association.</p>
+        <span class="syn-link">Lire la synthèse complète &rarr;</span>
+      </div>
+    </a>
+    <a href="magnifica-humanitas.html" class="syn-card">
+      <div class="syn-em">🤖</div>
+      <div class="syn-body">
+        <h3>Magnifica Humanitas</h3>
+        <div class="syn-meta"><span class="syn-pape">Léon XIV</span><span class="syn-dot">·</span><span>2026</span><span class="syn-dot">·</span><span class="syn-theme">IA et dignité humaine</span></div>
+        <p class="syn-sujet"><em>Sur la protection de la personne humaine à l'ère de l'intelligence artificielle</em></p>
+        <p class="syn-teaser">La première encyclique de Léon XIV. Face à la révolution de l'IA, le choix entre l'orgueil de Babel et la patience de Néhémie. Une réponse théologique au transhumanisme.</p>
+        <span class="syn-link">Lire la synthèse complète &rarr;</span>
+      </div>
+    </a>
   </div>
 
-  <h2 class="sec"><span class="n">1</span>Contexte historique</h2>
-  <p class="lead">Un an après son élection, le premier pape américain de l'histoire publie sa première encyclique. Le choix du nom « Léon XIV » par l'ancien cardinal Robert Prevost n'était pas un hasard : il annonçait l'ambition de faire pour la révolution numérique ce que Léon XIII avait fait pour la révolution industrielle. À 135 ans de distance, la question posée est la même : comment protéger l'être humain quand le monde change trop vite ?</p>
-  <p>Le texte naît dans un monde où l'intelligence artificielle touche déjà de nombreux domaines de la vie, influence des décisions qui façonnent la coexistence humaine et transforme dramatiquement la façon dont les guerres sont menées. Léon XIV a commencé sa rédaction dès l'été 2025, et l'a signée le 15 mai 2026, jour anniversaire de Rerum Novarum, scellant ainsi le lien entre les deux Léon.</p>
-
-  <h2 class="sec"><span class="n">2</span>Structure du document</h2>
-  <p>L'encyclique est structurée en cinq chapitres répartis sur 245 paragraphes. Elle fait dialoguer un large éventail de voix, de saint Augustin et Thomas d'Aquin à Hannah Arendt, Viktor Frankl et Romano Guardini. Le texte part d'un postulat : la technologie n'est pas une « force antagoniste par rapport à la personne », ni « un mal en soi ».</p>
-  <p>Deux images bibliques structurent l'ensemble : la tour de Babel — la tour de l'orgueil technique — d'un côté, et la reconstruction patiente et partagée des murs de Jérusalem par Néhémie de l'autre. Le choix n'est pas entre dire oui ou non à la technologie, mais entre ces deux manières d'habiter le monde.</p>
-
-  <h2 class="sec"><span class="n">3</span>Thèses principales</h2>
-  <ul class="these">
-    <li><span class="num">1</span><strong>La technologie n'est pas neutre, mais elle n'est pas un mal.</strong> L'IA peut guérir, connecter, éduquer et protéger la maison commune ; mais elle peut aussi diviser, exclure et générer de nouvelles formes d'injustice. Tout dépend de l'usage et de l'anthropologie qui la guide.</li>
-    <li><span class="num">2</span><strong>Babel ou Jérusalem.</strong> L'humanité fait face à un choix décisif : ériger une nouvelle tour de Babel — vouloir « toucher le ciel » par la seule puissance technique — ou rebâtir, comme Néhémie, une cité où Dieu et l'humanité habitent ensemble.</li>
-    <li><span class="num">3</span><strong>Contre le transhumanisme.</strong> Le pape dénonce une vision selon laquelle « la plénitude de la vie consisterait à avoir plus, à réduire la fragilité, à éliminer l'imprévu, à contrôler chaque chose ». À cette logique, il oppose l'acceptation des limites et de la fragilité humaines, non comme des erreurs à corriger, mais comme part de notre condition.</li>
-    <li><span class="num">4</span><strong>Travail, vérité et liberté.</strong> Le chapitre 4 montre comment la désinformation et le « contrôle social » algorithmique fragilisent la démocratie. Le pape dénonce les « nouvelles formes d'esclavage » numériques et le colonialisme des données qui exploite les plus vulnérables.</li>
-    <li><span class="num">5</span><strong>Désarmer l'IA.</strong> Le dernier chapitre met en garde contre la « culture du pouvoir » qui banalise la guerre et l'usage de l'intelligence artificielle dans les systèmes d'armement. Léon XIV appelle au désarmement et au multilatéralisme.</li>
-    <li><span class="num">6</span><strong>Un retour aux principes de la doctrine sociale.</strong> Pour préserver la personne, le pape invite à revenir au bien commun, à la destination universelle des biens, à la subsidiarité, à la solidarité et à la justice sociale.</li>
-  </ul>
-
-  <h2 class="sec"><span class="n">4</span>Citations marquantes</h2>
-  <blockquote>« La magnifique humanité créée par Dieu se trouve aujourd'hui face à un choix décisif : ériger une nouvelle tour de Babel ou bâtir la cité où Dieu et l'humanité habitent ensemble. »<span class="src">Magnifica Humanitas, incipit de l'encyclique.</span></blockquote>
-  <blockquote>« Nous avons le devoir urgent de rester profondément humains. »<span class="src">Magnifica Humanitas, n. 245 — sur cette humanité qu'aucune machine ne pourra remplacer.</span></blockquote>
-
-  <h2 class="sec"><span class="n">5</span>Portée et héritage</h2>
-  <p>Magnifica Humanitas n'ajoute pas l'IA comme appendice thématique à la doctrine sociale de l'Église : elle reconnaît que la transformation numérique interpelle de l'intérieur les catégories mêmes de la doctrine sociale et en demande un développement. En cela, le texte se veut aussi fondateur pour le XXI<sup>e</sup> siècle que Rerum Novarum le fut pour le XX<sup>e</sup>.</p>
-  <p>Parmi ses sources les plus citées figurent l'encyclique Caritas in Veritate de Benoît XVI et le Compendium de la doctrine sociale de l'Église. Le texte s'attaque frontalement au transhumanisme, au colonialisme numérique et à ce que certains commentateurs ont appelé « la nouvelle religion de la Silicon Valley ».</p>
-
-  <h2 class="sec"><span class="n">6</span>Implications pour notre temps</h2>
-  <p>L'encyclique parle directement à quiconque vit et travaille dans un monde façonné par les algorithmes — c'est-à-dire, désormais, à presque tous. Elle éclaire des questions très concrètes : la <strong>protection des données personnelles</strong>, la <strong>désinformation</strong> et son effet sur la démocratie, la <strong>place du travail humain</strong> face à l'automatisation, la <strong>protection des mineurs en ligne</strong>, et la <strong>régulation des armes autonomes</strong>.</p>
-  <p>Pour un cabinet comme MetanoIA Stratégie, qui place « l'IA au service de l'humain », ce texte offre un cadre éthique précieux : la technologie doit servir la personne et le bien commun, jamais l'inverse.</p>
-
-  <h2 class="sec"><span class="n">7</span>Actions concrètes possibles</h2>
-  <div class="action-group">À l'échelle personnelle</div>
-  <ul class="action">
-    <li>Cultiver un usage sobre et conscient des outils numériques, en gardant la maîtrise plutôt qu'en la cédant aux algorithmes.</li>
-    <li>Protéger ses données personnelles et celles de ses proches, en particulier des mineurs.</li>
-    <li>Accepter sa propre fragilité et sa finitude comme part de l'humanité, contre l'illusion transhumaniste.</li>
-  </ul>
-  <div class="action-group">À l'échelle communautaire et professionnelle</div>
-  <ul class="action">
-    <li>Dans son organisation, faire de la dignité humaine le critère premier de tout déploiement d'IA.</li>
-    <li>Former les équipes à un usage éthique et discernant de l'intelligence artificielle.</li>
-    <li>Veiller à ce que l'automatisation libère le travail humain plutôt qu'elle ne le dégrade ou le supprime sans alternative.</li>
-  </ul>
-  <div class="action-group">À l'échelle sociale</div>
-  <ul class="action">
-    <li>Soutenir une gouvernance éthique et multilatérale de l'IA, contre sa confiscation par quelques acteurs.</li>
-    <li>S'opposer au développement d'armes autonomes échappant au contrôle humain.</li>
-    <li>Promouvoir un accès équitable aux technologies, contre le « colonialisme numérique » qui creuse les inégalités.</li>
-  </ul>
-
-  <div class="links-out">
-    <h3>Pour aller plus loin</h3>
-    <p>Texte intégral : <a href="https://www.vatican.va/content/leo-xiv/fr/encyclicals/documents/20260515-magnifica-humanitas.html" target="_blank" rel="noopener">Magnifica Humanitas sur vatican.va</a></p>
-    <p>Textes liés : <em>Rerum Novarum</em> (1891) · <em>Caritas in Veritate</em> (2009) · <em>Laudato Si'</em> (2015) · <em>Fratelli Tutti</em> (2020)</p>
+  <div class="coming">
+    <h3>📚 Prochainement</h3>
+    <p>D'autres synthèses approfondies viendront enrichir cette collection.</p>
+    <div class="future">
+      <span>Quadragesimo Anno</span>
+      <span>Pacem in Terris</span>
+      <span>Populorum Progressio</span>
+      <span>Centesimus Annus</span>
+      <span>Laudato Si'</span>
+      <span>Fratelli Tutti</span>
+      <span>…</span>
+    </div>
   </div>
-</article>
-
 </main>
 
 <footer>
   <div class="f-mark">Encyclicum<span class="cross"> &#10013;</span></div>
-  <p class="note">Synthèses préparées par Encyclicum à partir des textes officiels du magistère pontifical et de sources de référence. Pour le texte intégral et faisant foi, se reporter à <a href="https://www.vatican.va">vatican.va</a>. — www.encyclicum.ca</p>
+  <p class="note">Synthèses préparées à partir des textes officiels du magistère pontifical. Pour les textes intégraux et faisant foi, voir <a href="https://www.vatican.va">vatican.va</a>. — <a href="index.html">www.encyclicum.ca</a></p>
 </footer>
+
+<script>
+  const hBtn=document.getElementById('hamBtn'),hCl=document.getElementById('hamClose'),hOv=document.getElementById('hamOverlay'),hPa=document.getElementById('hamPanel');
+  function hOpen(){hPa.classList.add('open');hOv.classList.add('open');document.body.classList.add('ham-open');}
+  function hClose(){hPa.classList.remove('open');hOv.classList.remove('open');document.body.classList.remove('ham-open');}
+  hBtn.addEventListener('click',hOpen);
+  hCl.addEventListener('click',hClose);
+  hOv.addEventListener('click',hClose);
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')hClose();});
+  // Fermer après clic sur un lien interne
+  document.querySelectorAll('.ham-links a, .ham-cta').forEach(a=>a.addEventListener('click',()=>{setTimeout(hClose,150);}));
+</script>
 </body>
 </html>
