@@ -21,7 +21,7 @@
 <meta name="twitter:description" content="Encycliques, exhortations, catéchèses et homélies des papes, classées par thème.">
 <meta name="twitter:image" content="https://www.encyclicum.ca/og-image.png">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebSite","name":"Encyclicum","url":"https://www.encyclicum.ca/","description":"Recensement et synthèse thématique des encycliques, exhortations apostoliques, catéchèses et homélies des papes, de Léon XIII à Léon XIV.","inLanguage":"fr","potentialAction":{"@type":"SearchAction","target":"https://www.encyclicum.ca/?q={search_term_string}","query-input":"required name=search_term_string"},"founder":{"@type":"Person","name":"Dr Wendnonghen Marc Zongo","jobTitle":"Directeur général","worksFor":{"@type":"Organization","name":"MetanoIA Stratégie","url":"https://www.metanoia-strategie.ca"}}}
+{"@context":"https://schema.org","@type":"WebSite","name":"Encyclicum","url":"https://www.encyclicum.ca/","description":"Recensement et synthèse thématique des encycliques, exhortations apostoliques, catéchèses et homélies des papes, de Léon XIII à Léon XIV.","inLanguage":"fr","potentialAction":{"@type":"SearchAction","target":"https://www.encyclicum.ca/?q={search_term_string}","query-input":"required name=search_term_string"},"founder":{"@type":"Person","name":"Dr Wendnonghen Marc Zongo","jobTitle":"Directeur général","worksFor":{"@type":"Organization","name":"MetanoIA Stratégie","url":"https://metanoia-strategie.ca"}}}
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -109,6 +109,31 @@
   .featured-all{text-align:center;}
   .featured-all a{display:inline-flex;align-items:center;gap:9px;background:var(--navy);color:#fff;text-decoration:none;font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:600;padding:13px 34px;border-radius:40px;transition:background .2s,transform .2s;}
   .featured-all a:hover{background:var(--gold);color:var(--navy-deep);transform:translateY(-2px);}
+
+  /* ---- Section webinaires sur l'accueil ---- */
+  .web-feat{background:linear-gradient(160deg,var(--navy-deep),var(--navy));color:#fff;padding:64px 24px;position:relative;overflow:hidden;}
+  .web-feat::before{content:"";position:absolute;inset:0;background-image:radial-gradient(circle at 1px 1px,rgba(212,180,104,.08) 1px,transparent 0);background-size:24px 24px;}
+  .web-feat-inner{position:relative;max-width:1180px;margin:0 auto;display:grid;grid-template-columns:1.4fr 1fr;gap:50px;align-items:center;}
+  .web-feat-content{}
+  .web-feat-badge{display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:var(--navy-deep);font-family:'Cormorant Garamond',serif;font-size:14px;font-weight:600;letter-spacing:.04em;padding:6px 16px;border-radius:30px;margin-bottom:18px;}
+  .web-feat-badge .dot{font-size:11px;}
+  .web-feat-eyebrow{font-size:13px;letter-spacing:.4em;text-transform:uppercase;color:var(--gold-light);margin-bottom:10px;font-weight:600;}
+  .web-feat-title{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(28px,4vw,40px);line-height:1.15;margin-bottom:18px;}
+  .web-feat-title em{color:var(--gold-light);font-style:italic;}
+  .web-feat-desc{font-size:17.5px;color:#D9DBE4;line-height:1.7;margin-bottom:24px;}
+  .web-feat-cta{display:flex;gap:12px;flex-wrap:wrap;}
+  .web-feat-btn-primary{display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:var(--navy-deep);text-decoration:none;font-family:'Cormorant Garamond',serif;font-weight:600;font-size:18px;padding:13px 28px;border-radius:30px;transition:background .2s,transform .2s;}
+  .web-feat-btn-primary:hover{background:var(--gold-light);transform:translateY(-2px);}
+  .web-feat-btn-secondary{display:inline-flex;align-items:center;gap:8px;background:transparent;color:#fff;text-decoration:none;font-family:'Cormorant Garamond',serif;font-weight:600;font-size:18px;padding:13px 28px;border:1.5px solid rgba(212,180,104,.5);border-radius:30px;transition:border-color .2s,background .2s;}
+  .web-feat-btn-secondary:hover{border-color:var(--gold);background:rgba(212,180,104,.1);}
+  .web-feat-meta{background:rgba(255,255,255,.05);border:1px solid rgba(212,180,104,.2);border-radius:16px;padding:26px;backdrop-filter:blur(6px);}
+  .web-feat-row{display:flex;gap:14px;align-items:flex-start;padding:11px 0;border-bottom:1px solid rgba(212,180,104,.12);}
+  .web-feat-row:last-child{border-bottom:none;}
+  .web-feat-ico{font-size:22px;flex-shrink:0;}
+  .web-feat-lbl{font-family:'Cormorant Garamond',serif;font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--gold-light);font-weight:600;margin-bottom:2px;}
+  .web-feat-val{font-size:16px;color:#fff;line-height:1.5;}
+  .web-feat-role{font-size:13px;color:#9CA2B3;font-style:italic;}
+  @media(max-width:880px){.web-feat-inner{grid-template-columns:1fr;gap:30px;}}
 
   .tabs{max-width:1180px;margin:30px auto 0;padding:0 24px;display:flex;gap:8px;flex-wrap:wrap;justify-content:center;}
   .tab{font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:600;padding:10px 22px;border:1.5px solid var(--line);border-radius:30px;background:var(--paper);color:var(--navy);cursor:pointer;transition:all .18s;}
@@ -229,13 +254,13 @@
     <li><a href="index.html" class="current"><span class="em">🏠</span>Accueil</a></li>
     <li><a href="index.html#corpus" class=""><span class="em">📚</span>Corpus complet</a></li>
     <li><a href="syntheses.html" class=""><span class="em">📖</span>Synthèses approfondies</a></li>
+    <li><a href="webinaires.html" class=""><span class="em">🎙️</span>Webinaires</a></li>
     <div class="ham-divider"></div>
     <li><a href="index.html#fondateur" class=""><span class="em">👤</span>Le fondateur</a></li>
     <li><a href="index.html#contact" class=""><span class="em">✉️</span>Nous écrire</a></li>
   </ul>
-  <a href="index.html#don" class="ham-cta">&#10013;&nbsp; Faire un don</a>
   <div class="ham-foot">
-    <a href="https://www.metanoia-strategie.ca" target="_blank" rel="noopener">MetanoIA Stratégie</a><br>
+    <a href="https://metanoia-strategie.ca" target="_blank" rel="noopener">MetanoIA Stratégie</a><br>
     www.encyclicum.ca
   </div>
 </aside>
@@ -266,16 +291,37 @@
       <p>L'acte fondateur de la doctrine sociale de l'Église. Face à la misère ouvrière, l'affirmation de la dignité du travailleur, du salaire juste et du droit d'association.</p>
       <span class="feat-link">Lire la synthèse →</span>
     </a>
-    <a href="magnifica-humanitas.html" class="feat-card">
-      <span class="feat-em">🤖</span>
-      <h3>Magnifica Humanitas</h3>
-      <div class="feat-meta">Léon XIV · 2026</div>
-      <p>La première encyclique de Léon XIV. Face à la révolution de l'IA, le choix entre l'orgueil de Babel et la patience de Néhémie. Une réponse théologique au transhumanisme.</p>
+    <a href="caritas-in-veritate.html" class="feat-card">
+      <span class="feat-em">💛</span>
+      <h3>Caritas in Veritate</h3>
+      <div class="feat-meta">Benoît XVI · 2009</div>
+      <p>Publiée au cœur de la crise financière mondiale et pour les 40 ans de Populorum Progressio. Benoît XVI relit le développement à la lumière de la charité, ouvrant la voie à une « éthique de l'économie ».</p>
       <span class="feat-link">Lire la synthèse →</span>
     </a>
   </div>
   <div class="featured-all">
     <a href="syntheses.html">Voir toutes les synthèses &rarr;</a>
+  </div>
+</section>
+
+<section class="web-feat" id="webinaires-une">
+  <div class="web-feat-inner">
+    <div class="web-feat-content">
+      <span class="web-feat-badge"><span class="dot">★</span> Prochain webinaire · Gratuit</span>
+      <div class="web-feat-eyebrow">Encyclique du Pape Léon XIV</div>
+      <h2 class="web-feat-title"><em>« Magnifica Humanitas »</em><br>ou la doctrine catholique de l'intelligence artificielle</h2>
+      <p class="web-feat-desc">Le 25 mai 2026, le Pape Léon XIV a publié sa première encyclique, <em>Magnifica Humanitas</em>, entièrement consacrée aux enjeux éthiques de l'intelligence artificielle. Ce webinaire propose une lecture commentée du texte : qu'enseigne l'Église sur l'IA ? Quelles implications pour les chrétiens, les entrepreneurs et les professionnels ?</p>
+      <div class="web-feat-cta">
+        <a href="webinaires.html" class="web-feat-btn-primary">En savoir plus &rarr;</a>
+        <a href="#contact" class="web-feat-btn-secondary">S'inscrire gratuitement</a>
+      </div>
+    </div>
+    <div class="web-feat-meta">
+      <div class="web-feat-row"><span class="web-feat-ico">📅</span><div><div class="web-feat-lbl">Date</div><div class="web-feat-val"><strong>Dimanche 14 juin 2026</strong></div></div></div>
+      <div class="web-feat-row"><span class="web-feat-ico">🕐</span><div><div class="web-feat-lbl">Heure</div><div class="web-feat-val">17 h — 18 h TU · 13 h — 14 h HAE (Québec)</div></div></div>
+      <div class="web-feat-row"><span class="web-feat-ico">💻</span><div><div class="web-feat-lbl">Format</div><div class="web-feat-val">En direct sur Zoom<br>Durée : 1 heure</div></div></div>
+      <div class="web-feat-row"><span class="web-feat-ico">🎙️</span><div><div class="web-feat-lbl">Animé par</div><div class="web-feat-val">Dr W. Marc Zongo<br><span class="web-feat-role">Directeur général, MetanoIA Stratégie</span></div></div></div>
+    </div>
   </div>
 </section>
 
@@ -973,17 +1019,6 @@
   <div class="no-results" id="noResults">Aucun document ne correspond à votre recherche.</div>
 </main>
 
-<section class="don" id="don">
-  <div class="don-inner">
-    <div class="eyebrow">Soutenir le projet</div>
-    <h2>Faire un don</h2>
-    <p>Encyclicum est un projet à but non lucratif qui rend la richesse du magistère pontifical accessible à tous, gratuitement.</p>
-    <p>Chaque contribution, si modeste soit-elle, fait grandir cette œuvre au service de la foi et de l'intelligence.</p>
-    <a href="mailto:zongomarcw@yahoo.fr?subject=Don%20Encyclicum" class="cta">&#10013;&nbsp; Soutenir Encyclicum</a>
-    <p class="small">Pour faire un don ou en savoir plus, contactez-nous — nous vous répondrons personnellement.</p>
-  </div>
-</section>
-
 <section class="contact" id="contact">
   <div class="contact-head"><div class="eyebrow">Restons en lien</div><h2>Nous écrire</h2><p>Une question, une suggestion de texte à ajouter, ou l'envie d'être informé des nouveautés ? Écrivez-nous.</p></div>
   <form action="https://formspree.io/f/mzdylvag" method="POST" id="contactForm">
@@ -1007,7 +1042,7 @@
       <p class="role">Directeur général de MetanoIA Stratégie</p>
       <p>Passionné par le dialogue entre la foi, la pensée sociale de l'Église et les grands défis contemporains — notamment ceux de l'intelligence artificielle — il a fondé Encyclicum pour rendre la sagesse des papes accessible au plus grand nombre.</p>
       <p>Il dirige par ailleurs MetanoIA Stratégie, un cabinet de conseil et de formation en intelligence artificielle, développement organisationnel, gouvernance et marketing digital, au service des organisations du Québec et de la francophonie.</p>
-      <a href="https://www.metanoia-strategie.ca" target="_blank" rel="noopener" class="founder-link">Découvrir MetanoIA Stratégie &rarr;</a>
+      <a href="https://metanoia-strategie.ca" target="_blank" rel="noopener" class="founder-link">Découvrir MetanoIA Stratégie &rarr;</a>
     </div>
   </div>
 </section>
@@ -1015,7 +1050,7 @@
 <footer>
   <div class="f-mark">Encyclicum<span class="cross"> &#10013;</span></div>
   <div class="f-links">
-    <a href="index.html">Accueil</a><a href="syntheses.html">Synthèses</a><a href="#contact">Contact</a><a href="#don">Faire un don</a><a href="https://www.metanoia-strategie.ca" target="_blank" rel="noopener">MetanoIA Stratégie</a>
+    <a href="index.html">Accueil</a><a href="syntheses.html">Synthèses</a><a href="webinaires.html">Webinaires</a><a href="#contact">Contact</a><a href="https://metanoia-strategie.ca" target="_blank" rel="noopener">MetanoIA Stratégie</a>
   </div>
   <p class="note">La sagesse des papes, enfin accessible. Recensement non exhaustif des textes du magistère pontifical, de Léon XIII à Léon XIV.</p>
   <div class="copy">www.encyclicum.ca — Mise à jour : mai 2026</div>
