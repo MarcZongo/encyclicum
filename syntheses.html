@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Synthèses approfondies — Encyclicum · Encyclicum</title>
-  <meta name="description" content="Toutes les synthèses approfondies des encycliques, exhortations et textes du magistère pontifical publiées sur Encyclicum.">
+  <meta name="description" content="Synthèses détaillées des encycliques sociales de l'Église, de Rerum Novarum à Magnifica Humanitas.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,32 +27,137 @@
   * { box-sizing: border-box; }
   html { scroll-behavior: smooth; }
   body { margin: 0; font-family: var(--sans); color: var(--ink); background: var(--cream); line-height: 1.7; font-size: 17px; }
+  body.menu-open { overflow: hidden; }
   .wrap { max-width: 920px; margin: 0 auto; padding: 0 1.5rem; }
-  .wrap-wide { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
+  .wrap-wide { max-width: 1180px; margin: 0 auto; padding: 0 1.5rem; }
 
-  header.site { background: var(--navy-deep); border-bottom: 1px solid rgba(201, 165, 68, 0.25); }
-  .nav-main { padding: 1.1rem 0; }
-  .nav-main .wrap-wide { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
-  .nav-main .brand { color: var(--cream); font-family: var(--serif); font-size: 1.4rem; font-weight: 600; text-decoration: none; }
-  .nav-main .brand span { color: var(--gold); }
-  .nav-main nav a { color: var(--cream); text-decoration: none; margin-left: 1.4rem; font-size: 0.95rem; opacity: 0.85; }
-  .nav-main nav a:first-child { margin-left: 0; }
-  .nav-main nav a:hover { opacity: 1; color: var(--gold-soft); }
+  /* ============ HEADER + HAMBURGER ============ */
+  header.site { background: var(--navy-deep); border-bottom: 1px solid rgba(201, 165, 68, 0.25); position: sticky; top: 0; z-index: 100; }
+  .brand-row { display: flex; justify-content: space-between; align-items: center; padding: 1.1rem 0; gap: 1rem; }
+  .brand { color: var(--cream); text-decoration: none; display: flex; flex-direction: column; line-height: 1.15; }
+  .brand-name { font-family: var(--serif); font-size: 1.55rem; font-weight: 600; letter-spacing: -0.01em; }
+  .brand-name .cross { color: var(--gold); }
+  .brand-tagline { font-family: var(--sans); font-size: 0.78rem; color: var(--gold-soft); text-transform: uppercase; letter-spacing: 0.18em; font-weight: 500; margin-top: 0.25rem; }
 
-  .nav-continents { background: rgba(0,0,0,0.18); padding: 0.7rem 0; border-top: 1px solid rgba(201, 165, 68, 0.15); }
-  .nav-continents .wrap-wide { display: flex; align-items: center; flex-wrap: wrap; gap: 0.4rem 1rem; }
-  .nav-continents .label { color: var(--gold); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.18em; font-weight: 600; margin-right: 0.5rem; }
-  .nav-continents a { color: rgba(245, 241, 232, 0.78); text-decoration: none; font-size: 0.9rem; padding: 0.2rem 0.5rem; border-radius: 3px; transition: all 0.15s; }
-  .nav-continents a:hover { color: var(--gold-soft); background: rgba(255,255,255,0.06); }
-  .nav-continents a.active { color: var(--gold); background: rgba(201, 165, 68, 0.12); font-weight: 600; }
+  /* Hamburger button — à gauche */
+  .hamburger {
+    background: transparent;
+    border: 1px solid rgba(201, 165, 68, 0.4);
+    border-radius: 4px;
+    width: 50px;
+    height: 44px;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    transition: all 0.2s;
+    flex-shrink: 0;
+  }
+  .hamburger:hover { border-color: var(--gold); background: rgba(201, 165, 68, 0.08); }
+  .hamburger span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: var(--gold-soft);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  body.menu-open .hamburger span:nth-child(1) { transform: translateY(7px) rotate(45deg); background: var(--gold); }
+  body.menu-open .hamburger span:nth-child(2) { opacity: 0; }
+  body.menu-open .hamburger span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); background: var(--gold); }
 
+  /* Menu overlay + panel */
+  .menu-overlay {
+    position: fixed; inset: 0; background: rgba(26, 35, 54, 0.6); backdrop-filter: blur(2px);
+    opacity: 0; pointer-events: none; transition: opacity 0.3s; z-index: 200;
+  }
+  body.menu-open .menu-overlay { opacity: 1; pointer-events: auto; }
+
+  .menu-panel {
+    position: fixed; top: 0; left: 0; bottom: 0; width: 100%; max-width: 420px;
+    background: var(--navy-deep); color: var(--cream);
+    transform: translateX(-100%); transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 201; overflow-y: auto;
+    box-shadow: 10px 0 40px rgba(0, 0, 0, 0.3);
+    padding: 2rem 2rem 4rem;
+  }
+  body.menu-open .menu-panel { transform: translateX(0); }
+
+  .menu-panel .menu-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 2.5rem; }
+  .menu-panel .menu-logo { font-family: var(--serif); font-size: 1.2rem; color: var(--cream); font-weight: 600; }
+  .menu-panel .menu-logo .cross { color: var(--gold); }
+  .menu-panel .menu-close {
+    background: transparent; border: 1px solid rgba(201, 165, 68, 0.4); border-radius: 4px;
+    color: var(--gold-soft); font-size: 1.4rem; width: 44px; height: 44px; cursor: pointer;
+    line-height: 0; transition: all 0.15s;
+  }
+  .menu-panel .menu-close:hover { color: var(--gold); border-color: var(--gold); }
+
+  .menu-panel ul { list-style: none; padding: 0; margin: 0; }
+  .menu-panel > ul > li { border-bottom: 1px solid rgba(201, 165, 68, 0.12); }
+  .menu-panel > ul > li:last-child { border-bottom: none; }
+  .menu-panel a {
+    color: var(--cream); text-decoration: none; padding: 0.95rem 0; display: block;
+    font-size: 1rem; transition: color 0.15s;
+  }
+  .menu-panel a:hover { color: var(--gold-soft); }
+  .menu-panel a.active { color: var(--gold); font-weight: 600; }
+
+  /* CTA Formations highlighted */
+  .menu-panel a.cta {
+    background: linear-gradient(135deg, var(--gold) 0%, var(--gold-soft) 100%);
+    color: var(--navy-deep);
+    padding: 0.95rem 1.2rem;
+    border-radius: 4px;
+    margin: 0.6rem 0;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .menu-panel a.cta:hover { color: var(--navy-deep); transform: translateX(2px); }
+  .menu-panel a.cta::after { content: '→'; font-size: 1.2rem; }
+
+  /* Sections déroulantes */
+  .menu-panel details { padding: 0.95rem 0; }
+  .menu-panel details summary {
+    cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center;
+    font-size: 1rem; color: var(--cream); transition: color 0.15s;
+  }
+  .menu-panel details summary:hover { color: var(--gold-soft); }
+  .menu-panel details summary::-webkit-details-marker { display: none; }
+  .menu-panel details summary::after {
+    content: '+'; color: var(--gold); font-size: 1.4rem; font-weight: 300;
+    transition: transform 0.25s; display: inline-block;
+  }
+  .menu-panel details[open] summary::after { transform: rotate(45deg); }
+  .menu-panel details > ul { padding-left: 1rem; margin-top: 0.4rem; border-left: 2px solid rgba(201, 165, 68, 0.2); }
+  .menu-panel details > ul > li > a { font-size: 0.92rem; padding: 0.5rem 0 0.5rem 0.8rem; color: rgba(245, 241, 232, 0.85); }
+  .menu-panel details > ul > li > a:hover { color: var(--gold-soft); }
+  .menu-panel details details { padding: 0.5rem 0 0.5rem 0.8rem; }
+  .menu-panel details details summary { font-size: 0.92rem; color: rgba(245, 241, 232, 0.85); }
+
+  .menu-footer { margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(201, 165, 68, 0.2); font-size: 0.85rem; color: rgba(245, 241, 232, 0.6); }
+  .menu-footer a { color: var(--gold-soft); padding: 0.3rem 0; }
+
+  /* ============ HERO ============ */
   .hero { background: var(--navy-deep); color: var(--cream); padding: 4rem 0 5rem; position: relative; }
   .hero::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 3px; background: linear-gradient(90deg, transparent, var(--gold) 50%, transparent); }
   .hero .eyebrow { color: var(--gold); text-transform: uppercase; letter-spacing: 0.18em; font-size: 0.85rem; font-weight: 600; margin-bottom: 1rem; }
   .hero h1 { font-family: var(--serif); font-size: clamp(2rem, 4.5vw, 3rem); font-weight: 700; line-height: 1.15; margin: 0 0 1rem 0; letter-spacing: -0.01em; }
   .hero h1 em { font-style: italic; color: var(--gold-soft); }
+  .hero .slogan {
+    display: inline-block; font-family: var(--serif); font-style: italic;
+    color: var(--gold); font-size: 1rem; letter-spacing: 0.08em;
+    margin: 0.5rem 0 1.5rem; padding: 0.4rem 0;
+    border-top: 1px solid rgba(201, 165, 68, 0.4);
+    border-bottom: 1px solid rgba(201, 165, 68, 0.4);
+  }
   .hero .lede { font-size: 1.15rem; max-width: 720px; color: rgba(245, 241, 232, 0.92); margin: 0; line-height: 1.65; }
 
+  /* ============ CONTENT ============ */
   section.content { padding: 4rem 0; }
   section.content.alt { background: var(--cream-deep); }
   section.content h2 { font-family: var(--serif); font-size: clamp(1.6rem, 3vw, 2.1rem); color: var(--navy); font-weight: 700; margin: 0 0 0.6rem 0; padding-top: 1.5rem; border-top: 2px solid var(--gold); }
@@ -93,6 +198,63 @@
 
   .note { background: var(--cream); border-top: 1px solid var(--muted); border-bottom: 1px solid var(--muted); padding: 1rem 1.4rem; margin: 2rem 0; font-style: italic; color: var(--muted); font-size: 0.95rem; }
 
+  /* ============ FORMATIONS CTA — Bandeau visible ============ */
+  .formations-cta {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-deep) 100%);
+    color: var(--cream);
+    padding: 3.5rem 0;
+    margin: 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .formations-cta::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+    background: linear-gradient(90deg, transparent, var(--gold) 50%, transparent);
+  }
+  .formations-cta::after {
+    content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px;
+    background: linear-gradient(90deg, transparent, var(--gold) 50%, transparent);
+  }
+  .formations-cta .eyebrow { color: var(--gold); text-transform: uppercase; letter-spacing: 0.18em; font-size: 0.8rem; font-weight: 600; }
+  .formations-cta h2 {
+    font-family: var(--serif); font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+    color: var(--cream); margin: 0.8rem 0 1rem; padding: 0; border: none; font-weight: 700;
+  }
+  .formations-cta h2 em { color: var(--gold-soft); font-style: italic; }
+  .formations-cta p { color: rgba(245, 241, 232, 0.9); max-width: 720px; font-size: 1.08rem; }
+  .formations-cta .btn-gold {
+    display: inline-block; background: var(--gold); color: var(--navy-deep);
+    padding: 0.95rem 2.2rem; border-radius: 4px; text-decoration: none;
+    font-weight: 600; font-size: 1.02rem; margin-top: 1.5rem;
+    transition: all 0.2s; box-shadow: 0 4px 14px rgba(201, 165, 68, 0.3);
+  }
+  .formations-cta .btn-gold:hover { background: var(--gold-soft); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(201, 165, 68, 0.4); }
+  .formations-cta .btn-gold::after { content: ' →'; }
+
+  /* ============ FORMS (Formspree) ============ */
+  .form-block { background: var(--white); border: 1px solid var(--line); border-radius: 8px; padding: 2rem; margin: 1.5rem 0; }
+  .form-field { margin-bottom: 1.2rem; }
+  .form-field label { display: block; font-weight: 600; color: var(--navy); margin-bottom: 0.4rem; font-size: 0.95rem; }
+  .form-field input, .form-field select, .form-field textarea {
+    width: 100%; padding: 0.7rem 0.9rem;
+    border: 1px solid var(--line); border-radius: 4px;
+    font-family: var(--sans); font-size: 0.95rem; color: var(--ink);
+    background: var(--cream); transition: border-color 0.15s, background 0.15s;
+  }
+  .form-field input:focus, .form-field select:focus, .form-field textarea:focus {
+    outline: none; border-color: var(--gold); background: var(--white);
+  }
+  .form-field textarea { resize: vertical; min-height: 120px; }
+  .form-field-inline { display: flex; align-items: flex-start; gap: 0.5rem; }
+  .form-field-inline input[type=checkbox] { width: auto; margin-top: 0.3rem; }
+  .form-submit {
+    background: var(--navy); color: var(--white); border: none;
+    padding: 0.9rem 2rem; border-radius: 4px; cursor: pointer;
+    font-family: var(--sans); font-size: 1rem; font-weight: 600;
+    transition: background 0.15s;
+  }
+  .form-submit:hover { background: var(--gold); color: var(--navy-deep); }
+
   .sources { background: var(--navy); color: var(--cream); padding: 3rem 0; }
   .sources h2 { color: var(--cream); border-top-color: var(--gold); }
   .sources a { color: var(--gold-soft); }
@@ -105,8 +267,10 @@
   @media (max-width: 700px) {
     section.content { padding: 2.5rem 0; }
     .hero { padding: 3rem 0 4rem; }
-    .nav-main nav a { margin-left: 0.8rem; font-size: 0.85rem; }
-    .nav-continents .label { width: 100%; margin-bottom: 0.3rem; }
+    .brand-name { font-size: 1.3rem; }
+    .brand-tagline { font-size: 0.7rem; }
+    .menu-panel { padding: 1.5rem; }
+    .formations-cta { padding: 2.5rem 0; }
   }
 </style>
 
@@ -114,35 +278,72 @@
 <body>
 
   <header class="site">
-    <div class="nav-main">
-      <div class="wrap-wide">
-        <a href="/" class="brand">Encyclicum <span>✝</span></a>
-        <nav>
-          <a href="/index.html">Accueil</a>
-          <a href="/syntheses.html">Synthèses</a>
-          <a href="/webinaires.html">Webinaires</a>
-          <a href="/mission-vision-valeurs.html">Mission</a>
-        </nav>
-      </div>
-    </div>
-    <div class="nav-continents">
-      <div class="wrap-wide">
-        <span class="label">L'Église dans le monde</span>
-        <a href="/eglise-canada.html">Canada</a>
-        <a href="/eglise-quebec.html">Québec</a>
-        <a href="/eglise-amerique.html">Amérique</a>
-        <a href="/eglise-afrique.html">Afrique</a>
-        <a href="/eglise-europe.html">Europe</a>
-        <a href="/eglise-asie.html">Asie</a>
-        <a href="/eglise-oceanie.html">Océanie</a>
-      </div>
+    <div class="wrap-wide brand-row">
+      <button class="hamburger" onclick="toggleMenu()" aria-label="Ouvrir le menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <a href="/" class="brand">
+        <span class="brand-name">Encyclicum <span class="cross">✝</span></span>
+        <span class="brand-tagline">Doctrine sociale de l'Église</span>
+      </a>
     </div>
   </header>
+
+
+  <nav class="menu-panel" id="menu" aria-label="Menu principal">
+    <div class="menu-header">
+      <span class="menu-logo">Encyclicum <span class="cross">✝</span></span>
+      <button class="menu-close" onclick="toggleMenu()" aria-label="Fermer le menu">×</button>
+    </div>
+
+    <ul>
+      <li><a href="/index.html">Accueil</a></li>
+      <li><a href="/syntheses.html" class="active">Synthèses approfondies</a></li>
+      <li><a href="/webinaires.html">Webinaires</a></li>
+      <li>
+        <details>
+          <summary>L'Église dans le monde</summary>
+          <ul>
+            <li><a href="/eglise-canada.html">Canada</a></li>
+            <li><a href="/eglise-quebec.html">Québec</a></li>
+            <li><a href="/eglise-amerique.html">Amérique</a></li>
+            <li>
+              <details>
+                <summary>Afrique</summary>
+                <ul>
+                  <li><a href="/eglise-afrique.html">SCEAM (vue continentale)</a></li>
+                  <li><a href="/eglise-afrique-rdc.html">RDC</a></li>
+                  <li><a href="/eglise-afrique-burkina-niger.html">Burkina-Niger</a></li>
+                  <li><a href="/eglise-afrique-cote-ivoire.html">Côte d'Ivoire</a></li>
+                  <li><a href="/eglise-afrique-senegal.html">Sénégal & Ouest atl.</a></li>
+                  <li><a href="/eglise-afrique-cameroun.html">Cameroun</a></li>
+                  <li><a href="/eglise-afrique-madagascar.html">Madagascar</a></li>
+                </ul>
+              </details>
+            </li>
+            <li><a href="/eglise-europe.html">Europe</a></li>
+            <li><a href="/eglise-asie.html">Asie</a></li>
+            <li><a href="/eglise-oceanie.html">Océanie</a></li>
+          </ul>
+        </details>
+      </li>
+      <li><a href="/formations.html" class="cta">Formations pour groupes</a></li>
+      <li><a href="/mission-vision-valeurs.html">À propos</a></li>
+    </ul>
+
+    <div class="menu-footer">
+      <p style="margin:0;">Encyclicum ✝ · Doctrine sociale de l'Église<br>
+      Une initiative de <a href="https://metanoia-strategie.ca">MetanoIA Stratégie</a></p>
+    </div>
+  </nav>
+  <div class="menu-overlay" onclick="toggleMenu()" aria-hidden="true"></div>
+
 
   <section class="hero">
     <div class="wrap">
       <p class="eyebrow">Synthèses approfondies</p>
-      <h1><em>Synthèses</em> ✝</h1>
+      <h1><em>Synthèses</em> approfondies</h1>
+      <span class="slogan">Comprendre · Discerner · Agir</span><br>
       <p class="lede">Au-delà du recensement par thème, des analyses détaillées : contexte, thèses, citations, héritage, implications pour notre temps et pistes d'action concrètes.</p>
     </div>
   </section>
@@ -151,7 +352,7 @@
   <section class="content">
     <div class="wrap">
 
-      <p>Au-delà du recensement par thème, des analyses détaillées de chaque texte majeur : contexte, thèses, citations, héritage, implications pour notre temps et pistes d'action concrètes.</p>
+      <p>Au-delà du recensement par thème, des analyses détaillées de chaque encyclique sociale majeure : contexte, thèses, citations, héritage, implications pour notre temps et pistes d'action concrètes.</p>
       <p>Une synthèse par texte, structurée en dix sections pour saisir l'essentiel et en tirer des fruits pour aujourd'hui. La collection s'enrichit progressivement.</p>
 
       <h2>Synthèses disponibles</h2>
@@ -173,63 +374,63 @@
       <div class="doc-card">
         <p class="doc-meta">🌾 Jean XXIII · 1961 · Doctrine sociale</p>
         <h4>Mater et Magistra</h4>
-        <p><em>Sur les récents développements de la question sociale à la lumière de la doctrine chrétienne</em><br>Jean XXIII actualise la doctrine sociale dans le contexte de l'après-guerre, de la décolonisation et du décollage économique. Il élargit la question sociale à l'agriculture, au tiers-monde et à la mondialisation naissante.</p>
+        <p><em>Sur les récents développements de la question sociale à la lumière de la doctrine chrétienne</em><br>Jean XXIII actualise la doctrine sociale dans le contexte de l'après-guerre, de la décolonisation et du décollage économique.</p>
         <a class="doc-source" href="/mater-et-magistra.html">Lire la synthèse complète</a>
       </div>
 
       <div class="doc-card">
         <p class="doc-meta">🕊️ Jean XXIII · 1963 · Paix et droits humains</p>
         <h4>Pacem in Terris</h4>
-        <p><em>Sur la paix entre toutes les nations dans la vérité, la justice, la charité et la liberté</em><br>Première encyclique adressée à « tous les hommes de bonne volonté », publiée après la crise des missiles de Cuba. Jean XXIII pose les bases d'une éthique mondiale fondée sur les droits humains et la paix.</p>
+        <p><em>Sur la paix entre toutes les nations dans la vérité, la justice, la charité et la liberté</em><br>Première encyclique adressée à « tous les hommes de bonne volonté », publiée après la crise des missiles de Cuba.</p>
         <a class="doc-source" href="/pacem-in-terris.html">Lire la synthèse complète</a>
       </div>
 
       <div class="doc-card">
         <p class="doc-meta">✨ Concile Vatican II · 1965 · Église et monde moderne</p>
         <h4>Gaudium et Spes</h4>
-        <p><em>Constitution pastorale sur l'Église dans le monde de ce temps</em><br>L'un des textes majeurs de Vatican II. L'Église s'engage dans un dialogue inédit avec le monde moderne, ses joies, ses angoisses et ses grands défis : famille, culture, économie, paix.</p>
+        <p><em>Constitution pastorale sur l'Église dans le monde de ce temps</em><br>L'un des textes majeurs de Vatican II. L'Église s'engage dans un dialogue inédit avec le monde moderne, ses joies, ses angoisses et ses grands défis.</p>
         <a class="doc-source" href="/gaudium-et-spes.html">Lire la synthèse complète</a>
       </div>
 
       <div class="doc-card">
         <p class="doc-meta">🌍 Paul VI · 1967 · Développement et tiers-monde</p>
         <h4>Populorum Progressio</h4>
-        <p><em>Sur le développement des peuples</em><br>L'encyclique du « développement intégral » et de la dénonciation de l'écart entre pays riches et pays pauvres. Paul VI y forge la formule devenue célèbre : « le développement est le nouveau nom de la paix ».</p>
+        <p><em>Sur le développement des peuples</em><br>L'encyclique du « développement intégral ». Paul VI y forge la formule devenue célèbre : « le développement est le nouveau nom de la paix ».</p>
         <a class="doc-source" href="/populorum-progressio.html">Lire la synthèse complète</a>
       </div>
 
       <div class="doc-card">
         <p class="doc-meta">🏙️ Paul VI · 1971 · Doctrine sociale et action</p>
         <h4>Octogesima Adveniens</h4>
-        <p><em>Lettre apostolique pour le 80ᵉ anniversaire de Rerum Novarum</em><br>Pour les 80 ans de Rerum Novarum, Paul VI déplace le regard de la « question ouvrière » vers les nouveaux défis : urbanisation, jeunesse, condition féminine, environnement. Et appelle chaque communauté chrétienne à discerner pour agir.</p>
+        <p><em>Lettre apostolique pour le 80ᵉ anniversaire de Rerum Novarum</em><br>Paul VI déplace le regard de la « question ouvrière » vers les nouveaux défis : urbanisation, jeunesse, condition féminine, environnement.</p>
         <a class="doc-source" href="/octogesima-adveniens.html">Lire la synthèse complète</a>
       </div>
 
       <div class="doc-card">
         <p class="doc-meta">🔨 Jean-Paul II · 1981 · Travail humain</p>
         <h4>Laborem Exercens</h4>
-        <p><em>Sur le travail humain à l'occasion du 90ᵉ anniversaire de Rerum Novarum</em><br>Première grande encyclique sociale de Jean-Paul II. Elle replace le travail au centre de la question sociale en affirmant la primauté de la personne du travailleur sur l'objet du travail.</p>
+        <p><em>Sur le travail humain à l'occasion du 90ᵉ anniversaire de Rerum Novarum</em><br>Première grande encyclique sociale de Jean-Paul II. Elle replace le travail au centre de la question sociale.</p>
         <a class="doc-source" href="/laborem-exercens.html">Lire la synthèse complète</a>
       </div>
 
       <div class="doc-card">
         <p class="doc-meta">🤝 Jean-Paul II · 1987 · Solidarité et développement</p>
         <h4>Sollicitudo Rei Socialis</h4>
-        <p><em>Sur la sollicitude sociale de l'Église, pour le 20ᵉ anniversaire de Populorum Progressio</em><br>Vingt ans après Populorum Progressio, Jean-Paul II dénonce les « structures de péché » qui bloquent le développement et hisse la solidarité au rang de vertu chrétienne et de principe politique.</p>
+        <p><em>Pour le 20ᵉ anniversaire de Populorum Progressio</em><br>Jean-Paul II dénonce les « structures de péché » et hisse la solidarité au rang de vertu chrétienne.</p>
         <a class="doc-source" href="/sollicitudo-rei-socialis.html">Lire la synthèse complète</a>
       </div>
 
       <div class="doc-card">
         <p class="doc-meta">🏛️ Jean-Paul II · 1991 · Doctrine sociale, économie</p>
         <h4>Centesimus Annus</h4>
-        <p><em>Pour le centenaire de Rerum Novarum</em><br>Au lendemain de la chute du communisme, Jean-Paul II tire les leçons d'un siècle et propose une critique nuancée du capitalisme : oui à l'économie de marché, non à la marchandisation de l'homme.</p>
+        <p><em>Pour le centenaire de Rerum Novarum</em><br>Critique nuancée du capitalisme au lendemain de la chute du communisme : oui à l'économie de marché, non à la marchandisation de l'homme.</p>
         <a class="doc-source" href="/centesimus-annus.html">Lire la synthèse complète</a>
       </div>
 
       <div class="doc-card">
         <p class="doc-meta">💛 Benoît XVI · 2009 · Développement humain intégral</p>
         <h4>Caritas in Veritate</h4>
-        <p><em>Sur le développement humain intégral dans la charité et la vérité</em><br>Publiée au cœur de la crise financière mondiale et pour les 40 ans de Populorum Progressio. Benoît XVI relit le développement à la lumière de la charité, ouvrant la voie à une « éthique de l'économie ».</p>
+        <p><em>Sur le développement humain intégral dans la charité et la vérité</em><br>Publiée au cœur de la crise financière mondiale. Benoît XVI ouvre la voie à une « éthique de l'économie ».</p>
         <a class="doc-source" href="/caritas-in-veritate.html">Lire la synthèse complète</a>
       </div>
 
@@ -238,12 +439,12 @@
       <div class="doc-card">
         <p class="doc-meta">🤖 Léon XIV · 2026 · IA et dignité humaine</p>
         <h4>Magnifica Humanitas</h4>
-        <p><em>Sur la protection de la personne humaine à l'ère de l'intelligence artificielle</em><br>Synthèse en préparation. Un webinaire a été tenu sur ce sujet le 14 juin 2026.</p>
+        <p><em>Sur la protection de la personne humaine à l'ère de l'intelligence artificielle</em><br>Synthèse en préparation. Un webinaire a été tenu sur ce sujet le 14 juin 2026 ; le replay est disponible sur la page Webinaires.</p>
         <a class="doc-source" href="/webinaires.html">Voir le webinaire associé</a>
       </div>
 
       <div class="note">
-        D'autres vagues thématiques de synthèses viendront enrichir la collection : Foi et théologie · Éthique et vie humaine · Écologie (Laudato Si') · Fraternité (Fratelli Tutti) · Œcuménisme · Mission …
+        D'autres vagues thématiques de synthèses viendront enrichir la collection : Écologie (<em>Laudato Si'</em>) · Fraternité (<em>Fratelli Tutti</em>) · Œcuménisme · Mission · Famille…
       </div>
 
     </div>
@@ -253,10 +454,24 @@
   <footer>
     <div class="wrap">
       Encyclicum ✝ &nbsp;·&nbsp;
-      <a href="/">Accueil</a> &nbsp;·&nbsp;
-      <em>La sagesse des papes, accessible — pour tous les continents</em>
+      <em>La doctrine sociale de l'Église, accessible à tous</em>
+      &nbsp;·&nbsp;
+      <a href="/">Accueil</a>
     </div>
   </footer>
+
+  <script>
+    function toggleMenu() {
+      const open = document.body.classList.toggle('menu-open');
+      document.querySelector('.hamburger').setAttribute('aria-expanded', open);
+    }
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        document.body.classList.remove('menu-open');
+        document.querySelector('.hamburger').setAttribute('aria-expanded', 'false');
+      }
+    });
+  </script>
 
 </body>
 </html>
