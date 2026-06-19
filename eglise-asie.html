@@ -41,10 +41,9 @@
 
   /* Nav horizontale style MetanoIA (visible sur desktop) */
   .main-nav { display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; margin-left: auto; }
-  .main-nav a { color: rgba(245, 241, 232, 0.82); text-decoration: none; font-size: 0.9rem; padding: 0.4rem 0.7rem; border-radius: 3px; transition: all 0.15s; display: flex; align-items: center; gap: 0.35rem; }
-  .main-nav a:hover { color: var(--gold-soft); background: rgba(255, 255, 255, 0.04); }
-  .main-nav a.active { color: var(--gold); }
-  .main-nav a .num { color: var(--gold); font-size: 0.72rem; font-weight: 600; opacity: 0.7; }
+  .main-nav a, .main-nav .nav-item > a { color: rgba(245, 241, 232, 0.82); text-decoration: none; font-size: 0.9rem; padding: 0.4rem 0.7rem; border-radius: 3px; transition: all 0.15s; display: inline-block; }
+  .main-nav a:hover, .main-nav .nav-item > a:hover { color: var(--gold-soft); background: rgba(255, 255, 255, 0.04); }
+  .main-nav a.active, .main-nav .nav-item > a.active { color: var(--gold); }
   .main-nav a.cta {
     background: linear-gradient(135deg, var(--gold) 0%, var(--gold-soft) 100%);
     color: var(--navy-deep);
@@ -56,7 +55,37 @@
   .main-nav a.cta:hover { background: var(--gold-soft); transform: translateY(-1px); }
   .main-nav a.cta::after { content: ' →'; }
 
-  /* Hamburger : caché sur desktop, visible sur mobile */
+  /* Dropdown nav desktop pour L'Église par continent */
+  .nav-item.has-dropdown { position: relative; }
+  .nav-item.has-dropdown > a::after { content: ' ▾'; font-size: 0.7rem; opacity: 0.6; }
+  .nav-dropdown {
+    position: absolute; top: 100%; left: 0;
+    background: var(--navy-deep);
+    border: 1px solid rgba(201, 165, 68, 0.25);
+    border-radius: 6px;
+    min-width: 240px;
+    opacity: 0; visibility: hidden;
+    transform: translateY(-6px);
+    transition: all 0.2s;
+    z-index: 50;
+    padding: 0.5rem 0;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+  }
+  .nav-item.has-dropdown:hover .nav-dropdown,
+  .nav-item.has-dropdown:focus-within .nav-dropdown { opacity: 1; visibility: visible; transform: translateY(0); }
+  .nav-dropdown a {
+    display: block;
+    padding: 0.5rem 1.1rem;
+    margin: 0;
+    border-radius: 0;
+    color: rgba(245, 241, 232, 0.85);
+    font-size: 0.88rem;
+  }
+  .nav-dropdown a:hover { background: rgba(201, 165, 68, 0.1); color: var(--gold-soft); }
+  .nav-dropdown a.sub { padding-left: 2rem; font-size: 0.82rem; opacity: 0.85; }
+  .nav-dropdown .dropdown-sep { border-top: 1px solid rgba(201, 165, 68, 0.15); margin: 0.4rem 0; }
+
+  /* Hamburger : caché sur desktop, visible sur mobile, à gauche */
   .hamburger {
     display: none;
     background: transparent;
@@ -66,7 +95,6 @@
     cursor: pointer; padding: 0;
     flex-direction: column; justify-content: center; align-items: center; gap: 4px;
     transition: all 0.2s;
-    margin-left: auto;
   }
   .hamburger:hover { border-color: var(--gold); }
   .hamburger span { display: block; width: 20px; height: 2px; background: var(--gold-soft); transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
@@ -222,25 +250,28 @@
   .sources ul { padding-left: 1.2rem; }
   .sources li { margin: 0.4rem 0; color: rgba(245, 241, 232, 0.85); }
 
-  /* ============ FOOTER 4 COLONNES style MetanoIA ============ */
+  /* ============ FOOTER 5 COLONNES style MetanoIA ============ */
   footer.site { background: var(--navy-deep); color: rgba(245, 241, 232, 0.85); padding: 3.5rem 0 1.5rem; border-top: 3px solid var(--gold); }
-  footer.site .footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 2.5rem; margin-bottom: 2.5rem; }
-  footer.site h4 { font-family: var(--serif); color: var(--cream); font-size: 1.1rem; font-weight: 600; margin: 0 0 1rem 0; }
+  footer.site .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr; gap: 2rem; margin-bottom: 2.5rem; }
+  footer.site h4 { font-family: var(--serif); color: var(--cream); font-size: 1.05rem; font-weight: 600; margin: 0 0 1rem 0; }
   footer.site h4.brand-h { font-size: 1.4rem; }
   footer.site h4.brand-h .cross { color: var(--gold); }
   footer.site .footer-brand p { font-size: 0.92rem; color: rgba(245, 241, 232, 0.65); line-height: 1.55; margin: 0.5rem 0 1rem 0; }
   footer.site .footer-brand .footer-slogan { font-family: var(--serif); font-style: italic; color: var(--gold-soft); font-size: 0.9rem; letter-spacing: 0.05em; margin-top: 0.5rem; }
   footer.site .footer-col ul { list-style: none; padding: 0; margin: 0; }
   footer.site .footer-col ul li { margin: 0.5rem 0; }
-  footer.site .footer-col ul li a { color: rgba(245, 241, 232, 0.75); text-decoration: none; font-size: 0.92rem; transition: color 0.15s; }
+  footer.site .footer-col ul li a { color: rgba(245, 241, 232, 0.75); text-decoration: none; font-size: 0.9rem; transition: color 0.15s; }
   footer.site .footer-col ul li a:hover { color: var(--gold-soft); }
   footer.site .footer-bottom { border-top: 1px solid rgba(201, 165, 68, 0.2); padding-top: 1.5rem; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; font-size: 0.85rem; color: rgba(245, 241, 232, 0.5); }
   footer.site .footer-bottom a { color: var(--gold-soft); text-decoration: none; }
 
-  @media (max-width: 800px) {
-    footer.site .footer-grid { grid-template-columns: 1fr 1fr; gap: 1.8rem; }
+  @media (max-width: 1000px) {
+    footer.site .footer-grid { grid-template-columns: 1fr 1fr 1fr; gap: 1.8rem; }
   }
-  @media (max-width: 500px) {
+  @media (max-width: 700px) {
+    footer.site .footer-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 480px) {
     footer.site .footer-grid { grid-template-columns: 1fr; }
   }
 
@@ -255,22 +286,39 @@
 
   <header class="site">
     <div class="wrap-wide brand-row">
+      <button class="hamburger" onclick="toggleMenu()" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
       <a href="/" class="brand">
         <span class="brand-name">Encyclicum <span class="cross">✝</span></span>
         <span class="brand-tagline">Comprendre · Discerner · Agir</span>
       </a>
       <nav class="main-nav">
-        <a href="/index.html"><span class="num">01</span>Accueil</a>
-        <a href="/syntheses.html"><span class="num">02</span>Synthèses</a>
-        <a href="/webinaires.html"><span class="num">03</span>Webinaires</a>
-        <a href="/eglise-canada.html" class="active"><span class="num">04</span>L'Église par continent</a>
-        <a href="/formations.html"><span class="num">05</span>Formations</a>
-        <a href="/mission-vision-valeurs.html"><span class="num">06</span>À propos</a>
+        <a href="/index.html">Accueil</a>
+        <a href="/syntheses.html">Synthèses</a>
+        <a href="/webinaires.html">Webinaires</a>
+        <a href="/formations.html">Formations</a>
+        <a href="/mission-vision-valeurs.html">À propos</a>
+        <div class="nav-item has-dropdown">
+          <a href="/eglise-canada.html" class="active">L'Église par continent</a>
+          <div class="nav-dropdown">
+            <a href="/eglise-canada.html">Canada</a>
+            <a href="/eglise-quebec.html">Québec</a>
+            <a href="/eglise-amerique.html">Amérique</a>
+            <a href="/eglise-afrique.html">Afrique (SCEAM)</a>
+            <a href="/eglise-afrique-rdc.html" class="sub">— RDC (CENCO)</a>
+            <a href="/eglise-afrique-burkina-niger.html" class="sub">— Burkina-Niger</a>
+            <a href="/eglise-afrique-cote-ivoire.html" class="sub">— Côte d'Ivoire</a>
+            <a href="/eglise-afrique-senegal.html" class="sub">— Sénégal & Ouest atl.</a>
+            <a href="/eglise-afrique-cameroun.html" class="sub">— Cameroun</a>
+            <a href="/eglise-afrique-madagascar.html" class="sub">— Madagascar</a>
+            <a href="/eglise-europe.html">Europe</a>
+            <a href="/eglise-asie.html">Asie</a>
+            <a href="/eglise-oceanie.html">Océanie</a>
+          </div>
+        </div>
         <a href="/formations.html#demande" class="cta">Demander une formation</a>
       </nav>
-      <button class="hamburger" onclick="toggleMenu()" aria-label="Menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
     </div>
   </header>
 
@@ -407,7 +455,7 @@
           <h4>Navigation</h4>
           <ul>
             <li><a href="/index.html">Accueil</a></li>
-            <li><a href="/syntheses.html">Synthèses approfondies</a></li>
+            <li><a href="/syntheses.html">Synthèses</a></li>
             <li><a href="/webinaires.html">Webinaires</a></li>
             <li><a href="/formations.html">Formations</a></li>
             <li><a href="/mission-vision-valeurs.html">À propos</a></li>
@@ -429,19 +477,31 @@
         </div>
 
         <div class="footer-col">
+          <h4>Afrique francophone</h4>
+          <ul>
+            <li><a href="/eglise-afrique-rdc.html">RDC (CENCO)</a></li>
+            <li><a href="/eglise-afrique-burkina-niger.html">Burkina-Niger (CEBN)</a></li>
+            <li><a href="/eglise-afrique-cote-ivoire.html">Côte d'Ivoire (CECI)</a></li>
+            <li><a href="/eglise-afrique-senegal.html">Sénégal & Ouest atl.</a></li>
+            <li><a href="/eglise-afrique-cameroun.html">Cameroun (CENC)</a></li>
+            <li><a href="/eglise-afrique-madagascar.html">Madagascar (CEM)</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
           <h4>Contact</h4>
           <ul>
             <li><a href="/index.html#contact">✉ Formulaire de contact</a></li>
             <li><a href="/formations.html#demande">★ Demande de formation</a></li>
-            <li><a href="https://metanoia-strategie.ca" target="_blank" rel="noopener">✦ MetanoIA Stratégie</a></li>
-            <li><a href="/" >🌐 encyclicum.ca</a></li>
+            <li><a href="/webinaires.html">🎙️ S'inscrire au webinaire</a></li>
+            <li><a href="/">🌐 encyclicum.ca</a></li>
           </ul>
         </div>
 
       </div>
 
       <div class="footer-bottom">
-        <span>© 2026 Encyclicum ✝ — Une initiative de <a href="https://metanoia-strategie.ca">MetanoIA Stratégie</a></span>
+        <span>© 2026 Encyclicum ✝ — Tous droits réservés</span>
         <span>Québec, Canada</span>
       </div>
     </div>

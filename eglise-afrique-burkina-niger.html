@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>L'Église au Burkina Faso et au Niger · Encyclicum</title>
-  <meta name="description" content="La voix de la CEBN, Église en première ligne face au terrorisme au Sahel.">
+  <meta name="description" content="La voix de la CEBN (Conférence Épiscopale Burkina-Niger), avec ses figures fondatrices : Alfred Diban (premier catéchiste) et le cardinal Paul Zoungrana (premier cardinal d'Afrique de l'Ouest, fondateur du SCEAM).">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -41,10 +41,9 @@
 
   /* Nav horizontale style MetanoIA (visible sur desktop) */
   .main-nav { display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; margin-left: auto; }
-  .main-nav a { color: rgba(245, 241, 232, 0.82); text-decoration: none; font-size: 0.9rem; padding: 0.4rem 0.7rem; border-radius: 3px; transition: all 0.15s; display: flex; align-items: center; gap: 0.35rem; }
-  .main-nav a:hover { color: var(--gold-soft); background: rgba(255, 255, 255, 0.04); }
-  .main-nav a.active { color: var(--gold); }
-  .main-nav a .num { color: var(--gold); font-size: 0.72rem; font-weight: 600; opacity: 0.7; }
+  .main-nav a, .main-nav .nav-item > a { color: rgba(245, 241, 232, 0.82); text-decoration: none; font-size: 0.9rem; padding: 0.4rem 0.7rem; border-radius: 3px; transition: all 0.15s; display: inline-block; }
+  .main-nav a:hover, .main-nav .nav-item > a:hover { color: var(--gold-soft); background: rgba(255, 255, 255, 0.04); }
+  .main-nav a.active, .main-nav .nav-item > a.active { color: var(--gold); }
   .main-nav a.cta {
     background: linear-gradient(135deg, var(--gold) 0%, var(--gold-soft) 100%);
     color: var(--navy-deep);
@@ -56,7 +55,37 @@
   .main-nav a.cta:hover { background: var(--gold-soft); transform: translateY(-1px); }
   .main-nav a.cta::after { content: ' →'; }
 
-  /* Hamburger : caché sur desktop, visible sur mobile */
+  /* Dropdown nav desktop pour L'Église par continent */
+  .nav-item.has-dropdown { position: relative; }
+  .nav-item.has-dropdown > a::after { content: ' ▾'; font-size: 0.7rem; opacity: 0.6; }
+  .nav-dropdown {
+    position: absolute; top: 100%; left: 0;
+    background: var(--navy-deep);
+    border: 1px solid rgba(201, 165, 68, 0.25);
+    border-radius: 6px;
+    min-width: 240px;
+    opacity: 0; visibility: hidden;
+    transform: translateY(-6px);
+    transition: all 0.2s;
+    z-index: 50;
+    padding: 0.5rem 0;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+  }
+  .nav-item.has-dropdown:hover .nav-dropdown,
+  .nav-item.has-dropdown:focus-within .nav-dropdown { opacity: 1; visibility: visible; transform: translateY(0); }
+  .nav-dropdown a {
+    display: block;
+    padding: 0.5rem 1.1rem;
+    margin: 0;
+    border-radius: 0;
+    color: rgba(245, 241, 232, 0.85);
+    font-size: 0.88rem;
+  }
+  .nav-dropdown a:hover { background: rgba(201, 165, 68, 0.1); color: var(--gold-soft); }
+  .nav-dropdown a.sub { padding-left: 2rem; font-size: 0.82rem; opacity: 0.85; }
+  .nav-dropdown .dropdown-sep { border-top: 1px solid rgba(201, 165, 68, 0.15); margin: 0.4rem 0; }
+
+  /* Hamburger : caché sur desktop, visible sur mobile, à gauche */
   .hamburger {
     display: none;
     background: transparent;
@@ -66,7 +95,6 @@
     cursor: pointer; padding: 0;
     flex-direction: column; justify-content: center; align-items: center; gap: 4px;
     transition: all 0.2s;
-    margin-left: auto;
   }
   .hamburger:hover { border-color: var(--gold); }
   .hamburger span { display: block; width: 20px; height: 2px; background: var(--gold-soft); transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
@@ -222,25 +250,28 @@
   .sources ul { padding-left: 1.2rem; }
   .sources li { margin: 0.4rem 0; color: rgba(245, 241, 232, 0.85); }
 
-  /* ============ FOOTER 4 COLONNES style MetanoIA ============ */
+  /* ============ FOOTER 5 COLONNES style MetanoIA ============ */
   footer.site { background: var(--navy-deep); color: rgba(245, 241, 232, 0.85); padding: 3.5rem 0 1.5rem; border-top: 3px solid var(--gold); }
-  footer.site .footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 2.5rem; margin-bottom: 2.5rem; }
-  footer.site h4 { font-family: var(--serif); color: var(--cream); font-size: 1.1rem; font-weight: 600; margin: 0 0 1rem 0; }
+  footer.site .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr; gap: 2rem; margin-bottom: 2.5rem; }
+  footer.site h4 { font-family: var(--serif); color: var(--cream); font-size: 1.05rem; font-weight: 600; margin: 0 0 1rem 0; }
   footer.site h4.brand-h { font-size: 1.4rem; }
   footer.site h4.brand-h .cross { color: var(--gold); }
   footer.site .footer-brand p { font-size: 0.92rem; color: rgba(245, 241, 232, 0.65); line-height: 1.55; margin: 0.5rem 0 1rem 0; }
   footer.site .footer-brand .footer-slogan { font-family: var(--serif); font-style: italic; color: var(--gold-soft); font-size: 0.9rem; letter-spacing: 0.05em; margin-top: 0.5rem; }
   footer.site .footer-col ul { list-style: none; padding: 0; margin: 0; }
   footer.site .footer-col ul li { margin: 0.5rem 0; }
-  footer.site .footer-col ul li a { color: rgba(245, 241, 232, 0.75); text-decoration: none; font-size: 0.92rem; transition: color 0.15s; }
+  footer.site .footer-col ul li a { color: rgba(245, 241, 232, 0.75); text-decoration: none; font-size: 0.9rem; transition: color 0.15s; }
   footer.site .footer-col ul li a:hover { color: var(--gold-soft); }
   footer.site .footer-bottom { border-top: 1px solid rgba(201, 165, 68, 0.2); padding-top: 1.5rem; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; font-size: 0.85rem; color: rgba(245, 241, 232, 0.5); }
   footer.site .footer-bottom a { color: var(--gold-soft); text-decoration: none; }
 
-  @media (max-width: 800px) {
-    footer.site .footer-grid { grid-template-columns: 1fr 1fr; gap: 1.8rem; }
+  @media (max-width: 1000px) {
+    footer.site .footer-grid { grid-template-columns: 1fr 1fr 1fr; gap: 1.8rem; }
   }
-  @media (max-width: 500px) {
+  @media (max-width: 700px) {
+    footer.site .footer-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 480px) {
     footer.site .footer-grid { grid-template-columns: 1fr; }
   }
 
@@ -255,22 +286,39 @@
 
   <header class="site">
     <div class="wrap-wide brand-row">
+      <button class="hamburger" onclick="toggleMenu()" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
       <a href="/" class="brand">
         <span class="brand-name">Encyclicum <span class="cross">✝</span></span>
         <span class="brand-tagline">Comprendre · Discerner · Agir</span>
       </a>
       <nav class="main-nav">
-        <a href="/index.html"><span class="num">01</span>Accueil</a>
-        <a href="/syntheses.html"><span class="num">02</span>Synthèses</a>
-        <a href="/webinaires.html"><span class="num">03</span>Webinaires</a>
-        <a href="/eglise-canada.html" class="active"><span class="num">04</span>L'Église par continent</a>
-        <a href="/formations.html"><span class="num">05</span>Formations</a>
-        <a href="/mission-vision-valeurs.html"><span class="num">06</span>À propos</a>
+        <a href="/index.html">Accueil</a>
+        <a href="/syntheses.html">Synthèses</a>
+        <a href="/webinaires.html">Webinaires</a>
+        <a href="/formations.html">Formations</a>
+        <a href="/mission-vision-valeurs.html">À propos</a>
+        <div class="nav-item has-dropdown">
+          <a href="/eglise-canada.html" class="active">L'Église par continent</a>
+          <div class="nav-dropdown">
+            <a href="/eglise-canada.html">Canada</a>
+            <a href="/eglise-quebec.html">Québec</a>
+            <a href="/eglise-amerique.html">Amérique</a>
+            <a href="/eglise-afrique.html">Afrique (SCEAM)</a>
+            <a href="/eglise-afrique-rdc.html" class="sub">— RDC (CENCO)</a>
+            <a href="/eglise-afrique-burkina-niger.html" class="sub">— Burkina-Niger</a>
+            <a href="/eglise-afrique-cote-ivoire.html" class="sub">— Côte d'Ivoire</a>
+            <a href="/eglise-afrique-senegal.html" class="sub">— Sénégal & Ouest atl.</a>
+            <a href="/eglise-afrique-cameroun.html" class="sub">— Cameroun</a>
+            <a href="/eglise-afrique-madagascar.html" class="sub">— Madagascar</a>
+            <a href="/eglise-europe.html">Europe</a>
+            <a href="/eglise-asie.html">Asie</a>
+            <a href="/eglise-oceanie.html">Océanie</a>
+          </div>
+        </div>
         <a href="/formations.html#demande" class="cta">Demander une formation</a>
       </nav>
-      <button class="hamburger" onclick="toggleMenu()" aria-label="Menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
     </div>
   </header>
 
@@ -313,13 +361,14 @@
   <section class="hero">
     <div class="wrap">
       <p class="eyebrow">Conférence Épiscopale Burkina-Niger (CEBN)</p>
-      <h1>L'Église au <em>Burkina</em> et au <em>Niger</em></h1>
-      <p class="lede">Une Église-Famille en première ligne face au terrorisme au Sahel, héritière du cardinal Paul Zoungrana, fondateur du SCEAM.</p>
+      <h1>L'Église au <em>Burkina Faso et au Niger</em></h1>
+      <p class="lede">Une Église-Famille héritière de figures pionnières : Alfred Diban, premier catéchiste, et le cardinal Paul Zoungrana, premier cardinal d'Afrique de l'Ouest et père fondateur du SCEAM en 1969 à Kampala.</p>
       
     </div>
   </section>
 
-<section class="content">
+
+  <section class="content">
     <div class="wrap">
 
       <p style="font-size:0.95rem;color:var(--muted);margin-bottom:1rem;">
@@ -327,13 +376,8 @@
       </p>
 
       <h2>La CEBN, voix de l'Église catholique au Burkina Faso et au Niger</h2>
-      <p>La Conférence Épiscopale Burkina-Niger (CEBN) rassemble les ordinaires des deux pays. Présidence depuis le 14 juin 2019 : <strong>Mgr Laurent Birfuoré Dabiré</strong>, évêque de Dori. Vice-présidence : Mgr Gabriel Sayaogo, archevêque de Koupéla. Sanctuaire national : Notre-Dame de Yagma (Ouagadougou), désigné en 1988. La CEBN est membre de la <strong>RECOWA-CERAO</strong> (Conférence épiscopale régionale d'Afrique de l'Ouest) et du SCEAM.</p>
+      <p>La Conférence Épiscopale Burkina-Niger (CEBN) rassemble les ordinaires des deux pays. Le <strong>18 juin 2025</strong>, à l'issue de l'Assemblée plénière, <strong>Mgr Gabriel Sayaogo</strong>, archevêque de Koupéla, a été élu président de la CEBN, succédant à Mgr Laurent Birfuoré Dabiré (évêque de Dori, président de 2019 à 2025). Sanctuaire national : Notre-Dame de Yagma (Ouagadougou), désigné en 1988. La CEBN est membre de la <strong>RECOWA-CERAO</strong> (Conférence épiscopale régionale d'Afrique de l'Ouest) et du SCEAM.</p>
       <p>L'archevêché métropolitain de Ouagadougou est actuellement occupé par <strong>Mgr Prosper Kontiebo</strong>, qui a reçu son pallium du pape François en juin 2024. Premier nonce apostolique d'origine burkinabè : Mgr Julien Kaboré (nommé au Ghana en juin 2024).</p>
-
-      <h2>Une Église en première ligne face au terrorisme</h2>
-      <p>Le Burkina Faso vit depuis 2015-2016 une crise sécuritaire majeure : insurrection djihadiste, déplacements massifs de populations, fermeture de paroisses entières dans le nord et l'est du pays, assassinats de prêtres et de catéchistes. La CEBN se trouve depuis plusieurs années en première ligne, à la fois cible et pasteur. Le diocèse de Dori (que préside Mgr Dabiré) est l'un des plus exposés.</p>
-
-      <blockquote>« Une guerre injuste imposée au pays. »<cite>— Caractérisation par les évêques du Burkina-Niger de la situation sécuritaire dans leurs communiqués récents</cite></blockquote>
 
     </div>
   </section>
@@ -358,7 +402,7 @@
 </div>
 
       <h2>L'Initiative Paix au Sahel (SPI)</h2>
-      <p>Lancée en 2019, l'<strong>Initiative Paix au Sahel</strong> est un programme régional de consolidation de la paix qui associe les conférences épiscopales du <strong>Burkina-Niger</strong>, du <strong>Mali</strong>, du <strong>Ghana</strong> et de la <strong>Côte d'Ivoire</strong>. Elle constitue l'une des coopérations interépiscopales les plus actives d'Afrique de l'Ouest francophone, articulant prière, plaidoyer, et formation des acteurs religieux et médiatiques.</p>
+      <p>Lancée en 2019, l'<strong>Initiative Paix au Sahel</strong> est un programme régional de consolidation de la paix qui associe les conférences épiscopales du <strong>Burkina-Niger</strong>, du <strong>Mali</strong>, du <strong>Ghana</strong> et de la <strong>Côte d'Ivoire</strong>. Elle constitue l'une des coopérations interépiscopales les plus actives d'Afrique de l'Ouest francophone, articulant prière, plaidoyer et formation des acteurs religieux et médiatiques.</p>
 
     </div>
   </section>
@@ -366,10 +410,19 @@
   <section class="content">
     <div class="wrap">
 
-      <h2>Héritage du Cardinal Paul Zoungrana</h2>
-      <p>Premier président du SCEAM lors de sa fondation en 1969 à Kampala, le <strong>cardinal Paul Zoungrana</strong> (archevêque de Ouagadougou, 1960-1995) demeure une figure tutélaire de l'Église-Famille de Dieu en Afrique. C'est lui qui, dans son discours d'ouverture à Kampala, a expliqué la notion de « Symposium » à partir de l'image de la table eucharistique — semence de l'ecclésiologie de l'Église-Famille de Dieu, proclamée trente ans plus tard par Jean-Paul II dans <em>Ecclesia in Africa</em>. Le Centre National Cardinal Paul Zoungrana, à Ouagadougou, accueille les Assemblées plénières de la CEBN.</p>
+      <h2>Deux grandes figures de l'Église-Famille au Burkina</h2>
 
-      <div class="note">La CEBN porte une voix particulièrement attentive aux questions de paix, de cohésion sociale, et de dialogue interreligieux — sujets vitaux dans un pays où chrétiens et musulmans cohabitent depuis toujours mais sont aujourd'hui exposés aux mêmes violences.</div>
+      <h3>Alfred Simon Diban Ki-Zerbo (~1875 – 1980) — Premier catéchiste du Burkina Faso</h3>
+      <p>Considéré comme le <strong>« Premier chrétien de Haute-Volta »</strong>, Alfred Simon Diban Ki-Zerbo est né vers 1875 à Da, près de Tougan en Pays Samo. Capturé à 17 ans avec son frère et vendu comme esclave sur le marché de Kabarga (actuel Mali), il s'évade en 1899 après trois tentatives. Recueilli par les Pères blancs de Ségou, il reçoit le baptême et prend les prénoms d'Alfred Simon. Devenu catéchiste, il évangélise le Pays Mossi et devient le pionnier de l'Église catholique au Burkina Faso.</p>
+      <p>En 1975, il accompagne le cardinal Paul Zoungrana en pèlerinage à Rome où il est présenté au pape Paul VI ; ce dernier, par respect pour son grand âge et son œuvre, lui cède sa place sur le trône pontifical. Centenaire, il s'éteint en 1980 — au moment précis où Jean-Paul II prononce la bénédiction finale de la messe célébrée à Ouagadougou lors de son voyage pastoral au Burkina. Père de l'historien et homme politique Joseph Ki-Zerbo.</p>
+      <p style="margin-top: 0.8rem;"><a class="doc-source" href="https://fr.wikipedia.org/wiki/Alfred_Ki-Zerbo" target="_blank" rel="noopener">Lire la notice biographique sur Wikipédia</a></p>
+
+      <h3>Cardinal Paul Zoungrana (1917 – 2000) — Premier cardinal d'Afrique de l'Ouest</h3>
+      <p>Né à Ouagadougou le 3 septembre 1917 et l'un des trois premiers prêtres burkinabè ordonnés (1942), Mgr Paul Zoungrana est nommé archevêque de Ouagadougou en 1960 par le pape Jean XXIII, qui lui donne en personne la consécration épiscopale dans la basilique Saint-Pierre. Lors du consistoire du <strong>22 février 1965</strong>, il est créé cardinal par le pape Paul VI — devenant le <strong>premier cardinal du Burkina Faso et le premier cardinal d'Afrique de l'Ouest</strong>. Il reste à ce jour le seul cardinal issu de la Société des missionnaires d'Afrique (Pères blancs).</p>
+      <p>Lors de la fondation du <strong>SCEAM en 1969 à Kampala</strong>, le cardinal Zoungrana en devient le premier président. C'est lui qui, dans son discours d'ouverture, a expliqué la notion de « Symposium » à partir de l'image de la table eucharistique — semence de l'ecclésiologie de l'« Église-Famille de Dieu », proclamée trente ans plus tard par Jean-Paul II dans <em>Ecclesia in Africa</em>. Il préside également la conférence épiscopale régionale d'Afrique de l'Ouest de 1967 à 1982. Sa cause de béatification a été ouverte le 27 septembre 2023. Le Centre National Cardinal Paul Zoungrana, à Ouagadougou, accueille les Assemblées plénières de la CEBN.</p>
+      <p style="margin-top: 0.8rem;"><a class="doc-source" href="https://fr.wikipedia.org/wiki/Paul_Zoungrana" target="_blank" rel="noopener">Lire la notice biographique sur Wikipédia</a></p>
+
+      <div class="note">La CEBN porte une voix particulièrement attentive aux questions de paix, de cohésion sociale et de dialogue interreligieux — sujets vitaux dans un pays où chrétiens et musulmans cohabitent depuis toujours.</div>
 
     </div>
   </section>
@@ -380,10 +433,14 @@
       <ul>
         <li>Site principal de la CEBN : <a href="https://egliseduburkina.org/" target="_blank" rel="noopener">egliseduburkina.org</a></li>
         <li>Actualités de la CEBN : <a href="https://egliseduburkina.net/" target="_blank" rel="noopener">egliseduburkina.net</a></li>
+        <li>Élection de Mgr Sayaogo (18 juin 2025) : <a href="https://lefaso.net/spip.php?article138885" target="_blank" rel="noopener">lefaso.net</a></li>
+        <li>Wikipédia — Alfred Simon Diban Ki-Zerbo : <a href="https://fr.wikipedia.org/wiki/Alfred_Ki-Zerbo" target="_blank" rel="noopener">fr.wikipedia.org/wiki/Alfred_Ki-Zerbo</a></li>
+        <li>Wikipédia — Cardinal Paul Zoungrana : <a href="https://fr.wikipedia.org/wiki/Paul_Zoungrana" target="_blank" rel="noopener">fr.wikipedia.org/wiki/Paul_Zoungrana</a></li>
         <li>SCEAM : <a href="https://secam.org/fr/" target="_blank" rel="noopener">secam.org/fr</a></li>
       </ul>
     </div>
   </section>
+
 
 
   <footer class="site">
@@ -400,7 +457,7 @@
           <h4>Navigation</h4>
           <ul>
             <li><a href="/index.html">Accueil</a></li>
-            <li><a href="/syntheses.html">Synthèses approfondies</a></li>
+            <li><a href="/syntheses.html">Synthèses</a></li>
             <li><a href="/webinaires.html">Webinaires</a></li>
             <li><a href="/formations.html">Formations</a></li>
             <li><a href="/mission-vision-valeurs.html">À propos</a></li>
@@ -422,19 +479,31 @@
         </div>
 
         <div class="footer-col">
+          <h4>Afrique francophone</h4>
+          <ul>
+            <li><a href="/eglise-afrique-rdc.html">RDC (CENCO)</a></li>
+            <li><a href="/eglise-afrique-burkina-niger.html">Burkina-Niger (CEBN)</a></li>
+            <li><a href="/eglise-afrique-cote-ivoire.html">Côte d'Ivoire (CECI)</a></li>
+            <li><a href="/eglise-afrique-senegal.html">Sénégal & Ouest atl.</a></li>
+            <li><a href="/eglise-afrique-cameroun.html">Cameroun (CENC)</a></li>
+            <li><a href="/eglise-afrique-madagascar.html">Madagascar (CEM)</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
           <h4>Contact</h4>
           <ul>
             <li><a href="/index.html#contact">✉ Formulaire de contact</a></li>
             <li><a href="/formations.html#demande">★ Demande de formation</a></li>
-            <li><a href="https://metanoia-strategie.ca" target="_blank" rel="noopener">✦ MetanoIA Stratégie</a></li>
-            <li><a href="/" >🌐 encyclicum.ca</a></li>
+            <li><a href="/webinaires.html">🎙️ S'inscrire au webinaire</a></li>
+            <li><a href="/">🌐 encyclicum.ca</a></li>
           </ul>
         </div>
 
       </div>
 
       <div class="footer-bottom">
-        <span>© 2026 Encyclicum ✝ — Une initiative de <a href="https://metanoia-strategie.ca">MetanoIA Stratégie</a></span>
+        <span>© 2026 Encyclicum ✝ — Tous droits réservés</span>
         <span>Québec, Canada</span>
       </div>
     </div>
