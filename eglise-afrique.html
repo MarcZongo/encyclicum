@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="fr-CA">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>L'Église en Afrique · Encyclicum</title>
+  <meta name="description" content="Synthèse de la voix de l'Église en Afrique : SCEAM, Église-Famille de Dieu, vision continentale 2025-2050, et les conférences nationales d'Afrique francophone.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=Inter+Tight:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #2a3447;
+    --navy-deep: #1a2336;
+    --gold: #c9a544;
+    --gold-soft: #d9b96a;
+    --cream: #f5f1e8;
+    --cream-deep: #ebe5d4;
+    --ink: #1f2937;
+    --muted: #64748b;
+    --line: #e2dccf;
+    --white: #ffffff;
+    --serif: 'Fraunces', Georgia, serif;
+    --sans: 'Inter Tight', system-ui, -apple-system, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; font-family: var(--sans); color: var(--ink); background: var(--cream); line-height: 1.7; font-size: 17px; }
+  .wrap { max-width: 920px; margin: 0 auto; padding: 0 1.5rem; }
+  .wrap-wide { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
+
+  header.site { background: var(--navy-deep); border-bottom: 1px solid rgba(201, 165, 68, 0.25); }
+  .nav-main { padding: 1.1rem 0; }
+  .nav-main .wrap-wide { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+  .nav-main .brand { color: var(--cream); font-family: var(--serif); font-size: 1.4rem; font-weight: 600; text-decoration: none; }
+  .nav-main .brand span { color: var(--gold); }
+  .nav-main nav a { color: var(--cream); text-decoration: none; margin-left: 1.4rem; font-size: 0.95rem; opacity: 0.85; }
+  .nav-main nav a:first-child { margin-left: 0; }
+  .nav-main nav a:hover { opacity: 1; color: var(--gold-soft); }
+
+  .nav-continents { background: rgba(0,0,0,0.18); padding: 0.7rem 0; border-top: 1px solid rgba(201, 165, 68, 0.15); }
+  .nav-continents .wrap-wide { display: flex; align-items: center; flex-wrap: wrap; gap: 0.4rem 1rem; }
+  .nav-continents .label { color: var(--gold); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.18em; font-weight: 600; margin-right: 0.5rem; }
+  .nav-continents a { color: rgba(245, 241, 232, 0.78); text-decoration: none; font-size: 0.9rem; padding: 0.2rem 0.5rem; border-radius: 3px; transition: all 0.15s; }
+  .nav-continents a:hover { color: var(--gold-soft); background: rgba(255,255,255,0.06); }
+  .nav-continents a.active { color: var(--gold); background: rgba(201, 165, 68, 0.12); font-weight: 600; }
+
+  .hero { background: var(--navy-deep); color: var(--cream); padding: 4rem 0 5rem; position: relative; }
+  .hero::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 3px; background: linear-gradient(90deg, transparent, var(--gold) 50%, transparent); }
+  .hero .eyebrow { color: var(--gold); text-transform: uppercase; letter-spacing: 0.18em; font-size: 0.85rem; font-weight: 600; margin-bottom: 1rem; }
+  .hero h1 { font-family: var(--serif); font-size: clamp(2rem, 4.5vw, 3rem); font-weight: 700; line-height: 1.15; margin: 0 0 1rem 0; letter-spacing: -0.01em; }
+  .hero h1 em { font-style: italic; color: var(--gold-soft); }
+  .hero .lede { font-size: 1.15rem; max-width: 720px; color: rgba(245, 241, 232, 0.92); margin: 0; line-height: 1.65; }
+
+  section.content { padding: 4rem 0; }
+  section.content.alt { background: var(--cream-deep); }
+  section.content h2 { font-family: var(--serif); font-size: clamp(1.6rem, 3vw, 2.1rem); color: var(--navy); font-weight: 700; margin: 0 0 0.6rem 0; padding-top: 1.5rem; border-top: 2px solid var(--gold); }
+  section.content h2:first-child { padding-top: 0; border-top: none; }
+  section.content h3 { font-family: var(--serif); font-size: 1.3rem; color: var(--navy); font-weight: 600; margin: 2rem 0 0.6rem 0; }
+  section.content p { color: var(--ink); margin: 0.5rem 0 1rem 0; }
+
+  .value-card { background: var(--white); border-left: 4px solid var(--gold); padding: 1.4rem 1.6rem; margin: 1rem 0; border-radius: 4px; }
+  .value-card h3 { margin-top: 0; }
+  .value-card p { margin-bottom: 0; }
+
+  .doc-card { background: var(--white); border: 1px solid var(--line); border-radius: 6px; padding: 1.4rem 1.6rem; margin: 1rem 0; }
+  .doc-card .doc-meta { color: var(--gold); text-transform: uppercase; letter-spacing: 0.12em; font-size: 0.75rem; font-weight: 600; margin-bottom: 0.3rem; }
+  .doc-card h4 { font-family: var(--serif); color: var(--navy); margin: 0 0 0.6rem 0; font-size: 1.15rem; font-weight: 600; }
+  .doc-card p { margin: 0; }
+  .doc-card .doc-source { display: inline-block; margin-top: 0.8rem; font-size: 0.85rem; color: var(--navy); text-decoration: none; padding: 0.3rem 0.7rem; background: var(--cream); border-radius: 3px; transition: background 0.15s; }
+  .doc-card .doc-source:hover { background: var(--gold); color: var(--navy-deep); }
+  .doc-card .doc-source::before { content: '↗ '; opacity: 0.6; }
+
+  .pillars { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0.8rem; margin: 1.5rem 0; }
+  .pillar { background: var(--white); border-left: 3px solid var(--gold); padding: 1rem 1.2rem; border-radius: 4px; }
+  .pillar .pillar-num { color: var(--gold); font-family: var(--serif); font-weight: 700; font-size: 1.1rem; }
+  .pillar .pillar-title { display: block; font-weight: 600; color: var(--navy); margin: 0.2rem 0; }
+  .pillar .pillar-desc { font-size: 0.9rem; color: var(--muted); }
+
+  .countries { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; margin: 1.5rem 0; }
+  .country-card { background: var(--white); border: 1px solid var(--line); border-radius: 6px; padding: 1.4rem 1.6rem; transition: all 0.2s; }
+  .country-card:hover { border-color: var(--gold); box-shadow: 0 4px 12px rgba(42, 52, 71, 0.08); }
+  .country-card .flag { font-size: 1.4rem; }
+  .country-card h4 { font-family: var(--serif); color: var(--navy); margin: 0.4rem 0; font-size: 1.1rem; font-weight: 600; }
+  .country-card p { font-size: 0.9rem; color: var(--muted); margin: 0 0 0.8rem 0; }
+  .country-card a { color: var(--navy); text-decoration: none; font-weight: 600; font-size: 0.9rem; }
+  .country-card a:hover { color: var(--gold); }
+  .country-card a::after { content: ' →'; }
+
+  blockquote { border-left: 4px solid var(--gold); padding: 0.5rem 0 0.5rem 1.5rem; margin: 1.5rem 0; font-family: var(--serif); font-style: italic; color: var(--navy); font-size: 1.15rem; line-height: 1.5; }
+  blockquote cite { display: block; font-size: 0.9rem; color: var(--muted); font-style: normal; margin-top: 0.6rem; font-family: var(--sans); }
+
+  .note { background: var(--cream); border-top: 1px solid var(--muted); border-bottom: 1px solid var(--muted); padding: 1rem 1.4rem; margin: 2rem 0; font-style: italic; color: var(--muted); font-size: 0.95rem; }
+
+  .sources { background: var(--navy); color: var(--cream); padding: 3rem 0; }
+  .sources h2 { color: var(--cream); border-top-color: var(--gold); }
+  .sources a { color: var(--gold-soft); }
+  .sources ul { padding-left: 1.2rem; }
+  .sources li { margin: 0.4rem 0; color: rgba(245, 241, 232, 0.85); }
+
+  footer { background: var(--navy-deep); color: rgba(245, 241, 232, 0.6); padding: 2rem 0; text-align: center; font-size: 0.9rem; border-top: 1px solid rgba(201, 165, 68, 0.2); }
+  footer a { color: var(--gold-soft); text-decoration: none; }
+
+  @media (max-width: 700px) {
+    section.content { padding: 2.5rem 0; }
+    .hero { padding: 3rem 0 4rem; }
+    .nav-main nav a { margin-left: 0.8rem; font-size: 0.85rem; }
+    .nav-continents .label { width: 100%; margin-bottom: 0.3rem; }
+  }
+</style>
+
+</head>
+<body>
+
+  <header class="site">
+    <div class="nav-main">
+      <div class="wrap-wide">
+        <a href="/" class="brand">Encyclicum <span>✝</span></a>
+        <nav>
+          <a href="/index.html">Accueil</a>
+          <a href="/syntheses.html">Synthèses</a>
+          <a href="/webinaires.html">Webinaires</a>
+          <a href="/mission-vision-valeurs.html">Mission</a>
+        </nav>
+      </div>
+    </div>
+    <div class="nav-continents">
+      <div class="wrap-wide">
+        <span class="label">L'Église dans le monde</span>
+        <a href="/eglise-canada.html">Canada</a>
+        <a href="/eglise-quebec.html">Québec</a>
+        <a href="/eglise-amerique.html">Amérique</a>
+        <a href="/eglise-afrique.html" class="active">Afrique</a>
+        <a href="/eglise-europe.html">Europe</a>
+        <a href="/eglise-asie.html">Asie</a>
+        <a href="/eglise-oceanie.html">Océanie</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="wrap">
+      <p class="eyebrow">Symposium des Conférences Épiscopales d'Afrique et de Madagascar</p>
+      <h1>L'Église <em>en Afrique</em></h1>
+      <p class="lede">La voix de l'Église-Famille de Dieu en Afrique : du concept fondateur de 1995 à la vision continentale 2025-2050 adoptée à Kigali, avec un focus dédié sur les conférences d'Afrique francophone.</p>
+    </div>
+  </section>
+
+
+  <section class="content">
+    <div class="wrap">
+
+      <h2>Le SCEAM, voix de l’Église catholique en Afrique</h2>
+      <p>Le Symposium des Conférences Épiscopales d’Afrique et de Madagascar (SCEAM) est né en 1969 à Kampala, à l’occasion de la première visite d’un pape en Afrique (Paul VI). Siège à Accra. Regroupe l’Église dans 54 pays. Observateur à l’Union africaine depuis 2015. En 2026, présidence : <strong>cardinal Fridolin Ambongo</strong>, archevêque de Kinshasa. Secrétaire général : <strong>père Rafael Simbine Junior</strong>.</p>
+
+      <h2>L’Église-Famille de Dieu</h2>
+      <p>Le mot « Symposium » a été choisi pour évoquer la table eucharistique. L’ecclésiologie de l’« Église-Famille de Dieu » a été officiellement proclamée en 1995 par Jean-Paul II.</p>
+
+      <blockquote>« L’Église, Famille de Dieu, est appelée à manifester au monde que Dieu est amour et que l’amour fraternel est possible. »<cite>— Synthèse de Ecclesia in Africa</cite></blockquote>
+
+    </div>
+  </section>
+
+  <section class="content alt">
+    <div class="wrap">
+
+      <h2>Documents pontificaux fondateurs pour l’Afrique</h2>
+
+<div class="doc-card">
+  <p class="doc-meta">14 septembre 1995 · Saint Jean-Paul II</p>
+  <h4>Ecclesia in Africa</h4>
+  <p>Exhortation apostolique post-synodale, fruit du premier Synode pour l’Afrique. Proclamation officielle de l’« Église-Famille de Dieu », appel à l’inculturation.</p>
+  <a class="doc-source" href="https://www.vatican.va/content/john-paul-ii/fr/apost_exhortations/documents/hf_jp-ii_exh_14091995_ecclesia-in-africa.html" target="_blank" rel="noopener">Lire sur vatican.va</a>
+</div>
+
+<div class="doc-card">
+  <p class="doc-meta">19 novembre 2011 · Benoît XVI</p>
+  <h4>Africae Munus</h4>
+  <p>Exhortation apostolique post-synodale, signée à Ouidah (Bénin), fruit du second Synode pour l’Afrique. Centrée sur la réconciliation, la justice et la paix.</p>
+  <a class="doc-source" href="https://www.vatican.va/content/benedict-xvi/fr/apost_exhortations/documents/hf_ben-xvi_exh_20111119_africae-munus.html" target="_blank" rel="noopener">Lire sur vatican.va</a>
+</div>
+
+      <h2>La 20ᵉ Assemblée plénière (Kigali, 2025)</h2>
+
+<div class="doc-card">
+  <p class="doc-meta">30 juillet – 4 août 2025 · Kigali, Rwanda</p>
+  <h4>« Le Christ, source d’espérance, de réconciliation et de paix »</h4>
+  <p>C’est l’événement magistériel africain le plus important du temps présent. Coïncidant avec l’Année jubilaire, l’Assemblée a tracé une feuille de route pour l’Église en Afrique sur 25 ans.</p>
+  <a class="doc-source" href="https://secam.africa-newsroom.com/press/symposium-of-episcopal-conferences-of-africa-and-madagascar-secam-to-hold-its-20th-plenary-assembly-in-kigali-rwanda?lang=fr" target="_blank" rel="noopener">Communiqué officiel SCEAM</a>
+</div>
+
+<div class="doc-card">
+  <p class="doc-meta">Août 2025 · Document de vision adopté à Kigali</p>
+  <h4>« Vision de l’Église-Famille de Dieu en Afrique 2025-2050 »</h4>
+  <p>Feuille de route stratégique pour les vingt-cinq prochaines années, organisée autour de douze piliers fondamentaux.</p>
+  <a class="doc-source" href="https://www.aciafrique.org/news/16381/le-sceam-devoile-12-piliers-pour-guider-leglise-catholique-continentale-au-cours-des-25-prochaines-annees" target="_blank" rel="noopener">Voir la couverture détaillée</a>
+</div>
+
+      <h3>Les 12 piliers de la vision 2025-2050</h3>
+
+      <div class="pillars">
+        <div class="pillar">
+          <span class="pillar-num">1.</span>
+          <span class="pillar-title">Évangélisation</span>
+          <span class="pillar-desc">Éducation catholique, formation théologique, transformation des cultures.</span>
+        </div>
+        <div class="pillar">
+          <span class="pillar-num">2.</span>
+          <span class="pillar-title">Leadership ministériel familial</span>
+          <span class="pillar-desc">Renforcement des ministères familiaux et domestiques.</span>
+        </div>
+        <div class="pillar">
+          <span class="pillar-num">3.</span>
+          <span class="pillar-title">Engagement des jeunes</span>
+          <span class="pillar-desc">Formation, accompagnement, participation aux instances ecclésiales.</span>
+        </div>
+        <div class="pillar">
+          <span class="pillar-num">4.</span>
+          <span class="pillar-title">Protection de la création</span>
+          <span class="pillar-desc">Conversion écologique, bureaux diocésains pour l’environnement.</span>
+        </div>
+        <div class="pillar">
+          <span class="pillar-num">5.</span>
+          <span class="pillar-title">Mission numérique</span>
+          <span class="pillar-desc">Évangélisation à travers les médias et plateformes numériques.</span>
+        </div>
+        <div class="pillar">
+          <span class="pillar-num">6.</span>
+          <span class="pillar-title">Responsabilité politique</span>
+          <span class="pillar-desc">Engagement éclairé des catholiques dans la vie publique.</span>
+        </div>
+        <div class="pillar">
+          <span class="pillar-num">7.</span>
+          <span class="pillar-title">Autonomie ecclésiale</span>
+          <span class="pillar-desc">Réduction des dépendances extérieures, gestion responsable.</span>
+        </div>
+        <div class="pillar">
+          <span class="pillar-num">8.</span>
+          <span class="pillar-title">Œcuménisme</span>
+          <span class="pillar-desc">Dialogue avec les autres Églises chrétiennes en Afrique.</span>
+        </div>
+        <div class="pillar">
+          <span class="pillar-num">9.</span>
+          <span class="pillar-title">Éducation catholique</span>
+          <span class="pillar-desc">Écoles, universités, formation à tous les niveaux.</span>
+        </div>
+        <div class="pillar">
+          <span class="pillar-num">10.</span>
+          <span class="pillar-title">Santé</span>
+          <span class="pillar-desc">Pastorale de la santé, dispensaires et hôpitaux catholiques.</span>
+        </div>
+        <div class="pillar">
+          <span class="pillar-num">11.</span>
+          <span class="pillar-title">Liturgie significative</span>
+          <span class="pillar-desc">Inculturation liturgique respectueuse de la tradition.</span>
+        </div>
+        <div class="pillar">
+          <span class="pillar-num">12.</span>
+          <span class="pillar-title">Engagement ecclésial et politique</span>
+          <span class="pillar-desc">Voix prophétique de l’Église dans la cité.</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="content">
+    <div class="wrap">
+
+      <h2>Diplomatie ecclésiale</h2>
+
+<div class="doc-card">
+  <p class="doc-meta">11 février 2026 · Addis-Abeba</p>
+  <h4>Renouvellement du Protocole d’accord SCEAM — Union africaine</h4>
+  <p>Signature au siège de la Commission de l’Union africaine d’un MoU renouvelé approfondissant la collaboration pour le développement de l’Afrique.</p>
+  <a class="doc-source" href="https://secam.org/" target="_blank" rel="noopener">Voir sur secam.org</a>
+</div>
+
+<div class="doc-card">
+  <p class="doc-meta">2 février 2026 · Déclaration conjointe SCEAM + USCCB</p>
+  <h4>« Frères et Sœurs dans l’Espérance »</h4>
+  <p>Texte conjoint avec la Conférence épiscopale des États-Unis sur la solidarité entre les peuples et les Églises d’Afrique et d’Amérique du Nord.</p>
+  <a class="doc-source" href="https://aefjn.org/fr/presentation-de-la-lettre-conjointe-de-la-conference-episcopale-des-etats-unis-et-du-secam-sur-la-cooperation-au-developpement/" target="_blank" rel="noopener">Lire la présentation</a>
+</div>
+
+      <h2>L’Afrique francophone, conférence par conférence</h2>
+      <p>L’Afrique catholique francophone est structurée en conférences régionales (RECOWA-CERAO pour l’Afrique de l’Ouest, ACEAC pour l’Afrique centrale) et en conférences nationales ou inter-territoriales. Encyclicum consacre une page dédiée à six d’entre elles.</p>
+
+      <div class="countries">
+
+        <div class="country-card">
+          <span class="flag">🇨🇩</span>
+          <h4>République démocratique du Congo</h4>
+          <p>CENCO — voix politique majeure dans la crise actuelle.</p>
+          <a href="/eglise-afrique-rdc.html">L’Église en RDC</a>
+        </div>
+        <div class="country-card">
+          <span class="flag">🇧🇫</span>
+          <h4>Burkina Faso et Niger</h4>
+          <p>CEBN — Église-Famille en première ligne face au terrorisme au Sahel.</p>
+          <a href="/eglise-afrique-burkina-niger.html">L’Église au Burkina et au Niger</a>
+        </div>
+        <div class="country-card">
+          <span class="flag">🇨🇮</span>
+          <h4>Côte d’Ivoire</h4>
+          <p>CECI — Église ivoirienne, Notre-Dame d’Afrique d’Abidjan.</p>
+          <a href="/eglise-afrique-cote-ivoire.html">L’Église en Côte d’Ivoire</a>
+        </div>
+        <div class="country-card">
+          <span class="flag">🇸🇳</span>
+          <h4>Sénégal · Mauritanie · Cap-Vert · Guinée-Bissau</h4>
+          <p>Conférence inter-territoriale ouest-africaine.</p>
+          <a href="/eglise-afrique-senegal.html">L’Église dans l’Ouest atlantique</a>
+        </div>
+        <div class="country-card">
+          <span class="flag">🇨🇲</span>
+          <h4>Cameroun</h4>
+          <p>CENC — Église bilingue, dialogue interreligieux et paix.</p>
+          <a href="/eglise-afrique-cameroun.html">L’Église au Cameroun</a>
+        </div>
+        <div class="country-card">
+          <span class="flag">🇲🇬</span>
+          <h4>Madagascar</h4>
+          <p>CEM — voix de stabilité dans la transition politique.</p>
+          <a href="/eglise-afrique-madagascar.html">L’Église à Madagascar</a>
+        </div>
+
+      </div>
+
+      <div class="note">Les conférences régionales (RECOWA-CERAO, ACEAC) et les autres conférences nationales du continent (Bénin, Togo, Mali, Guinée, Tchad, Rwanda, etc.) mériteront un traitement spécifique dans les mois à venir.</div>
+
+    </div>
+  </section>
+
+  <section class="sources">
+    <div class="wrap">
+      <h2>Sources</h2>
+      <ul>
+        <li>SCEAM : <a href="https://secam.org/fr/" target="_blank" rel="noopener">secam.org/fr</a></li>
+        <li>Liste des conférences régionales du SCEAM : <a href="https://secam.org/fr/regional-conferences-of-secam/" target="_blank" rel="noopener">secam.org/fr/regional-conferences-of-secam</a></li>
+        <li>Documents pontificaux : <a href="https://www.vatican.va/" target="_blank" rel="noopener">vatican.va</a></li>
+      </ul>
+    </div>
+  </section>
+
+
+  <footer>
+    <div class="wrap">
+      Encyclicum ✝ &nbsp;·&nbsp;
+      <a href="/">Accueil</a> &nbsp;·&nbsp;
+      <em>La sagesse des papes, accessible — pour tous les continents</em>
+    </div>
+  </footer>
+
+</body>
+</html>

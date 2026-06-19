@@ -1,102 +1,263 @@
-<!-- ============================================================
-     SECTION : Webinaire passé — Magnifica Humanitas
-     À insérer dans webinaires.html, idéalement avant
-     la section "📚 Prochains webinaires"
-     ============================================================ -->
+<!DOCTYPE html>
+<html lang="fr-CA">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Webinaires — Encyclicum · Encyclicum</title>
+  <meta name="description" content="Les webinaires gratuits d'Encyclicum : analyses commentées des grands textes du magistère pontifical. Prochain cycle : Doctrine sociale de l'Église, automne 2026.">
 
-<section class="webinaire-replay" style="
-  background: #f6f1e6;
-  border-left: 4px solid #c9a544;
-  padding: 2.5rem 2rem;
-  margin: 3rem 0;
-  border-radius: 4px;
-">
-  <p style="
-    color: #c9a544;
-    font-size: 0.85rem;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    margin: 0 0 0.5rem 0;
-    font-weight: 600;
-  ">
-    ✓ Webinaire passé · Replay disponible
-  </p>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=Inter+Tight:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #2a3447;
+    --navy-deep: #1a2336;
+    --gold: #c9a544;
+    --gold-soft: #d9b96a;
+    --cream: #f5f1e8;
+    --cream-deep: #ebe5d4;
+    --ink: #1f2937;
+    --muted: #64748b;
+    --line: #e2dccf;
+    --white: #ffffff;
+    --serif: 'Fraunces', Georgia, serif;
+    --sans: 'Inter Tight', system-ui, -apple-system, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; font-family: var(--sans); color: var(--ink); background: var(--cream); line-height: 1.7; font-size: 17px; }
+  .wrap { max-width: 920px; margin: 0 auto; padding: 0 1.5rem; }
+  .wrap-wide { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
 
-  <h2 style="
-    color: #2a3447;
-    font-family: 'Fraunces', Georgia, serif;
-    font-size: 1.9rem;
-    margin: 0.3rem 0 0.8rem 0;
-    font-weight: 700;
-  ">
-    <em>« Magnifica Humanitas »</em>
-  </h2>
+  header.site { background: var(--navy-deep); border-bottom: 1px solid rgba(201, 165, 68, 0.25); }
+  .nav-main { padding: 1.1rem 0; }
+  .nav-main .wrap-wide { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+  .nav-main .brand { color: var(--cream); font-family: var(--serif); font-size: 1.4rem; font-weight: 600; text-decoration: none; }
+  .nav-main .brand span { color: var(--gold); }
+  .nav-main nav a { color: var(--cream); text-decoration: none; margin-left: 1.4rem; font-size: 0.95rem; opacity: 0.85; }
+  .nav-main nav a:first-child { margin-left: 0; }
+  .nav-main nav a:hover { opacity: 1; color: var(--gold-soft); }
 
-  <p style="color: #2a3447; font-size: 1.05rem; margin: 0 0 1.5rem 0;">
-    ou la doctrine catholique de l'intelligence artificielle —
-    <strong>Dimanche 14 juin 2026</strong>
-  </p>
+  .nav-continents { background: rgba(0,0,0,0.18); padding: 0.7rem 0; border-top: 1px solid rgba(201, 165, 68, 0.15); }
+  .nav-continents .wrap-wide { display: flex; align-items: center; flex-wrap: wrap; gap: 0.4rem 1rem; }
+  .nav-continents .label { color: var(--gold); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.18em; font-weight: 600; margin-right: 0.5rem; }
+  .nav-continents a { color: rgba(245, 241, 232, 0.78); text-decoration: none; font-size: 0.9rem; padding: 0.2rem 0.5rem; border-radius: 3px; transition: all 0.15s; }
+  .nav-continents a:hover { color: var(--gold-soft); background: rgba(255,255,255,0.06); }
+  .nav-continents a.active { color: var(--gold); background: rgba(201, 165, 68, 0.12); font-weight: 600; }
 
-  <p style="color: #2a3447; line-height: 1.7; margin: 0 0 1.8rem 0;">
-    Le webinaire d'analyse de la première encyclique du pape Léon XIV
-    s'est tenu le 14 juin 2026. La présentation utilisée durant la session
-    est désormais disponible en libre consultation.
-  </p>
+  .hero { background: var(--navy-deep); color: var(--cream); padding: 4rem 0 5rem; position: relative; }
+  .hero::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 3px; background: linear-gradient(90deg, transparent, var(--gold) 50%, transparent); }
+  .hero .eyebrow { color: var(--gold); text-transform: uppercase; letter-spacing: 0.18em; font-size: 0.85rem; font-weight: 600; margin-bottom: 1rem; }
+  .hero h1 { font-family: var(--serif); font-size: clamp(2rem, 4.5vw, 3rem); font-weight: 700; line-height: 1.15; margin: 0 0 1rem 0; letter-spacing: -0.01em; }
+  .hero h1 em { font-style: italic; color: var(--gold-soft); }
+  .hero .lede { font-size: 1.15rem; max-width: 720px; color: rgba(245, 241, 232, 0.92); margin: 0; line-height: 1.65; }
 
-  <!-- Bloc de téléchargement -->
-  <div style="
-    background: #ffffff;
-    border: 1px solid #e2e6f0;
-    padding: 1.25rem 1.5rem;
-    border-radius: 6px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 1rem;
-    margin-bottom: 1.5rem;
-  ">
-    <div>
-      <p style="margin: 0; font-weight: 600; color: #2a3447;">
-        📄 Présentation du webinaire (PDF, 16 diapositives)
-      </p>
-      <p style="margin: 0.2rem 0 0 0; font-size: 0.9rem; color: #64748b;">
-        Plan complet, citations, principes et pistes d'action
-      </p>
+  section.content { padding: 4rem 0; }
+  section.content.alt { background: var(--cream-deep); }
+  section.content h2 { font-family: var(--serif); font-size: clamp(1.6rem, 3vw, 2.1rem); color: var(--navy); font-weight: 700; margin: 0 0 0.6rem 0; padding-top: 1.5rem; border-top: 2px solid var(--gold); }
+  section.content h2:first-child { padding-top: 0; border-top: none; }
+  section.content h3 { font-family: var(--serif); font-size: 1.3rem; color: var(--navy); font-weight: 600; margin: 2rem 0 0.6rem 0; }
+  section.content p { color: var(--ink); margin: 0.5rem 0 1rem 0; }
+
+  .value-card { background: var(--white); border-left: 4px solid var(--gold); padding: 1.4rem 1.6rem; margin: 1rem 0; border-radius: 4px; }
+  .value-card h3 { margin-top: 0; }
+  .value-card p { margin-bottom: 0; }
+
+  .doc-card { background: var(--white); border: 1px solid var(--line); border-radius: 6px; padding: 1.4rem 1.6rem; margin: 1rem 0; }
+  .doc-card .doc-meta { color: var(--gold); text-transform: uppercase; letter-spacing: 0.12em; font-size: 0.75rem; font-weight: 600; margin-bottom: 0.3rem; }
+  .doc-card h4 { font-family: var(--serif); color: var(--navy); margin: 0 0 0.6rem 0; font-size: 1.15rem; font-weight: 600; }
+  .doc-card p { margin: 0; }
+  .doc-card .doc-source { display: inline-block; margin-top: 0.8rem; font-size: 0.85rem; color: var(--navy); text-decoration: none; padding: 0.3rem 0.7rem; background: var(--cream); border-radius: 3px; transition: background 0.15s; }
+  .doc-card .doc-source:hover { background: var(--gold); color: var(--navy-deep); }
+  .doc-card .doc-source::before { content: '↗ '; opacity: 0.6; }
+
+  .pillars { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0.8rem; margin: 1.5rem 0; }
+  .pillar { background: var(--white); border-left: 3px solid var(--gold); padding: 1rem 1.2rem; border-radius: 4px; }
+  .pillar .pillar-num { color: var(--gold); font-family: var(--serif); font-weight: 700; font-size: 1.1rem; }
+  .pillar .pillar-title { display: block; font-weight: 600; color: var(--navy); margin: 0.2rem 0; }
+  .pillar .pillar-desc { font-size: 0.9rem; color: var(--muted); }
+
+  .countries { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; margin: 1.5rem 0; }
+  .country-card { background: var(--white); border: 1px solid var(--line); border-radius: 6px; padding: 1.4rem 1.6rem; transition: all 0.2s; }
+  .country-card:hover { border-color: var(--gold); box-shadow: 0 4px 12px rgba(42, 52, 71, 0.08); }
+  .country-card .flag { font-size: 1.4rem; }
+  .country-card h4 { font-family: var(--serif); color: var(--navy); margin: 0.4rem 0; font-size: 1.1rem; font-weight: 600; }
+  .country-card p { font-size: 0.9rem; color: var(--muted); margin: 0 0 0.8rem 0; }
+  .country-card a { color: var(--navy); text-decoration: none; font-weight: 600; font-size: 0.9rem; }
+  .country-card a:hover { color: var(--gold); }
+  .country-card a::after { content: ' →'; }
+
+  blockquote { border-left: 4px solid var(--gold); padding: 0.5rem 0 0.5rem 1.5rem; margin: 1.5rem 0; font-family: var(--serif); font-style: italic; color: var(--navy); font-size: 1.15rem; line-height: 1.5; }
+  blockquote cite { display: block; font-size: 0.9rem; color: var(--muted); font-style: normal; margin-top: 0.6rem; font-family: var(--sans); }
+
+  .note { background: var(--cream); border-top: 1px solid var(--muted); border-bottom: 1px solid var(--muted); padding: 1rem 1.4rem; margin: 2rem 0; font-style: italic; color: var(--muted); font-size: 0.95rem; }
+
+  .sources { background: var(--navy); color: var(--cream); padding: 3rem 0; }
+  .sources h2 { color: var(--cream); border-top-color: var(--gold); }
+  .sources a { color: var(--gold-soft); }
+  .sources ul { padding-left: 1.2rem; }
+  .sources li { margin: 0.4rem 0; color: rgba(245, 241, 232, 0.85); }
+
+  footer { background: var(--navy-deep); color: rgba(245, 241, 232, 0.6); padding: 2rem 0; text-align: center; font-size: 0.9rem; border-top: 1px solid rgba(201, 165, 68, 0.2); }
+  footer a { color: var(--gold-soft); text-decoration: none; }
+
+  @media (max-width: 700px) {
+    section.content { padding: 2.5rem 0; }
+    .hero { padding: 3rem 0 4rem; }
+    .nav-main nav a { margin-left: 0.8rem; font-size: 0.85rem; }
+    .nav-continents .label { width: 100%; margin-bottom: 0.3rem; }
+  }
+</style>
+
+</head>
+<body>
+
+  <header class="site">
+    <div class="nav-main">
+      <div class="wrap-wide">
+        <a href="/" class="brand">Encyclicum <span>✝</span></a>
+        <nav>
+          <a href="/index.html">Accueil</a>
+          <a href="/syntheses.html">Synthèses</a>
+          <a href="/webinaires.html">Webinaires</a>
+          <a href="/mission-vision-valeurs.html">Mission</a>
+        </nav>
+      </div>
     </div>
-    <a href="magnifica-humanitas-webinaire-2026-06-14.pdf"
-       download
-       style="
-         background: #2a3447;
-         color: #ffffff;
-         padding: 0.7rem 1.4rem;
-         text-decoration: none;
-         border-radius: 4px;
-         font-weight: 600;
-         font-size: 0.95rem;
-         white-space: nowrap;
-       ">
-      Télécharger ↓
-    </a>
-  </div>
-
-  <!-- Aperçu PDF intégré (optionnel — supprimer le bloc si tu préfères
-       seulement le lien de téléchargement) -->
-  <details style="margin-top: 1.5rem;">
-    <summary style="
-      cursor: pointer;
-      color: #2a3447;
-      font-weight: 600;
-      padding: 0.6rem 0;
-    ">
-      ▸ Aperçu de la présentation
-    </summary>
-    <div style="margin-top: 1rem; border: 1px solid #e2e6f0; border-radius: 4px; overflow: hidden;">
-      <iframe
-        src="magnifica-humanitas-webinaire-2026-06-14.pdf#view=FitH"
-        title="Aperçu du webinaire Magnifica Humanitas"
-        style="width: 100%; height: 600px; border: 0; display: block;">
-      </iframe>
+    <div class="nav-continents">
+      <div class="wrap-wide">
+        <span class="label">L'Église dans le monde</span>
+        <a href="/eglise-canada.html">Canada</a>
+        <a href="/eglise-quebec.html">Québec</a>
+        <a href="/eglise-amerique.html">Amérique</a>
+        <a href="/eglise-afrique.html">Afrique</a>
+        <a href="/eglise-europe.html">Europe</a>
+        <a href="/eglise-asie.html">Asie</a>
+        <a href="/eglise-oceanie.html">Océanie</a>
+      </div>
     </div>
-  </details>
-</section>
+  </header>
+
+  <section class="hero">
+    <div class="wrap">
+      <p class="eyebrow">Webinaires gratuits</p>
+      <h1><em>Webinaires</em> ✝</h1>
+      <p class="lede">Des sessions en ligne ouvertes à toutes et tous, pour découvrir, décrypter et appliquer la sagesse des papes face aux grands défis contemporains.</p>
+    </div>
+  </section>
+
+
+  <section class="content">
+    <div class="wrap">
+      <p>Des sessions en ligne ouvertes à toutes et tous, pour découvrir, décrypter et appliquer la sagesse des papes face aux grands défis contemporains.</p>
+    </div>
+  </section>
+
+  <section class="content alt">
+    <div class="wrap">
+
+      <h2>★ Prochain webinaire · Gratuit</h2>
+
+      <div style="background: var(--white); border-left: 4px solid var(--gold); padding: 2.2rem 2rem; border-radius: 4px; margin: 1rem 0;">
+        <p style="color: var(--gold); text-transform: uppercase; letter-spacing: 0.15em; font-size: 0.85rem; font-weight: 600; margin: 0 0 0.4rem 0;">Cycle automne 2026 · Doctrine sociale de l'Église</p>
+        <h3 style="font-family: var(--serif); color: var(--navy); font-size: 1.7rem; margin: 0.3rem 0 0.8rem 0; padding: 0; font-weight: 700;">Découvrir la doctrine sociale de l'Église</h3>
+        <p style="color: var(--ink); font-size: 1.05rem; margin: 0 0 1.2rem 0;">Une synthèse des différentes encycliques sociales de l'Église, par thèmes, dans la formule éprouvée de la série Encyclicum.</p>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; margin: 1.5rem 0;">
+          <div style="background: var(--cream); padding: 1rem; border-radius: 4px; text-align: center;">
+            <div style="font-size: 1.5rem;">📅</div>
+            <p style="margin: 0.3rem 0 0 0; font-weight: 600; color: var(--navy);">Automne 2026</p>
+            <p style="margin: 0.2rem 0 0 0; font-size: 0.85rem; color: var(--muted);">Date à venir</p>
+          </div>
+          <div style="background: var(--cream); padding: 1rem; border-radius: 4px; text-align: center;">
+            <div style="font-size: 1.5rem;">💻</div>
+            <p style="margin: 0.3rem 0 0 0; font-weight: 600; color: var(--navy);">En direct sur Zoom</p>
+            <p style="margin: 0.2rem 0 0 0; font-size: 0.85rem; color: var(--muted);">Durée : 1 heure</p>
+          </div>
+          <div style="background: var(--cream); padding: 1rem; border-radius: 4px; text-align: center;">
+            <div style="font-size: 1.5rem;">🎙️</div>
+            <p style="margin: 0.3rem 0 0 0; font-weight: 600; color: var(--navy);">Animé par</p>
+            <p style="margin: 0.2rem 0 0 0; font-size: 0.85rem; color: var(--muted);">Dr W. Marc Zongo</p>
+          </div>
+        </div>
+
+        <h4 style="font-family: var(--serif); color: var(--navy); margin-top: 1.5rem;">Une formule en trois temps</h4>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; margin: 1.2rem 0;">
+          <div style="border-left: 3px solid var(--gold); padding-left: 1rem;">
+            <p style="color: var(--gold); font-weight: 600; margin: 0; font-size: 0.85rem;">Partie 1</p>
+            <p style="font-family: var(--serif); font-size: 1.1rem; font-weight: 600; color: var(--navy); margin: 0.2rem 0;">Synthèse</p>
+            <p style="font-size: 0.9rem; color: var(--muted); margin: 0;">Les enseignements clés des encycliques sociales</p>
+          </div>
+          <div style="border-left: 3px solid var(--gold); padding-left: 1rem;">
+            <p style="color: var(--gold); font-weight: 600; margin: 0; font-size: 0.85rem;">Partie 2</p>
+            <p style="font-family: var(--serif); font-size: 1.1rem; font-weight: 600; color: var(--navy); margin: 0.2rem 0;">Implications pour notre temps</p>
+            <p style="font-size: 0.9rem; color: var(--muted); margin: 0;">Lire les défis actuels à la lumière du Magistère</p>
+          </div>
+          <div style="border-left: 3px solid var(--gold); padding-left: 1rem;">
+            <p style="color: var(--gold); font-weight: 600; margin: 0; font-size: 0.85rem;">Partie 3</p>
+            <p style="font-family: var(--serif); font-size: 1.1rem; font-weight: 600; color: var(--navy); margin: 0.2rem 0;">Actions concrètes</p>
+            <p style="font-size: 0.9rem; color: var(--muted); margin: 0;">Pistes pour personne, communauté et cité</p>
+          </div>
+        </div>
+
+        <h4 style="font-family: var(--serif); color: var(--navy); margin-top: 1.5rem;">Sujets abordés</h4>
+        <p style="margin-top: 0.5rem;">De <em>Rerum Novarum</em> (1891) à <em>Caritas in Veritate</em> (2009), en passant par <em>Quadragesimo Anno</em>, <em>Mater et Magistra</em>, <em>Pacem in Terris</em>, <em>Populorum Progressio</em>, <em>Laborem Exercens</em>, <em>Sollicitudo Rei Socialis</em>, <em>Centesimus Annus</em> et <em>Gaudium et Spes</em> : un siècle et demi d'enseignement social rendu accessible.</p>
+
+        <p style="margin-top: 1.5rem;"><strong>Pour qui ?</strong> Chrétiens · Engagés associatifs · Professionnels · Entrepreneurs · Étudiants · Tous publics intéressés par la pensée sociale catholique.</p>
+
+        <div style="background: var(--cream); padding: 1.2rem 1.5rem; border-radius: 6px; margin-top: 1.5rem;">
+          <p style="margin: 0; font-weight: 600; color: var(--navy);">📩 Vous voulez être informé de la date ?</p>
+          <p style="margin: 0.5rem 0 0 0;">Écrivez à <a href="mailto:metanoia_strategie@hotmail.com?subject=Webinaire%20automne%202026%20-%20Inscription" style="color: var(--navy); font-weight: 600;">metanoia_strategie@hotmail.com</a> avec en objet « Webinaire automne 2026 — Inscription ». Le lien Zoom et un rappel vous seront envoyés dès que la date sera fixée.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="content">
+    <div class="wrap">
+
+      <h2>✓ Webinaire passé · Replay disponible</h2>
+
+      <div style="background: var(--white); border-left: 4px solid var(--gold); padding: 2rem; border-radius: 4px;">
+        <p style="color: var(--gold); text-transform: uppercase; letter-spacing: 0.15em; font-size: 0.85rem; font-weight: 600; margin: 0 0 0.4rem 0;">14 juin 2026 · Encyclique de Léon XIV</p>
+        <h3 style="font-family: var(--serif); color: var(--navy); font-size: 1.7rem; margin: 0.3rem 0 0.8rem 0; padding: 0; font-weight: 700;"><em>« Magnifica Humanitas »</em></h3>
+        <p style="color: var(--ink); font-size: 1.05rem; margin: 0 0 1.2rem 0;">Ou la doctrine catholique de l'intelligence artificielle. Analyse et décryptage de la première encyclique pontificale consacrée à l'IA.</p>
+
+        <p>Le webinaire d'analyse de la première encyclique du pape Léon XIV s'est tenu le 14 juin 2026. La présentation utilisée durant la session est disponible en libre consultation.</p>
+
+        <div style="background: var(--cream); padding: 1.2rem 1.5rem; border-radius: 6px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; margin-top: 1.5rem;">
+          <div>
+            <p style="margin: 0; font-weight: 600; color: var(--navy);">📄 Présentation du webinaire</p>
+            <p style="margin: 0.2rem 0 0 0; font-size: 0.9rem; color: var(--muted);">PDF · 16 diapositives · Plan complet, citations, principes et pistes d'action</p>
+          </div>
+          <a href="/magnifica-humanitas-webinaire-2026-06-14.pdf" download style="background: var(--navy); color: var(--white); padding: 0.7rem 1.4rem; text-decoration: none; border-radius: 4px; font-weight: 600; font-size: 0.95rem; white-space: nowrap;">Télécharger ↓</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="content alt">
+    <div class="wrap">
+
+      <h2>📚 Prochains webinaires</h2>
+      <p>Après le cycle d'automne sur la doctrine sociale, d'autres rendez-vous viendront enrichir le programme — sur l'écologie intégrale (<em>Laudato Si'</em>), la fraternité (<em>Fratelli Tutti</em>), la mission (<em>Evangelii Gaudium</em>), parmi d'autres.</p>
+      <p>Pour être informé des prochaines dates : <a href="mailto:metanoia_strategie@hotmail.com?subject=Newsletter%20Encyclicum" style="color: var(--navy); font-weight: 600;">metanoia_strategie@hotmail.com</a></p>
+
+    </div>
+  </section>
+
+
+  <footer>
+    <div class="wrap">
+      Encyclicum ✝ &nbsp;·&nbsp;
+      <a href="/">Accueil</a> &nbsp;·&nbsp;
+      <em>La sagesse des papes, accessible — pour tous les continents</em>
+    </div>
+  </footer>
+
+</body>
+</html>
