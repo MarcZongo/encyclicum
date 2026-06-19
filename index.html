@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Encyclicum — La doctrine sociale de l'Église, accessible · Encyclicum</title>
-  <meta name="description" content="Encyclicum rend accessible la doctrine sociale de l'Église : encycliques sociales pontificales, exhortations, et la voix des conférences épiscopales sur les sept continents. Webinaires gratuits et formations sur mesure.">
+  <meta name="description" content="Encyclicum vulgarise la doctrine sociale de l'Église en français : synthèses, webinaires gratuits, formations sur mesure. De Rerum Novarum (1891) à Magnifica Humanitas (2026). Voix des conférences épiscopales sur les sept continents.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -29,145 +29,104 @@
   body { margin: 0; font-family: var(--sans); color: var(--ink); background: var(--cream); line-height: 1.7; font-size: 17px; }
   body.menu-open { overflow: hidden; }
   .wrap { max-width: 920px; margin: 0 auto; padding: 0 1.5rem; }
-  .wrap-wide { max-width: 1180px; margin: 0 auto; padding: 0 1.5rem; }
+  .wrap-wide { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
 
-  /* ============ HEADER + HAMBURGER ============ */
-  header.site { background: var(--navy-deep); border-bottom: 1px solid rgba(201, 165, 68, 0.25); position: sticky; top: 0; z-index: 100; }
-  .brand-row { display: flex; justify-content: space-between; align-items: center; padding: 1.1rem 0; gap: 1rem; }
-  .brand { color: var(--cream); text-decoration: none; display: flex; flex-direction: column; line-height: 1.15; }
-  .brand-name { font-family: var(--serif); font-size: 1.55rem; font-weight: 600; letter-spacing: -0.01em; }
+  /* ============ HEADER STYLE METANOIA ============ */
+  header.site { background: var(--navy-deep); border-bottom: 1px solid rgba(201, 165, 68, 0.2); position: sticky; top: 0; z-index: 100; }
+  .brand-row { display: flex; align-items: center; gap: 2rem; padding: 1rem 0; }
+  .brand { color: var(--cream); text-decoration: none; display: flex; flex-direction: column; line-height: 1.15; flex-shrink: 0; }
+  .brand-name { font-family: var(--serif); font-size: 1.45rem; font-weight: 600; letter-spacing: -0.01em; }
   .brand-name .cross { color: var(--gold); }
-  .brand-tagline { font-family: var(--sans); font-size: 0.78rem; color: var(--gold-soft); text-transform: uppercase; letter-spacing: 0.18em; font-weight: 500; margin-top: 0.25rem; }
+  .brand-tagline { font-family: var(--serif); font-style: italic; font-size: 0.8rem; color: var(--gold-soft); letter-spacing: 0.05em; margin-top: 0.2rem; }
 
-  /* Hamburger button — à gauche */
+  /* Nav horizontale style MetanoIA (visible sur desktop) */
+  .main-nav { display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; margin-left: auto; }
+  .main-nav a { color: rgba(245, 241, 232, 0.82); text-decoration: none; font-size: 0.9rem; padding: 0.4rem 0.7rem; border-radius: 3px; transition: all 0.15s; display: flex; align-items: center; gap: 0.35rem; }
+  .main-nav a:hover { color: var(--gold-soft); background: rgba(255, 255, 255, 0.04); }
+  .main-nav a.active { color: var(--gold); }
+  .main-nav a .num { color: var(--gold); font-size: 0.72rem; font-weight: 600; opacity: 0.7; }
+  .main-nav a.cta {
+    background: linear-gradient(135deg, var(--gold) 0%, var(--gold-soft) 100%);
+    color: var(--navy-deep);
+    font-weight: 600;
+    padding: 0.5rem 1.1rem;
+    margin-left: 0.5rem;
+    border-radius: 4px;
+  }
+  .main-nav a.cta:hover { background: var(--gold-soft); transform: translateY(-1px); }
+  .main-nav a.cta::after { content: ' →'; }
+
+  /* Hamburger : caché sur desktop, visible sur mobile */
   .hamburger {
+    display: none;
     background: transparent;
     border: 1px solid rgba(201, 165, 68, 0.4);
     border-radius: 4px;
-    width: 50px;
-    height: 44px;
-    cursor: pointer;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 5px;
+    width: 44px; height: 40px;
+    cursor: pointer; padding: 0;
+    flex-direction: column; justify-content: center; align-items: center; gap: 4px;
     transition: all 0.2s;
-    flex-shrink: 0;
+    margin-left: auto;
   }
-  .hamburger:hover { border-color: var(--gold); background: rgba(201, 165, 68, 0.08); }
-  .hamburger span {
-    display: block;
-    width: 22px;
-    height: 2px;
-    background: var(--gold-soft);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-  body.menu-open .hamburger span:nth-child(1) { transform: translateY(7px) rotate(45deg); background: var(--gold); }
+  .hamburger:hover { border-color: var(--gold); }
+  .hamburger span { display: block; width: 20px; height: 2px; background: var(--gold-soft); transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+  body.menu-open .hamburger span:nth-child(1) { transform: translateY(6px) rotate(45deg); background: var(--gold); }
   body.menu-open .hamburger span:nth-child(2) { opacity: 0; }
-  body.menu-open .hamburger span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); background: var(--gold); }
+  body.menu-open .hamburger span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); background: var(--gold); }
 
-  /* Menu overlay + panel */
-  .menu-overlay {
-    position: fixed; inset: 0; background: rgba(26, 35, 54, 0.6); backdrop-filter: blur(2px);
-    opacity: 0; pointer-events: none; transition: opacity 0.3s; z-index: 200;
-  }
+  /* Menu mobile overlay */
+  .menu-overlay { position: fixed; inset: 0; background: rgba(26, 35, 54, 0.6); backdrop-filter: blur(2px); opacity: 0; pointer-events: none; transition: opacity 0.3s; z-index: 200; display: none; }
+  .menu-panel { position: fixed; top: 0; left: 0; bottom: 0; width: 100%; max-width: 380px; background: var(--navy-deep); color: var(--cream); transform: translateX(-100%); transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1); z-index: 201; overflow-y: auto; box-shadow: 10px 0 40px rgba(0, 0, 0, 0.3); padding: 2rem; display: none; }
   body.menu-open .menu-overlay { opacity: 1; pointer-events: auto; }
-
-  .menu-panel {
-    position: fixed; top: 0; left: 0; bottom: 0; width: 100%; max-width: 420px;
-    background: var(--navy-deep); color: var(--cream);
-    transform: translateX(-100%); transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-    z-index: 201; overflow-y: auto;
-    box-shadow: 10px 0 40px rgba(0, 0, 0, 0.3);
-    padding: 2rem 2rem 4rem;
-  }
   body.menu-open .menu-panel { transform: translateX(0); }
-
-  .menu-panel .menu-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 2.5rem; }
-  .menu-panel .menu-logo { font-family: var(--serif); font-size: 1.2rem; color: var(--cream); font-weight: 600; }
-  .menu-panel .menu-logo .cross { color: var(--gold); }
-  .menu-panel .menu-close {
-    background: transparent; border: 1px solid rgba(201, 165, 68, 0.4); border-radius: 4px;
-    color: var(--gold-soft); font-size: 1.4rem; width: 44px; height: 44px; cursor: pointer;
-    line-height: 0; transition: all 0.15s;
-  }
-  .menu-panel .menu-close:hover { color: var(--gold); border-color: var(--gold); }
-
   .menu-panel ul { list-style: none; padding: 0; margin: 0; }
-  .menu-panel > ul > li { border-bottom: 1px solid rgba(201, 165, 68, 0.12); }
-  .menu-panel > ul > li:last-child { border-bottom: none; }
-  .menu-panel a {
-    color: var(--cream); text-decoration: none; padding: 0.95rem 0; display: block;
-    font-size: 1rem; transition: color 0.15s;
-  }
-  .menu-panel a:hover { color: var(--gold-soft); }
+  .menu-panel ul li { border-bottom: 1px solid rgba(201, 165, 68, 0.12); }
+  .menu-panel a { color: var(--cream); text-decoration: none; padding: 0.9rem 0; display: block; font-size: 0.95rem; }
   .menu-panel a.active { color: var(--gold); font-weight: 600; }
-
-  /* CTA Formations highlighted */
-  .menu-panel a.cta {
-    background: linear-gradient(135deg, var(--gold) 0%, var(--gold-soft) 100%);
-    color: var(--navy-deep);
-    padding: 0.95rem 1.2rem;
-    border-radius: 4px;
-    margin: 0.6rem 0;
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  .menu-panel a.cta:hover { color: var(--navy-deep); transform: translateX(2px); }
-  .menu-panel a.cta::after { content: '→'; font-size: 1.2rem; }
-
-  /* Sections déroulantes */
-  .menu-panel details { padding: 0.95rem 0; }
-  .menu-panel details summary {
-    cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center;
-    font-size: 1rem; color: var(--cream); transition: color 0.15s;
-  }
-  .menu-panel details summary:hover { color: var(--gold-soft); }
+  .menu-panel a.cta { color: var(--gold); font-weight: 600; }
+  .menu-panel .menu-close { background: transparent; border: 1px solid rgba(201, 165, 68, 0.4); color: var(--gold-soft); font-size: 1.4rem; width: 40px; height: 40px; cursor: pointer; border-radius: 4px; line-height: 0; margin-bottom: 1.5rem; }
+  .menu-panel details summary { cursor: pointer; list-style: none; padding: 0.9rem 0; color: var(--cream); display: flex; justify-content: space-between; }
   .menu-panel details summary::-webkit-details-marker { display: none; }
-  .menu-panel details summary::after {
-    content: '+'; color: var(--gold); font-size: 1.4rem; font-weight: 300;
-    transition: transform 0.25s; display: inline-block;
-  }
+  .menu-panel details summary::after { content: '+'; color: var(--gold); font-size: 1.3rem; transition: transform 0.2s; }
   .menu-panel details[open] summary::after { transform: rotate(45deg); }
-  .menu-panel details > ul { padding-left: 1rem; margin-top: 0.4rem; border-left: 2px solid rgba(201, 165, 68, 0.2); }
-  .menu-panel details > ul > li > a { font-size: 0.92rem; padding: 0.5rem 0 0.5rem 0.8rem; color: rgba(245, 241, 232, 0.85); }
-  .menu-panel details > ul > li > a:hover { color: var(--gold-soft); }
-  .menu-panel details details { padding: 0.5rem 0 0.5rem 0.8rem; }
-  .menu-panel details details summary { font-size: 0.92rem; color: rgba(245, 241, 232, 0.85); }
+  .menu-panel details > ul { padding-left: 0.8rem; border-left: 2px solid rgba(201, 165, 68, 0.2); }
 
-  .menu-footer { margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(201, 165, 68, 0.2); font-size: 0.85rem; color: rgba(245, 241, 232, 0.6); }
-  .menu-footer a { color: var(--gold-soft); padding: 0.3rem 0; }
+  @media (max-width: 920px) {
+    .main-nav { display: none; }
+    .hamburger { display: flex; }
+    .menu-overlay, .menu-panel { display: block; }
+  }
 
-  /* ============ HERO ============ */
+  /* ============ HERO style MetanoIA ============ */
   .hero { background: var(--navy-deep); color: var(--cream); padding: 4rem 0 5rem; position: relative; }
   .hero::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 3px; background: linear-gradient(90deg, transparent, var(--gold) 50%, transparent); }
-  .hero .eyebrow { color: var(--gold); text-transform: uppercase; letter-spacing: 0.18em; font-size: 0.85rem; font-weight: 600; margin-bottom: 1rem; }
-  .hero h1 { font-family: var(--serif); font-size: clamp(2rem, 4.5vw, 3rem); font-weight: 700; line-height: 1.15; margin: 0 0 1rem 0; letter-spacing: -0.01em; }
-  .hero h1 em { font-style: italic; color: var(--gold-soft); }
-  .hero .slogan {
-    display: inline-block; font-family: var(--serif); font-style: italic;
-    color: var(--gold); font-size: 1rem; letter-spacing: 0.08em;
-    margin: 0.5rem 0 1.5rem; padding: 0.4rem 0;
-    border-top: 1px solid rgba(201, 165, 68, 0.4);
-    border-bottom: 1px solid rgba(201, 165, 68, 0.4);
-  }
-  .hero .lede { font-size: 1.15rem; max-width: 720px; color: rgba(245, 241, 232, 0.92); margin: 0; line-height: 1.65; }
+  .hero .eyebrow { color: var(--gold); text-transform: uppercase; letter-spacing: 0.18em; font-size: 0.82rem; font-weight: 600; margin-bottom: 1rem; }
+  .hero h1 { font-family: var(--serif); font-size: clamp(2.1rem, 5vw, 3.4rem); font-weight: 700; line-height: 1.1; margin: 0 0 1.2rem 0; letter-spacing: -0.015em; }
+  .hero h1 em { font-style: italic; color: var(--gold); font-weight: 600; }
+  .hero .lede { font-size: 1.15rem; max-width: 720px; color: rgba(245, 241, 232, 0.92); margin: 0 0 1.8rem 0; line-height: 1.65; }
+  .hero-ctas { display: flex; gap: 0.8rem; flex-wrap: wrap; margin-top: 1.5rem; }
+  .btn-primary, .btn-secondary { display: inline-block; padding: 0.85rem 1.7rem; border-radius: 4px; text-decoration: none; font-weight: 600; font-size: 0.98rem; transition: all 0.2s; }
+  .btn-primary { background: var(--gold); color: var(--navy-deep); box-shadow: 0 4px 14px rgba(201, 165, 68, 0.3); }
+  .btn-primary:hover { background: var(--gold-soft); transform: translateY(-2px); }
+  .btn-primary::after { content: ' →'; }
+  .btn-secondary { background: transparent; color: var(--cream); border: 1px solid rgba(201, 165, 68, 0.5); }
+  .btn-secondary:hover { border-color: var(--gold); color: var(--gold-soft); }
 
-  /* ============ CONTENT ============ */
+  /* ============ SECTIONS NUMÉROTÉES style MetanoIA ============ */
   section.content { padding: 4rem 0; }
   section.content.alt { background: var(--cream-deep); }
-  section.content h2 { font-family: var(--serif); font-size: clamp(1.6rem, 3vw, 2.1rem); color: var(--navy); font-weight: 700; margin: 0 0 0.6rem 0; padding-top: 1.5rem; border-top: 2px solid var(--gold); }
-  section.content h2:first-child { padding-top: 0; border-top: none; }
+  .section-num { color: var(--gold); font-family: var(--serif); font-size: 0.85rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.4rem; display: block; }
+  section.content h2 { font-family: var(--serif); font-size: clamp(1.7rem, 3.5vw, 2.4rem); color: var(--navy); font-weight: 700; margin: 0 0 1rem 0; line-height: 1.2; letter-spacing: -0.01em; }
+  section.content h2 em { font-style: italic; color: var(--gold); }
   section.content h3 { font-family: var(--serif); font-size: 1.3rem; color: var(--navy); font-weight: 600; margin: 2rem 0 0.6rem 0; }
   section.content p { color: var(--ink); margin: 0.5rem 0 1rem 0; }
+  section.content .lead { font-size: 1.1rem; max-width: 720px; color: var(--muted); }
 
+  /* ============ CARDS ============ */
   .value-card { background: var(--white); border-left: 4px solid var(--gold); padding: 1.4rem 1.6rem; margin: 1rem 0; border-radius: 4px; }
-  .value-card h3 { margin-top: 0; }
-  .value-card p { margin-bottom: 0; }
+  .value-card .card-num { color: var(--gold); font-family: var(--serif); font-size: 0.85rem; font-weight: 600; letter-spacing: 0.1em; }
+  .value-card h3 { margin: 0.3rem 0 0.5rem 0; font-family: var(--serif); color: var(--navy); }
+  .value-card p { margin: 0; }
 
   .doc-card { background: var(--white); border: 1px solid var(--line); border-radius: 6px; padding: 1.4rem 1.6rem; margin: 1rem 0; }
   .doc-card .doc-meta { color: var(--gold); text-transform: uppercase; letter-spacing: 0.12em; font-size: 0.75rem; font-weight: 600; margin-bottom: 0.3rem; }
@@ -177,12 +136,28 @@
   .doc-card .doc-source:hover { background: var(--gold); color: var(--navy-deep); }
   .doc-card .doc-source::before { content: '↗ '; opacity: 0.6; }
 
+  /* Grille de cartes numérotées style MetanoIA */
+  .cards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; margin: 1.5rem 0; }
+  .num-card { background: var(--white); border: 1px solid var(--line); border-radius: 6px; padding: 1.6rem 1.8rem; transition: all 0.2s; }
+  .num-card:hover { border-color: var(--gold); box-shadow: 0 4px 14px rgba(42, 52, 71, 0.06); }
+  .num-card .card-num { color: var(--gold); font-family: var(--serif); font-size: 0.85rem; font-weight: 600; letter-spacing: 0.08em; display: block; margin-bottom: 0.6rem; }
+  .num-card h3 { font-family: var(--serif); color: var(--navy); font-size: 1.25rem; margin: 0 0 0.6rem 0; font-weight: 600; }
+  .num-card p { color: var(--muted); margin: 0 0 0.8rem 0; font-size: 0.95rem; }
+  .num-card ul { list-style: none; padding: 0; margin: 0; }
+  .num-card ul li { color: var(--ink); font-size: 0.9rem; padding: 0.2rem 0; padding-left: 1rem; position: relative; }
+  .num-card ul li::before { content: '·'; position: absolute; left: 0.2rem; color: var(--gold); font-weight: 700; }
+  .num-card a.card-link { display: inline-block; margin-top: 0.8rem; color: var(--navy); font-weight: 600; font-size: 0.9rem; text-decoration: none; }
+  .num-card a.card-link:hover { color: var(--gold); }
+  .num-card a.card-link::after { content: ' →'; }
+
+  /* Pillars (12 piliers) */
   .pillars { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0.8rem; margin: 1.5rem 0; }
   .pillar { background: var(--white); border-left: 3px solid var(--gold); padding: 1rem 1.2rem; border-radius: 4px; }
   .pillar .pillar-num { color: var(--gold); font-family: var(--serif); font-weight: 700; font-size: 1.1rem; }
   .pillar .pillar-title { display: block; font-weight: 600; color: var(--navy); margin: 0.2rem 0; }
   .pillar .pillar-desc { font-size: 0.9rem; color: var(--muted); }
 
+  /* Countries grid */
   .countries { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; margin: 1.5rem 0; }
   .country-card { background: var(--white); border: 1px solid var(--line); border-radius: 6px; padding: 1.4rem 1.6rem; transition: all 0.2s; }
   .country-card:hover { border-color: var(--gold); box-shadow: 0 4px 12px rgba(42, 52, 71, 0.08); }
@@ -198,79 +173,80 @@
 
   .note { background: var(--cream); border-top: 1px solid var(--muted); border-bottom: 1px solid var(--muted); padding: 1rem 1.4rem; margin: 2rem 0; font-style: italic; color: var(--muted); font-size: 0.95rem; }
 
-  /* ============ FORMATIONS CTA — Bandeau visible ============ */
-  .formations-cta {
-    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-deep) 100%);
-    color: var(--cream);
-    padding: 3.5rem 0;
-    margin: 0;
-    position: relative;
-    overflow: hidden;
-  }
-  .formations-cta::before {
-    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
-    background: linear-gradient(90deg, transparent, var(--gold) 50%, transparent);
-  }
-  .formations-cta::after {
-    content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px;
-    background: linear-gradient(90deg, transparent, var(--gold) 50%, transparent);
-  }
-  .formations-cta .eyebrow { color: var(--gold); text-transform: uppercase; letter-spacing: 0.18em; font-size: 0.8rem; font-weight: 600; }
-  .formations-cta h2 {
-    font-family: var(--serif); font-size: clamp(1.8rem, 3.5vw, 2.4rem);
-    color: var(--cream); margin: 0.8rem 0 1rem; padding: 0; border: none; font-weight: 700;
-  }
-  .formations-cta h2 em { color: var(--gold-soft); font-style: italic; }
-  .formations-cta p { color: rgba(245, 241, 232, 0.9); max-width: 720px; font-size: 1.08rem; }
-  .formations-cta .btn-gold {
-    display: inline-block; background: var(--gold); color: var(--navy-deep);
-    padding: 0.95rem 2.2rem; border-radius: 4px; text-decoration: none;
-    font-weight: 600; font-size: 1.02rem; margin-top: 1.5rem;
-    transition: all 0.2s; box-shadow: 0 4px 14px rgba(201, 165, 68, 0.3);
-  }
-  .formations-cta .btn-gold:hover { background: var(--gold-soft); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(201, 165, 68, 0.4); }
+  /* CTA Formations style MetanoIA */
+  .formations-cta { background: linear-gradient(135deg, var(--navy) 0%, var(--navy-deep) 100%); color: var(--cream); padding: 3.5rem 0; position: relative; }
+  .formations-cta::before, .formations-cta::after { content: ''; position: absolute; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, transparent, var(--gold) 50%, transparent); }
+  .formations-cta::before { top: 0; }
+  .formations-cta::after { bottom: 0; }
+  .formations-cta .section-num { color: var(--gold); }
+  .formations-cta h2 { font-family: var(--serif); font-size: clamp(1.8rem, 3.5vw, 2.4rem); color: var(--cream); margin: 0.6rem 0 1rem; font-weight: 700; line-height: 1.2; }
+  .formations-cta h2 em { color: var(--gold); font-style: italic; }
+  .formations-cta p { color: rgba(245, 241, 232, 0.9); max-width: 720px; font-size: 1.05rem; }
+  .formations-cta .btn-gold { display: inline-block; background: var(--gold); color: var(--navy-deep); padding: 0.95rem 2.2rem; border-radius: 4px; text-decoration: none; font-weight: 600; font-size: 1rem; margin-top: 1.5rem; transition: all 0.2s; box-shadow: 0 4px 14px rgba(201, 165, 68, 0.3); }
+  .formations-cta .btn-gold:hover { background: var(--gold-soft); transform: translateY(-2px); }
   .formations-cta .btn-gold::after { content: ' →'; }
 
-  /* ============ FORMS (Formspree) ============ */
+  /* Forms (Formspree) */
   .form-block { background: var(--white); border: 1px solid var(--line); border-radius: 8px; padding: 2rem; margin: 1.5rem 0; }
   .form-field { margin-bottom: 1.2rem; }
   .form-field label { display: block; font-weight: 600; color: var(--navy); margin-bottom: 0.4rem; font-size: 0.95rem; }
-  .form-field input, .form-field select, .form-field textarea {
-    width: 100%; padding: 0.7rem 0.9rem;
-    border: 1px solid var(--line); border-radius: 4px;
-    font-family: var(--sans); font-size: 0.95rem; color: var(--ink);
-    background: var(--cream); transition: border-color 0.15s, background 0.15s;
-  }
-  .form-field input:focus, .form-field select:focus, .form-field textarea:focus {
-    outline: none; border-color: var(--gold); background: var(--white);
-  }
+  .form-field input, .form-field select, .form-field textarea { width: 100%; padding: 0.7rem 0.9rem; border: 1px solid var(--line); border-radius: 4px; font-family: var(--sans); font-size: 0.95rem; color: var(--ink); background: var(--cream); transition: all 0.15s; }
+  .form-field input:focus, .form-field select:focus, .form-field textarea:focus { outline: none; border-color: var(--gold); background: var(--white); }
   .form-field textarea { resize: vertical; min-height: 120px; }
   .form-field-inline { display: flex; align-items: flex-start; gap: 0.5rem; }
   .form-field-inline input[type=checkbox] { width: auto; margin-top: 0.3rem; }
-  .form-submit {
-    background: var(--navy); color: var(--white); border: none;
-    padding: 0.9rem 2rem; border-radius: 4px; cursor: pointer;
-    font-family: var(--sans); font-size: 1rem; font-weight: 600;
-    transition: background 0.15s;
-  }
+  .form-submit { background: var(--navy); color: var(--white); border: none; padding: 0.9rem 2rem; border-radius: 4px; cursor: pointer; font-family: var(--sans); font-size: 1rem; font-weight: 600; transition: background 0.15s; }
   .form-submit:hover { background: var(--gold); color: var(--navy-deep); }
 
+  /* ============ SECTION RECHERCHE style MetanoIA ============ */
+  .search-section { background: var(--cream-deep); padding: 3.5rem 0; }
+  .search-section .section-num { color: var(--gold); }
+  .search-section h2 { font-family: var(--serif); color: var(--navy); font-size: clamp(1.5rem, 3vw, 1.9rem); margin: 0.4rem 0 1.5rem; }
+  .search-box { position: relative; max-width: 600px; }
+  .search-box input { width: 100%; padding: 1rem 1.2rem 1rem 3rem; border: 2px solid var(--line); border-radius: 8px; font-family: var(--sans); font-size: 1.05rem; background: var(--white); transition: all 0.15s; }
+  .search-box input:focus { outline: none; border-color: var(--gold); box-shadow: 0 4px 14px rgba(201, 165, 68, 0.15); }
+  .search-box::before { content: '🔍'; position: absolute; left: 1rem; top: 50%; transform: translateY(-50%); font-size: 1.1rem; opacity: 0.5; pointer-events: none; }
+  .search-suggestions { margin-top: 1rem; color: var(--muted); font-size: 0.92rem; }
+  .search-suggestions a { color: var(--navy); text-decoration: none; font-weight: 500; padding: 0.2rem 0.5rem; border-radius: 3px; background: var(--cream); margin-right: 0.3rem; display: inline-block; transition: all 0.15s; }
+  .search-suggestions a:hover { background: var(--gold); color: var(--navy-deep); }
+  .search-results { margin-top: 1.5rem; }
+  .search-results .result { padding: 0.8rem 1rem; background: var(--white); border: 1px solid var(--line); border-radius: 4px; margin-bottom: 0.5rem; }
+  .search-results .result a { color: var(--navy); text-decoration: none; font-weight: 600; }
+  .search-results .result a:hover { color: var(--gold); }
+  .search-results .result .result-meta { font-size: 0.85rem; color: var(--muted); margin-top: 0.2rem; }
+  .search-empty { color: var(--muted); font-style: italic; }
+
   .sources { background: var(--navy); color: var(--cream); padding: 3rem 0; }
-  .sources h2 { color: var(--cream); border-top-color: var(--gold); }
+  .sources h2 { color: var(--cream); }
   .sources a { color: var(--gold-soft); }
   .sources ul { padding-left: 1.2rem; }
   .sources li { margin: 0.4rem 0; color: rgba(245, 241, 232, 0.85); }
 
-  footer { background: var(--navy-deep); color: rgba(245, 241, 232, 0.6); padding: 2rem 0; text-align: center; font-size: 0.9rem; border-top: 1px solid rgba(201, 165, 68, 0.2); }
-  footer a { color: var(--gold-soft); text-decoration: none; }
+  /* ============ FOOTER 4 COLONNES style MetanoIA ============ */
+  footer.site { background: var(--navy-deep); color: rgba(245, 241, 232, 0.85); padding: 3.5rem 0 1.5rem; border-top: 3px solid var(--gold); }
+  footer.site .footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 2.5rem; margin-bottom: 2.5rem; }
+  footer.site h4 { font-family: var(--serif); color: var(--cream); font-size: 1.1rem; font-weight: 600; margin: 0 0 1rem 0; }
+  footer.site h4.brand-h { font-size: 1.4rem; }
+  footer.site h4.brand-h .cross { color: var(--gold); }
+  footer.site .footer-brand p { font-size: 0.92rem; color: rgba(245, 241, 232, 0.65); line-height: 1.55; margin: 0.5rem 0 1rem 0; }
+  footer.site .footer-brand .footer-slogan { font-family: var(--serif); font-style: italic; color: var(--gold-soft); font-size: 0.9rem; letter-spacing: 0.05em; margin-top: 0.5rem; }
+  footer.site .footer-col ul { list-style: none; padding: 0; margin: 0; }
+  footer.site .footer-col ul li { margin: 0.5rem 0; }
+  footer.site .footer-col ul li a { color: rgba(245, 241, 232, 0.75); text-decoration: none; font-size: 0.92rem; transition: color 0.15s; }
+  footer.site .footer-col ul li a:hover { color: var(--gold-soft); }
+  footer.site .footer-bottom { border-top: 1px solid rgba(201, 165, 68, 0.2); padding-top: 1.5rem; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; font-size: 0.85rem; color: rgba(245, 241, 232, 0.5); }
+  footer.site .footer-bottom a { color: var(--gold-soft); text-decoration: none; }
+
+  @media (max-width: 800px) {
+    footer.site .footer-grid { grid-template-columns: 1fr 1fr; gap: 1.8rem; }
+  }
+  @media (max-width: 500px) {
+    footer.site .footer-grid { grid-template-columns: 1fr; }
+  }
 
   @media (max-width: 700px) {
     section.content { padding: 2.5rem 0; }
     .hero { padding: 3rem 0 4rem; }
-    .brand-name { font-size: 1.3rem; }
-    .brand-tagline { font-size: 0.7rem; }
-    .menu-panel { padding: 1.5rem; }
-    .formations-cta { padding: 2.5rem 0; }
   }
 </style>
 
@@ -279,150 +255,190 @@
 
   <header class="site">
     <div class="wrap-wide brand-row">
-      <button class="hamburger" onclick="toggleMenu()" aria-label="Ouvrir le menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
       <a href="/" class="brand">
         <span class="brand-name">Encyclicum <span class="cross">✝</span></span>
-        <span class="brand-tagline">Doctrine sociale de l'Église</span>
+        <span class="brand-tagline">Comprendre · Discerner · Agir</span>
       </a>
+      <nav class="main-nav">
+        <a href="/index.html" class="active"><span class="num">01</span>Accueil</a>
+        <a href="/syntheses.html"><span class="num">02</span>Synthèses</a>
+        <a href="/webinaires.html"><span class="num">03</span>Webinaires</a>
+        <a href="/eglise-canada.html"><span class="num">04</span>L'Église par continent</a>
+        <a href="/formations.html"><span class="num">05</span>Formations</a>
+        <a href="/mission-vision-valeurs.html"><span class="num">06</span>À propos</a>
+        <a href="/formations.html#demande" class="cta">Demander une formation</a>
+      </nav>
+      <button class="hamburger" onclick="toggleMenu()" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </header>
 
-
-  <nav class="menu-panel" id="menu" aria-label="Menu principal">
-    <div class="menu-header">
-      <span class="menu-logo">Encyclicum <span class="cross">✝</span></span>
-      <button class="menu-close" onclick="toggleMenu()" aria-label="Fermer le menu">×</button>
-    </div>
-
+  <!-- Menu mobile -->
+  <nav class="menu-panel" id="menu" aria-label="Menu mobile">
+    <button class="menu-close" onclick="toggleMenu()" aria-label="Fermer">×</button>
     <ul>
-      <li><a href="/index.html" class="active">Accueil</a></li>
-      <li><a href="/syntheses.html">Synthèses approfondies</a></li>
+      <li><a href="/index.html">Accueil</a></li>
+      <li><a href="/syntheses.html">Synthèses</a></li>
       <li><a href="/webinaires.html">Webinaires</a></li>
       <li>
         <details>
-          <summary>L'Église dans le monde</summary>
+          <summary>L'Église par continent et par région</summary>
           <ul>
             <li><a href="/eglise-canada.html">Canada</a></li>
             <li><a href="/eglise-quebec.html">Québec</a></li>
             <li><a href="/eglise-amerique.html">Amérique</a></li>
-            <li>
-              <details>
-                <summary>Afrique</summary>
-                <ul>
-                  <li><a href="/eglise-afrique.html">SCEAM (vue continentale)</a></li>
-                  <li><a href="/eglise-afrique-rdc.html">RDC</a></li>
-                  <li><a href="/eglise-afrique-burkina-niger.html">Burkina-Niger</a></li>
-                  <li><a href="/eglise-afrique-cote-ivoire.html">Côte d'Ivoire</a></li>
-                  <li><a href="/eglise-afrique-senegal.html">Sénégal & Ouest atl.</a></li>
-                  <li><a href="/eglise-afrique-cameroun.html">Cameroun</a></li>
-                  <li><a href="/eglise-afrique-madagascar.html">Madagascar</a></li>
-                </ul>
-              </details>
-            </li>
+            <li><details><summary>Afrique</summary><ul>
+              <li><a href="/eglise-afrique.html">SCEAM</a></li>
+              <li><a href="/eglise-afrique-rdc.html">RDC</a></li>
+              <li><a href="/eglise-afrique-burkina-niger.html">Burkina-Niger</a></li>
+              <li><a href="/eglise-afrique-cote-ivoire.html">Côte d'Ivoire</a></li>
+              <li><a href="/eglise-afrique-senegal.html">Sénégal & Ouest atl.</a></li>
+              <li><a href="/eglise-afrique-cameroun.html">Cameroun</a></li>
+              <li><a href="/eglise-afrique-madagascar.html">Madagascar</a></li>
+            </ul></details></li>
             <li><a href="/eglise-europe.html">Europe</a></li>
             <li><a href="/eglise-asie.html">Asie</a></li>
             <li><a href="/eglise-oceanie.html">Océanie</a></li>
           </ul>
         </details>
       </li>
-      <li><a href="/formations.html" class="cta">Formations pour groupes</a></li>
+      <li><a href="/formations.html" class="cta">Formations</a></li>
       <li><a href="/mission-vision-valeurs.html">À propos</a></li>
     </ul>
-
-    <div class="menu-footer">
-      <p style="margin:0;">Encyclicum ✝ · Doctrine sociale de l'Église<br>
-      Une initiative de <a href="https://metanoia-strategie.ca">MetanoIA Stratégie</a></p>
-    </div>
   </nav>
   <div class="menu-overlay" onclick="toggleMenu()" aria-hidden="true"></div>
 
 
   <section class="hero">
     <div class="wrap">
-      <p class="eyebrow">Doctrine sociale de l'Église</p>
-      <h1><em>Encyclicum</em> <span style='color:var(--gold)'>✝</span></h1>
-      <span class="slogan">Comprendre · Discerner · Agir</span><br>
-      <p class="lede">La doctrine sociale de l'Église, synthétisée, classée par thème et rendue accessible à tous — de Léon XIII (1891) à Léon XIV (2026). Et la voix de l'Église sur les sept continents.</p>
+      <p class="eyebrow">Vulgarisation francophone · Sept continents</p>
+      <h1>La <em>sagesse sociale</em> de l'Église, rendue accessible.</h1>
+      <p class="lede">De Léon XIII (1891) à Léon XIV (2026), des synthèses fidèles, des webinaires gratuits et des formations sur mesure — pour comprendre, discerner et agir à la lumière du Magistère.</p>
+      <div class="hero-ctas"><a href="/webinaires.html" class="btn-primary">S'inscrire au prochain webinaire</a><a href="/syntheses.html" class="btn-secondary">Voir les synthèses</a></div>
     </div>
   </section>
 
 
+  <!-- Section 01 : À propos -->
   <section class="content">
-    <div class="wrap">
+    <div class="wrap-wide">
+      <span class="section-num">— 01 · À propos</span>
+      <h2>Un service au cœur de la <em>doctrine sociale</em> de l'Église</h2>
+      <p class="lead">Encyclicum est un service ecclésial laïc, francophone et numérique. Sa mission : rendre accessible à toutes les personnes de bonne volonté la sagesse sociale catholique, de <em>Rerum Novarum</em> (1891) à <em>Magnifica Humanitas</em> (2026), à travers des synthèses fidèles, des webinaires gratuits et des formations sur mesure.</p>
 
-      <div style="background: var(--white); border-left: 4px solid var(--gold); padding: 1.5rem 1.8rem; border-radius: 4px; margin-bottom: 2.5rem;">
-        <p style="color: var(--gold); text-transform: uppercase; letter-spacing: 0.15em; font-size: 0.8rem; font-weight: 600; margin: 0 0 0.4rem 0;">★ Webinaire à venir · Gratuit</p>
-        <h2 style="font-family: var(--serif); color: var(--navy); font-size: 1.6rem; margin: 0 0 0.6rem 0; padding: 0; border: none;">Découvrir la doctrine sociale de l'Église</h2>
-        <p style="color: var(--ink); margin: 0 0 1rem 0;">Une synthèse des différentes encycliques sociales de l'Église, par thèmes, sous la formule éprouvée : <strong>Synthèse – Implications pour notre temps – Actions concrètes</strong>.</p>
-        <p style="color: var(--muted); font-size: 0.95rem; margin: 0;"><strong>Automne 2026</strong> · Date à préciser · <a href="/webinaires.html" style="color: var(--gold); font-weight: 600;">En savoir plus →</a></p>
+      <div class="cards-grid" style="margin-top: 2rem;">
+        <div class="num-card">
+          <span class="card-num">01 · Accessibilité</span>
+          <h3>Pour tous</h3>
+          <p>Rendre lisible ce qui est dense, sans rien sacrifier de la profondeur.</p>
+        </div>
+        <div class="num-card">
+          <span class="card-num">02 · Fidélité</span>
+          <h3>Aux sources</h3>
+          <p>Rester fidèle à l'Évangile et au Magistère, sans paraphrase tendancieuse.</p>
+        </div>
+        <div class="num-card">
+          <span class="card-num">03 · Discernement</span>
+          <h3>En contexte</h3>
+          <p>Appliquer ces enseignements à la lumière de chaque réalité particulière.</p>
+        </div>
+        <div class="num-card">
+          <span class="card-num">04 · Engagement</span>
+          <h3>Pour la fraternité</h3>
+          <p>Soutenir l'action chrétienne pour un monde de fraternité, de tolérance, de justice et de paix.</p>
+        </div>
       </div>
 
-      <h2>Synthèses à la une</h2>
-      <p>Au-delà du recensement, des analyses détaillées : contexte, thèses, héritage, et pistes d'action concrètes.</p>
-
-      <div class="doc-card">
-        <p class="doc-meta">📜 Léon XIII · 1891</p>
-        <h4>Rerum Novarum</h4>
-        <p>L'acte fondateur de la doctrine sociale de l'Église. Face à la misère ouvrière, l'affirmation de la dignité du travailleur, du salaire juste et du droit d'association.</p>
-        <a class="doc-source" href="/rerum-novarum.html">Lire la synthèse</a>
-      </div>
-
-      <div class="doc-card">
-        <p class="doc-meta">💛 Benoît XVI · 2009</p>
-        <h4>Caritas in Veritate</h4>
-        <p>Publiée au cœur de la crise financière mondiale et pour les 40 ans de Populorum Progressio. Benoît XVI relit le développement à la lumière de la charité, ouvrant la voie à une « éthique de l'économie ».</p>
-        <a class="doc-source" href="/caritas-in-veritate.html">Lire la synthèse</a>
-      </div>
-
-      <p style="text-align: center; margin-top: 1.5rem;"><a href="/syntheses.html" style="color: var(--gold); font-weight: 600; text-decoration: none;">Voir toutes les synthèses →</a></p>
-
+      <p style="margin-top: 1.8rem;"><a href="/mission-vision-valeurs.html" style="color: var(--gold); font-weight: 600; text-decoration: none;">Découvrir la mission, la vision et les valeurs en détail →</a></p>
     </div>
   </section>
 
+  <!-- Section 02 : Webinaire à venir -->
   <section class="content alt">
-    <div class="wrap">
-      <h2>À propos d'Encyclicum</h2>
-      <p>Encyclicum est un service ecclésial laïc, francophone et numérique, dédié à la <strong>vulgarisation de la doctrine sociale de l'Église</strong>. Sa mission : rendre cette sagesse accessible à toutes les personnes de bonne volonté, de <em>Rerum Novarum</em> (1891) à <em>Magnifica Humanitas</em> (2026).</p>
-      <p>À travers des synthèses fidèles, des webinaires gratuits et des formations sur mesure, Encyclicum traduit la Tradition vivante de l'Église en langage clair — sans jamais la trahir.</p>
-      <p style="margin-top: 1.5rem;"><a href="/mission-vision-valeurs.html" style="color: var(--gold); font-weight: 600; text-decoration: none;">Lire notre mission, notre vision et nos valeurs →</a></p>
+    <div class="wrap-wide">
+      <span class="section-num">— 02 · Prochain rendez-vous</span>
+      <h2>Découvrir la doctrine <em>sociale</em> de l'Église</h2>
+      <p class="lead">Un webinaire gratuit, en ligne, pour saisir l'essentiel de la pensée sociale catholique — de <em>Rerum Novarum</em> à <em>Caritas in Veritate</em>.</p>
+
+      <div style="background: var(--white); border-left: 4px solid var(--gold); padding: 1.8rem 2rem; border-radius: 4px; margin-top: 1.5rem;">
+        <p style="color: var(--gold); text-transform: uppercase; letter-spacing: 0.15em; font-size: 0.78rem; font-weight: 600; margin: 0 0 0.5rem 0;">★ Cycle automne 2026 · Gratuit</p>
+        <h3 style="font-family: var(--serif); color: var(--navy); font-size: 1.5rem; margin: 0 0 0.8rem 0;">Une formule éprouvée en trois temps</h3>
+        <p style="margin: 0 0 1rem 0;"><strong>Synthèse</strong> · <strong>Implications pour notre temps</strong> · <strong>Actions concrètes</strong></p>
+        <p style="color: var(--muted); margin: 0;"><strong>Automne 2026</strong> · Date à venir · Animé par Dr W. Marc Zongo</p>
+        <p style="margin: 1.2rem 0 0;">
+          <a href="/webinaires.html" class="btn-primary" style="font-size: 0.95rem; padding: 0.7rem 1.4rem;">M'inscrire au webinaire</a>
+        </p>
+      </div>
     </div>
   </section>
 
-  <!-- Bandeau Formations bien visible -->
+  <!-- Section 03 : Synthèses à la une -->
+  <section class="content">
+    <div class="wrap-wide">
+      <span class="section-num">— 03 · Synthèses à la une</span>
+      <h2>Des analyses <em>approfondies</em>, texte par texte</h2>
+      <p class="lead">Au-delà du recensement, des synthèses fidèles : contexte, thèses, citations, héritage, et pistes d'action concrètes.</p>
+
+      <div class="cards-grid" style="margin-top: 1.5rem;">
+        <div class="num-card">
+          <span class="card-num">📜 Léon XIII · 1891</span>
+          <h3>Rerum Novarum</h3>
+          <p>L'acte fondateur. Face à la misère ouvrière : dignité du travailleur, salaire juste, droit d'association.</p>
+          <a href="/rerum-novarum.html" class="card-link">Lire la synthèse</a>
+        </div>
+        <div class="num-card">
+          <span class="card-num">💛 Benoît XVI · 2009</span>
+          <h3>Caritas in Veritate</h3>
+          <p>Au cœur de la crise financière mondiale : développement intégral, charité et vérité, éthique de l'économie.</p>
+          <a href="/caritas-in-veritate.html" class="card-link">Lire la synthèse</a>
+        </div>
+        <div class="num-card">
+          <span class="card-num">🤖 Léon XIV · 2026</span>
+          <h3>Magnifica Humanitas</h3>
+          <p>L'intelligence artificielle au regard de la dignité humaine. Synthèse en préparation ; webinaire du 14 juin disponible.</p>
+          <a href="/webinaires.html" class="card-link">Voir le webinaire</a>
+        </div>
+      </div>
+
+      <p style="text-align: center; margin-top: 1.8rem;"><a href="/syntheses.html" style="color: var(--gold); font-weight: 600; text-decoration: none;">Voir toutes les synthèses →</a></p>
+    </div>
+  </section>
+
+  <!-- Bandeau Formations -->
   <section class="formations-cta">
-    <div class="wrap">
-      <p class="eyebrow">★ Pour les groupes</p>
-      <h2>Demandez une <em>formation</em> sur la doctrine sociale de l'Église</h2>
-      <p>Vous représentez une paroisse, un diocèse, un mouvement, une école, une université ou une entreprise ? Encyclicum conçoit et anime des formations sur mesure pour votre public : en présentiel, à distance ou en hybride, dans le format éprouvé Synthèse · Implications pour notre temps · Actions concrètes.</p>
+    <div class="wrap-wide">
+      <span class="section-num">— 04 · Pour les groupes</span>
+      <h2>Demandez une <em>formation</em> sur mesure</h2>
+      <p>Paroisses, diocèses, mouvements, écoles, universités, entreprises : Encyclicum conçoit et anime des sessions selon la méthode <em>Synthèse · Implications pour notre temps · Actions concrètes</em>.</p>
       <p style="margin-top: 0.8rem; font-style: italic; color: var(--gold-soft);">Pas de tarif imposé — Encyclicum fonctionne par contributions volontaires, à la mesure de chaque groupe.</p>
       <a href="/formations.html" class="btn-gold">Voir l'offre et faire une demande</a>
     </div>
   </section>
 
+  <!-- Section 05 : L'Église par continent et par région -->
   <section class="content alt">
-    <div class="wrap">
+    <div class="wrap-wide">
+      <span class="section-num">— 05 · Textes de référence</span>
+      <h2>L'Église par <em>continent</em> et par <em>région</em></h2>
+      <p class="lead">Au-delà des textes pontificaux, Encyclicum documente la voix des conférences épiscopales sur les sept continents — avec liens vers les sources officielles.</p>
 
-      <h2>L'Église par continent et par région</h2>
-      <p><em>Textes de référence des conférences épiscopales.</em> Au-delà des textes pontificaux, Encyclicum documente aussi la voix des conférences épiscopales sur les sept continents. Chaque page présente l'organisation, ses documents majeurs et des liens vers les sources officielles.</p>
-
-      <div class="countries">
-        <div class="country-card"><span class="flag">🍁</span><h4>L'Église au Canada</h4><p>CECC — Réconciliation autochtone, AMM, G7.</p><a href="/eglise-canada.html">Découvrir</a></div>
-        <div class="country-card"><span class="flag">⚜️</span><h4>L'Église au Québec</h4><p>AECQ — Travail, soins de fin de vie.</p><a href="/eglise-quebec.html">Découvrir</a></div>
-        <div class="country-card"><span class="flag">🌎</span><h4>L'Église en Amérique</h4><p>CELAM + USCCB — De Medellín à Aparecida.</p><a href="/eglise-amerique.html">Découvrir</a></div>
-        <div class="country-card"><span class="flag">🌍</span><h4>L'Église en Afrique</h4><p>SCEAM — Église-Famille, Kigali 2025.</p><a href="/eglise-afrique.html">Découvrir</a></div>
-        <div class="country-card"><span class="flag">🇪🇺</span><h4>L'Église en Europe</h4><p>CCEE + COMECE — Charta Oecumenica.</p><a href="/eglise-europe.html">Découvrir</a></div>
-        <div class="country-card"><span class="flag">🌏</span><h4>L'Église en Asie</h4><p>FABC — Triple dialogue.</p><a href="/eglise-asie.html">Découvrir</a></div>
-        <div class="country-card"><span class="flag">🏝️</span><h4>L'Église en Océanie</h4><p>FCBCO — Défi climatique, peuples autochtones.</p><a href="/eglise-oceanie.html">Découvrir</a></div>
+      <div class="countries" style="margin-top: 1.5rem;">
+        <div class="country-card"><span class="flag">🍁</span><h4>Canada · CECC</h4><p>Réconciliation autochtone, AMM, G7.</p><a href="/eglise-canada.html">Découvrir</a></div>
+        <div class="country-card"><span class="flag">⚜️</span><h4>Québec · AECQ</h4><p>Travail, soins de fin de vie.</p><a href="/eglise-quebec.html">Découvrir</a></div>
+        <div class="country-card"><span class="flag">🌎</span><h4>Amérique · CELAM + USCCB</h4><p>De Medellín à Aparecida.</p><a href="/eglise-amerique.html">Découvrir</a></div>
+        <div class="country-card"><span class="flag">🌍</span><h4>Afrique · SCEAM</h4><p>Église-Famille, Kigali 2025.</p><a href="/eglise-afrique.html">Découvrir</a></div>
+        <div class="country-card"><span class="flag">🇪🇺</span><h4>Europe · CCEE + COMECE</h4><p>Charta Oecumenica.</p><a href="/eglise-europe.html">Découvrir</a></div>
+        <div class="country-card"><span class="flag">🌏</span><h4>Asie · FABC</h4><p>Triple dialogue.</p><a href="/eglise-asie.html">Découvrir</a></div>
+        <div class="country-card"><span class="flag">🏝️</span><h4>Océanie · FCBCO</h4><p>Défi climatique, peuples autochtones.</p><a href="/eglise-oceanie.html">Découvrir</a></div>
       </div>
-
     </div>
   </section>
 
+  <!-- Section 06 : Corpus complet (préservé) -->
   <section class="content">
-    <div class="wrap">
-
+    <div class="wrap-wide">
+      <span class="section-num">— 06 · Corpus magistériel</span>
       <h2>Corpus complet</h2>
       <p>Recensement des textes les plus significatifs du Magistère pontifical, de Léon XIII à Léon XIV, classés par thème. Non exhaustif.</p>
 
@@ -641,27 +657,31 @@
 
     
 
+    
     </div>
   </section>
 
+  <!-- Section 07 : Le fondateur -->
   <section class="content alt">
-    <div class="wrap">
-      <h2>Le fondateur</h2>
+    <div class="wrap-wide">
+      <span class="section-num">— 07 · L'humain derrière le projet</span>
+      <h2>Dr Wendnonghen Marc <em>Zongo</em></h2>
+      <p class="lead">Fondateur et directeur d'Encyclicum, professeur d'administration à l'Université de Hearst, et directeur général de MetanoIA Stratégie.</p>
 
-      <div style="background: var(--white); border-left: 4px solid var(--gold); padding: 2rem; border-radius: 4px;">
-        <p style="color: var(--gold); text-transform: uppercase; letter-spacing: 0.15em; font-size: 0.8rem; font-weight: 600; margin: 0 0 0.4rem 0;">Dr Wendnonghen Marc Zongo</p>
-        <h3 style="font-family: var(--serif); color: var(--navy); margin: 0 0 1rem 0;">Directeur général de MetanoIA Stratégie</h3>
-        <p>Passionné par le dialogue entre la foi, la doctrine sociale de l'Église et les grands défis contemporains — notamment ceux de l'intelligence artificielle — il a fondé Encyclicum pour rendre la doctrine sociale de l'Église accessible au plus grand nombre.</p>
-        <p>Il dirige par ailleurs MetanoIA Stratégie, un cabinet de conseil et de formation en intelligence artificielle, développement organisationnel, gouvernance et marketing digital, au service des organisations du Québec et de la francophonie.</p>
-        <p style="margin-top: 1rem;"><a href="https://metanoia-strategie.ca" style="color: var(--navy); font-weight: 600;">Découvrir MetanoIA Stratégie →</a></p>
+      <div style="background: var(--white); border-left: 4px solid var(--gold); padding: 1.8rem 2rem; border-radius: 4px; margin-top: 1.5rem;">
+        <p>Passionné par le dialogue entre la foi, la pensée sociale catholique et les grands défis contemporains — notamment ceux de l'intelligence artificielle — Marc a fondé Encyclicum pour rendre cette pensée accessible au plus grand nombre.</p>
+        <p>Il dirige par ailleurs <strong>MetanoIA Stratégie</strong>, un cabinet de conseil et de formation en intelligence artificielle, gouvernance, développement organisationnel et marketing digital, au service des organisations du Québec et de la francophonie.</p>
+        <p style="margin-top: 1rem;"><a href="https://metanoia-strategie.ca" target="_blank" rel="noopener" style="color: var(--navy); font-weight: 600;">Découvrir MetanoIA Stratégie →</a></p>
       </div>
     </div>
   </section>
 
+  <!-- Section 08 : Contact -->
   <section class="content" id="contact">
-    <div class="wrap">
-      <h2>Nous écrire</h2>
-      <p>Une question, une suggestion de texte à ajouter, ou l'envie d'être informé des nouveautés ? Écrivez-nous.</p>
+    <div class="wrap-wide">
+      <span class="section-num">— 08 · Nous écrire</span>
+      <h2>Une <em>question</em>, une <em>suggestion</em>, un <em>partenariat</em> ?</h2>
+      <p class="lead">Écrivez-nous via ce formulaire. Réponse personnalisée dans les jours qui suivent.</p>
 
       <form class="form-block" action="https://formspree.io/f/mzdylvag" method="POST">
         <input type="hidden" name="_subject" value="Encyclicum — Contact général">
@@ -684,7 +704,7 @@
             <option>Question générale</option>
             <option>Suggestion d'un texte à ajouter</option>
             <option>Inscription aux nouveautés</option>
-            <option>Inscription au webinaire d'automne 2026 (Doctrine sociale)</option>
+            <option>Inscription au webinaire d'automne 2026</option>
             <option>Faire un don / partenariat</option>
             <option>Autre</option>
           </select>
@@ -702,31 +722,143 @@
 
         <button type="submit" class="form-submit">Envoyer le message</button>
       </form>
+    </div>
+  </section>
 
+  <!-- Section 09 : Recherche -->
+  
+  <section class="search-section">
+    <div class="wrap-wide">
+      <span class="section-num">— Rechercher sur le site</span>
+      <h2>Une <em>question</em>, un <em>texte</em>, un <em>continent</em> ?</h2>
+      <div class="search-box">
+        <input type="search" id="site-search" placeholder="Tapez un mot-clé…" autocomplete="off">
+      </div>
+      <p class="search-suggestions">
+        Essayez :
+        <a href="/syntheses.html">doctrine sociale</a>
+        <a href="/webinaires.html">webinaire</a>
+        <a href="/eglise-afrique.html">Afrique</a>
+        <a href="/eglise-quebec.html">Québec</a>
+        <a href="/formations.html">formation</a>
+        <a href="/mission-vision-valeurs.html">valeurs</a>
+      </p>
+      <div id="search-results" class="search-results"></div>
     </div>
   </section>
 
 
-  <footer>
-    <div class="wrap">
-      Encyclicum ✝ &nbsp;·&nbsp;
-      <em>La doctrine sociale de l'Église, accessible à tous</em>
-      &nbsp;·&nbsp;
-      <a href="/">Accueil</a>
+
+
+  <footer class="site">
+    <div class="wrap-wide">
+      <div class="footer-grid">
+
+        <div class="footer-col footer-brand">
+          <h4 class="brand-h">Encyclicum <span class="cross">✝</span></h4>
+          <p>Vulgarisation francophone de la doctrine sociale de l'Église, pour toutes les personnes de bonne volonté.</p>
+          <p class="footer-slogan">Comprendre · Discerner · Agir</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="/index.html">Accueil</a></li>
+            <li><a href="/syntheses.html">Synthèses approfondies</a></li>
+            <li><a href="/webinaires.html">Webinaires</a></li>
+            <li><a href="/formations.html">Formations</a></li>
+            <li><a href="/mission-vision-valeurs.html">À propos</a></li>
+            <li><a href="/index.html#contact">Nous écrire</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>L'Église par continent</h4>
+          <ul>
+            <li><a href="/eglise-canada.html">Canada</a></li>
+            <li><a href="/eglise-quebec.html">Québec</a></li>
+            <li><a href="/eglise-amerique.html">Amérique</a></li>
+            <li><a href="/eglise-afrique.html">Afrique (SCEAM)</a></li>
+            <li><a href="/eglise-europe.html">Europe</a></li>
+            <li><a href="/eglise-asie.html">Asie</a></li>
+            <li><a href="/eglise-oceanie.html">Océanie</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="/index.html#contact">✉ Formulaire de contact</a></li>
+            <li><a href="/formations.html#demande">★ Demande de formation</a></li>
+            <li><a href="https://metanoia-strategie.ca" target="_blank" rel="noopener">✦ MetanoIA Stratégie</a></li>
+            <li><a href="/" >🌐 encyclicum.ca</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 Encyclicum ✝ — Une initiative de <a href="https://metanoia-strategie.ca">MetanoIA Stratégie</a></span>
+        <span>Québec, Canada</span>
+      </div>
     </div>
   </footer>
+
 
   <script>
     function toggleMenu() {
       const open = document.body.classList.toggle('menu-open');
-      document.querySelector('.hamburger').setAttribute('aria-expanded', open);
+      const btn = document.querySelector('.hamburger');
+      if (btn) btn.setAttribute('aria-expanded', open);
     }
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') {
         document.body.classList.remove('menu-open');
-        document.querySelector('.hamburger').setAttribute('aria-expanded', 'false');
+        const btn = document.querySelector('.hamburger');
+        if (btn) btn.setAttribute('aria-expanded', 'false');
       }
     });
+
+    // Site search (filtre les liens du site)
+    const SITE_INDEX = [
+      {title: "Accueil", url: "/index.html", tags: ["accueil", "encyclicum", "doctrine sociale", "magistère"]},
+      {title: "Synthèses approfondies", url: "/syntheses.html", tags: ["synthèse", "encyclique", "doctrine sociale"]},
+      {title: "Webinaires", url: "/webinaires.html", tags: ["webinaire", "zoom", "automne 2026", "doctrine sociale", "magnifica humanitas"]},
+      {title: "Formations sur la DSE", url: "/formations.html", tags: ["formation", "groupe", "paroisse", "contributions volontaires"]},
+      {title: "À propos", url: "/mission-vision-valeurs.html", tags: ["mission", "vision", "valeurs", "à propos"]},
+      {title: "L'Église au Canada (CECC)", url: "/eglise-canada.html", tags: ["canada", "CECC", "réconciliation", "autochtones"]},
+      {title: "L'Église au Québec (AECQ)", url: "/eglise-quebec.html", tags: ["québec", "AECQ", "AMM", "fin de vie"]},
+      {title: "L'Église en Amérique (CELAM, USCCB)", url: "/eglise-amerique.html", tags: ["amérique", "CELAM", "USCCB", "Aparecida"]},
+      {title: "L'Église en Afrique (SCEAM)", url: "/eglise-afrique.html", tags: ["afrique", "SCEAM", "Kigali", "Église-Famille"]},
+      {title: "RDC (CENCO)", url: "/eglise-afrique-rdc.html", tags: ["RDC", "Congo", "CENCO", "rite zaïrois"]},
+      {title: "Burkina-Niger (CEBN)", url: "/eglise-afrique-burkina-niger.html", tags: ["burkina", "niger", "CEBN", "sahel", "paix"]},
+      {title: "Côte d'Ivoire (CECI)", url: "/eglise-afrique-cote-ivoire.html", tags: ["côte d'ivoire", "CECI", "Notre-Dame d'Afrique"]},
+      {title: "Sénégal et Ouest atlantique", url: "/eglise-afrique-senegal.html", tags: ["sénégal", "mauritanie", "cap-vert", "guinée-bissau"]},
+      {title: "Cameroun (CENC)", url: "/eglise-afrique-cameroun.html", tags: ["cameroun", "CENC", "ACADIR"]},
+      {title: "Madagascar (CEM)", url: "/eglise-afrique-madagascar.html", tags: ["madagascar", "CEM", "océan Indien"]},
+      {title: "L'Église en Europe (CCEE, COMECE)", url: "/eglise-europe.html", tags: ["europe", "CCEE", "COMECE", "Charta Oecumenica"]},
+      {title: "L'Église en Asie (FABC)", url: "/eglise-asie.html", tags: ["asie", "FABC", "triple dialogue"]},
+      {title: "L'Église en Océanie", url: "/eglise-oceanie.html", tags: ["océanie", "FCBCO", "pacifique"]},
+    ];
+    const searchInput = document.getElementById('site-search');
+    const searchResults = document.getElementById('search-results');
+    if (searchInput && searchResults) {
+      searchInput.addEventListener('input', (e) => {
+        const q = e.target.value.trim().toLowerCase();
+        if (!q) { searchResults.innerHTML = ''; return; }
+        const hits = SITE_INDEX.filter(p =>
+          p.title.toLowerCase().includes(q) ||
+          p.tags.some(t => t.toLowerCase().includes(q))
+        );
+        if (hits.length === 0) {
+          searchResults.innerHTML = '<p class="search-empty">Aucun résultat. Essayez un autre mot-clé.</p>';
+        } else {
+          searchResults.innerHTML = hits.map(h =>
+            `<div class="result"><a href="${h.url}">${h.title}</a><div class="result-meta">${h.tags.slice(0,4).join(' · ')}</div></div>`
+          ).join('');
+        }
+      });
+    }
   </script>
 
 </body>
