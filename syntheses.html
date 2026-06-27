@@ -84,6 +84,29 @@
   .syn-card-coming::before{content:"";position:absolute;top:0;left:0;width:5px;height:100%;background:repeating-linear-gradient(180deg,var(--gold) 0 8px,transparent 8px 14px);}
   .badge-coming{display:inline-block;font-size:13px;font-family:'EB Garamond',serif;font-style:italic;letter-spacing:.04em;padding:3px 11px;border-radius:20px;background:var(--gold);color:var(--navy-deep);font-weight:600;vertical-align:middle;margin-left:10px;}
 
+  .theme-block{margin-top:34px;max-width:1100px;margin-left:auto;margin-right:auto;}
+  .theme-head{display:flex;align-items:center;gap:10px;padding-bottom:8px;border-bottom:2px solid var(--gold);margin-bottom:14px;}
+  .theme-num{background:var(--navy-deep);color:var(--gold-light);width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12.5px;font-weight:700;flex-shrink:0;}
+  .theme-emoji{font-size:19px;}
+  .theme-head h4{font-family:'Cormorant Garamond',serif;font-size:19px;color:var(--navy);margin:0;font-weight:600;}
+  .corpus-table{width:100%;border-collapse:collapse;font-size:14.5px;background:var(--paper);}
+  .corpus-table th{background:var(--navy-deep);color:var(--cream);text-align:left;padding:9px 12px;font-weight:600;font-size:11.5px;text-transform:uppercase;letter-spacing:.06em;white-space:nowrap;}
+  .corpus-table td{padding:9px 12px;border-bottom:1px solid var(--line);vertical-align:top;}
+  .corpus-table tbody tr:hover{background:var(--cream);}
+  .corpus-table tbody tr:nth-child(even){background:rgba(27,42,74,.02);}
+  .corpus-table td:nth-child(3){white-space:nowrap;color:var(--muted);}
+  .t-title em{color:var(--gold);font-style:italic;}
+  .t-syn{text-align:center;white-space:nowrap;}
+  .syn-pill{display:inline-block;background:var(--navy-deep);color:var(--gold-light);padding:4px 11px;border-radius:12px;font-size:12.5px;font-weight:600;text-decoration:none;transition:background .2s;}
+  .syn-pill:hover{background:var(--gold);color:var(--navy-deep);}
+  .syn-pill-empty{color:var(--muted);font-size:13.5px;}
+  .type-badge{display:inline-block;padding:3px 10px;border-radius:12px;font-size:11.5px;font-weight:600;white-space:nowrap;}
+  .type-enc{background:#F3E9CC;color:#8a6d1f;}
+  .type-exh{background:#E3EEF7;color:#2c5c82;}
+  .type-let{background:#F0E3F2;color:#7a3d8a;}
+  .type-con{background:#E3F2E8;color:#2d6e44;}
+  .type-letsimple{background:#FBE7E0;color:#9a4a2e;}
+
   .coming{background:var(--paper);border:2px dashed var(--line);border-radius:14px;padding:32px;margin-top:30px;text-align:center;}
   .coming h3{font-family:'Cormorant Garamond',serif;color:var(--navy);font-size:21px;font-weight:600;margin-bottom:8px;}
   .coming p{color:var(--muted);font-style:italic;font-size:16px;}
@@ -144,401 +167,577 @@
 
 <main>
   <div class="intro">
-    <p>Une synthèse par texte, structurée en dix sections pour saisir l'essentiel et en tirer des fruits pour aujourd'hui. La collection s'enrichit progressivement.</p>
+    <p>Le corpus magistériel complet, classé par thématique. Chaque texte indique son type (encyclique, exhortation, lettre apostolique, lettre, constitution conciliaire) et, lorsqu'elle existe, sa synthèse approfondie : contexte, thèses, citations, héritage, implications et pistes d'action.</p>
   </div>
 
-  <div class="syn-list">
-        <a href="aeterni-patris.html" class="syn-card">
-      <div class="syn-em"></div>
-      <div class="syn-body">
-        <h3>Aeterni Patris</h3>
-        <div class="syn-meta"><span class="syn-pape">Léon XIII</span><span class="syn-dot">·</span><span>1879</span><span class="syn-dot">·</span><span class="syn-theme">Foi et raison</span></div>
-        <p class="syn-sujet"><em>Sur la philosophie chrétienne</em></p>
-        <p class="syn-teaser">Léon XIII relance les études thomistes et fonde le néo-thomisme, l'un des grands courants de la pensée catholique moderne.</p>
-        <span class="syn-link">Lire la synthèse complète &rarr;</span>
-      </div>
-    </a>
-<a href="rerum-novarum.html" class="syn-card">
-      <div class="syn-em">📜</div>
-      <div class="syn-body">
-        <h3>Rerum Novarum</h3>
-        <div class="syn-meta"><span class="syn-pape">Léon XIII</span><span class="syn-dot">·</span><span>1891</span><span class="syn-dot">·</span><span class="syn-theme">Doctrine sociale, travail</span></div>
-        <p class="syn-sujet"><em>Sur la condition des ouvriers</em></p>
-        <p class="syn-teaser">L'acte fondateur de la doctrine sociale de l'Église. Face à la misère ouvrière, l'affirmation de la dignité du travailleur, du salaire juste et du droit d'association.</p>
-        <span class="syn-link">Lire la synthèse complète &rarr;</span>
-      </div>
-    </a>
-    <a href="pascendi-dominici-gregis.html" class="syn-card">
-      <div class="syn-em"></div>
-      <div class="syn-body">
-        <h3>Pascendi Dominici Gregis</h3>
-        <div class="syn-meta"><span class="syn-pape">Pie X</span><span class="syn-dot">·</span><span>1907</span><span class="syn-dot">·</span><span class="syn-theme">Foi et raison</span></div>
-        <p class="syn-sujet"><em>Sur les erreurs du modernisme</em></p>
-        <p class="syn-teaser">Pie X dresse une synthèse doctrinale du modernisme, qu'il qualifie de « synthèse de toutes les hérésies ».</p>
-        <span class="syn-link">Lire la synthèse complète &rarr;</span>
-      </div>
-    </a>
-    <a href="quadragesimo-anno.html" class="syn-card">
-      <div class="syn-em">⚖️</div>
-      <div class="syn-body">
-        <h3>Quadragesimo Anno</h3>
-        <div class="syn-meta"><span class="syn-pape">Pie XI</span><span class="syn-dot">·</span><span>1931</span><span class="syn-dot">·</span><span class="syn-theme">Doctrine sociale</span></div>
-        <p class="syn-sujet"><em>Sur la reconstruction de l'ordre social</em></p>
-        <p class="syn-teaser">Pour les 40 ans de Rerum Novarum, Pie XI réaffirme la doctrine sociale face aux crises de l'époque. Il y introduit deux principes fondateurs : la subsidiarité et la justice sociale.</p>
-        <span class="syn-link">Lire la synthèse complète &rarr;</span>
-      </div>
-    </a>
-    <a href="divini-redemptoris.html" class="syn-card">
-      <div class="syn-em">⚖️</div>
-      <div class="syn-body">
-        <h3>Divini Redemptoris</h3>
-        <div class="syn-meta"><span class="syn-pape">Pie XI</span><span class="syn-dot">·</span><span>1937</span><span class="syn-dot">·</span><span class="syn-theme">Communisme et justice sociale</span></div>
-        <p class="syn-sujet"><em>Sur le communisme athée</em></p>
-        <p class="syn-teaser">Pie XI condamne le communisme comme « intrinsèquement pervers », tout en rappelant que seule la justice sociale peut en assécher le terreau.</p>
-        <span class="syn-link">Lire la synthèse complète &rarr;</span>
-      </div>
-    </a>
-    <a href="mit-brennender-sorge.html" class="syn-card">
-      <div class="syn-em">🕯️</div>
-      <div class="syn-body">
-        <h3>Mit brennender Sorge</h3>
-        <div class="syn-meta"><span class="syn-pape">Pie XI</span><span class="syn-dot">·</span><span>1937</span><span class="syn-dot">·</span><span class="syn-theme">Totalitarisme et liberté religieuse</span></div>
-        <p class="syn-sujet"><em>Sur la situation de l'Église catholique dans le Reich allemand</em></p>
-        <p class="syn-teaser">Rédigée en allemand et diffusée clandestinement, elle dénonce le néo-paganisme racial du national-socialisme.</p>
-        <span class="syn-link">Lire la synthèse complète &rarr;</span>
-      </div>
-    </a>
-    <a href="mater-et-magistra.html" class="syn-card">
-      <div class="syn-em">🌾</div>
-      <div class="syn-body">
-        <h3>Mater et Magistra</h3>
-        <div class="syn-meta"><span class="syn-pape">Jean XXIII</span><span class="syn-dot">·</span><span>1961</span><span class="syn-dot">·</span><span class="syn-theme">Doctrine sociale</span></div>
-        <p class="syn-sujet"><em>Sur les récents développements de la question sociale à la lumière de la doctrine chrétienne</em></p>
-        <p class="syn-teaser">Jean XXIII actualise la doctrine sociale dans le contexte de l'après-guerre, de la décolonisation et du décollage économique. Il élargit la question sociale à l'agriculture, au tiers-monde et à la mondialisation naissante.</p>
-        <span class="syn-link">Lire la synthèse complète &rarr;</span>
-      </div>
-    </a>
-    <a href="pacem-in-terris.html" class="syn-card">
-      <div class="syn-em">🕊️</div>
-      <div class="syn-body">
-        <h3>Pacem in Terris</h3>
-        <div class="syn-meta"><span class="syn-pape">Jean XXIII</span><span class="syn-dot">·</span><span>1963</span><span class="syn-dot">·</span><span class="syn-theme">Paix et droits humains</span></div>
-        <p class="syn-sujet"><em>Sur la paix entre toutes les nations dans la vérité, la justice, la charité et la liberté</em></p>
-        <p class="syn-teaser">Première encyclique adressée à « tous les hommes de bonne volonté », publiée après la crise des missiles de Cuba. Jean XXIII pose les bases d'une éthique mondiale fondée sur les droits humains et la paix.</p>
-        <span class="syn-link">Lire la synthèse complète &rarr;</span>
-      </div>
-    </a>
-    <a href="gaudium-et-spes.html" class="syn-card">
-      <div class="syn-em">✨</div>
-      <div class="syn-body">
-        <h3>Gaudium et Spes</h3>
-        <div class="syn-meta"><span class="syn-pape">Concile Vatican II</span><span class="syn-dot">·</span><span>1965</span><span class="syn-dot">·</span><span class="syn-theme">Église et monde moderne</span></div>
-        <p class="syn-sujet"><em>Constitution pastorale sur l'Église dans le monde de ce temps</em></p>
-        <p class="syn-teaser">L'un des textes majeurs de Vatican II. L'Église s'engage dans un dialogue inédit avec le monde moderne, ses joies, ses angoisses et ses grands défis : famille, culture, économie, paix.</p>
-        <span class="syn-link">Lire la synthèse complète &rarr;</span>
-      </div>
-    </a>
-    <a href="populorum-progressio.html" class="syn-card">
-      <div class="syn-em">🌍</div>
-      <div class="syn-body">
-        <h3>Populorum Progressio</h3>
-        <div class="syn-meta"><span class="syn-pape">Paul VI</span><span class="syn-dot">·</span><span>1967</span><span class="syn-dot">·</span><span class="syn-theme">Développement et tiers-monde</span></div>
-        <p class="syn-sujet"><em>Sur le développement des peuples</em></p>
-        <p class="syn-teaser">L'encyclique du « développement intégral » et de la dénonciation de l'écart entre pays riches et pays pauvres. Paul VI y forge la formule devenue célèbre : « le développement est le nouveau nom de la paix ».</p>
-        <span class="syn-link">Lire la synthèse complète &rarr;</span>
-      </div>
-    </a>
-    <a href="humanae-vitae.html" class="syn-card">
-      <div class="syn-em">👪</div>
-      <div class="syn-body">
-        <h3>Humanae Vitae</h3>
-        <div class="syn-meta"><span class="syn-pape">Paul VI</span><span class="syn-dot">·</span><span>1968</span><span class="syn-dot">·</span><span class="syn-theme">Famille et vie</span></div>
-        <p class="syn-sujet"><em>Sur la régulation des naissances</em></p>
-        <p class="syn-teaser">Paul VI réaffirme le lien indissociable entre union et procréation dans l'acte conjugal, suscitant un débat toujours vif.</p>
-        <span class="syn-link">Lire la synthèse complète &rarr;</span>
-      </div>
-    </a>
-    <a href="octogesima-adveniens.html" class="syn-card">
-      <div class="syn-em">🏙️</div>
-      <div class="syn-body">
-        <h3>Octogesima Adveniens</h3>
-        <div class="syn-meta"><span class="syn-pape">Paul VI</span><span class="syn-dot">·</span><span>1971</span><span class="syn-dot">·</span><span class="syn-theme">Doctrine sociale et action</span></div>
-        <p class="syn-sujet"><em>Lettre apostolique pour le 80e anniversaire de Rerum Novarum</em></p>
-        <p class="syn-teaser">Pour les 80 ans de Rerum Novarum, Paul VI déplace le regard de la « question ouvrière » vers les nouveaux défis : urbanisation, jeunesse, condition féminine, environnement. Et appelle chaque communauté chrétienne à discerner pour agir.</p>
-        <span class="syn-link">Lire la synthèse complète &rarr;</span>
-      </div>
-    </a>
-    <a href="evangelii-nuntiandi.html" class="syn-card">
-      <div class="syn-em">📯</div>
-      <div class="syn-body">
-        <h3>Evangelii Nuntiandi</h3>
-        <div class="syn-meta"><span class="syn-pape">Paul VI</span><span class="syn-dot">·</span><span>1975</span><span class="syn-dot">·</span><span class="syn-theme">Évangélisation</span></div>
-        <p class="syn-sujet"><em>Sur l'évangélisation dans le monde moderne</em></p>
-        <p class="syn-teaser">La grande charte de l'évangélisation contemporaine : « L'Église existe pour évangéliser. »</p>
-        <span class="syn-link">Lire la synthèse complète &rarr;</span>
-      </div>
-    </a>
-    <a href="redemptor-hominis.html" class="syn-card">
-      <div class="syn-em">✝️</div>
-      <div class="syn-body">
-        <h3>Redemptor Hominis</h3>
-        <div class="syn-meta"><span class="syn-pape">Jean-Paul II</span><span class="syn-dot">·</span><span>1979</span><span class="syn-dot">·</span><span class="syn-theme">Anthropologie chrétienne</span></div>
-        <p class="syn-sujet"><em>Sur le Christ rédempteur de l'homme</em></p>
-        <p class="syn-teaser">Première encyclique de Jean-Paul II, elle pose le programme de tout son pontificat : « L'homme est la voie de l'Église. »</p>
-        <span class="syn-link">Lire la synthèse complète &rarr;</span>
-      </div>
-    </a>
-    <a href="laborem-exercens.html" class="syn-card">
-      <div class="syn-em">🔨</div>
-      <div class="syn-body">
-        <h3>Laborem Exercens</h3>
-        <div class="syn-meta"><span class="syn-pape">Jean-Paul II</span><span class="syn-dot">·</span><span>1981</span><span class="syn-dot">·</span><span class="syn-theme">Travail humain</span></div>
-        <p class="syn-sujet"><em>Sur le travail humain à l'occasion du 90e anniversaire de Rerum Novarum</em></p>
-        <p class="syn-teaser">Première grande encyclique sociale de Jean-Paul II. Elle replace le travail au centre de la question sociale en affirmant la primauté de la personne du travailleur sur l'objet du travail.</p>
-        <span class="syn-link">Lire la synthèse complète &rarr;</span>
-      </div>
-    </a>
-    <a href="familiaris-consortio.html" class="syn-card">
-      <div class="syn-em">👪</div>
-      <div class="syn-body">
-        <h3>Familiaris Consortio</h3>
-        <div class="syn-meta"><span class="syn-pape">Jean-Paul II</span><span class="syn-dot">·</span><span>1981</span><span class="syn-dot">·</span><span class="syn-theme">Famille</span></div>
-        <p class="syn-sujet"><em>Sur les tâches de la famille chrétienne dans le monde d'aujourd'hui</em></p>
-        <p class="syn-teaser">Mariage, paternité responsable, éducation : une vaste charte de la famille chrétienne, après le Synode de 1980.</p>
-        <span class="syn-link">Lire la synthèse complète &rarr;</span>
-      </div>
-    </a>
-    <a href="sollicitudo-rei-socialis.html" class="syn-card">
-      <div class="syn-em">🤝</div>
-      <div class="syn-body">
-        <h3>Sollicitudo Rei Socialis</h3>
-        <div class="syn-meta"><span class="syn-pape">Jean-Paul II</span><span class="syn-dot">·</span><span>1987</span><span class="syn-dot">·</span><span class="syn-theme">Solidarité et développement</span></div>
-        <p class="syn-sujet"><em>Sur la sollicitude sociale de l'Église, pour le 20e anniversaire de Populorum Progressio</em></p>
-        <p class="syn-teaser">Vingt ans après Populorum Progressio, Jean-Paul II dénonce les « structures de péché » qui bloquent le développement et hisse la solidarité au rang de vertu chrétienne et de principe politique.</p>
-        <span class="syn-link">Lire la synthèse complète &rarr;</span>
-      </div>
-    </a>
-    <a href="centesimus-annus.html" class="syn-card">
-      <div class="syn-em">🏛️</div>
-      <div class="syn-body">
-        <h3>Centesimus Annus</h3>
-        <div class="syn-meta"><span class="syn-pape">Jean-Paul II</span><span class="syn-dot">·</span><span>1991</span><span class="syn-dot">·</span><span class="syn-theme">Doctrine sociale, économie</span></div>
-        <p class="syn-sujet"><em>Pour le centenaire de Rerum Novarum</em></p>
-        <p class="syn-teaser">Au lendemain de la chute du communisme, Jean-Paul II tire les leçons d'un siècle et propose une critique nuancée du capitalisme : oui à l'économie de marché, non à la marchandisation de l'homme.</p>
-        <span class="syn-link">Lire la synthèse complète &rarr;</span>
-      </div>
-    </a>
-    <a href="veritatis-splendor.html" class="syn-card">
-      <div class="syn-em">💡</div>
-      <div class="syn-body">
-        <h3>Veritatis Splendor</h3>
-        <div class="syn-meta"><span class="syn-pape">Jean-Paul II</span><span class="syn-dot">·</span><span>1993</span><span class="syn-dot">·</span><span class="syn-theme">Théologie morale</span></div>
-        <p class="syn-sujet"><em>Sur certaines questions fondamentales de l'enseignement moral de l'Église</em></p>
-        <p class="syn-teaser">Face au relativisme moral, Jean-Paul II réaffirme l'existence d'une vérité morale objective accessible à la raison.</p>
-        <span class="syn-link">Lire la synthèse complète &rarr;</span>
-      </div>
-    </a>
-    <a href="evangelium-vitae.html" class="syn-card">
-      <div class="syn-em">🕊️</div>
-      <div class="syn-body">
-        <h3>Evangelium Vitae</h3>
-        <div class="syn-meta"><span class="syn-pape">Jean-Paul II</span><span class="syn-dot">·</span><span>1995</span><span class="syn-dot">·</span><span class="syn-theme">Vie humaine</span></div>
-        <p class="syn-sujet"><em>Sur la valeur et l'inviolabilité de la vie humaine</em></p>
-        <p class="syn-teaser">Face à une « culture de mort », Jean-Paul II défend l'inviolabilité de toute vie, de la conception à la mort naturelle.</p>
-        <span class="syn-link">Lire la synthèse complète &rarr;</span>
-      </div>
-    </a>
-    <a href="ut-unum-sint.html" class="syn-card">
-      <div class="syn-em"></div>
-      <div class="syn-body">
-        <h3>Ut Unum Sint</h3>
-        <div class="syn-meta"><span class="syn-pape">Jean-Paul II</span><span class="syn-dot">·</span><span>1995</span><span class="syn-dot">·</span><span class="syn-theme">Œcuménisme</span></div>
-        <p class="syn-sujet"><em>Sur l'engagement œcuménique</em></p>
-        <p class="syn-teaser">Première encyclique entièrement consacrée à l'œcuménisme : « Que tous soient un », la prière du Christ reprise par Jean-Paul II.</p>
-        <span class="syn-link">Lire la synthèse complète &rarr;</span>
-      </div>
-    </a>
-    <a href="fides-et-ratio.html" class="syn-card">
-      <div class="syn-em"></div>
-      <div class="syn-body">
-        <h3>Fides et Ratio</h3>
-        <div class="syn-meta"><span class="syn-pape">Jean-Paul II</span><span class="syn-dot">·</span><span>1998</span><span class="syn-dot">·</span><span class="syn-theme">Foi et raison</span></div>
-        <p class="syn-sujet"><em>Sur les rapports entre la foi et la raison</em></p>
-        <p class="syn-teaser">« La foi et la raison sont comme deux ailes » : une défense vigoureuse de la quête de vérité face au relativisme contemporain.</p>
-        <span class="syn-link">Lire la synthèse complète &rarr;</span>
-      </div>
-    </a>
-    <a href="deus-caritas-est.html" class="syn-card">
-      <div class="syn-em">❤️</div>
-      <div class="syn-body">
-        <h3>Deus Caritas Est</h3>
-        <div class="syn-meta"><span class="syn-pape">Benoît XVI</span><span class="syn-dot">·</span><span>2006</span><span class="syn-dot">·</span><span class="syn-theme">Amour et charité</span></div>
-        <p class="syn-sujet"><em>Sur l'amour chrétien</em></p>
-        <p class="syn-teaser">Eros et agapè, charité et justice : première encyclique de Benoît XVI, ouverture de sa trilogie sur les vertus théologales.</p>
-        <span class="syn-link">Lire la synthèse complète &rarr;</span>
-      </div>
-    </a>
-    <a href="spe-salvi.html" class="syn-card">
-      <div class="syn-em">⚓</div>
-      <div class="syn-body">
-        <h3>Spe Salvi</h3>
-        <div class="syn-meta"><span class="syn-pape">Benoît XVI</span><span class="syn-dot">·</span><span>2007</span><span class="syn-dot">·</span><span class="syn-theme">Espérance</span></div>
-        <p class="syn-sujet"><em>Sur l'espérance chrétienne</em></p>
-        <p class="syn-teaser">Face aux désillusions du progrès et du marxisme, une méditation sur l'espérance comme fondement déjà à l'œuvre.</p>
-        <span class="syn-link">Lire la synthèse complète &rarr;</span>
-      </div>
-    </a>
-    <a href="caritas-in-veritate.html" class="syn-card">
-      <div class="syn-em">💛</div>
-      <div class="syn-body">
-        <h3>Caritas in Veritate</h3>
-        <div class="syn-meta"><span class="syn-pape">Benoît XVI</span><span class="syn-dot">·</span><span>2009</span><span class="syn-dot">·</span><span class="syn-theme">Développement humain intégral</span></div>
-        <p class="syn-sujet"><em>Sur le développement humain intégral dans la charité et la vérité</em></p>
-        <p class="syn-teaser">Publiée au cœur de la crise financière mondiale et pour les 40 ans de Populorum Progressio. Benoît XVI relit le développement à la lumière de la charité, ouvrant la voie à une « éthique de l'économie ».</p>
-        <span class="syn-link">Lire la synthèse complète &rarr;</span>
-      </div>
-    </a>
-        <a href="lumen-fidei.html" class="syn-card">
-      <div class="syn-em"></div>
-      <div class="syn-body">
-        <h3>Lumen Fidei</h3>
-        <div class="syn-meta"><span class="syn-pape">François</span><span class="syn-dot">·</span><span>2013</span><span class="syn-dot">·</span><span class="syn-theme">Foi et raison</span></div>
-        <p class="syn-sujet"><em>Sur la foi</em></p>
-        <p class="syn-teaser">Première encyclique de François, achevant à partir d'un texte de Benoît XVI la trilogie sur les vertus théologales.</p>
-        <span class="syn-link">Lire la synthèse complète &rarr;</span>
-      </div>
-    </a>
-<a href="evangelii-gaudium.html" class="syn-card">
-      <div class="syn-em">🌅</div>
-      <div class="syn-body">
-        <h3>Evangelii Gaudium</h3>
-        <div class="syn-meta"><span class="syn-pape">François</span><span class="syn-dot">·</span><span>2013</span><span class="syn-dot">·</span><span class="syn-theme">Évangélisation et justice sociale</span></div>
-        <p class="syn-sujet"><em>Sur l'annonce de l'Évangile dans le monde actuel</em></p>
-        <p class="syn-teaser">Premier texte programmatique de François : une « Église en sortie » et la dénonciation d'une économie qui exclut et qui tue.</p>
-        <span class="syn-link">Lire la synthèse complète &rarr;</span>
-      </div>
-    </a>
-    <a href="laudato-si.html" class="syn-card">
-      <div class="syn-em">🌿</div>
-      <div class="syn-body">
-        <h3>Laudato Si'</h3>
-        <div class="syn-meta"><span class="syn-pape">François</span><span class="syn-dot">·</span><span>2015</span><span class="syn-dot">·</span><span class="syn-theme">Écologie intégrale</span></div>
-        <p class="syn-sujet"><em>Sur la sauvegarde de la maison commune</em></p>
-        <p class="syn-teaser">Première encyclique entièrement consacrée à l'écologie : le cri de la terre et le cri des pauvres ne font qu'un.</p>
-        <span class="syn-link">Lire la synthèse complète &rarr;</span>
-      </div>
-    </a>
-    <a href="amoris-laetitia.html" class="syn-card">
-      <div class="syn-em">💞</div>
-      <div class="syn-body">
-        <h3>Amoris Laetitia</h3>
-        <div class="syn-meta"><span class="syn-pape">François</span><span class="syn-dot">·</span><span>2016</span><span class="syn-dot">·</span><span class="syn-theme">Famille</span></div>
-        <p class="syn-sujet"><em>Sur l'amour dans la famille</em></p>
-        <p class="syn-teaser">Fruit de deux synodes : un appel à la miséricorde et au discernement pastoral pour les familles, au cœur d'un débat théologique vif.</p>
-        <span class="syn-link">Lire la synthèse complète &rarr;</span>
-      </div>
-    </a>
-    <a href="querida-amazonia.html" class="syn-card">
-      <div class="syn-em">🌳</div>
-      <div class="syn-body">
-        <h3>Querida Amazonia</h3>
-        <div class="syn-meta"><span class="syn-pape">François</span><span class="syn-dot">·</span><span>2020</span><span class="syn-dot">·</span><span class="syn-theme">Écologie intégrale</span></div>
-        <p class="syn-sujet"><em>Au Peuple de Dieu et à toutes les personnes de bonne volonté</em></p>
-        <p class="syn-teaser">Quatre rêves pour l'Amazonie — social, culturel, écologique et ecclésial — face au néo-colonialisme économique.</p>
-        <span class="syn-link">Lire la synthèse complète &rarr;</span>
-      </div>
-    </a>
-    <a href="fratelli-tutti.html" class="syn-card">
-      <div class="syn-em">🤝</div>
-      <div class="syn-body">
-        <h3>Fratelli Tutti</h3>
-        <div class="syn-meta"><span class="syn-pape">François</span><span class="syn-dot">·</span><span>2020</span><span class="syn-dot">·</span><span class="syn-theme">Fraternité universelle</span></div>
-        <p class="syn-sujet"><em>Sur la fraternité et l'amitié sociale</em></p>
-        <p class="syn-teaser">En pleine pandémie, François appelle à une fraternité et une amitié sociale universelles, au-delà des frontières.</p>
-        <span class="syn-link">Lire la synthèse complète &rarr;</span>
-      </div>
-    </a>
-    <a href="laudate-deum.html" class="syn-card">
-      <div class="syn-em">🔥</div>
-      <div class="syn-body">
-        <h3>Laudate Deum</h3>
-        <div class="syn-meta"><span class="syn-pape">François</span><span class="syn-dot">·</span><span>2023</span><span class="syn-dot">·</span><span class="syn-theme">Écologie</span></div>
-        <p class="syn-sujet"><em>Sur la crise climatique</em></p>
-        <p class="syn-teaser">Huit ans après Laudato Si', un texte bref et pressant, publié avant la COP28, sur l'urgence d'agir.</p>
-        <span class="syn-link">Lire la synthèse complète &rarr;</span>
-      </div>
-    </a>
-    <a href="magnifica-humanitas.html" class="syn-card">
-      <div class="syn-em"></div>
-      <div class="syn-body">
-        <h3>Magnifica Humanitas</h3>
-        <div class="syn-meta"><span class="syn-pape">Léon XIV</span><span class="syn-dot">·</span><span>2026</span><span class="syn-dot">·</span><span class="syn-theme">Intelligence artificielle</span></div>
-        <p class="syn-sujet"><em>Sur la protection de la personne humaine à l'ère de l'intelligence artificielle</em></p>
-        <p class="syn-teaser">Première encyclique de Léon XIV, signée le 135ᵉ anniversaire de Rerum Novarum : la doctrine sociale face au défi de l'IA.</p>
-        <span class="syn-link">Lire la synthèse complète &rarr;</span>
-      </div>
-    </a>
+  <div class="theme-block">
+    <div class="theme-head"><span class="theme-num">1</span><span class="theme-emoji">💼</span><h4>Doctrine sociale, travail et économie</h4></div>
+    <div style="overflow-x:auto;">
+    <table class="corpus-table">
+      <thead><tr><th>Titre</th><th>Pape</th><th>Année</th><th>Type</th><th>Contenu</th><th>Synthèse approfondie</th></tr></thead>
+      <tbody>
+          <tr>
+            <td class="t-title"><em>Rerum Novarum</em></td>
+            <td>Léon XIII</td>
+            <td>1891</td>
+            <td><span class="type-badge type-enc">Encyclique</span></td>
+            <td>Condition ouvrière, syndicats, justice sociale — acte fondateur de la doctrine sociale</td>
+            <td class="t-syn"><a href="rerum-novarum.html" class="syn-pill">Lire &rarr;</a></td>
+          </tr>
+          <tr>
+            <td class="t-title"><em>Quadragesimo Anno</em></td>
+            <td>Pie XI</td>
+            <td>1931</td>
+            <td><span class="type-badge type-enc">Encyclique</span></td>
+            <td>40ᵉ anniversaire de Rerum Novarum, reconstruction de l'ordre social</td>
+            <td class="t-syn"><a href="quadragesimo-anno.html" class="syn-pill">Lire &rarr;</a></td>
+          </tr>
+          <tr>
+            <td class="t-title"><em>Gaudium et Spes</em></td>
+            <td>Concile Vatican II</td>
+            <td>1965</td>
+            <td><span class="type-badge type-con">Constitution conciliaire</span></td>
+            <td>L'Église dans le monde de ce temps</td>
+            <td class="t-syn"><a href="gaudium-et-spes.html" class="syn-pill">Lire &rarr;</a></td>
+          </tr>
+          <tr>
+            <td class="t-title"><em>Mater et Magistra</em></td>
+            <td>Jean XXIII</td>
+            <td>1961</td>
+            <td><span class="type-badge type-enc">Encyclique</span></td>
+            <td>Christianisme et progrès social</td>
+            <td class="t-syn"><a href="mater-et-magistra.html" class="syn-pill">Lire &rarr;</a></td>
+          </tr>
+          <tr>
+            <td class="t-title"><em>Pacem in Terris</em></td>
+            <td>Jean XXIII</td>
+            <td>1963</td>
+            <td><span class="type-badge type-enc">Encyclique</span></td>
+            <td>Paix entre les nations dans la vérité et la justice</td>
+            <td class="t-syn"><a href="pacem-in-terris.html" class="syn-pill">Lire &rarr;</a></td>
+          </tr>
+          <tr>
+            <td class="t-title"><em>Populorum Progressio</em></td>
+            <td>Paul VI</td>
+            <td>1967</td>
+            <td><span class="type-badge type-enc">Encyclique</span></td>
+            <td>Développement des peuples</td>
+            <td class="t-syn"><a href="populorum-progressio.html" class="syn-pill">Lire &rarr;</a></td>
+          </tr>
+          <tr>
+            <td class="t-title"><em>Octogesima Adveniens</em></td>
+            <td>Paul VI</td>
+            <td>1971</td>
+            <td><span class="type-badge type-let">Lettre apostolique</span></td>
+            <td>80ᵉ anniversaire de Rerum Novarum, appel à l'action</td>
+            <td class="t-syn"><a href="octogesima-adveniens.html" class="syn-pill">Lire &rarr;</a></td>
+          </tr>
+          <tr>
+            <td class="t-title"><em>Laborem Exercens</em></td>
+            <td>Jean-Paul II</td>
+            <td>1981</td>
+            <td><span class="type-badge type-enc">Encyclique</span></td>
+            <td>Dignité du travail humain</td>
+            <td class="t-syn"><a href="laborem-exercens.html" class="syn-pill">Lire &rarr;</a></td>
+          </tr>
+          <tr>
+            <td class="t-title"><em>Sollicitudo Rei Socialis</em></td>
+            <td>Jean-Paul II</td>
+            <td>1987</td>
+            <td><span class="type-badge type-enc">Encyclique</span></td>
+            <td>Développement solidaire des peuples</td>
+            <td class="t-syn"><a href="sollicitudo-rei-socialis.html" class="syn-pill">Lire &rarr;</a></td>
+          </tr>
+          <tr>
+            <td class="t-title"><em>Centesimus Annus</em></td>
+            <td>Jean-Paul II</td>
+            <td>1991</td>
+            <td><span class="type-badge type-enc">Encyclique</span></td>
+            <td>Centenaire de Rerum Novarum</td>
+            <td class="t-syn"><a href="centesimus-annus.html" class="syn-pill">Lire &rarr;</a></td>
+          </tr>
+          <tr>
+            <td class="t-title"><em>Caritas in Veritate</em></td>
+            <td>Benoît XVI</td>
+            <td>2009</td>
+            <td><span class="type-badge type-enc">Encyclique</span></td>
+            <td>Développement humain intégral dans la charité et la vérité</td>
+            <td class="t-syn"><a href="caritas-in-veritate.html" class="syn-pill">Lire &rarr;</a></td>
+          </tr>
+      </tbody>
+    </table>
+    </div>
   </div>
-
-  <div class="intro" style="margin-top: 3.5rem;">
-    <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 1.7rem; color: var(--navy-deep);">✉️ Lettres</h2>
-    <p>Au-delà des grandes encycliques et exhortations, les papes adressent aussi des lettres plus ciblées — souvent aux évêques, aux prêtres ou à des groupes particuliers — sur des questions précises de doctrine, de liturgie ou de discipline ecclésiale.</p>
+  <div class="theme-block">
+    <div class="theme-head"><span class="theme-num">2</span><span class="theme-emoji">🌿</span><h4>Écologie et environnement</h4></div>
+    <div style="overflow-x:auto;">
+    <table class="corpus-table">
+      <thead><tr><th>Titre</th><th>Pape</th><th>Année</th><th>Type</th><th>Contenu</th><th>Synthèse approfondie</th></tr></thead>
+      <tbody>
+          <tr>
+            <td class="t-title"><em>Laudato Si'</em></td>
+            <td>François</td>
+            <td>2015</td>
+            <td><span class="type-badge type-enc">Encyclique</span></td>
+            <td>Sauvegarde de la maison commune</td>
+            <td class="t-syn"><a href="laudato-si.html" class="syn-pill">Lire &rarr;</a></td>
+          </tr>
+          <tr>
+            <td class="t-title"><em>Laudate Deum</em></td>
+            <td>François</td>
+            <td>2023</td>
+            <td><span class="type-badge type-exh">Exhortation apostolique</span></td>
+            <td>Crise climatique, suite de Laudato Si'</td>
+            <td class="t-syn"><a href="laudate-deum.html" class="syn-pill">Lire &rarr;</a></td>
+          </tr>
+      </tbody>
+    </table>
+    </div>
   </div>
-  <div class="syn-list">
-    <a href="salvifici-doloris.html" class="syn-card">
-      <div class="syn-em"></div>
-      <div class="syn-body">
-        <h3>Salvifici Doloris</h3>
-        <div class="syn-meta"><span class="syn-pape">Jean-Paul II</span><span class="syn-dot">·</span><span>1984</span><span class="syn-dot">·</span><span class="syn-theme">Éthique et vie humaine</span></div>
-        <p class="syn-sujet"><em>Sur le sens chrétien de la souffrance humaine</em></p>
-        <p class="syn-teaser">Trois ans après l'attentat dont il fut victime, Jean-Paul II médite sur le sens salvifique de la souffrance, à la lumière de la Croix.</p>
-        <span class="syn-link">Lire la synthèse complète &rarr;</span>
-      </div>
-    </a>
-    <a href="mulieris-dignitatem.html" class="syn-card">
-      <div class="syn-em"></div>
-      <div class="syn-body">
-        <h3>Mulieris Dignitatem</h3>
-        <div class="syn-meta"><span class="syn-pape">Jean-Paul II</span><span class="syn-dot">·</span><span>1988</span><span class="syn-dot">·</span><span class="syn-theme">Éthique et vie humaine</span></div>
-        <p class="syn-sujet"><em>Sur la dignité et la vocation de la femme</em></p>
-        <p class="syn-teaser">Publiée pour clôturer l'Année mariale : la dignité et la vocation propre de la femme, à la lumière de la Bible et de Marie.</p>
-        <span class="syn-link">Lire la synthèse complète &rarr;</span>
-      </div>
-    </a>
-    <a href="testem-benevolentiae-nostrae.html" class="syn-card">
-      <div class="syn-em"></div>
-      <div class="syn-body">
-        <h3>Testem Benevolentiae Nostrae</h3>
-        <div class="syn-meta"><span class="syn-pape">Léon XIII</span><span class="syn-dot">·</span><span>1899</span><span class="syn-dot">·</span><span class="syn-theme">Foi et raison</span></div>
-        <p class="syn-sujet"><em>Sur l'américanisme</em></p>
-        <p class="syn-teaser">Adressée au cardinal Gibbons de Baltimore : Léon XIII met en garde contre la tentation d'adapter la doctrine catholique à l'air du temps.</p>
-        <span class="syn-link">Lire la synthèse complète &rarr;</span>
-      </div>
-    </a>
-    <a href="dominicae-cenae.html" class="syn-card">
-      <div class="syn-em"></div>
-      <div class="syn-body">
-        <h3>Dominicae Cenae</h3>
-        <div class="syn-meta"><span class="syn-pape">Jean-Paul II</span><span class="syn-dot">·</span><span>1980</span><span class="syn-dot">·</span><span class="syn-theme">Liturgie et Eucharistie</span></div>
-        <p class="syn-sujet"><em>Sur le mystère et le culte de la sainte Eucharistie</em></p>
-        <p class="syn-teaser">Lettre du Jeudi saint aux évêques : la sacralité et le caractère sacrificiel de la messe, et l'unité du culte eucharistique après Vatican II.</p>
-        <span class="syn-link">Lire la synthèse complète &rarr;</span>
-      </div>
-    </a>
+  <div class="theme-block">
+    <div class="theme-head"><span class="theme-num">3</span><span class="theme-emoji">🤖</span><h4>Intelligence artificielle et dignité humaine</h4></div>
+    <div style="overflow-x:auto;">
+    <table class="corpus-table">
+      <thead><tr><th>Titre</th><th>Pape</th><th>Année</th><th>Type</th><th>Contenu</th><th>Synthèse approfondie</th></tr></thead>
+      <tbody>
+          <tr>
+            <td class="t-title"><em>Magnifica Humanitas</em></td>
+            <td>Léon XIV</td>
+            <td>2026</td>
+            <td><span class="type-badge type-enc">Encyclique</span></td>
+            <td>Protection de la personne humaine à l'ère de l'intelligence artificielle</td>
+            <td class="t-syn"><a href="magnifica-humanitas.html" class="syn-pill">Lire &rarr;</a></td>
+          </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+  <div class="theme-block">
+    <div class="theme-head"><span class="theme-num">4</span><span class="theme-emoji">📖</span><h4>Foi, théologie et vérité</h4></div>
+    <div style="overflow-x:auto;">
+    <table class="corpus-table">
+      <thead><tr><th>Titre</th><th>Pape</th><th>Année</th><th>Type</th><th>Contenu</th><th>Synthèse approfondie</th></tr></thead>
+      <tbody>
+          <tr>
+            <td class="t-title"><em>Aeterni Patris</em></td>
+            <td>Léon XIII</td>
+            <td>1879</td>
+            <td><span class="type-badge type-enc">Encyclique</span></td>
+            <td>Philosophie chrétienne, Thomas d'Aquin et la scolastique</td>
+            <td class="t-syn"><a href="aeterni-patris.html" class="syn-pill">Lire &rarr;</a></td>
+          </tr>
+          <tr>
+            <td class="t-title"><em>Pascendi Dominici Gregis</em></td>
+            <td>Pie X</td>
+            <td>1907</td>
+            <td><span class="type-badge type-enc">Encyclique</span></td>
+            <td>Condamnation du modernisme</td>
+            <td class="t-syn"><a href="pascendi-dominici-gregis.html" class="syn-pill">Lire &rarr;</a></td>
+          </tr>
+          <tr>
+            <td class="t-title"><em>Humani Generis</em></td>
+            <td>Pie XII</td>
+            <td>1950</td>
+            <td><span class="type-badge type-enc">Encyclique</span></td>
+            <td>Erreurs menaçant les fondements de la doctrine catholique</td>
+            <td class="t-syn"><span class="syn-pill-empty">À venir</span></td>
+          </tr>
+          <tr>
+            <td class="t-title"><em>Fides et Ratio</em></td>
+            <td>Jean-Paul II</td>
+            <td>1998</td>
+            <td><span class="type-badge type-enc">Encyclique</span></td>
+            <td>Relations entre la foi et la raison</td>
+            <td class="t-syn"><a href="fides-et-ratio.html" class="syn-pill">Lire &rarr;</a></td>
+          </tr>
+          <tr>
+            <td class="t-title"><em>Lumen Fidei</em></td>
+            <td>François</td>
+            <td>2013</td>
+            <td><span class="type-badge type-enc">Encyclique</span></td>
+            <td>La lumière de la foi</td>
+            <td class="t-syn"><a href="lumen-fidei.html" class="syn-pill">Lire &rarr;</a></td>
+          </tr>
+          <tr>
+            <td class="t-title"><em>Testem Benevolentiae Nostrae</em></td>
+            <td>Léon XIII</td>
+            <td>1899</td>
+            <td><span class="type-badge type-letsimple">Lettre</span></td>
+            <td>Sur l'américanisme, adressée au cardinal Gibbons de Baltimore</td>
+            <td class="t-syn"><a href="testem-benevolentiae-nostrae.html" class="syn-pill">Lire &rarr;</a></td>
+          </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+  <div class="theme-block">
+    <div class="theme-head"><span class="theme-num">5</span><span class="theme-emoji">❤️</span><h4>Amour, charité et miséricorde</h4></div>
+    <div style="overflow-x:auto;">
+    <table class="corpus-table">
+      <thead><tr><th>Titre</th><th>Pape</th><th>Année</th><th>Type</th><th>Contenu</th><th>Synthèse approfondie</th></tr></thead>
+      <tbody>
+          <tr>
+            <td class="t-title"><em>Deus Caritas Est</em></td>
+            <td>Benoît XVI</td>
+            <td>2006</td>
+            <td><span class="type-badge type-enc">Encyclique</span></td>
+            <td>L'amour chrétien et la charité</td>
+            <td class="t-syn"><a href="deus-caritas-est.html" class="syn-pill">Lire &rarr;</a></td>
+          </tr>
+          <tr>
+            <td class="t-title"><em>Dilexit Nos</em></td>
+            <td>François</td>
+            <td>2024</td>
+            <td><span class="type-badge type-enc">Encyclique</span></td>
+            <td>Dévotion au Sacré-Cœur de Jésus</td>
+            <td class="t-syn"><span class="syn-pill-empty">À venir</span></td>
+          </tr>
+          <tr>
+            <td class="t-title"><em>Dilexi Te</em></td>
+            <td>Léon XIV</td>
+            <td>2025</td>
+            <td><span class="type-badge type-exh">Exhortation apostolique</span></td>
+            <td>L'amour pour les pauvres</td>
+            <td class="t-syn"><span class="syn-pill-empty">À venir</span></td>
+          </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+  <div class="theme-block">
+    <div class="theme-head"><span class="theme-num">6</span><span class="theme-emoji">🕊️</span><h4>Fraternité, paix et relations humaines</h4></div>
+    <div style="overflow-x:auto;">
+    <table class="corpus-table">
+      <thead><tr><th>Titre</th><th>Pape</th><th>Année</th><th>Type</th><th>Contenu</th><th>Synthèse approfondie</th></tr></thead>
+      <tbody>
+          <tr>
+            <td class="t-title"><em>Pacem in Terris</em></td>
+            <td>Jean XXIII</td>
+            <td>1963</td>
+            <td><span class="type-badge type-enc">Encyclique</span></td>
+            <td>Paix entre les nations</td>
+            <td class="t-syn"><a href="pacem-in-terris.html" class="syn-pill">Lire &rarr;</a></td>
+          </tr>
+          <tr>
+            <td class="t-title"><em>Populorum Progressio</em></td>
+            <td>Paul VI</td>
+            <td>1967</td>
+            <td><span class="type-badge type-enc">Encyclique</span></td>
+            <td>Fraternité entre les peuples</td>
+            <td class="t-syn"><a href="populorum-progressio.html" class="syn-pill">Lire &rarr;</a></td>
+          </tr>
+          <tr>
+            <td class="t-title"><em>Fratelli Tutti</em></td>
+            <td>François</td>
+            <td>2020</td>
+            <td><span class="type-badge type-enc">Encyclique</span></td>
+            <td>Fraternité et amitié sociale</td>
+            <td class="t-syn"><a href="fratelli-tutti.html" class="syn-pill">Lire &rarr;</a></td>
+          </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+  <div class="theme-block">
+    <div class="theme-head"><span class="theme-num">7</span><span class="theme-emoji">⚖️</span><h4>Éthique, morale et vie humaine</h4></div>
+    <div style="overflow-x:auto;">
+    <table class="corpus-table">
+      <thead><tr><th>Titre</th><th>Pape</th><th>Année</th><th>Type</th><th>Contenu</th><th>Synthèse approfondie</th></tr></thead>
+      <tbody>
+          <tr>
+            <td class="t-title"><em>Arcanum Divinae</em></td>
+            <td>Léon XIII</td>
+            <td>1880</td>
+            <td><span class="type-badge type-enc">Encyclique</span></td>
+            <td>Le mariage chrétien</td>
+            <td class="t-syn"><span class="syn-pill-empty">À venir</span></td>
+          </tr>
+          <tr>
+            <td class="t-title"><em>Casti Connubii</em></td>
+            <td>Pie XI</td>
+            <td>1930</td>
+            <td><span class="type-badge type-enc">Encyclique</span></td>
+            <td>Le mariage chrétien</td>
+            <td class="t-syn"><span class="syn-pill-empty">À venir</span></td>
+          </tr>
+          <tr>
+            <td class="t-title"><em>Humanae Vitae</em></td>
+            <td>Paul VI</td>
+            <td>1968</td>
+            <td><span class="type-badge type-enc">Encyclique</span></td>
+            <td>Régulation des naissances</td>
+            <td class="t-syn"><a href="humanae-vitae.html" class="syn-pill">Lire &rarr;</a></td>
+          </tr>
+          <tr>
+            <td class="t-title"><em>Veritatis Splendor</em></td>
+            <td>Jean-Paul II</td>
+            <td>1993</td>
+            <td><span class="type-badge type-enc">Encyclique</span></td>
+            <td>L'enseignement moral de l'Église</td>
+            <td class="t-syn"><a href="veritatis-splendor.html" class="syn-pill">Lire &rarr;</a></td>
+          </tr>
+          <tr>
+            <td class="t-title"><em>Evangelium Vitae</em></td>
+            <td>Jean-Paul II</td>
+            <td>1995</td>
+            <td><span class="type-badge type-enc">Encyclique</span></td>
+            <td>Valeur et inviolabilité de la vie humaine</td>
+            <td class="t-syn"><a href="evangelium-vitae.html" class="syn-pill">Lire &rarr;</a></td>
+          </tr>
+          <tr>
+            <td class="t-title"><em>Salvifici Doloris</em></td>
+            <td>Jean-Paul II</td>
+            <td>1984</td>
+            <td><span class="type-badge type-letsimple">Lettre</span></td>
+            <td>Le sens chrétien de la souffrance humaine</td>
+            <td class="t-syn"><a href="salvifici-doloris.html" class="syn-pill">Lire &rarr;</a></td>
+          </tr>
+          <tr>
+            <td class="t-title"><em>Mulieris Dignitatem</em></td>
+            <td>Jean-Paul II</td>
+            <td>1988</td>
+            <td><span class="type-badge type-letsimple">Lettre</span></td>
+            <td>La dignité et la vocation de la femme</td>
+            <td class="t-syn"><a href="mulieris-dignitatem.html" class="syn-pill">Lire &rarr;</a></td>
+          </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+  <div class="theme-block">
+    <div class="theme-head"><span class="theme-num">8</span><span class="theme-emoji">⛪</span><h4>Ecclésiologie et Eucharistie</h4></div>
+    <div style="overflow-x:auto;">
+    <table class="corpus-table">
+      <thead><tr><th>Titre</th><th>Pape</th><th>Année</th><th>Type</th><th>Contenu</th><th>Synthèse approfondie</th></tr></thead>
+      <tbody>
+          <tr>
+            <td class="t-title"><em>Mystici Corporis</em></td>
+            <td>Pie XII</td>
+            <td>1943</td>
+            <td><span class="type-badge type-enc">Encyclique</span></td>
+            <td>L'Église, corps mystique du Christ</td>
+            <td class="t-syn"><span class="syn-pill-empty">À venir</span></td>
+          </tr>
+          <tr>
+            <td class="t-title"><em>Mediator Dei</em></td>
+            <td>Pie XII</td>
+            <td>1947</td>
+            <td><span class="type-badge type-enc">Encyclique</span></td>
+            <td>La liturgie et le culte divin</td>
+            <td class="t-syn"><span class="syn-pill-empty">À venir</span></td>
+          </tr>
+          <tr>
+            <td class="t-title"><em>Ecclesiam Suam</em></td>
+            <td>Paul VI</td>
+            <td>1964</td>
+            <td><span class="type-badge type-enc">Encyclique</span></td>
+            <td>La mission de l'Église dans le monde</td>
+            <td class="t-syn"><span class="syn-pill-empty">À venir</span></td>
+          </tr>
+          <tr>
+            <td class="t-title"><em>Ecclesia de Eucharistia</em></td>
+            <td>Jean-Paul II</td>
+            <td>2003</td>
+            <td><span class="type-badge type-enc">Encyclique</span></td>
+            <td>L'Eucharistie dans sa relation à l'Église</td>
+            <td class="t-syn"><span class="syn-pill-empty">À venir</span></td>
+          </tr>
+          <tr>
+            <td class="t-title"><em>Dominicae Cenae</em></td>
+            <td>Jean-Paul II</td>
+            <td>1980</td>
+            <td><span class="type-badge type-letsimple">Lettre</span></td>
+            <td>Le mystère et le culte de la sainte Eucharistie</td>
+            <td class="t-syn"><a href="dominicae-cenae.html" class="syn-pill">Lire &rarr;</a></td>
+          </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+  <div class="theme-block">
+    <div class="theme-head"><span class="theme-num">9</span><span class="theme-emoji">🤝</span><h4>Œcuménisme et unité chrétienne</h4></div>
+    <div style="overflow-x:auto;">
+    <table class="corpus-table">
+      <thead><tr><th>Titre</th><th>Pape</th><th>Année</th><th>Type</th><th>Contenu</th><th>Synthèse approfondie</th></tr></thead>
+      <tbody>
+          <tr>
+            <td class="t-title"><em>Mortalium Animos</em></td>
+            <td>Pie XI</td>
+            <td>1928</td>
+            <td><span class="type-badge type-enc">Encyclique</span></td>
+            <td>Sur l'unité religieuse</td>
+            <td class="t-syn"><span class="syn-pill-empty">À venir</span></td>
+          </tr>
+          <tr>
+            <td class="t-title"><em>Ut Unum Sint</em></td>
+            <td>Jean-Paul II</td>
+            <td>1995</td>
+            <td><span class="type-badge type-enc">Encyclique</span></td>
+            <td>L'engagement œcuménique</td>
+            <td class="t-syn"><a href="ut-unum-sint.html" class="syn-pill">Lire &rarr;</a></td>
+          </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+  <div class="theme-block">
+    <div class="theme-head"><span class="theme-num">10</span><span class="theme-emoji">🌍</span><h4>Mission et évangélisation</h4></div>
+    <div style="overflow-x:auto;">
+    <table class="corpus-table">
+      <thead><tr><th>Titre</th><th>Pape</th><th>Année</th><th>Type</th><th>Contenu</th><th>Synthèse approfondie</th></tr></thead>
+      <tbody>
+          <tr>
+            <td class="t-title"><em>Maximum Illud</em></td>
+            <td>Benoît XV</td>
+            <td>1919</td>
+            <td><span class="type-badge type-let">Lettre apostolique</span></td>
+            <td>Les missions catholiques après la Première Guerre mondiale</td>
+            <td class="t-syn"><span class="syn-pill-empty">À venir</span></td>
+          </tr>
+          <tr>
+            <td class="t-title"><em>Evangelii Praecones</em></td>
+            <td>Pie XII</td>
+            <td>1951</td>
+            <td><span class="type-badge type-enc">Encyclique</span></td>
+            <td>L'activité missionnaire</td>
+            <td class="t-syn"><span class="syn-pill-empty">À venir</span></td>
+          </tr>
+          <tr>
+            <td class="t-title"><em>Redemptoris Missio</em></td>
+            <td>Jean-Paul II</td>
+            <td>1990</td>
+            <td><span class="type-badge type-enc">Encyclique</span></td>
+            <td>La valeur permanente du précepte missionnaire</td>
+            <td class="t-syn"><span class="syn-pill-empty">À venir</span></td>
+          </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+  <div class="theme-block">
+    <div class="theme-head"><span class="theme-num">11</span><span class="theme-emoji">🙏</span><h4>Dévotion mariale et spiritualité</h4></div>
+    <div style="overflow-x:auto;">
+    <table class="corpus-table">
+      <thead><tr><th>Titre</th><th>Pape</th><th>Année</th><th>Type</th><th>Contenu</th><th>Synthèse approfondie</th></tr></thead>
+      <tbody>
+          <tr>
+            <td class="t-title"><em>Supremi Apostolatus</em></td>
+            <td>Léon XIII</td>
+            <td>1883</td>
+            <td><span class="type-badge type-enc">Encyclique</span></td>
+            <td>Le Rosaire</td>
+            <td class="t-syn"><span class="syn-pill-empty">À venir</span></td>
+          </tr>
+          <tr>
+            <td class="t-title"><em>Quamquam Pluries</em></td>
+            <td>Léon XIII</td>
+            <td>1889</td>
+            <td><span class="type-badge type-enc">Encyclique</span></td>
+            <td>La dévotion à saint Joseph</td>
+            <td class="t-syn"><span class="syn-pill-empty">À venir</span></td>
+          </tr>
+          <tr>
+            <td class="t-title"><em>Ad Diem Illum Laetissimum</em></td>
+            <td>Pie X</td>
+            <td>1904</td>
+            <td><span class="type-badge type-enc">Encyclique</span></td>
+            <td>La dévotion à la Vierge Marie</td>
+            <td class="t-syn"><span class="syn-pill-empty">À venir</span></td>
+          </tr>
+          <tr>
+            <td class="t-title"><em>Spe Salvi</em></td>
+            <td>Benoît XVI</td>
+            <td>2007</td>
+            <td><span class="type-badge type-enc">Encyclique</span></td>
+            <td>L'espérance chrétienne</td>
+            <td class="t-syn"><a href="spe-salvi.html" class="syn-pill">Lire &rarr;</a></td>
+          </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+  <div class="theme-block">
+    <div class="theme-head"><span class="theme-num">12</span><span class="theme-emoji">🏛️</span><h4>Politique, État et liberté</h4></div>
+    <div style="overflow-x:auto;">
+    <table class="corpus-table">
+      <thead><tr><th>Titre</th><th>Pape</th><th>Année</th><th>Type</th><th>Contenu</th><th>Synthèse approfondie</th></tr></thead>
+      <tbody>
+          <tr>
+            <td class="t-title"><em>Diuturnum Illud</em></td>
+            <td>Léon XIII</td>
+            <td>1881</td>
+            <td><span class="type-badge type-enc">Encyclique</span></td>
+            <td>L'origine du pouvoir civil</td>
+            <td class="t-syn"><span class="syn-pill-empty">À venir</span></td>
+          </tr>
+          <tr>
+            <td class="t-title"><em>Immortale Dei</em></td>
+            <td>Léon XIII</td>
+            <td>1885</td>
+            <td><span class="type-badge type-enc">Encyclique</span></td>
+            <td>La constitution chrétienne des États</td>
+            <td class="t-syn"><span class="syn-pill-empty">À venir</span></td>
+          </tr>
+          <tr>
+            <td class="t-title"><em>Libertas Praestantissimum</em></td>
+            <td>Léon XIII</td>
+            <td>1888</td>
+            <td><span class="type-badge type-enc">Encyclique</span></td>
+            <td>La liberté humaine</td>
+            <td class="t-syn"><span class="syn-pill-empty">À venir</span></td>
+          </tr>
+          <tr>
+            <td class="t-title"><em>Non Abbiamo Bisogno</em></td>
+            <td>Pie XI</td>
+            <td>1931</td>
+            <td><span class="type-badge type-enc">Encyclique</span></td>
+            <td>Condamnation du fascisme italien</td>
+            <td class="t-syn"><span class="syn-pill-empty">À venir</span></td>
+          </tr>
+          <tr>
+            <td class="t-title"><em>Mit Brennender Sorge</em></td>
+            <td>Pie XI</td>
+            <td>1937</td>
+            <td><span class="type-badge type-enc">Encyclique</span></td>
+            <td>Condamnation du nazisme</td>
+            <td class="t-syn"><a href="mit-brennender-sorge.html" class="syn-pill">Lire &rarr;</a></td>
+          </tr>
+          <tr>
+            <td class="t-title"><em>Divini Redemptoris</em></td>
+            <td>Pie XI</td>
+            <td>1937</td>
+            <td><span class="type-badge type-enc">Encyclique</span></td>
+            <td>Condamnation du communisme athée</td>
+            <td class="t-syn"><a href="divini-redemptoris.html" class="syn-pill">Lire &rarr;</a></td>
+          </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+  <div class="theme-block">
+    <div class="theme-head"><span class="theme-num">13</span><span class="theme-emoji">🎓</span><h4>Éducation et culture</h4></div>
+    <div style="overflow-x:auto;">
+    <table class="corpus-table">
+      <thead><tr><th>Titre</th><th>Pape</th><th>Année</th><th>Type</th><th>Contenu</th><th>Synthèse approfondie</th></tr></thead>
+      <tbody>
+          <tr>
+            <td class="t-title"><em>Divini Illius Magistri</em></td>
+            <td>Pie XI</td>
+            <td>1929</td>
+            <td><span class="type-badge type-enc">Encyclique</span></td>
+            <td>L'éducation chrétienne de la jeunesse</td>
+            <td class="t-syn"><span class="syn-pill-empty">À venir</span></td>
+          </tr>
+      </tbody>
+    </table>
+    </div>
   </div>
 
   <div class="coming">
     <h3>📚 Prochainement</h3>
-    <p>D'autres vagues thématiques de synthèses viendront enrichir la collection.</p>
-    <div class="future">
-      <span>Foi et raison</span>
-      <span>Œcuménisme</span>
-      <span>Mission et évangélisation</span>
-      <span>Ecclésiologie</span>
-      <span>Dévotion mariale</span>
-      <span>…</span>
-    </div>
+    <p>D'autres synthèses viendront enrichir progressivement ce corpus.</p>
   </div>
+
 </main>
 
 <footer>
