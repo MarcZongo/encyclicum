@@ -23,6 +23,12 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"WebSite","name":"Encyclicum","url":"https://www.encyclicum.ca/","description":"Recensement et synthèse thématique des encycliques, exhortations apostoliques, catéchèses et homélies des papes, de Léon XIII à Léon XIV.","inLanguage":"fr","potentialAction":{"@type":"SearchAction","target":"https://www.encyclicum.ca/?q={search_term_string}","query-input":"required name=search_term_string"},"founder":{"@type":"Person","name":"Dr Wendnonghen Marc Zongo","jobTitle":"Directeur général","worksFor":{"@type":"Organization","name":"MetanoIA Stratégie","url":"https://www.metanoia-strategie.ca"}}}
 </script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Qu'est-ce que la doctrine sociale de l'Église ?","acceptedAnswer":{"@type":"Answer","text":"La doctrine sociale de l'Église est l'ensemble des enseignements du magistère catholique sur la dignité de la personne humaine, le bien commun, la justice sociale et l'organisation de la société, depuis Rerum Novarum (1891) jusqu'aux textes les plus récents."}},
+{"@type":"Question","name":"À qui s'adresse Encyclicum ?","acceptedAnswer":{"@type":"Answer","text":"À tout le monde : chercheurs, étudiants, chrétiens et non-chrétiens, professionnels et organisations en quête de repères éthiques. Les synthèses sont accessibles sans formation préalable et vérifiées pour les besoins de la recherche."}}
+]}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
@@ -91,6 +97,9 @@
   .count{font-size:14px;color:var(--muted);font-style:italic;margin-left:auto;white-space:nowrap;}
 
   /* ---- Synthèses à la une (en haut, avant les tableaux) ---- */
+  .audience-note{max-width:760px;margin:34px auto 0;padding:22px 28px;background:#FCF7EA;border:1px solid var(--line);border-radius:12px;text-align:center;}
+  .audience-note p{font-size:16.5px;color:#3A3E46;line-height:1.7;margin:0;}
+  .audience-note strong{color:var(--navy);}
   .featured{max-width:1180px;margin:0 auto;padding:54px 24px 14px;}
   .featured-head{text-align:center;margin-bottom:28px;}
   .featured-head .eyebrow{font-size:12px;letter-spacing:.34em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:10px;}
@@ -136,6 +145,8 @@
   tbody tr:nth-child(even){background:#FCFAF4;}
   tbody tr:hover{background:#F6EFDD;transition:background .15s;}
   .c-titre{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:600;font-size:19px;color:var(--navy);}
+  .c-titre a{color:inherit;text-decoration:none;border-bottom:1px dotted var(--gold);}
+  .c-titre a:hover{color:var(--gold);border-bottom-style:solid;}
   .c-pape{white-space:nowrap;}
   .c-annee{font-variant-numeric:tabular-nums;color:var(--muted);white-space:nowrap;}
   .c-contenu{color:#3A3E46;line-height:1.5;}
@@ -180,6 +191,11 @@
   .form-status.ok{display:block;color:#2E7D52;}
   .form-status.err{display:block;color:#B23A48;}
 
+  .faq{max-width:760px;margin:0 auto;padding:70px 24px;}
+  .faq-head{text-align:center;margin-bottom:30px;}
+  .faq-item{background:var(--paper);border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);padding:22px 26px;margin-bottom:16px;}
+  .faq-item h3{font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--navy);margin-bottom:8px;}
+  .faq-item p{font-size:16px;color:#3A3E46;line-height:1.7;margin:0;}
   .founder{max-width:1180px;margin:0 auto;padding:76px 24px;}
   .founder-card{display:grid;grid-template-columns:auto 1fr;gap:36px;align-items:center;background:var(--paper);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);padding:44px;}
   .founder-avatar{width:130px;height:130px;border-radius:50%;background:linear-gradient(160deg,var(--navy),var(--navy-deep));color:var(--gold-light);font-family:'Cormorant Garamond',serif;font-size:48px;font-weight:600;display:flex;align-items:center;justify-content:center;border:3px solid var(--gold);flex-shrink:0;}
@@ -256,6 +272,10 @@
   </div>
 </header>
 
+<section class="audience-note">
+  <p><strong>Que vous soyez chercheur, étudiant, chrétien ou non-chrétien</strong>, simple curieux ou praticien engagé dans le développement, l'éducation ou l'éthique des organisations : Encyclicum a été conçu pour que chacun y trouve son compte. Les textes du magistère pontifical et de la doctrine sociale de l'Église y sont rendus accessibles, vérifiés et fidèles à leurs sources, sans présupposer de croyance ni de formation théologique préalable.</p>
+</section>
+
 <section class="featured" id="syntheses-une">
   <div class="featured-head">
     <div class="eyebrow">À découvrir</div>
@@ -311,67 +331,67 @@
           <thead><tr><th>Titre</th><th>Pape</th><th>Année</th><th>Type</th><th>Contenu</th></tr></thead>
           <tbody>
         <tr class="row" data-pape="Léon XIII" data-search="rerum novarum léon xiii condition ouvrière, syndicats, justice sociale — acte fondateur de la doctrine sociale">
-          <td class="c-titre">Rerum Novarum</td><td class="c-pape">Léon XIII</td>
+          <td class="c-titre"><a href="rerum-novarum.html">Rerum Novarum</a></td><td class="c-pape">Léon XIII</td>
           <td class="c-annee">1891</td>
           <td class="c-type"><span class="badge t-enc">Encyclique</span></td>
           <td class="c-contenu">Condition ouvrière, syndicats, justice sociale — acte fondateur de la doctrine sociale</td>
         </tr>
         <tr class="row" data-pape="Pie XI" data-search="quadragesimo anno pie xi 40e anniversaire de rerum novarum, reconstruction de l'ordre social">
-          <td class="c-titre">Quadragesimo Anno</td><td class="c-pape">Pie XI</td>
+          <td class="c-titre"><a href="quadragesimo-anno.html">Quadragesimo Anno</a></td><td class="c-pape">Pie XI</td>
           <td class="c-annee">1931</td>
           <td class="c-type"><span class="badge t-enc">Encyclique</span></td>
           <td class="c-contenu">40e anniversaire de Rerum Novarum, reconstruction de l'ordre social</td>
         </tr>
         <tr class="row" data-pape="Concile Vatican II" data-search="gaudium et spes concile vatican ii l'église dans le monde de ce temps (constitution pastorale)">
-          <td class="c-titre">Gaudium et Spes</td><td class="c-pape">Concile Vatican II</td>
+          <td class="c-titre"><a href="gaudium-et-spes.html">Gaudium et Spes</a></td><td class="c-pape">Concile Vatican II</td>
           <td class="c-annee">1965</td>
           <td class="c-type"><span class="badge t-con">Constitution conciliaire</span></td>
           <td class="c-contenu">L'Église dans le monde de ce temps (constitution pastorale)</td>
         </tr>
         <tr class="row" data-pape="Jean XXIII" data-search="mater et magistra jean xxiii christianisme et progrès social">
-          <td class="c-titre">Mater et Magistra</td><td class="c-pape">Jean XXIII</td>
+          <td class="c-titre"><a href="mater-et-magistra.html">Mater et Magistra</a></td><td class="c-pape">Jean XXIII</td>
           <td class="c-annee">1961</td>
           <td class="c-type"><span class="badge t-enc">Encyclique</span></td>
           <td class="c-contenu">Christianisme et progrès social</td>
         </tr>
         <tr class="row" data-pape="Jean XXIII" data-search="pacem in terris jean xxiii paix entre les nations dans la vérité et la justice">
-          <td class="c-titre">Pacem in Terris</td><td class="c-pape">Jean XXIII</td>
+          <td class="c-titre"><a href="pacem-in-terris.html">Pacem in Terris</a></td><td class="c-pape">Jean XXIII</td>
           <td class="c-annee">1963</td>
           <td class="c-type"><span class="badge t-enc">Encyclique</span></td>
           <td class="c-contenu">Paix entre les nations dans la vérité et la justice</td>
         </tr>
         <tr class="row" data-pape="Paul VI" data-search="populorum progressio paul vi développement des peuples">
-          <td class="c-titre">Populorum Progressio</td><td class="c-pape">Paul VI</td>
+          <td class="c-titre"><a href="populorum-progressio.html">Populorum Progressio</a></td><td class="c-pape">Paul VI</td>
           <td class="c-annee">1967</td>
           <td class="c-type"><span class="badge t-enc">Encyclique</span></td>
           <td class="c-contenu">Développement des peuples</td>
         </tr>
         <tr class="row" data-pape="Paul VI" data-search="octogesima adveniens paul vi 80e anniversaire de rerum novarum, appel à l'action">
-          <td class="c-titre">Octogesima Adveniens</td><td class="c-pape">Paul VI</td>
+          <td class="c-titre"><a href="octogesima-adveniens.html">Octogesima Adveniens</a></td><td class="c-pape">Paul VI</td>
           <td class="c-annee">1971</td>
           <td class="c-type"><span class="badge t-let">Lettre apostolique</span></td>
           <td class="c-contenu">80e anniversaire de Rerum Novarum, appel à l'action</td>
         </tr>
         <tr class="row" data-pape="Jean-Paul II" data-search="laborem exercens jean-paul ii dignité du travail humain">
-          <td class="c-titre">Laborem Exercens</td><td class="c-pape">Jean-Paul II</td>
+          <td class="c-titre"><a href="laborem-exercens.html">Laborem Exercens</a></td><td class="c-pape">Jean-Paul II</td>
           <td class="c-annee">1981</td>
           <td class="c-type"><span class="badge t-enc">Encyclique</span></td>
           <td class="c-contenu">Dignité du travail humain</td>
         </tr>
         <tr class="row" data-pape="Jean-Paul II" data-search="sollicitudo rei socialis jean-paul ii développement solidaire des peuples">
-          <td class="c-titre">Sollicitudo Rei Socialis</td><td class="c-pape">Jean-Paul II</td>
+          <td class="c-titre"><a href="sollicitudo-rei-socialis.html">Sollicitudo Rei Socialis</a></td><td class="c-pape">Jean-Paul II</td>
           <td class="c-annee">1987</td>
           <td class="c-type"><span class="badge t-enc">Encyclique</span></td>
           <td class="c-contenu">Développement solidaire des peuples</td>
         </tr>
         <tr class="row" data-pape="Jean-Paul II" data-search="centesimus annus jean-paul ii centenaire de rerum novarum">
-          <td class="c-titre">Centesimus Annus</td><td class="c-pape">Jean-Paul II</td>
+          <td class="c-titre"><a href="centesimus-annus.html">Centesimus Annus</a></td><td class="c-pape">Jean-Paul II</td>
           <td class="c-annee">1991</td>
           <td class="c-type"><span class="badge t-enc">Encyclique</span></td>
           <td class="c-contenu">Centenaire de Rerum Novarum</td>
         </tr>
         <tr class="row" data-pape="Benoît XVI" data-search="caritas in veritate benoît xvi développement humain intégral dans la charité et la vérité">
-          <td class="c-titre">Caritas in Veritate</td><td class="c-pape">Benoît XVI</td>
+          <td class="c-titre"><a href="caritas-in-veritate.html">Caritas in Veritate</a></td><td class="c-pape">Benoît XVI</td>
           <td class="c-annee">2009</td>
           <td class="c-type"><span class="badge t-enc">Encyclique</span></td>
           <td class="c-contenu">Développement humain intégral dans la charité et la vérité</td>
@@ -383,7 +403,7 @@
           <thead><tr><th>Titre</th><th>Pape</th><th>Année</th><th>Type</th><th>Contenu</th></tr></thead>
           <tbody>
         <tr class="row" data-pape="François" data-search="laudato si' françois sauvegarde de la maison commune">
-          <td class="c-titre">Laudato Si'</td><td class="c-pape">François</td>
+          <td class="c-titre"><a href="laudato-si.html">Laudato Si'</a></td><td class="c-pape">François</td>
           <td class="c-annee">2015</td>
           <td class="c-type"><span class="badge t-enc">Encyclique</span></td>
           <td class="c-contenu">Sauvegarde de la maison commune</td>
@@ -473,19 +493,19 @@
           <thead><tr><th>Titre</th><th>Pape</th><th>Année</th><th>Type</th><th>Contenu</th></tr></thead>
           <tbody>
         <tr class="row" data-pape="Jean XXIII" data-search="pacem in terris jean xxiii paix entre les nations (voir aussi section doctrine sociale)">
-          <td class="c-titre">Pacem in Terris</td><td class="c-pape">Jean XXIII</td>
+          <td class="c-titre"><a href="pacem-in-terris.html">Pacem in Terris</a></td><td class="c-pape">Jean XXIII</td>
           <td class="c-annee">1963</td>
           <td class="c-type"><span class="badge t-enc">Encyclique</span></td>
           <td class="c-contenu">Paix entre les nations (voir aussi section Doctrine sociale)</td>
         </tr>
         <tr class="row" data-pape="Paul VI" data-search="populorum progressio paul vi fraternité entre les peuples (voir aussi section doctrine sociale)">
-          <td class="c-titre">Populorum Progressio</td><td class="c-pape">Paul VI</td>
+          <td class="c-titre"><a href="populorum-progressio.html">Populorum Progressio</a></td><td class="c-pape">Paul VI</td>
           <td class="c-annee">1967</td>
           <td class="c-type"><span class="badge t-enc">Encyclique</span></td>
           <td class="c-contenu">Fraternité entre les peuples (voir aussi section Doctrine sociale)</td>
         </tr>
         <tr class="row" data-pape="François" data-search="fratelli tutti françois fraternité et amitié sociale">
-          <td class="c-titre">Fratelli Tutti</td><td class="c-pape">François</td>
+          <td class="c-titre"><a href="fratelli-tutti.html">Fratelli Tutti</a></td><td class="c-pape">François</td>
           <td class="c-annee">2020</td>
           <td class="c-type"><span class="badge t-enc">Encyclique</span></td>
           <td class="c-contenu">Fraternité et amitié sociale</td>
@@ -509,19 +529,19 @@
           <td class="c-contenu">Le mariage chrétien</td>
         </tr>
         <tr class="row" data-pape="Paul VI" data-search="humanae vitae paul vi régulation des naissances">
-          <td class="c-titre">Humanae Vitae</td><td class="c-pape">Paul VI</td>
+          <td class="c-titre"><a href="humanae-vitae.html">Humanae Vitae</a></td><td class="c-pape">Paul VI</td>
           <td class="c-annee">1968</td>
           <td class="c-type"><span class="badge t-enc">Encyclique</span></td>
           <td class="c-contenu">Régulation des naissances</td>
         </tr>
         <tr class="row" data-pape="Jean-Paul II" data-search="veritatis splendor jean-paul ii l'enseignement moral de l'église">
-          <td class="c-titre">Veritatis Splendor</td><td class="c-pape">Jean-Paul II</td>
+          <td class="c-titre"><a href="veritatis-splendor.html">Veritatis Splendor</a></td><td class="c-pape">Jean-Paul II</td>
           <td class="c-annee">1993</td>
           <td class="c-type"><span class="badge t-enc">Encyclique</span></td>
           <td class="c-contenu">L'enseignement moral de l'Église</td>
         </tr>
         <tr class="row" data-pape="Jean-Paul II" data-search="evangelium vitae jean-paul ii valeur et inviolabilité de la vie humaine">
-          <td class="c-titre">Evangelium Vitae</td><td class="c-pape">Jean-Paul II</td>
+          <td class="c-titre"><a href="evangelium-vitae.html">Evangelium Vitae</a></td><td class="c-pape">Jean-Paul II</td>
           <td class="c-annee">1995</td>
           <td class="c-type"><span class="badge t-enc">Encyclique</span></td>
           <td class="c-contenu">Valeur et inviolabilité de la vie humaine</td>
@@ -659,13 +679,13 @@
           <td class="c-contenu">Condamnation du fascisme italien</td>
         </tr>
         <tr class="row" data-pape="Pie XI" data-search="mit brennender sorge pie xi condamnation du nazisme">
-          <td class="c-titre">Mit Brennender Sorge</td><td class="c-pape">Pie XI</td>
+          <td class="c-titre"><a href="mit-brennender-sorge.html">Mit Brennender Sorge</a></td><td class="c-pape">Pie XI</td>
           <td class="c-annee">1937</td>
           <td class="c-type"><span class="badge t-enc">Encyclique</span></td>
           <td class="c-contenu">Condamnation du nazisme</td>
         </tr>
         <tr class="row" data-pape="Pie XI" data-search="divini redemptoris pie xi condamnation du communisme athée">
-          <td class="c-titre">Divini Redemptoris</td><td class="c-pape">Pie XI</td>
+          <td class="c-titre"><a href="divini-redemptoris.html">Divini Redemptoris</a></td><td class="c-pape">Pie XI</td>
           <td class="c-annee">1937</td>
           <td class="c-type"><span class="badge t-enc">Encyclique</span></td>
           <td class="c-contenu">Condamnation du communisme athée</td>
@@ -710,7 +730,7 @@
           <thead><tr><th>Titre</th><th>Pape</th><th>Année</th><th>Contenu</th></tr></thead>
           <tbody>
         <tr class="row" data-pape="Paul VI" data-search="evangelii nuntiandi paul vi l'annonce de l'évangile dans le monde moderne">
-          <td class="c-titre">Evangelii Nuntiandi</td><td class="c-pape">Paul VI</td>
+          <td class="c-titre"><a href="evangelii-nuntiandi.html">Evangelii Nuntiandi</a></td><td class="c-pape">Paul VI</td>
           <td class="c-annee">1975</td>
           <td class="c-contenu">L'annonce de l'Évangile dans le monde moderne</td>
         </tr>
@@ -720,7 +740,7 @@
           <td class="c-contenu">La catéchèse en notre temps</td>
         </tr>
         <tr class="row" data-pape="François" data-search="evangelii gaudium françois la joie de l'évangile — programme du pontificat">
-          <td class="c-titre">Evangelii Gaudium</td><td class="c-pape">François</td>
+          <td class="c-titre"><a href="evangelii-gaudium.html">Evangelii Gaudium</a></td><td class="c-pape">François</td>
           <td class="c-annee">2013</td>
           <td class="c-contenu">La joie de l'Évangile — programme du pontificat</td>
         </tr>
@@ -1007,6 +1027,24 @@
     <button type="submit" class="submit-btn">Envoyer le message</button>
     <p class="form-status" id="formStatus"></p>
   </form>
+</section>
+
+<section class="faq" id="faq">
+  <div class="faq-head"><div class="eyebrow">Questions fréquentes</div><h2>Comprendre la doctrine sociale de l'Église</h2></div>
+  <div class="faq-list">
+    <div class="faq-item">
+      <h3>Qu'est-ce que la doctrine sociale de l'Église ?</h3>
+      <p>La doctrine sociale de l'Église (DSE) est l'ensemble des enseignements du magistère catholique sur la dignité de la personne humaine, le bien commun, la justice sociale et l'organisation de la société. Elle prend sa source dans l'encyclique <em>Rerum Novarum</em> de Léon XIII (1891) et s'est développée depuis à travers une succession d'encycliques, de constitutions conciliaires et d'exhortations apostoliques, jusqu'aux textes les plus récents sur l'écologie intégrale, la fraternité universelle ou l'intelligence artificielle.</p>
+    </div>
+    <div class="faq-item">
+      <h3>À qui s'adresse Encyclicum ?</h3>
+      <p>À tout le monde : chercheurs et étudiants en théologie, en sciences sociales ou en éthique, chrétiens en quête de formation, personnes non chrétiennes curieuses de la pensée sociale catholique, professionnels et organisations cherchant des repères éthiques. Les synthèses sont rédigées pour être accessibles sans formation préalable, tout en restant fidèles et vérifiées pour les besoins de la recherche universitaire.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Les synthèses sont-elles fiables pour un usage académique ?</h3>
+      <p>Chaque synthèse est vérifiée par rapport au texte officiel publié sur vatican.va et cite ses sources. Encyclicum ne prétend pas se substituer à la lecture du texte intégral, vers lequel chaque page renvoie systématiquement, mais propose un point d'entrée structuré : contexte historique, thèses principales, citations, portée et implications contemporaines.</p>
+    </div>
+  </div>
 </section>
 
 <section class="founder" id="fondateur">
