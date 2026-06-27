@@ -1,925 +1,1097 @@
 <!DOCTYPE html>
-<html lang="fr-CA">
+<html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Encyclicum — La doctrine sociale de l'Église, accessible · Encyclicum</title>
-  <meta name="description" content="Encyclicum vulgarise la doctrine sociale de l'Église en français : synthèses, webinaires gratuits, formations sur mesure. De Rerum Novarum (1891) à Magnifica Humanitas (2026). Voix des conférences épiscopales sur les sept continents.">
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Encyclicum — Encycliques, exhortations et catéchèses des papes par thème</title>
+<meta name="description" content="Encyclicum recense et synthétise par thème les encycliques, exhortations apostoliques, catéchèses et homélies des papes, de Léon XIII à Léon XIV (Rerum Novarum, Laudato Si', Magnifica Humanitas…).">
+<meta name="keywords" content="encyclique, encycliques papales, doctrine sociale de l'Église, magistère pontifical, exhortation apostolique, catéchèse, homélie, Rerum Novarum, Laudato Si, Magnifica Humanitas, pape Léon XIV, pape François, Jean-Paul II, Benoît XVI">
+<meta name="author" content="Dr Wendnonghen Marc Zongo">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.encyclicum.ca/">
+<meta property="og:site_name" content="Encyclicum">
+<meta property="og:title" content="Encyclicum — La sagesse des papes, accessible">
+<meta property="og:description" content="Encycliques, exhortations apostoliques, catéchèses et homélies des papes, classées par thème.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_CA">
+<meta property="og:url" content="https://www.encyclicum.ca/">
+<meta property="og:image" content="https://www.encyclicum.ca/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Encyclicum — La sagesse des papes, accessible">
+<meta name="twitter:description" content="Encycliques, exhortations, catéchèses et homélies des papes, classées par thème.">
+<meta name="twitter:image" content="https://www.encyclicum.ca/og-image.png">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","name":"Encyclicum","url":"https://www.encyclicum.ca/","description":"Recensement et synthèse thématique des encycliques, exhortations apostoliques, catéchèses et homélies des papes, de Léon XIII à Léon XIV.","inLanguage":"fr","potentialAction":{"@type":"SearchAction","target":"https://www.encyclicum.ca/?q={search_term_string}","query-input":"required name=search_term_string"},"founder":{"@type":"Person","name":"Dr Wendnonghen Marc Zongo","jobTitle":"Directeur général","worksFor":{"@type":"Organization","name":"MetanoIA Stratégie","url":"https://www.metanoia-strategie.ca"}}}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=Inter+Tight:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --navy: #2a3447;
-    --navy-deep: #1a2336;
-    --gold: #c9a544;
-    --gold-soft: #d9b96a;
-    --cream: #f5f1e8;
-    --cream-deep: #ebe5d4;
-    --ink: #1f2937;
-    --muted: #64748b;
-    --line: #e2dccf;
-    --white: #ffffff;
-    --serif: 'Fraunces', Georgia, serif;
-    --sans: 'Inter Tight', system-ui, -apple-system, sans-serif;
+
+  :root{
+    --navy:#1B2A4A;--navy-deep:#141F38;--gold:#B8923E;--gold-light:#D4B468;
+    --cream:#FBF8F1;--paper:#FFFFFF;--ink:#23272E;--muted:#6B6356;
+    --line:#E5DDcc;--shadow:0 1px 3px rgba(27,42,74,.06),0 8px 30px rgba(27,42,74,.07);
   }
-  * { box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
-  body { margin: 0; font-family: var(--sans); color: var(--ink); background: var(--cream); line-height: 1.7; font-size: 17px; }
-  body.menu-open { overflow: hidden; }
-  .wrap { max-width: 920px; margin: 0 auto; padding: 0 1.5rem; }
-  .wrap-wide { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'EB Garamond',Georgia,serif;background:var(--cream);color:var(--ink);line-height:1.6;font-size:18px;-webkit-font-smoothing:antialiased;}
 
-  /* ============ HEADER STYLE METANOIA ============ */
-  header.site { background: var(--navy-deep); border-bottom: 1px solid rgba(201, 165, 68, 0.2); position: sticky; top: 0; z-index: 100; }
-  .brand-row { display: flex; align-items: center; gap: 2rem; padding: 1rem 0; }
-  .brand { color: var(--cream); text-decoration: none; display: flex; flex-direction: column; line-height: 1.15; flex-shrink: 0; }
-  .brand-name { font-family: var(--serif); font-size: 1.45rem; font-weight: 600; letter-spacing: -0.01em; }
-  .brand-name .cross { color: var(--gold); }
-  .brand-tagline { font-family: var(--serif); font-style: italic; font-size: 0.8rem; color: var(--gold-soft); letter-spacing: 0.05em; margin-top: 0.2rem; }
 
-  /* Nav horizontale style MetanoIA (visible sur desktop) */
-  .main-nav { display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; margin-left: auto; }
-  .main-nav a, .main-nav .nav-item > a { color: rgba(245, 241, 232, 0.82); text-decoration: none; font-size: 0.9rem; padding: 0.4rem 0.7rem; border-radius: 3px; transition: all 0.15s; display: inline-block; }
-  .main-nav a:hover, .main-nav .nav-item > a:hover { color: var(--gold-soft); background: rgba(255, 255, 255, 0.04); }
-  .main-nav a.active, .main-nav .nav-item > a.active { color: var(--gold); }
-  .main-nav a.cta {
-    background: linear-gradient(135deg, var(--gold) 0%, var(--gold-soft) 100%);
-    color: var(--navy-deep);
-    font-weight: 600;
-    padding: 0.5rem 1.1rem;
-    margin-left: 0.5rem;
-    border-radius: 4px;
-  }
-  .main-nav a.cta:hover { background: var(--gold-soft); transform: translateY(-1px); }
-  .main-nav a.cta::after { content: ' →'; }
+  /* ---- Menu hamburger (partagé) ---- */
+  .ham-btn{position:fixed;top:18px;right:22px;z-index:200;width:48px;height:48px;border-radius:50%;background:var(--navy);color:#fff;border:1.5px solid rgba(212,180,104,.45);cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(27,42,74,.25);transition:transform .2s,background .2s,opacity .2s;}
+  .ham-btn:hover{background:var(--gold);transform:scale(1.05);}
+  .ham-btn svg{width:22px;height:22px;}
+  body.ham-open .ham-btn{opacity:0;pointer-events:none;}
+  .ham-overlay{position:fixed;inset:0;background:rgba(20,31,56,.55);backdrop-filter:blur(3px);z-index:198;opacity:0;pointer-events:none;transition:opacity .25s;}
+  .ham-overlay.open{opacity:1;pointer-events:auto;}
+  .ham-panel{position:fixed;top:0;right:0;height:100%;width:340px;max-width:88vw;background:linear-gradient(170deg,var(--navy-deep),var(--navy));color:#fff;z-index:199;transform:translateX(100%);transition:transform .32s cubic-bezier(.4,0,.2,1);box-shadow:-12px 0 40px rgba(0,0,0,.3);overflow-y:auto;}
+  .ham-panel.open{transform:translateX(0);}
+  .ham-panel::before{content:"";position:absolute;inset:0;background-image:radial-gradient(circle at 1px 1px,rgba(212,180,104,.07) 1px,transparent 0);background-size:22px 22px;pointer-events:none;}
+  .ham-head{position:relative;padding:30px 28px 22px;border-bottom:1px solid rgba(212,180,104,.2);}
+  .ham-close{position:absolute;top:18px;right:18px;width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.08);color:#fff;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s;}
+  .ham-close:hover{background:var(--gold);color:var(--navy-deep);}
+  .ham-close svg{width:18px;height:18px;}
+  .ham-brand{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:600;letter-spacing:.04em;}
+  .ham-brand .cross{color:var(--gold-light);}
+  .ham-tag{font-size:13px;color:var(--gold-light);font-style:italic;letter-spacing:.04em;margin-top:4px;}
+  .ham-links{position:relative;padding:18px 0 14px;list-style:none;}
+  .ham-links li a{display:flex;align-items:center;gap:14px;padding:14px 28px;color:#D9DBE4;text-decoration:none;font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:500;border-left:3px solid transparent;transition:all .15s;}
+  .ham-links li a:hover{background:rgba(255,255,255,.06);color:#fff;border-left-color:var(--gold);}
+  .ham-links li a.current{background:rgba(184,146,62,.13);color:#fff;border-left-color:var(--gold);}
+  .ham-links .em{font-size:20px;width:24px;text-align:center;}
+  .ham-divider{height:1px;background:rgba(212,180,104,.18);margin:8px 28px;}
+  .ham-cta{position:relative;margin:18px 28px 26px;display:block;background:var(--gold);color:var(--navy-deep);text-align:center;padding:13px;border-radius:30px;font-family:'Cormorant Garamond',serif;font-weight:600;font-size:18px;text-decoration:none;transition:background .2s;}
+  .ham-cta:hover{background:var(--gold-light);}
+  .ham-foot{position:relative;padding:18px 28px 28px;font-size:13px;color:#9CA2B3;font-style:italic;text-align:center;border-top:1px solid rgba(212,180,104,.15);}
+  .ham-foot a{color:var(--gold-light);text-decoration:none;}
+  body.ham-open{overflow:hidden;}
 
-  /* Dropdown nav desktop pour L'Église par continent */
-  .nav-item.has-dropdown { position: relative; }
-  .nav-item.has-dropdown > a::after { content: ' ▾'; font-size: 0.7rem; opacity: 0.6; }
-  .nav-dropdown {
-    position: absolute; top: 100%; left: 0;
-    background: var(--navy-deep);
-    border: 1px solid rgba(201, 165, 68, 0.25);
-    border-radius: 6px;
-    min-width: 240px;
-    opacity: 0; visibility: hidden;
-    transform: translateY(-6px);
-    transition: all 0.2s;
-    z-index: 50;
-    padding: 0.5rem 0;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
-  }
-  .nav-item.has-dropdown:hover .nav-dropdown,
-  .nav-item.has-dropdown:focus-within .nav-dropdown { opacity: 1; visibility: visible; transform: translateY(0); }
-  .nav-dropdown a {
-    display: block;
-    padding: 0.5rem 1.1rem;
-    margin: 0;
-    border-radius: 0;
-    color: rgba(245, 241, 232, 0.85);
-    font-size: 0.88rem;
-  }
-  .nav-dropdown a:hover { background: rgba(201, 165, 68, 0.1); color: var(--gold-soft); }
-  .nav-dropdown a.sub { padding-left: 2rem; font-size: 0.82rem; opacity: 0.85; }
-  .nav-dropdown .dropdown-sep { border-top: 1px solid rgba(201, 165, 68, 0.15); margin: 0.4rem 0; }
 
-  /* Hamburger : caché sur desktop, visible sur mobile, à gauche */
-  .hamburger {
-    display: none;
-    background: transparent;
-    border: 1px solid rgba(201, 165, 68, 0.4);
-    border-radius: 4px;
-    width: 44px; height: 40px;
-    cursor: pointer; padding: 0;
-    flex-direction: column; justify-content: center; align-items: center; gap: 4px;
-    transition: all 0.2s;
-  }
-  .hamburger:hover { border-color: var(--gold); }
-  .hamburger span { display: block; width: 20px; height: 2px; background: var(--gold-soft); transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
-  body.menu-open .hamburger span:nth-child(1) { transform: translateY(6px) rotate(45deg); background: var(--gold); }
-  body.menu-open .hamburger span:nth-child(2) { opacity: 0; }
-  body.menu-open .hamburger span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); background: var(--gold); }
+  header{position:relative;background:linear-gradient(160deg,var(--navy-deep),var(--navy));color:#fff;padding:84px 24px 64px;overflow:hidden;}
+  header::before{content:"";position:absolute;inset:0;background-image:radial-gradient(circle at 1px 1px,rgba(212,180,104,.10) 1px,transparent 0);background-size:26px 26px;opacity:.6;}
+  header::after{content:"";position:absolute;left:50%;bottom:0;width:170px;height:3px;background:linear-gradient(90deg,transparent,var(--gold),transparent);transform:translateX(-50%);}
+  .head-inner{position:relative;max-width:1180px;margin:0 auto;text-align:center;}
+  .mark{font-family:'Cormorant Garamond',serif;font-size:13px;letter-spacing:.42em;text-transform:uppercase;color:var(--gold-light);margin-bottom:18px;font-weight:600;}
+  h1{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(46px,8vw,82px);line-height:.98;}
+  h1 .cross{color:var(--gold-light);font-weight:400;}
+  .tagline{font-style:italic;font-size:clamp(18px,2.4vw,23px);color:#D9DBE4;margin-top:18px;}
+  .span-dates{display:inline-flex;align-items:center;gap:14px;margin-top:26px;font-family:'Cormorant Garamond',serif;font-size:18px;color:#fff;flex-wrap:wrap;justify-content:center;}
+  .span-dates b{color:var(--gold-light);font-weight:600;}
+  .span-dates .dash{width:46px;height:1px;background:var(--gold);opacity:.7;}
 
-  /* Menu mobile overlay */
-  .menu-overlay { position: fixed; inset: 0; background: rgba(26, 35, 54, 0.6); backdrop-filter: blur(2px); opacity: 0; pointer-events: none; transition: opacity 0.3s; z-index: 200; display: none; }
-  .menu-panel { position: fixed; top: 0; left: 0; bottom: 0; width: 100%; max-width: 380px; background: var(--navy-deep); color: var(--cream); transform: translateX(-100%); transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1); z-index: 201; overflow-y: auto; box-shadow: 10px 0 40px rgba(0, 0, 0, 0.3); padding: 2rem; display: none; }
-  body.menu-open .menu-overlay { opacity: 1; pointer-events: auto; }
-  body.menu-open .menu-panel { transform: translateX(0); }
-  .menu-panel ul { list-style: none; padding: 0; margin: 0; }
-  .menu-panel ul li { border-bottom: 1px solid rgba(201, 165, 68, 0.12); }
-  .menu-panel a { color: var(--cream); text-decoration: none; padding: 0.9rem 0; display: block; font-size: 0.95rem; }
-  .menu-panel a.active { color: var(--gold); font-weight: 600; }
-  .menu-panel a.cta { color: var(--gold); font-weight: 600; }
-  .menu-panel .menu-close { background: transparent; border: 1px solid rgba(201, 165, 68, 0.4); color: var(--gold-soft); font-size: 1.4rem; width: 40px; height: 40px; cursor: pointer; border-radius: 4px; line-height: 0; margin-bottom: 1.5rem; }
-  .menu-panel details summary { cursor: pointer; list-style: none; padding: 0.9rem 0; color: var(--cream); display: flex; justify-content: space-between; }
-  .menu-panel details summary::-webkit-details-marker { display: none; }
-  .menu-panel details summary::after { content: '+'; color: var(--gold); font-size: 1.3rem; transition: transform 0.2s; }
-  .menu-panel details[open] summary::after { transform: rotate(45deg); }
-  .menu-panel details > ul { padding-left: 0.8rem; border-left: 2px solid rgba(201, 165, 68, 0.2); }
+  .controls{position:sticky;top:0;z-index:40;background:rgba(251,248,241,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);padding:14px 24px;}
+  .controls-inner{max-width:1180px;margin:0 auto;display:flex;flex-wrap:wrap;gap:12px;align-items:center;padding-right:60px;}
+  .search{flex:1 1 240px;position:relative;}
+  .search input{width:100%;padding:11px 16px 11px 42px;border:1px solid var(--line);border-radius:8px;background:var(--paper);font-family:inherit;font-size:16px;color:var(--ink);transition:border-color .2s,box-shadow .2s;}
+  .search input:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(184,146,62,.13);}
+  .search svg{position:absolute;left:14px;top:50%;transform:translateY(-50%);width:17px;height:17px;color:var(--muted);}
+  select{padding:11px 14px;border:1px solid var(--line);border-radius:8px;background:var(--paper);font-family:inherit;font-size:15px;color:var(--ink);cursor:pointer;}
+  select:focus{outline:none;border-color:var(--gold);}
+  .count{font-size:14px;color:var(--muted);font-style:italic;margin-left:auto;white-space:nowrap;}
 
-  @media (max-width: 920px) {
-    .main-nav { display: none; }
-    .hamburger { display: flex; }
-    .menu-overlay, .menu-panel { display: block; }
-  }
+  /* ---- Synthèses à la une (en haut, avant les tableaux) ---- */
+  .featured{max-width:1180px;margin:0 auto;padding:54px 24px 14px;}
+  .featured-head{text-align:center;margin-bottom:28px;}
+  .featured-head .eyebrow{font-size:12px;letter-spacing:.34em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:10px;}
+  .featured-head h2{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,4vw,38px);color:var(--navy);font-weight:600;}
+  .featured-head p{color:var(--muted);font-style:italic;font-size:17px;margin-top:6px;}
+  .featured-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:24px;}
+  .feat-card{display:block;text-decoration:none;background:var(--paper);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);padding:28px;transition:transform .2s,box-shadow .2s,border-color .2s;position:relative;overflow:hidden;}
+  .feat-card::before{content:"";position:absolute;top:0;left:0;width:100%;height:4px;background:linear-gradient(90deg,var(--gold),var(--gold-light));}
+  .feat-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(27,42,74,.13);border-color:var(--gold);}
+  .feat-card .feat-em{font-size:30px;display:block;margin-bottom:12px;}
+  .feat-card h3{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:600;font-size:26px;color:var(--navy);margin-bottom:4px;}
+  .feat-card .feat-meta{color:var(--gold);font-size:14px;letter-spacing:.04em;text-transform:uppercase;font-weight:600;margin-bottom:12px;}
+  .feat-card p{color:#3A3E46;font-size:16.5px;line-height:1.6;margin-bottom:14px;}
+  .feat-card .feat-link{color:var(--navy);font-family:'Cormorant Garamond',serif;font-weight:600;font-size:17px;display:inline-flex;align-items:center;gap:6px;}
+  .feat-card:hover .feat-link{color:var(--gold);}
+  .featured-all{text-align:center;}
+  .featured-all a{display:inline-flex;align-items:center;gap:9px;background:var(--navy);color:#fff;text-decoration:none;font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:600;padding:13px 34px;border-radius:40px;transition:background .2s,transform .2s;}
+  .featured-all a:hover{background:var(--gold);color:var(--navy-deep);transform:translateY(-2px);}
 
-  /* ============ HERO style MetanoIA ============ */
-  .hero { background: var(--navy-deep); color: var(--cream); padding: 4rem 0 5rem; position: relative; }
-  .hero::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 3px; background: linear-gradient(90deg, transparent, var(--gold) 50%, transparent); }
-  .hero .eyebrow { color: var(--gold); text-transform: uppercase; letter-spacing: 0.18em; font-size: 0.82rem; font-weight: 600; margin-bottom: 1rem; }
-  .hero h1 { font-family: var(--serif); font-size: clamp(2.1rem, 5vw, 3.4rem); font-weight: 700; line-height: 1.1; margin: 0 0 1.2rem 0; letter-spacing: -0.015em; }
-  .hero h1 em { font-style: italic; color: var(--gold); font-weight: 600; }
-  .hero .lede { font-size: 1.15rem; max-width: 720px; color: rgba(245, 241, 232, 0.92); margin: 0 0 1.8rem 0; line-height: 1.65; }
-  .hero-ctas { display: flex; gap: 0.8rem; flex-wrap: wrap; margin-top: 1.5rem; }
-  .btn-primary, .btn-secondary { display: inline-block; padding: 0.85rem 1.7rem; border-radius: 4px; text-decoration: none; font-weight: 600; font-size: 0.98rem; transition: all 0.2s; }
-  .btn-primary { background: var(--gold); color: var(--navy-deep); box-shadow: 0 4px 14px rgba(201, 165, 68, 0.3); }
-  .btn-primary:hover { background: var(--gold-soft); transform: translateY(-2px); }
-  .btn-primary::after { content: ' →'; }
-  .btn-secondary { background: transparent; color: var(--cream); border: 1px solid rgba(201, 165, 68, 0.5); }
-  .btn-secondary:hover { border-color: var(--gold); color: var(--gold-soft); }
+  .tabs{max-width:1180px;margin:30px auto 0;padding:0 24px;display:flex;gap:8px;flex-wrap:wrap;justify-content:center;}
+  .tab{font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:600;padding:10px 22px;border:1.5px solid var(--line);border-radius:30px;background:var(--paper);color:var(--navy);cursor:pointer;transition:all .18s;}
+  .tab:hover{border-color:var(--gold);}
+  .tab.active{background:var(--navy);color:#fff;border-color:var(--navy);}
+  .tab .tab-em{margin-right:7px;}
 
-  /* ============ SECTIONS NUMÉROTÉES style MetanoIA ============ */
-  section.content { padding: 4rem 0; }
-  section.content.alt { background: var(--cream-deep); }
-  .section-num { color: var(--gold); font-family: var(--serif); font-size: 0.85rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.4rem; display: block; }
-  section.content h2 { font-family: var(--serif); font-size: clamp(1.7rem, 3.5vw, 2.4rem); color: var(--navy); font-weight: 700; margin: 0 0 1rem 0; line-height: 1.2; letter-spacing: -0.01em; }
-  section.content h2 em { font-style: italic; color: var(--gold); }
-  section.content h3 { font-family: var(--serif); font-size: 1.3rem; color: var(--navy); font-weight: 600; margin: 2rem 0 0.6rem 0; }
-  section.content p { color: var(--ink); margin: 0.5rem 0 1rem 0; }
-  section.content .lead { font-size: 1.1rem; max-width: 720px; color: var(--muted); }
+  main{max-width:1180px;margin:0 auto;padding:30px 24px 60px;}
+  .corpus{display:none;}
+  .corpus.active{display:block;animation:fade .35s ease;}
+  @keyframes fade{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:none;}}
+  .corpus-head{text-align:center;max-width:760px;margin:24px auto 30px;}
+  .corpus-head h2{font-family:'Cormorant Garamond',serif;font-size:clamp(30px,4.5vw,42px);color:var(--navy);font-weight:600;margin-bottom:10px;}
+  .corpus-head p{color:var(--muted);font-size:18px;font-style:italic;line-height:1.6;}
 
-  /* ============ CARDS ============ */
-  .value-card { background: var(--white); border-left: 4px solid var(--gold); padding: 1.4rem 1.6rem; margin: 1rem 0; border-radius: 4px; }
-  .value-card .card-num { color: var(--gold); font-family: var(--serif); font-size: 0.85rem; font-weight: 600; letter-spacing: 0.1em; }
-  .value-card h3 { margin: 0.3rem 0 0.5rem 0; font-family: var(--serif); color: var(--navy); }
-  .value-card p { margin: 0; }
+  .thematic{margin-bottom:42px;scroll-margin-top:60px;}
+  .sec-title{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(23px,3.2vw,31px);color:var(--navy);display:flex;align-items:center;gap:13px;padding-bottom:12px;margin-bottom:18px;border-bottom:2px solid var(--gold);}
+  .sec-emoji{font-size:.85em;}
+  .sec-num{font-family:'EB Garamond',serif;font-size:.5em;color:#fff;background:var(--navy);width:32px;height:32px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-weight:500;flex-shrink:0;}
 
-  .doc-card { background: var(--white); border: 1px solid var(--line); border-radius: 6px; padding: 1.4rem 1.6rem; margin: 1rem 0; }
-  .doc-card .doc-meta { color: var(--gold); text-transform: uppercase; letter-spacing: 0.12em; font-size: 0.75rem; font-weight: 600; margin-bottom: 0.3rem; }
-  .doc-card h4 { font-family: var(--serif); color: var(--navy); margin: 0 0 0.6rem 0; font-size: 1.15rem; font-weight: 600; }
-  .doc-card p { margin: 0; }
-  .doc-card .doc-source { display: inline-block; margin-top: 0.8rem; font-size: 0.85rem; color: var(--navy); text-decoration: none; padding: 0.3rem 0.7rem; background: var(--cream); border-radius: 3px; transition: background 0.15s; }
-  .doc-card .doc-source:hover { background: var(--gold); color: var(--navy-deep); }
-  .doc-card .doc-source::before { content: '↗ '; opacity: 0.6; }
+  .table-wrap{background:var(--paper);border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);overflow:hidden;}
+  table{width:100%;border-collapse:collapse;}
+  thead th{background:var(--navy);color:#fff;font-family:'Cormorant Garamond',serif;font-weight:600;font-size:15px;letter-spacing:.06em;text-transform:uppercase;text-align:left;padding:13px 18px;}
+  tbody td{padding:13px 18px;border-top:1px solid var(--line);vertical-align:top;font-size:17px;}
+  tbody tr:nth-child(even){background:#FCFAF4;}
+  tbody tr:hover{background:#F6EFDD;transition:background .15s;}
+  .c-titre{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:600;font-size:19px;color:var(--navy);}
+  .c-pape{white-space:nowrap;}
+  .c-annee{font-variant-numeric:tabular-nums;color:var(--muted);white-space:nowrap;}
+  .c-contenu{color:#3A3E46;line-height:1.5;}
+  .badge{display:inline-block;font-size:12px;letter-spacing:.03em;padding:3px 9px;border-radius:20px;white-space:nowrap;font-weight:500;}
+  .t-enc{background:#EAE2CC;color:#7A5E1E;}.t-exh{background:#E3EAF0;color:#2C4E6B;}
+  .t-con{background:#E6E0EC;color:#54407A;}.t-let{background:#E8E2DC;color:#6B5340;}
+  .row.hidden{display:none;}.thematic.hidden{display:none;}
+  .no-results{text-align:center;padding:50px 20px;color:var(--muted);font-style:italic;font-size:19px;display:none;}
+  .corpus-note{max-width:820px;margin:6px auto 0;font-size:14.5px;color:var(--muted);font-style:italic;text-align:center;line-height:1.6;}
 
-  /* Grille de cartes numérotées style MetanoIA */
-  .cards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; margin: 1.5rem 0; }
-  .num-card { background: var(--white); border: 1px solid var(--line); border-radius: 6px; padding: 1.6rem 1.8rem; transition: all 0.2s; }
-  .num-card:hover { border-color: var(--gold); box-shadow: 0 4px 14px rgba(42, 52, 71, 0.06); }
-  .num-card .card-num { color: var(--gold); font-family: var(--serif); font-size: 0.85rem; font-weight: 600; letter-spacing: 0.08em; display: block; margin-bottom: 0.6rem; }
-  .num-card h3 { font-family: var(--serif); color: var(--navy); font-size: 1.25rem; margin: 0 0 0.6rem 0; font-weight: 600; }
-  .num-card p { color: var(--muted); margin: 0 0 0.8rem 0; font-size: 0.95rem; }
-  .num-card ul { list-style: none; padding: 0; margin: 0; }
-  .num-card ul li { color: var(--ink); font-size: 0.9rem; padding: 0.2rem 0; padding-left: 1rem; position: relative; }
-  .num-card ul li::before { content: '·'; position: absolute; left: 0.2rem; color: var(--gold); font-weight: 700; }
-  .num-card a.card-link { display: inline-block; margin-top: 0.8rem; color: var(--navy); font-weight: 600; font-size: 0.9rem; text-decoration: none; }
-  .num-card a.card-link:hover { color: var(--gold); }
-  .num-card a.card-link::after { content: ' →'; }
+  .don{background:linear-gradient(160deg,var(--navy),var(--navy-deep));color:#fff;padding:70px 24px;position:relative;overflow:hidden;}
+  .don::before{content:"";position:absolute;inset:0;background-image:radial-gradient(circle at 1px 1px,rgba(212,180,104,.08) 1px,transparent 0);background-size:24px 24px;}
+  .don-inner{position:relative;max-width:760px;margin:0 auto;text-align:center;}
+  .don .eyebrow{font-size:13px;letter-spacing:.4em;text-transform:uppercase;color:var(--gold-light);margin-bottom:16px;font-weight:600;}
+  .don h2{font-family:'Cormorant Garamond',serif;font-size:clamp(32px,5vw,46px);font-weight:600;margin-bottom:18px;}
+  .don p{font-size:19px;color:#D9DBE4;line-height:1.7;margin-bottom:14px;}
+  .don .cta{display:inline-flex;align-items:center;gap:10px;margin-top:24px;background:var(--gold);color:var(--navy-deep);font-family:'Cormorant Garamond',serif;font-weight:600;font-size:21px;padding:15px 40px;border-radius:40px;text-decoration:none;transition:background .2s,transform .2s;border:none;cursor:pointer;}
+  .don .cta:hover{background:var(--gold-light);transform:translateY(-2px);}
+  .don .small{font-size:14px;color:#9CA2B3;margin-top:18px;font-style:italic;}
+  .don-amounts{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:30px;}
+  .don-amounts a{background:rgba(255,255,255,.08);border:1.5px solid rgba(212,180,104,.45);color:#fff;font-family:'Cormorant Garamond',serif;font-weight:600;font-size:19px;padding:12px 28px;border-radius:30px;text-decoration:none;transition:all .2s;}
+  .don-amounts a:hover{background:var(--gold);color:var(--navy-deep);border-color:var(--gold);transform:translateY(-2px);}
+  .don-amounts a.other{background:transparent;border-style:dashed;font-size:16px;padding:11px 22px;}
 
-  /* Pillars (12 piliers) */
-  .pillars { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0.8rem; margin: 1.5rem 0; }
-  .pillar { background: var(--white); border-left: 3px solid var(--gold); padding: 1rem 1.2rem; border-radius: 4px; }
-  .pillar .pillar-num { color: var(--gold); font-family: var(--serif); font-weight: 700; font-size: 1.1rem; }
-  .pillar .pillar-title { display: block; font-weight: 600; color: var(--navy); margin: 0.2rem 0; }
-  .pillar .pillar-desc { font-size: 0.9rem; color: var(--muted); }
+  .contact{max-width:680px;margin:0 auto;padding:76px 24px;}
+  .contact-head{text-align:center;margin-bottom:34px;}
+  .contact-head .eyebrow{font-size:12px;letter-spacing:.34em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:10px;}
+  .contact-head h2{font-family:'Cormorant Garamond',serif;font-size:clamp(30px,4.5vw,42px);color:var(--navy);font-weight:600;margin-bottom:10px;}
+  .contact-head p{color:var(--muted);font-style:italic;font-size:18px;}
+  .contact form{background:var(--paper);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);padding:38px;}
+  .field{margin-bottom:20px;}
+  .field label{display:block;font-family:'Cormorant Garamond',serif;font-weight:600;font-size:17px;color:var(--navy);margin-bottom:7px;}
+  .field input,.field textarea,.field select{width:100%;padding:12px 15px;border:1px solid var(--line);border-radius:8px;background:var(--cream);font-family:inherit;font-size:16px;color:var(--ink);transition:border-color .2s,box-shadow .2s;}
+  .field input:focus,.field textarea:focus,.field select:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(184,146,62,.13);background:var(--paper);}
+  .field textarea{resize:vertical;min-height:120px;}
+  .check{display:flex;align-items:flex-start;gap:10px;margin-bottom:24px;}
+  .check input{width:auto;margin-top:5px;accent-color:var(--gold);}
+  .check label{font-family:inherit;font-weight:400;font-size:16px;color:var(--ink);margin:0;cursor:pointer;}
+  .submit-btn{width:100%;background:var(--navy);color:#fff;font-family:'Cormorant Garamond',serif;font-weight:600;font-size:20px;padding:15px;border:none;border-radius:40px;cursor:pointer;transition:background .2s,transform .2s;}
+  .submit-btn:hover{background:var(--gold);color:var(--navy-deep);transform:translateY(-2px);}
+  .form-status{text-align:center;margin-top:16px;font-style:italic;font-size:16px;display:none;}
+  .form-status.ok{display:block;color:#2E7D52;}
+  .form-status.err{display:block;color:#B23A48;}
 
-  /* Countries grid */
-  .countries { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; margin: 1.5rem 0; }
-  .country-card { background: var(--white); border: 1px solid var(--line); border-radius: 6px; padding: 1.4rem 1.6rem; transition: all 0.2s; }
-  .country-card:hover { border-color: var(--gold); box-shadow: 0 4px 12px rgba(42, 52, 71, 0.08); }
-  .country-card .flag { font-size: 1.4rem; }
-  .country-card h4 { font-family: var(--serif); color: var(--navy); margin: 0.4rem 0; font-size: 1.1rem; font-weight: 600; }
-  .country-card p { font-size: 0.9rem; color: var(--muted); margin: 0 0 0.8rem 0; }
-  .country-card a { color: var(--navy); text-decoration: none; font-weight: 600; font-size: 0.9rem; }
-  .country-card a:hover { color: var(--gold); }
-  .country-card a::after { content: ' →'; }
+  .founder{max-width:1180px;margin:0 auto;padding:76px 24px;}
+  .founder-card{display:grid;grid-template-columns:auto 1fr;gap:36px;align-items:center;background:var(--paper);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);padding:44px;}
+  .founder-avatar{width:130px;height:130px;border-radius:50%;background:linear-gradient(160deg,var(--navy),var(--navy-deep));color:var(--gold-light);font-family:'Cormorant Garamond',serif;font-size:48px;font-weight:600;display:flex;align-items:center;justify-content:center;border:3px solid var(--gold);flex-shrink:0;}
+  .founder-body .eyebrow{font-size:12px;letter-spacing:.34em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:10px;}
+  .founder-body h2{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,4vw,38px);color:var(--navy);font-weight:600;margin-bottom:4px;}
+  .founder-body .role{color:var(--muted);font-style:italic;font-size:18px;margin-bottom:16px;}
+  .founder-body p{color:#3A3E46;font-size:17.5px;line-height:1.7;margin-bottom:16px;}
+  .founder-link{display:inline-flex;align-items:center;gap:9px;background:var(--navy);color:#fff;text-decoration:none;font-size:16px;padding:11px 24px;border-radius:30px;transition:background .2s,transform .2s;}
+  .founder-link:hover{background:var(--gold);color:var(--navy-deep);transform:translateY(-2px);}
 
-  blockquote { border-left: 4px solid var(--gold); padding: 0.5rem 0 0.5rem 1.5rem; margin: 1.5rem 0; font-family: var(--serif); font-style: italic; color: var(--navy); font-size: 1.15rem; line-height: 1.5; }
-  blockquote cite { display: block; font-size: 0.9rem; color: var(--muted); font-style: normal; margin-top: 0.6rem; font-family: var(--sans); }
+  footer{background:var(--navy-deep);color:#C6CAD6;padding:50px 24px;text-align:center;}
+  footer .f-mark{font-family:'Cormorant Garamond',serif;font-size:26px;color:#fff;letter-spacing:.04em;margin-bottom:8px;}
+  footer .f-mark .cross{color:var(--gold-light);}
+  footer .f-links{margin:14px 0;display:flex;gap:18px;justify-content:center;flex-wrap:wrap;}
+  footer .f-links a{color:#C6CAD6;text-decoration:none;font-size:15px;}
+  footer .f-links a:hover{color:var(--gold-light);}
+  footer .note{max-width:760px;margin:14px auto 0;font-size:14.5px;line-height:1.7;color:#9CA2B3;font-style:italic;}
+  footer .copy{margin-top:22px;font-size:13px;color:#6F7589;letter-spacing:.03em;}
 
-  .note { background: var(--cream); border-top: 1px solid var(--muted); border-bottom: 1px solid var(--muted); padding: 1rem 1.4rem; margin: 2rem 0; font-style: italic; color: var(--muted); font-size: 0.95rem; }
-
-  /* CTA Formations style MetanoIA */
-  .formations-cta { background: linear-gradient(135deg, var(--navy) 0%, var(--navy-deep) 100%); color: var(--cream); padding: 3.5rem 0; position: relative; }
-  .formations-cta::before, .formations-cta::after { content: ''; position: absolute; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, transparent, var(--gold) 50%, transparent); }
-  .formations-cta::before { top: 0; }
-  .formations-cta::after { bottom: 0; }
-  .formations-cta .section-num { color: var(--gold); }
-  .formations-cta h2 { font-family: var(--serif); font-size: clamp(1.8rem, 3.5vw, 2.4rem); color: var(--cream); margin: 0.6rem 0 1rem; font-weight: 700; line-height: 1.2; }
-  .formations-cta h2 em { color: var(--gold); font-style: italic; }
-  .formations-cta p { color: rgba(245, 241, 232, 0.9); max-width: 720px; font-size: 1.05rem; }
-  .formations-cta .btn-gold { display: inline-block; background: var(--gold); color: var(--navy-deep); padding: 0.95rem 2.2rem; border-radius: 4px; text-decoration: none; font-weight: 600; font-size: 1rem; margin-top: 1.5rem; transition: all 0.2s; box-shadow: 0 4px 14px rgba(201, 165, 68, 0.3); }
-  .formations-cta .btn-gold:hover { background: var(--gold-soft); transform: translateY(-2px); }
-  .formations-cta .btn-gold::after { content: ' →'; }
-
-  /* Forms (Formspree) */
-  .form-block { background: var(--white); border: 1px solid var(--line); border-radius: 8px; padding: 2rem; margin: 1.5rem 0; }
-  .form-field { margin-bottom: 1.2rem; }
-  .form-field label { display: block; font-weight: 600; color: var(--navy); margin-bottom: 0.4rem; font-size: 0.95rem; }
-  .form-field input, .form-field select, .form-field textarea { width: 100%; padding: 0.7rem 0.9rem; border: 1px solid var(--line); border-radius: 4px; font-family: var(--sans); font-size: 0.95rem; color: var(--ink); background: var(--cream); transition: all 0.15s; }
-  .form-field input:focus, .form-field select:focus, .form-field textarea:focus { outline: none; border-color: var(--gold); background: var(--white); }
-  .form-field textarea { resize: vertical; min-height: 120px; }
-  .form-field-inline { display: flex; align-items: flex-start; gap: 0.5rem; }
-  .form-field-inline input[type=checkbox] { width: auto; margin-top: 0.3rem; }
-  .form-submit { background: var(--navy); color: var(--white); border: none; padding: 0.9rem 2rem; border-radius: 4px; cursor: pointer; font-family: var(--sans); font-size: 1rem; font-weight: 600; transition: background 0.15s; }
-  .form-submit:hover { background: var(--gold); color: var(--navy-deep); }
-
-  /* ============ SECTION RECHERCHE style MetanoIA ============ */
-  .search-section { background: var(--cream-deep); padding: 3.5rem 0; }
-  .search-section .section-num { color: var(--gold); }
-  .search-section h2 { font-family: var(--serif); color: var(--navy); font-size: clamp(1.5rem, 3vw, 1.9rem); margin: 0.4rem 0 1.5rem; }
-  .search-box { position: relative; max-width: 600px; }
-  .search-box input { width: 100%; padding: 1rem 1.2rem 1rem 3rem; border: 2px solid var(--line); border-radius: 8px; font-family: var(--sans); font-size: 1.05rem; background: var(--white); transition: all 0.15s; }
-  .search-box input:focus { outline: none; border-color: var(--gold); box-shadow: 0 4px 14px rgba(201, 165, 68, 0.15); }
-  .search-box::before { content: '🔍'; position: absolute; left: 1rem; top: 50%; transform: translateY(-50%); font-size: 1.1rem; opacity: 0.5; pointer-events: none; }
-  .search-suggestions { margin-top: 1rem; color: var(--muted); font-size: 0.92rem; }
-  .search-suggestions a { color: var(--navy); text-decoration: none; font-weight: 500; padding: 0.2rem 0.5rem; border-radius: 3px; background: var(--cream); margin-right: 0.3rem; display: inline-block; transition: all 0.15s; }
-  .search-suggestions a:hover { background: var(--gold); color: var(--navy-deep); }
-  .search-results { margin-top: 1.5rem; }
-  .search-results .result { padding: 0.8rem 1rem; background: var(--white); border: 1px solid var(--line); border-radius: 4px; margin-bottom: 0.5rem; }
-  .search-results .result a { color: var(--navy); text-decoration: none; font-weight: 600; }
-  .search-results .result a:hover { color: var(--gold); }
-  .search-results .result .result-meta { font-size: 0.85rem; color: var(--muted); margin-top: 0.2rem; }
-  .search-empty { color: var(--muted); font-style: italic; }
-
-  .sources { background: var(--navy); color: var(--cream); padding: 3rem 0; }
-  .sources h2 { color: var(--cream); }
-  .sources a { color: var(--gold-soft); }
-  .sources ul { padding-left: 1.2rem; }
-  .sources li { margin: 0.4rem 0; color: rgba(245, 241, 232, 0.85); }
-
-  /* ============ FOOTER 5 COLONNES style MetanoIA ============ */
-  footer.site { background: var(--navy-deep); color: rgba(245, 241, 232, 0.85); padding: 3.5rem 0 1.5rem; border-top: 3px solid var(--gold); }
-  footer.site .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr; gap: 2rem; margin-bottom: 2.5rem; }
-  footer.site h4 { font-family: var(--serif); color: var(--cream); font-size: 1.05rem; font-weight: 600; margin: 0 0 1rem 0; }
-  footer.site h4.brand-h { font-size: 1.4rem; }
-  footer.site h4.brand-h .cross { color: var(--gold); }
-  footer.site .footer-brand p { font-size: 0.92rem; color: rgba(245, 241, 232, 0.65); line-height: 1.55; margin: 0.5rem 0 1rem 0; }
-  footer.site .footer-brand .footer-slogan { font-family: var(--serif); font-style: italic; color: var(--gold-soft); font-size: 0.9rem; letter-spacing: 0.05em; margin-top: 0.5rem; }
-  footer.site .footer-col ul { list-style: none; padding: 0; margin: 0; }
-  footer.site .footer-col ul li { margin: 0.5rem 0; }
-  footer.site .footer-col ul li a { color: rgba(245, 241, 232, 0.75); text-decoration: none; font-size: 0.9rem; transition: color 0.15s; }
-  footer.site .footer-col ul li a:hover { color: var(--gold-soft); }
-  footer.site .footer-bottom { border-top: 1px solid rgba(201, 165, 68, 0.2); padding-top: 1.5rem; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; font-size: 0.85rem; color: rgba(245, 241, 232, 0.5); }
-  footer.site .footer-bottom a { color: var(--gold-soft); text-decoration: none; }
-
-  @media (max-width: 1000px) {
-    footer.site .footer-grid { grid-template-columns: 1fr 1fr 1fr; gap: 1.8rem; }
-  }
-  @media (max-width: 700px) {
-    footer.site .footer-grid { grid-template-columns: 1fr 1fr; }
-  }
-  @media (max-width: 480px) {
-    footer.site .footer-grid { grid-template-columns: 1fr; }
-  }
-
-  @media (max-width: 700px) {
-    section.content { padding: 2.5rem 0; }
-    .hero { padding: 3rem 0 4rem; }
+  @media(max-width:680px){
+    body{font-size:16px;}
+    .count{width:100%;margin-left:0;}
+    thead{display:none;}
+    table,tbody,tr,td{display:block;width:100%;}
+    tbody tr{padding:13px 16px;border-top:1px solid var(--line);}
+    tbody td{padding:3px 0;border:none;font-size:16px;}
+    .c-titre{font-size:21px;}
+    .c-pape::before{content:"Pape : ";color:var(--muted);font-style:italic;}
+    .c-contenu{margin-top:6px;}
+    .founder-card{grid-template-columns:1fr;text-align:center;padding:32px 24px;}
+    .founder-avatar{margin:0 auto;}
+    .featured-grid{grid-template-columns:1fr;}
   }
 </style>
-
 </head>
 <body>
 
-  <header class="site">
-    <div class="wrap-wide brand-row">
-      <button class="hamburger" onclick="toggleMenu()" aria-label="Menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
-      <a href="/" class="brand">
-        <span class="brand-name">Encyclicum <span class="cross">✝</span></span>
-        <span class="brand-tagline">Comprendre · Discerner · Agir</span>
-      </a>
-      <nav class="main-nav">
-        <a href="/index.html" class="active">Accueil</a>
-        <a href="/syntheses.html">Synthèses</a>
-        <a href="/webinaires.html">Webinaires</a>
-        <a href="/formations.html">Formations</a>
-        <a href="/mission-vision-valeurs.html">À propos</a>
-        <div class="nav-item has-dropdown">
-          <a href="/eglise-canada.html">L'Église par continent</a>
-          <div class="nav-dropdown">
-            <a href="/eglise-canada.html">Canada</a>
-            <a href="/eglise-quebec.html">Québec</a>
-            <a href="/eglise-amerique.html">Amérique</a>
-            <a href="/eglise-afrique.html">Afrique (SCEAM)</a>
-            <a href="/eglise-afrique-rdc.html" class="sub">— RDC (CENCO)</a>
-            <a href="/eglise-afrique-burkina-niger.html" class="sub">— Burkina-Niger</a>
-            <a href="/eglise-afrique-cote-ivoire.html" class="sub">— Côte d'Ivoire</a>
-            <a href="/eglise-afrique-senegal.html" class="sub">— Sénégal & Ouest atl.</a>
-            <a href="/eglise-afrique-cameroun.html" class="sub">— Cameroun</a>
-            <a href="/eglise-afrique-madagascar.html" class="sub">— Madagascar</a>
-            <a href="/eglise-europe.html">Europe</a>
-            <a href="/eglise-asie.html">Asie</a>
-            <a href="/eglise-oceanie.html">Océanie</a>
-          </div>
-        </div>
-        <a href="/formations.html#demande" class="cta">Demander une formation</a>
-      </nav>
+<button class="ham-btn" id="hamBtn" aria-label="Ouvrir le menu">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+</button>
+<div class="ham-overlay" id="hamOverlay"></div>
+<aside class="ham-panel" id="hamPanel" aria-label="Menu principal">
+  <div class="ham-head">
+    <button class="ham-close" id="hamClose" aria-label="Fermer">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+    <div class="ham-brand">Encyclicum<span class="cross"> &#10013;</span></div>
+    <div class="ham-tag">La sagesse des papes, accessible</div>
+  </div>
+  <ul class="ham-links">
+    <li><a href="index.html" class="current"><span class="em">🏠</span>Accueil</a></li>
+    <li><a href="index.html#corpus" class=""><span class="em">📚</span>Corpus complet</a></li>
+    <li><a href="syntheses.html" class=""><span class="em">📖</span>Synthèses approfondies</a></li>
+    <div class="ham-divider"></div>
+    <li><a href="index.html#fondateur" class=""><span class="em">👤</span>Le fondateur</a></li>
+    <li><a href="index.html#contact" class=""><span class="em">✉️</span>Nous écrire</a></li>
+  </ul>
+  <a href="index.html#don" class="ham-cta">&#10013;&nbsp; Faire un don</a>
+  <div class="ham-foot">
+    <a href="https://www.metanoia-strategie.ca" target="_blank" rel="noopener">MetanoIA Stratégie</a><br>
+    www.encyclicum.ca
+  </div>
+</aside>
+
+
+<header>
+  <div class="head-inner">
+    <div class="mark">Doctrine &amp; Magistère pontifical</div>
+    <h1>Encyclicum<span class="cross"> &#10013;</span></h1>
+    <p class="tagline">La sagesse des papes, synthétisée et classée par thème</p>
+    <div class="span-dates">
+      <span><b>Léon XIII</b> · 1878</span><span class="dash"></span><span><b>Léon XIV</b> · 2026</span>
     </div>
-  </header>
+  </div>
+</header>
 
-  <!-- Menu mobile -->
-  <nav class="menu-panel" id="menu" aria-label="Menu mobile">
-    <button class="menu-close" onclick="toggleMenu()" aria-label="Fermer">×</button>
-    <ul>
-      <li><a href="/index.html">Accueil</a></li>
-      <li><a href="/syntheses.html">Synthèses</a></li>
-      <li><a href="/webinaires.html">Webinaires</a></li>
-      <li>
-        <details>
-          <summary>L'Église par continent et par région</summary>
-          <ul>
-            <li><a href="/eglise-canada.html">Canada</a></li>
-            <li><a href="/eglise-quebec.html">Québec</a></li>
-            <li><a href="/eglise-amerique.html">Amérique</a></li>
-            <li><details><summary>Afrique</summary><ul>
-              <li><a href="/eglise-afrique.html">SCEAM</a></li>
-              <li><a href="/eglise-afrique-rdc.html">RDC</a></li>
-              <li><a href="/eglise-afrique-burkina-niger.html">Burkina-Niger</a></li>
-              <li><a href="/eglise-afrique-cote-ivoire.html">Côte d'Ivoire</a></li>
-              <li><a href="/eglise-afrique-senegal.html">Sénégal & Ouest atl.</a></li>
-              <li><a href="/eglise-afrique-cameroun.html">Cameroun</a></li>
-              <li><a href="/eglise-afrique-madagascar.html">Madagascar</a></li>
-            </ul></details></li>
-            <li><a href="/eglise-europe.html">Europe</a></li>
-            <li><a href="/eglise-asie.html">Asie</a></li>
-            <li><a href="/eglise-oceanie.html">Océanie</a></li>
-          </ul>
-        </details>
-      </li>
-      <li><a href="/formations.html" class="cta">Formations</a></li>
-      <li><a href="/mission-vision-valeurs.html">À propos</a></li>
-    </ul>
-  </nav>
-  <div class="menu-overlay" onclick="toggleMenu()" aria-hidden="true"></div>
+<section class="featured" id="syntheses-une">
+  <div class="featured-head">
+    <div class="eyebrow">À découvrir</div>
+    <h2>Synthèses à la une</h2>
+    <p>Au-delà du recensement, des analyses détaillées : contexte, thèses, héritage, et pistes d'action concrètes.</p>
+  </div>
+  <div class="featured-grid">
+    <a href="rerum-novarum.html" class="feat-card">
+      <span class="feat-em">📜</span>
+      <h3>Rerum Novarum</h3>
+      <div class="feat-meta">Léon XIII · 1891</div>
+      <p>L'acte fondateur de la doctrine sociale de l'Église. Face à la misère ouvrière, l'affirmation de la dignité du travailleur, du salaire juste et du droit d'association.</p>
+      <span class="feat-link">Lire la synthèse →</span>
+    </a>
+    <a href="magnifica-humanitas.html" class="feat-card">
+      <span class="feat-em">🤖</span>
+      <h3>Magnifica Humanitas</h3>
+      <div class="feat-meta">Léon XIV · 2026</div>
+      <p>La première encyclique de Léon XIV. Face à la révolution de l'IA, le choix entre l'orgueil de Babel et la patience de Néhémie. Une réponse théologique au transhumanisme.</p>
+      <span class="feat-link">Lire la synthèse →</span>
+    </a>
+  </div>
+  <div class="featured-all">
+    <a href="syntheses.html">Voir toutes les synthèses &rarr;</a>
+  </div>
+</section>
 
-
-  <section class="hero">
-    <div class="wrap">
-      <p class="eyebrow">Vulgarisation francophone · Sept continents</p>
-      <h1>La <em>doctrine sociale</em> de l'Église, rendue accessible.</h1>
-      <p class="lede">De Léon XIII (1891) à Léon XIV (2026), des synthèses fidèles, des webinaires gratuits et des formations sur mesure — pour comprendre, discerner et agir à la lumière du Magistère.</p>
-      <div class="hero-ctas"><a href="/webinaires.html" class="btn-primary">S'inscrire au prochain webinaire</a><a href="/syntheses.html" class="btn-secondary">Voir les synthèses</a></div>
+<div class="controls">
+  <div class="controls-inner">
+    <div class="search">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+      <input type="text" id="search" placeholder="Rechercher un titre, un pape, un thème…">
     </div>
-  </section>
+    <select id="filter-pape"><option value="">Tous les papes</option></select>
+    <span class="count" id="count"></span>
+  </div>
+</div>
 
+<div class="tabs" id="corpus">
+  <button class="tab active" data-corpus="enc"><span class="tab-em">📜</span>Encycliques</button>
+  <button class="tab" data-corpus="exh"><span class="tab-em">✍️</span>Exhortations</button>
+  <button class="tab" data-corpus="cat"><span class="tab-em">🎓</span>Catéchèses</button>
+  <button class="tab" data-corpus="hom"><span class="tab-em">🕊️</span>Homélies</button>
+</div>
 
-  <!-- Section 01 : À propos -->
-  <section class="content">
-    <div class="wrap-wide">
-      <span class="section-num">— À propos</span>
-      <h2>Un service au cœur de la <em>doctrine sociale</em> de l'Église</h2>
-      <p class="lead">Encyclicum est un service ecclésial laïc, francophone et numérique. Sa mission : rendre accessible à toutes les personnes de bonne volonté la doctrine sociale catholique, de <em>Rerum Novarum</em> (1891) à <em>Magnifica Humanitas</em> (2026), à travers des synthèses fidèles, des webinaires gratuits et des formations sur mesure.</p>
-
-      <div class="cards-grid" style="margin-top: 2rem;">
-        <div class="num-card">
-          <span class="card-num">Accessibilité</span>
-          <h3>Pour tous</h3>
-          <p>Rendre lisible ce qui est dense, sans rien sacrifier de la profondeur.</p>
-        </div>
-        <div class="num-card">
-          <span class="card-num">Fidélité</span>
-          <h3>Aux sources</h3>
-          <p>Rester fidèle à l'Évangile et au Magistère, sans paraphrase tendancieuse.</p>
-        </div>
-        <div class="num-card">
-          <span class="card-num">Discernement</span>
-          <h3>En contexte</h3>
-          <p>Appliquer ces enseignements à la lumière de chaque réalité particulière.</p>
-        </div>
-        <div class="num-card">
-          <span class="card-num">Engagement</span>
-          <h3>Pour la fraternité</h3>
-          <p>Soutenir l'action chrétienne pour un monde de fraternité, de tolérance, de justice et de paix.</p>
-        </div>
-      </div>
-
-      <p style="margin-top: 1.8rem;"><a href="/mission-vision-valeurs.html" style="color: var(--gold); font-weight: 600; text-decoration: none;">Découvrir la mission, la vision et les valeurs en détail →</a></p>
-    </div>
-  </section>
-
-  <!-- Section 02 : Webinaire à venir -->
-  <section class="content alt">
-    <div class="wrap-wide">
-      <span class="section-num">— Prochain rendez-vous</span>
-      <h2>Découvrir la doctrine <em>sociale</em> de l'Église</h2>
-      <p class="lead">Un webinaire gratuit, en ligne, pour saisir l'essentiel de la pensée sociale catholique — de <em>Rerum Novarum</em> à <em>Caritas in Veritate</em>.</p>
-
-      <div style="background: var(--white); border-left: 4px solid var(--gold); padding: 1.8rem 2rem; border-radius: 4px; margin-top: 1.5rem;">
-        <p style="color: var(--gold); text-transform: uppercase; letter-spacing: 0.15em; font-size: 0.78rem; font-weight: 600; margin: 0 0 0.5rem 0;">★ Cycle automne 2026 · Gratuit</p>
-        <h3 style="font-family: var(--serif); color: var(--navy); font-size: 1.5rem; margin: 0 0 0.8rem 0;">Une formule éprouvée en trois temps</h3>
-        <p style="margin: 0 0 1rem 0;"><strong>Synthèse</strong> · <strong>Implications pour notre temps</strong> · <strong>Actions concrètes</strong></p>
-        <p style="color: var(--muted); margin: 0;"><strong>Automne 2026</strong> · Date à venir · Animé par Dr W. Marc Zongo</p>
-        <p style="margin: 1.2rem 0 0;">
-          <a href="/webinaires.html" class="btn-primary" style="font-size: 0.95rem; padding: 0.7rem 1.4rem;">M'inscrire au webinaire</a>
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Section 03 : Synthèses à la une -->
-  <section class="content">
-    <div class="wrap-wide">
-      <span class="section-num">— Synthèses à la une</span>
-      <h2>Des analyses <em>approfondies</em>, texte par texte</h2>
-      <p class="lead">Au-delà du recensement, des synthèses fidèles : contexte, thèses, citations, héritage, et pistes d'action concrètes.</p>
-
-      <div class="cards-grid" style="margin-top: 1.5rem;">
-        <div class="num-card">
-          <span class="card-num">📜 Léon XIII · 1891</span>
-          <h3>Rerum Novarum</h3>
-          <p>L'acte fondateur. Face à la misère ouvrière : dignité du travailleur, salaire juste, droit d'association.</p>
-          <a href="/rerum-novarum.html" class="card-link">Lire la synthèse</a>
-        </div>
-        <div class="num-card">
-          <span class="card-num">💛 Benoît XVI · 2009</span>
-          <h3>Caritas in Veritate</h3>
-          <p>Au cœur de la crise financière mondiale : développement intégral, charité et vérité, éthique de l'économie.</p>
-          <a href="/caritas-in-veritate.html" class="card-link">Lire la synthèse</a>
-        </div>
-        <div class="num-card">
-          <span class="card-num">🤖 Léon XIV · 2026</span>
-          <h3>Magnifica Humanitas</h3>
-          <p>L'intelligence artificielle au regard de la dignité humaine. Synthèse en préparation ; webinaire du 14 juin disponible.</p>
-          <a href="/webinaires.html" class="card-link">Voir le webinaire</a>
-        </div>
-      </div>
-
-      <p style="text-align: center; margin-top: 1.8rem;"><a href="/syntheses.html" style="color: var(--gold); font-weight: 600; text-decoration: none;">Voir toutes les synthèses →</a></p>
-    </div>
-  </section>
-
-  <!-- Bandeau Formations -->
-  <section class="formations-cta">
-    <div class="wrap-wide">
-      <span class="section-num">— Pour les groupes</span>
-      <h2>Demandez une <em>formation</em> sur mesure</h2>
-      <p>Paroisses, diocèses, mouvements, écoles, universités, entreprises : Encyclicum conçoit et anime des sessions selon la méthode <em>Synthèse · Implications pour notre temps · Actions concrètes</em>.</p>
-      <p style="margin-top: 0.8rem; font-style: italic; color: var(--gold-soft);">Pas de tarif imposé — Encyclicum fonctionne par contributions volontaires, à la mesure de chaque groupe.</p>
-      <a href="/formations.html" class="btn-gold">Voir l'offre et faire une demande</a>
-    </div>
-  </section>
-
-  <!-- Section 05 : L'Église par continent et par région -->
-  <section class="content alt">
-    <div class="wrap-wide">
-      <span class="section-num">— Textes de référence</span>
-      <h2>L'Église par <em>continent</em> et par <em>région</em></h2>
-      <p class="lead">Au-delà des textes pontificaux, Encyclicum documente la voix des conférences épiscopales sur les sept continents — avec liens vers les sources officielles.</p>
-
-      <div class="countries" style="margin-top: 1.5rem;">
-        <div class="country-card"><span class="flag">🍁</span><h4>Canada · CECC</h4><p>Réconciliation autochtone, AMM, G7.</p><a href="/eglise-canada.html">Découvrir</a></div>
-        <div class="country-card"><span class="flag">⚜️</span><h4>Québec · AECQ</h4><p>Travail, soins de fin de vie.</p><a href="/eglise-quebec.html">Découvrir</a></div>
-        <div class="country-card"><span class="flag">🌎</span><h4>Amérique · CELAM + USCCB</h4><p>De Medellín à Aparecida.</p><a href="/eglise-amerique.html">Découvrir</a></div>
-        <div class="country-card"><span class="flag">🌍</span><h4>Afrique · SCEAM</h4><p>Église-Famille, Kigali 2025.</p><a href="/eglise-afrique.html">Découvrir</a></div>
-        <div class="country-card"><span class="flag">🇪🇺</span><h4>Europe · CCEE + COMECE</h4><p>Charta Oecumenica.</p><a href="/eglise-europe.html">Découvrir</a></div>
-        <div class="country-card"><span class="flag">🌏</span><h4>Asie · FABC</h4><p>Triple dialogue.</p><a href="/eglise-asie.html">Découvrir</a></div>
-        <div class="country-card"><span class="flag">🏝️</span><h4>Océanie · FCBCO</h4><p>Défi climatique, peuples autochtones.</p><a href="/eglise-oceanie.html">Découvrir</a></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Section 06 : Corpus complet (préservé) -->
-  <section class="content">
-    <div class="wrap-wide">
-      <span class="section-num">— Corpus magistériel</span>
-      <h2>Corpus complet</h2>
-      <p>Recensement des textes les plus significatifs du Magistère pontifical, de Léon XIII à Léon XIV, classés par thème. Non exhaustif.</p>
-
-      <h3>📜 Lettres encycliques</h3>
-
-      <h4 style="color: var(--gold); font-family: var(--sans); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.12em; margin-top: 2rem;">1. Doctrine sociale, travail et économie</h4>
-      <ul style="line-height: 2;">
-        <li><strong>Rerum Novarum</strong> — Léon XIII, 1891 — <em>Condition ouvrière, syndicats, justice sociale — acte fondateur de la doctrine sociale</em></li>
-        <li><strong>Quadragesimo Anno</strong> — Pie XI, 1931 — <em>40ᵉ anniversaire de Rerum Novarum, reconstruction de l'ordre social</em></li>
-        <li><strong>Gaudium et Spes</strong> — Concile Vatican II, 1965 — <em>Constitution conciliaire sur l'Église dans le monde de ce temps</em></li>
-        <li><strong>Mater et Magistra</strong> — Jean XXIII, 1961 — <em>Christianisme et progrès social</em></li>
-        <li><strong>Pacem in Terris</strong> — Jean XXIII, 1963 — <em>Paix entre les nations dans la vérité et la justice</em></li>
-        <li><strong>Populorum Progressio</strong> — Paul VI, 1967 — <em>Développement des peuples</em></li>
-        <li><strong>Octogesima Adveniens</strong> — Paul VI, 1971 — <em>80ᵉ anniversaire de Rerum Novarum, appel à l'action</em></li>
-        <li><strong>Laborem Exercens</strong> — Jean-Paul II, 1981 — <em>Dignité du travail humain</em></li>
-        <li><strong>Sollicitudo Rei Socialis</strong> — Jean-Paul II, 1987 — <em>Développement solidaire des peuples</em></li>
-        <li><strong>Centesimus Annus</strong> — Jean-Paul II, 1991 — <em>Centenaire de Rerum Novarum</em></li>
-        <li><strong>Caritas in Veritate</strong> — Benoît XVI, 2009 — <em>Développement humain intégral dans la charité et la vérité</em></li>
-      </ul>
-
-      <h4 style="color: var(--gold); font-family: var(--sans); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.12em; margin-top: 2rem;">2. Écologie et environnement</h4>
-      <ul style="line-height: 2;">
-        <li><strong>Laudato Si'</strong> — François, 2015 — <em>Sauvegarde de la maison commune</em></li>
-        <li><strong>Laudate Deum</strong> — François, 2023 — <em>Crise climatique, suite de Laudato Si'</em></li>
-      </ul>
-
-      <h4 style="color: var(--gold); font-family: var(--sans); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.12em; margin-top: 2rem;">3. Intelligence artificielle et dignité humaine</h4>
-      <ul style="line-height: 2;">
-        <li><strong>Magnifica Humanitas</strong> — Léon XIV, 2026 — <em>Protection de la personne humaine à l'ère de l'intelligence artificielle</em></li>
-      </ul>
-
-      <h4 style="color: var(--gold); font-family: var(--sans); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.12em; margin-top: 2rem;">4. Foi, théologie et vérité</h4>
-      <ul style="line-height: 2;">
-        <li><strong>Aeterni Patris</strong> — Léon XIII, 1879 — <em>Philosophie chrétienne, Thomas d'Aquin et la scolastique</em></li>
-        <li><strong>Pascendi Dominici Gregis</strong> — Pie X, 1907 — <em>Condamnation du modernisme</em></li>
-        <li><strong>Humani Generis</strong> — Pie XII, 1950 — <em>Erreurs menaçant les fondements de la doctrine catholique</em></li>
-        <li><strong>Fides et Ratio</strong> — Jean-Paul II, 1998 — <em>Relations entre la foi et la raison</em></li>
-        <li><strong>Lumen Fidei</strong> — François, 2013 — <em>La lumière de la foi</em></li>
-      </ul>
-
-      <h4 style="color: var(--gold); font-family: var(--sans); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.12em; margin-top: 2rem;">5. Amour, charité et miséricorde</h4>
-      <ul style="line-height: 2;">
-        <li><strong>Deus Caritas Est</strong> — Benoît XVI, 2006 — <em>L'amour chrétien et la charité</em></li>
-        <li><strong>Dilexit Nos</strong> — François, 2024 — <em>Dévotion au Sacré-Cœur de Jésus</em></li>
-        <li><strong>Dilexi Te</strong> — Léon XIV, 2025 — <em>Exhortation : L'amour pour les pauvres</em></li>
-      </ul>
-
-      <h4 style="color: var(--gold); font-family: var(--sans); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.12em; margin-top: 2rem;">6. Fraternité, paix et relations humaines</h4>
-      <ul style="line-height: 2;">
-        <li><strong>Pacem in Terris</strong> — Jean XXIII, 1963 — <em>Paix entre les nations</em></li>
-        <li><strong>Populorum Progressio</strong> — Paul VI, 1967 — <em>Fraternité entre les peuples</em></li>
-        <li><strong>Fratelli Tutti</strong> — François, 2020 — <em>Fraternité et amitié sociale</em></li>
-      </ul>
-
-      <h4 style="color: var(--gold); font-family: var(--sans); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.12em; margin-top: 2rem;">7. Éthique, morale et vie humaine</h4>
-      <ul style="line-height: 2;">
-        <li><strong>Arcanum Divinae</strong> — Léon XIII, 1880 — <em>Le mariage chrétien</em></li>
-        <li><strong>Casti Connubii</strong> — Pie XI, 1930 — <em>Le mariage chrétien</em></li>
-        <li><strong>Humanae Vitae</strong> — Paul VI, 1968 — <em>Régulation des naissances</em></li>
-        <li><strong>Veritatis Splendor</strong> — Jean-Paul II, 1993 — <em>L'enseignement moral de l'Église</em></li>
-        <li><strong>Evangelium Vitae</strong> — Jean-Paul II, 1995 — <em>Valeur et inviolabilité de la vie humaine</em></li>
-      </ul>
-
-      <h4 style="color: var(--gold); font-family: var(--sans); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.12em; margin-top: 2rem;">8. Ecclésiologie et Eucharistie</h4>
-      <ul style="line-height: 2;">
-        <li><strong>Mystici Corporis</strong> — Pie XII, 1943 — <em>L'Église, corps mystique du Christ</em></li>
-        <li><strong>Mediator Dei</strong> — Pie XII, 1947 — <em>La liturgie et le culte divin</em></li>
-        <li><strong>Ecclesiam Suam</strong> — Paul VI, 1964 — <em>La mission de l'Église dans le monde</em></li>
-        <li><strong>Ecclesia de Eucharistia</strong> — Jean-Paul II, 2003 — <em>L'Eucharistie dans sa relation à l'Église</em></li>
-      </ul>
-
-      <h4 style="color: var(--gold); font-family: var(--sans); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.12em; margin-top: 2rem;">9. Œcuménisme et unité chrétienne</h4>
-      <ul style="line-height: 2;">
-        <li><strong>Mortalium Animos</strong> — Pie XI, 1928 — <em>Sur l'unité religieuse (regard critique sur l'œcuménisme naissant)</em></li>
-        <li><strong>Ut Unum Sint</strong> — Jean-Paul II, 1995 — <em>L'engagement œcuménique</em></li>
-      </ul>
-
-      <h4 style="color: var(--gold); font-family: var(--sans); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.12em; margin-top: 2rem;">10. Mission et évangélisation</h4>
-      <ul style="line-height: 2;">
-        <li><strong>Maximum Illud</strong> — Benoît XV, 1919 — <em>Lettre apostolique : Les missions catholiques après la Première Guerre mondiale</em></li>
-        <li><strong>Evangelii Praecones</strong> — Pie XII, 1951 — <em>L'activité missionnaire</em></li>
-        <li><strong>Redemptoris Missio</strong> — Jean-Paul II, 1990 — <em>La valeur permanente du précepte missionnaire</em></li>
-      </ul>
-
-      <h4 style="color: var(--gold); font-family: var(--sans); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.12em; margin-top: 2rem;">11. Dévotion mariale et spiritualité</h4>
-      <ul style="line-height: 2;">
-        <li><strong>Supremi Apostolatus</strong> — Léon XIII, 1883 — <em>Le Rosaire</em></li>
-        <li><strong>Quamquam Pluries</strong> — Léon XIII, 1889 — <em>La dévotion à saint Joseph</em></li>
-        <li><strong>Ad Diem Illum Laetissimum</strong> — Pie X, 1904 — <em>La dévotion à la Vierge Marie</em></li>
-        <li><strong>Spe Salvi</strong> — Benoît XVI, 2007 — <em>L'espérance chrétienne</em></li>
-      </ul>
-
-      <h4 style="color: var(--gold); font-family: var(--sans); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.12em; margin-top: 2rem;">12. Politique, État et liberté</h4>
-      <ul style="line-height: 2;">
-        <li><strong>Diuturnum Illud</strong> — Léon XIII, 1881 — <em>L'origine du pouvoir civil</em></li>
-        <li><strong>Immortale Dei</strong> — Léon XIII, 1885 — <em>La constitution chrétienne des États</em></li>
-        <li><strong>Libertas Praestantissimum</strong> — Léon XIII, 1888 — <em>La liberté humaine</em></li>
-        <li><strong>Non Abbiamo Bisogno</strong> — Pie XI, 1931 — <em>Condamnation du fascisme italien</em></li>
-        <li><strong>Mit Brennender Sorge</strong> — Pie XI, 1937 — <em>Condamnation du nazisme</em></li>
-        <li><strong>Divini Redemptoris</strong> — Pie XI, 1937 — <em>Condamnation du communisme athée</em></li>
-      </ul>
-
-      <h4 style="color: var(--gold); font-family: var(--sans); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.12em; margin-top: 2rem;">13. Éducation et culture</h4>
-      <ul style="line-height: 2;">
-        <li><strong>Divini Illius Magistri</strong> — Pie XI, 1929 — <em>L'éducation chrétienne de la jeunesse</em></li>
-      </ul>
-
-      <h3 style="margin-top: 3rem;">✍️ Exhortations apostoliques</h3>
-
-      <h4 style="color: var(--gold); font-family: var(--sans); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.12em; margin-top: 2rem;">Famille, mariage et amour</h4>
-      <ul style="line-height: 2;">
-        <li><strong>Familiaris Consortio</strong> — Jean-Paul II, 1981 — <em>Les tâches de la famille chrétienne dans le monde d'aujourd'hui</em></li>
-        <li><strong>Amoris Laetitia</strong> — François, 2016 — <em>L'amour dans la famille</em></li>
-      </ul>
-
-      <h4 style="color: var(--gold); font-family: var(--sans); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.12em; margin-top: 2rem;">Évangélisation et mission</h4>
-      <ul style="line-height: 2;">
-        <li><strong>Evangelii Nuntiandi</strong> — Paul VI, 1975 — <em>L'annonce de l'Évangile dans le monde moderne</em></li>
-        <li><strong>Catechesi Tradendae</strong> — Jean-Paul II, 1979 — <em>La catéchèse en notre temps</em></li>
-        <li><strong>Evangelii Gaudium</strong> — François, 2013 — <em>La joie de l'Évangile — programme du pontificat</em></li>
-        <li><strong>Querida Amazonia</strong> — François, 2020 — <em>L'Amazonie : Église, culture, écologie et social</em></li>
-      </ul>
-
-      <h4 style="color: var(--gold); font-family: var(--sans); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.12em; margin-top: 2rem;">Sainteté et vie chrétienne</h4>
-      <ul style="line-height: 2;">
-        <li><strong>Gaudete in Domino</strong> — Paul VI, 1975 — <em>La joie chrétienne</em></li>
-        <li><strong>Gaudete et Exsultate</strong> — François, 2018 — <em>L'appel à la sainteté dans le monde actuel</em></li>
-        <li><strong>C'est la confiance</strong> — François, 2023 — <em>La confiance en l'amour miséricordieux de Dieu (sainte Thérèse de Lisieux)</em></li>
-      </ul>
-
-      <h4 style="color: var(--gold); font-family: var(--sans); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.12em; margin-top: 2rem;">Jeunesse et vocations</h4>
-      <ul style="line-height: 2;">
-        <li><strong>Christus Vivit</strong> — François, 2019 — <em>Aux jeunes et à tout le peuple de Dieu</em></li>
-        <li><strong>Redemptionis Donum</strong> — Jean-Paul II, 1984 — <em>La vie consacrée à la lumière de la consécration</em></li>
-      </ul>
-
-      <h4 style="color: var(--gold); font-family: var(--sans); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.12em; margin-top: 2rem;">Parole de Dieu et eucharistie</h4>
-      <ul style="line-height: 2;">
-        <li><strong>Verbum Domini</strong> — Benoît XVI, 2010 — <em>La Parole de Dieu dans la vie et la mission de l'Église</em></li>
-        <li><strong>Sacramentum Caritatis</strong> — Benoît XVI, 2007 — <em>L'Eucharistie, source et sommet de la vie de l'Église</em></li>
-      </ul>
-
-      <h4 style="color: var(--gold); font-family: var(--sans); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.12em; margin-top: 2rem;">Charité et amour des pauvres</h4>
-      <ul style="line-height: 2;">
-        <li><strong>Dilexi Te</strong> — Léon XIV, 2025 — <em>L'amour pour les pauvres</em></li>
-      </ul>
-
-      <h4 style="color: var(--gold); font-family: var(--sans); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.12em; margin-top: 2rem;">Écologie</h4>
-      <ul style="line-height: 2;">
-        <li><strong>Laudate Deum</strong> — François, 2023 — <em>La crise climatique — suite de Laudato Si'</em></li>
-      </ul>
-
-      <h3 style="margin-top: 3rem;">🎓 Catéchèses & audiences générales</h3>
-      <p>Les grands cycles d'enseignement délivrés lors des audiences générales du mercredi, regroupés par thème.</p>
-
-      <h4 style="color: var(--gold); font-family: var(--sans); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.12em; margin-top: 1.5rem;">Prière et vie spirituelle</h4>
-      <ul style="line-height: 2;">
-        <li><strong>École de la prière</strong> — Benoît XVI, 2011–2012 — <em>Cycle sur la prière chrétienne, des Psaumes à Jésus et aux saints</em></li>
-        <li><strong>La prière (cycle)</strong> — François, 2020–2021 — <em>38 catéchèses sur la prière chrétienne</em></li>
-      </ul>
-
-      <h4 style="color: var(--gold); font-family: var(--sans); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.12em; margin-top: 1.5rem;">Corps, amour humain et mariage</h4>
-      <ul style="line-height: 2;">
-        <li><strong>Théologie du corps</strong> — Jean-Paul II, 1979–1984 — <em>129 catéchèses sur l'amour humain dans le plan divin</em></li>
-        <li><strong>La famille (cycle)</strong> — François, 2014–2015 — <em>Catéchèses sur la famille, en lien avec le Synode</em></li>
-      </ul>
-
-      <h4 style="color: var(--gold); font-family: var(--sans); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.12em; margin-top: 1.5rem;">Église, foi et credo</h4>
-      <ul style="line-height: 2;">
-        <li><strong>Les Pères de l'Église</strong> — Benoît XVI, 2007–2009 — <em>Les grandes figures de la Tradition, des Apôtres au Moyen Âge</em></li>
-        <li><strong>Année de la foi</strong> — Benoît XVI, 2012–2013 — <em>Catéchèses sur le Credo et la foi</em></li>
-        <li><strong>Le Credo (cycle)</strong> — François, 2013 — <em>Catéchèses sur la profession de foi</em></li>
-      </ul>
-
-      <h4 style="color: var(--gold); font-family: var(--sans); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.12em; margin-top: 1.5rem;">Vertus, vices et discernement</h4>
-      <ul style="line-height: 2;">
-        <li><strong>Le discernement</strong> — François, 2022–2023 — <em>Cycle sur le discernement spirituel</em></li>
-        <li><strong>Les vices et les vertus</strong> — François, 2023–2024 — <em>21 catéchèses sur les vertus cardinales, théologales et les vices</em></li>
-      </ul>
-
-      <h4 style="color: var(--gold); font-family: var(--sans); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.12em; margin-top: 1.5rem;">Âges de la vie et société</h4>
-      <ul style="line-height: 2;">
-        <li><strong>La vieillesse</strong> — François, 2022 — <em>Le sens et la valeur de la vieillesse</em></li>
-        <li><strong>Les œuvres de miséricorde</strong> — François, 2016 — <em>Catéchèses du Jubilé de la miséricorde</em></li>
-      </ul>
-
-      <h4 style="color: var(--gold); font-family: var(--sans); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.12em; margin-top: 1.5rem;">Jésus-Christ et l'espérance</h4>
-      <ul style="line-height: 2;">
-        <li><strong>Jésus-Christ notre espérance</strong> — François / Léon XIV, 2024–2025 — <em>Cycle jubilaire ouvert par François, poursuivi par Léon XIV</em></li>
-        <li><strong>Catéchèses christologiques</strong> — Jean-Paul II, 1987–1989 — <em>Sur Jésus-Christ, le Saint-Esprit et la Trinité</em></li>
-      </ul>
-
-      <h3 style="margin-top: 3rem;">🕊️ Homélies marquantes</h3>
-
-      <h4 style="color: var(--gold); font-family: var(--sans); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.12em; margin-top: 1.5rem;">Inaugurations de pontificat</h4>
-      <ul style="line-height: 2;">
-        <li><strong>Homélie d'inauguration</strong> — Jean-Paul II, 1978 — <em>« N'ayez pas peur ! Ouvrez tout grand les portes au Christ »</em></li>
-        <li><strong>Homélie d'inauguration</strong> — Benoît XVI, 2005 — <em>Sur le ministère de Pierre et l'unité de l'Église</em></li>
-        <li><strong>Homélie d'inauguration</strong> — François, 2013 — <em>Sur la garde de la création et la tendresse</em></li>
-        <li><strong>Homélie d'inauguration</strong> — Léon XIV, 2025 — <em>Sur l'espérance et l'unité au début du pontificat</em></li>
-      </ul>
-
-      <h4 style="color: var(--gold); font-family: var(--sans); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.12em; margin-top: 1.5rem;">Paix, justice et grands rassemblements</h4>
-      <ul style="line-height: 2;">
-        <li><strong>Homélie de Lampedusa</strong> — François, 2013 — <em>Sur les migrants et « la mondialisation de l'indifférence »</em></li>
-        <li><strong>JMJ — homélies</strong> — Jean-Paul II, 1984–2002 — <em>Homélies des Journées mondiales de la jeunesse</em></li>
-      </ul>
-
-      <h4 style="color: var(--gold); font-family: var(--sans); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.12em; margin-top: 1.5rem;">Grandes fêtes liturgiques</h4>
-      <ul style="line-height: 2;">
-        <li><strong>Veillée pascale (homélies)</strong> — Benoît XVI, 2005–2013 — <em>Sur la lumière du Christ ressuscité</em></li>
-        <li><strong>Nativité (homélies de Noël)</strong> — Divers papes — <em>Méditations sur l'Incarnation à la messe de la nuit</em></li>
-      </ul>
-
+<main>
+  <section class="corpus active" data-corpus="enc">
+    <div class="corpus-head"><h2>Lettres encycliques</h2><p>Les lettres solennelles du Pape. Y figurent aussi quelques exhortations, lettres apostoliques et textes conciliaires majeurs (voir colonne « Type »).</p></div>
     
-
+      <div class="thematic" data-section>
+        <h3 class="sec-title"><span class="sec-emoji">🏭</span><span class="sec-num">1</span>Doctrine sociale, travail et économie</h3>
+        <div class="table-wrap"><table>
+          <thead><tr><th>Titre</th><th>Pape</th><th>Année</th><th>Type</th><th>Contenu</th></tr></thead>
+          <tbody>
+        <tr class="row" data-pape="Léon XIII" data-search="rerum novarum léon xiii condition ouvrière, syndicats, justice sociale — acte fondateur de la doctrine sociale">
+          <td class="c-titre">Rerum Novarum</td><td class="c-pape">Léon XIII</td>
+          <td class="c-annee">1891</td>
+          <td class="c-type"><span class="badge t-enc">Encyclique</span></td>
+          <td class="c-contenu">Condition ouvrière, syndicats, justice sociale — acte fondateur de la doctrine sociale</td>
+        </tr>
+        <tr class="row" data-pape="Pie XI" data-search="quadragesimo anno pie xi 40e anniversaire de rerum novarum, reconstruction de l'ordre social">
+          <td class="c-titre">Quadragesimo Anno</td><td class="c-pape">Pie XI</td>
+          <td class="c-annee">1931</td>
+          <td class="c-type"><span class="badge t-enc">Encyclique</span></td>
+          <td class="c-contenu">40e anniversaire de Rerum Novarum, reconstruction de l'ordre social</td>
+        </tr>
+        <tr class="row" data-pape="Concile Vatican II" data-search="gaudium et spes concile vatican ii l'église dans le monde de ce temps (constitution pastorale)">
+          <td class="c-titre">Gaudium et Spes</td><td class="c-pape">Concile Vatican II</td>
+          <td class="c-annee">1965</td>
+          <td class="c-type"><span class="badge t-con">Constitution conciliaire</span></td>
+          <td class="c-contenu">L'Église dans le monde de ce temps (constitution pastorale)</td>
+        </tr>
+        <tr class="row" data-pape="Jean XXIII" data-search="mater et magistra jean xxiii christianisme et progrès social">
+          <td class="c-titre">Mater et Magistra</td><td class="c-pape">Jean XXIII</td>
+          <td class="c-annee">1961</td>
+          <td class="c-type"><span class="badge t-enc">Encyclique</span></td>
+          <td class="c-contenu">Christianisme et progrès social</td>
+        </tr>
+        <tr class="row" data-pape="Jean XXIII" data-search="pacem in terris jean xxiii paix entre les nations dans la vérité et la justice">
+          <td class="c-titre">Pacem in Terris</td><td class="c-pape">Jean XXIII</td>
+          <td class="c-annee">1963</td>
+          <td class="c-type"><span class="badge t-enc">Encyclique</span></td>
+          <td class="c-contenu">Paix entre les nations dans la vérité et la justice</td>
+        </tr>
+        <tr class="row" data-pape="Paul VI" data-search="populorum progressio paul vi développement des peuples">
+          <td class="c-titre">Populorum Progressio</td><td class="c-pape">Paul VI</td>
+          <td class="c-annee">1967</td>
+          <td class="c-type"><span class="badge t-enc">Encyclique</span></td>
+          <td class="c-contenu">Développement des peuples</td>
+        </tr>
+        <tr class="row" data-pape="Paul VI" data-search="octogesima adveniens paul vi 80e anniversaire de rerum novarum, appel à l'action">
+          <td class="c-titre">Octogesima Adveniens</td><td class="c-pape">Paul VI</td>
+          <td class="c-annee">1971</td>
+          <td class="c-type"><span class="badge t-let">Lettre apostolique</span></td>
+          <td class="c-contenu">80e anniversaire de Rerum Novarum, appel à l'action</td>
+        </tr>
+        <tr class="row" data-pape="Jean-Paul II" data-search="laborem exercens jean-paul ii dignité du travail humain">
+          <td class="c-titre">Laborem Exercens</td><td class="c-pape">Jean-Paul II</td>
+          <td class="c-annee">1981</td>
+          <td class="c-type"><span class="badge t-enc">Encyclique</span></td>
+          <td class="c-contenu">Dignité du travail humain</td>
+        </tr>
+        <tr class="row" data-pape="Jean-Paul II" data-search="sollicitudo rei socialis jean-paul ii développement solidaire des peuples">
+          <td class="c-titre">Sollicitudo Rei Socialis</td><td class="c-pape">Jean-Paul II</td>
+          <td class="c-annee">1987</td>
+          <td class="c-type"><span class="badge t-enc">Encyclique</span></td>
+          <td class="c-contenu">Développement solidaire des peuples</td>
+        </tr>
+        <tr class="row" data-pape="Jean-Paul II" data-search="centesimus annus jean-paul ii centenaire de rerum novarum">
+          <td class="c-titre">Centesimus Annus</td><td class="c-pape">Jean-Paul II</td>
+          <td class="c-annee">1991</td>
+          <td class="c-type"><span class="badge t-enc">Encyclique</span></td>
+          <td class="c-contenu">Centenaire de Rerum Novarum</td>
+        </tr>
+        <tr class="row" data-pape="Benoît XVI" data-search="caritas in veritate benoît xvi développement humain intégral dans la charité et la vérité">
+          <td class="c-titre">Caritas in Veritate</td><td class="c-pape">Benoît XVI</td>
+          <td class="c-annee">2009</td>
+          <td class="c-type"><span class="badge t-enc">Encyclique</span></td>
+          <td class="c-contenu">Développement humain intégral dans la charité et la vérité</td>
+        </tr></tbody></table></div>
+      </div>
+      <div class="thematic" data-section>
+        <h3 class="sec-title"><span class="sec-emoji">🌍</span><span class="sec-num">2</span>Écologie et environnement</h3>
+        <div class="table-wrap"><table>
+          <thead><tr><th>Titre</th><th>Pape</th><th>Année</th><th>Type</th><th>Contenu</th></tr></thead>
+          <tbody>
+        <tr class="row" data-pape="François" data-search="laudato si' françois sauvegarde de la maison commune">
+          <td class="c-titre">Laudato Si'</td><td class="c-pape">François</td>
+          <td class="c-annee">2015</td>
+          <td class="c-type"><span class="badge t-enc">Encyclique</span></td>
+          <td class="c-contenu">Sauvegarde de la maison commune</td>
+        </tr>
+        <tr class="row" data-pape="François" data-search="laudate deum françois crise climatique, suite de laudato si'">
+          <td class="c-titre">Laudate Deum</td><td class="c-pape">François</td>
+          <td class="c-annee">2023</td>
+          <td class="c-type"><span class="badge t-exh">Exhortation apostolique</span></td>
+          <td class="c-contenu">Crise climatique, suite de Laudato Si'</td>
+        </tr></tbody></table></div>
+      </div>
+      <div class="thematic" data-section>
+        <h3 class="sec-title"><span class="sec-emoji">🤖</span><span class="sec-num">3</span>Intelligence artificielle et dignité humaine</h3>
+        <div class="table-wrap"><table>
+          <thead><tr><th>Titre</th><th>Pape</th><th>Année</th><th>Type</th><th>Contenu</th></tr></thead>
+          <tbody>
+        <tr class="row" data-pape="Léon XIV" data-search="magnifica humanitas léon xiv protection de la personne humaine à l'ère de l'intelligence artificielle">
+          <td class="c-titre">Magnifica Humanitas</td><td class="c-pape">Léon XIV</td>
+          <td class="c-annee">2026</td>
+          <td class="c-type"><span class="badge t-enc">Encyclique</span></td>
+          <td class="c-contenu">Protection de la personne humaine à l'ère de l'intelligence artificielle</td>
+        </tr></tbody></table></div>
+      </div>
+      <div class="thematic" data-section>
+        <h3 class="sec-title"><span class="sec-emoji">✝️</span><span class="sec-num">4</span>Foi, théologie et vérité</h3>
+        <div class="table-wrap"><table>
+          <thead><tr><th>Titre</th><th>Pape</th><th>Année</th><th>Type</th><th>Contenu</th></tr></thead>
+          <tbody>
+        <tr class="row" data-pape="Léon XIII" data-search="aeterni patris léon xiii philosophie chrétienne, thomas d'aquin et la scolastique">
+          <td class="c-titre">Aeterni Patris</td><td class="c-pape">Léon XIII</td>
+          <td class="c-annee">1879</td>
+          <td class="c-type"><span class="badge t-enc">Encyclique</span></td>
+          <td class="c-contenu">Philosophie chrétienne, Thomas d'Aquin et la scolastique</td>
+        </tr>
+        <tr class="row" data-pape="Pie X" data-search="pascendi dominici gregis pie x condamnation du modernisme">
+          <td class="c-titre">Pascendi Dominici Gregis</td><td class="c-pape">Pie X</td>
+          <td class="c-annee">1907</td>
+          <td class="c-type"><span class="badge t-enc">Encyclique</span></td>
+          <td class="c-contenu">Condamnation du modernisme</td>
+        </tr>
+        <tr class="row" data-pape="Pie XII" data-search="humani generis pie xii erreurs menaçant les fondements de la doctrine catholique">
+          <td class="c-titre">Humani Generis</td><td class="c-pape">Pie XII</td>
+          <td class="c-annee">1950</td>
+          <td class="c-type"><span class="badge t-enc">Encyclique</span></td>
+          <td class="c-contenu">Erreurs menaçant les fondements de la doctrine catholique</td>
+        </tr>
+        <tr class="row" data-pape="Jean-Paul II" data-search="fides et ratio jean-paul ii relations entre la foi et la raison">
+          <td class="c-titre">Fides et Ratio</td><td class="c-pape">Jean-Paul II</td>
+          <td class="c-annee">1998</td>
+          <td class="c-type"><span class="badge t-enc">Encyclique</span></td>
+          <td class="c-contenu">Relations entre la foi et la raison</td>
+        </tr>
+        <tr class="row" data-pape="François" data-search="lumen fidei françois la lumière de la foi">
+          <td class="c-titre">Lumen Fidei</td><td class="c-pape">François</td>
+          <td class="c-annee">2013</td>
+          <td class="c-type"><span class="badge t-enc">Encyclique</span></td>
+          <td class="c-contenu">La lumière de la foi</td>
+        </tr></tbody></table></div>
+      </div>
+      <div class="thematic" data-section>
+        <h3 class="sec-title"><span class="sec-emoji">❤️</span><span class="sec-num">5</span>Amour, charité et miséricorde</h3>
+        <div class="table-wrap"><table>
+          <thead><tr><th>Titre</th><th>Pape</th><th>Année</th><th>Type</th><th>Contenu</th></tr></thead>
+          <tbody>
+        <tr class="row" data-pape="Benoît XVI" data-search="deus caritas est benoît xvi l'amour chrétien et la charité">
+          <td class="c-titre">Deus Caritas Est</td><td class="c-pape">Benoît XVI</td>
+          <td class="c-annee">2006</td>
+          <td class="c-type"><span class="badge t-enc">Encyclique</span></td>
+          <td class="c-contenu">L'amour chrétien et la charité</td>
+        </tr>
+        <tr class="row" data-pape="François" data-search="dilexit nos françois dévotion au sacré-cœur de jésus">
+          <td class="c-titre">Dilexit Nos</td><td class="c-pape">François</td>
+          <td class="c-annee">2024</td>
+          <td class="c-type"><span class="badge t-enc">Encyclique</span></td>
+          <td class="c-contenu">Dévotion au Sacré-Cœur de Jésus</td>
+        </tr>
+        <tr class="row" data-pape="Léon XIV" data-search="dilexi te léon xiv l'amour pour les pauvres">
+          <td class="c-titre">Dilexi Te</td><td class="c-pape">Léon XIV</td>
+          <td class="c-annee">2025</td>
+          <td class="c-type"><span class="badge t-exh">Exhortation apostolique</span></td>
+          <td class="c-contenu">L'amour pour les pauvres</td>
+        </tr></tbody></table></div>
+      </div>
+      <div class="thematic" data-section>
+        <h3 class="sec-title"><span class="sec-emoji">🌐</span><span class="sec-num">6</span>Fraternité, paix et relations humaines</h3>
+        <div class="table-wrap"><table>
+          <thead><tr><th>Titre</th><th>Pape</th><th>Année</th><th>Type</th><th>Contenu</th></tr></thead>
+          <tbody>
+        <tr class="row" data-pape="Jean XXIII" data-search="pacem in terris jean xxiii paix entre les nations (voir aussi section doctrine sociale)">
+          <td class="c-titre">Pacem in Terris</td><td class="c-pape">Jean XXIII</td>
+          <td class="c-annee">1963</td>
+          <td class="c-type"><span class="badge t-enc">Encyclique</span></td>
+          <td class="c-contenu">Paix entre les nations (voir aussi section Doctrine sociale)</td>
+        </tr>
+        <tr class="row" data-pape="Paul VI" data-search="populorum progressio paul vi fraternité entre les peuples (voir aussi section doctrine sociale)">
+          <td class="c-titre">Populorum Progressio</td><td class="c-pape">Paul VI</td>
+          <td class="c-annee">1967</td>
+          <td class="c-type"><span class="badge t-enc">Encyclique</span></td>
+          <td class="c-contenu">Fraternité entre les peuples (voir aussi section Doctrine sociale)</td>
+        </tr>
+        <tr class="row" data-pape="François" data-search="fratelli tutti françois fraternité et amitié sociale">
+          <td class="c-titre">Fratelli Tutti</td><td class="c-pape">François</td>
+          <td class="c-annee">2020</td>
+          <td class="c-type"><span class="badge t-enc">Encyclique</span></td>
+          <td class="c-contenu">Fraternité et amitié sociale</td>
+        </tr></tbody></table></div>
+      </div>
+      <div class="thematic" data-section>
+        <h3 class="sec-title"><span class="sec-emoji">🧭</span><span class="sec-num">7</span>Éthique, morale et vie humaine</h3>
+        <div class="table-wrap"><table>
+          <thead><tr><th>Titre</th><th>Pape</th><th>Année</th><th>Type</th><th>Contenu</th></tr></thead>
+          <tbody>
+        <tr class="row" data-pape="Léon XIII" data-search="arcanum divinae léon xiii le mariage chrétien (précurseur de casti connubii et humanae vitae)">
+          <td class="c-titre">Arcanum Divinae</td><td class="c-pape">Léon XIII</td>
+          <td class="c-annee">1880</td>
+          <td class="c-type"><span class="badge t-enc">Encyclique</span></td>
+          <td class="c-contenu">Le mariage chrétien (précurseur de Casti Connubii et Humanae Vitae)</td>
+        </tr>
+        <tr class="row" data-pape="Pie XI" data-search="casti connubii pie xi le mariage chrétien">
+          <td class="c-titre">Casti Connubii</td><td class="c-pape">Pie XI</td>
+          <td class="c-annee">1930</td>
+          <td class="c-type"><span class="badge t-enc">Encyclique</span></td>
+          <td class="c-contenu">Le mariage chrétien</td>
+        </tr>
+        <tr class="row" data-pape="Paul VI" data-search="humanae vitae paul vi régulation des naissances">
+          <td class="c-titre">Humanae Vitae</td><td class="c-pape">Paul VI</td>
+          <td class="c-annee">1968</td>
+          <td class="c-type"><span class="badge t-enc">Encyclique</span></td>
+          <td class="c-contenu">Régulation des naissances</td>
+        </tr>
+        <tr class="row" data-pape="Jean-Paul II" data-search="veritatis splendor jean-paul ii l'enseignement moral de l'église">
+          <td class="c-titre">Veritatis Splendor</td><td class="c-pape">Jean-Paul II</td>
+          <td class="c-annee">1993</td>
+          <td class="c-type"><span class="badge t-enc">Encyclique</span></td>
+          <td class="c-contenu">L'enseignement moral de l'Église</td>
+        </tr>
+        <tr class="row" data-pape="Jean-Paul II" data-search="evangelium vitae jean-paul ii valeur et inviolabilité de la vie humaine">
+          <td class="c-titre">Evangelium Vitae</td><td class="c-pape">Jean-Paul II</td>
+          <td class="c-annee">1995</td>
+          <td class="c-type"><span class="badge t-enc">Encyclique</span></td>
+          <td class="c-contenu">Valeur et inviolabilité de la vie humaine</td>
+        </tr></tbody></table></div>
+      </div>
+      <div class="thematic" data-section>
+        <h3 class="sec-title"><span class="sec-emoji">⛪</span><span class="sec-num">8</span>Ecclésiologie et Eucharistie</h3>
+        <div class="table-wrap"><table>
+          <thead><tr><th>Titre</th><th>Pape</th><th>Année</th><th>Type</th><th>Contenu</th></tr></thead>
+          <tbody>
+        <tr class="row" data-pape="Pie XII" data-search="mystici corporis pie xii l'église, corps mystique du christ">
+          <td class="c-titre">Mystici Corporis</td><td class="c-pape">Pie XII</td>
+          <td class="c-annee">1943</td>
+          <td class="c-type"><span class="badge t-enc">Encyclique</span></td>
+          <td class="c-contenu">L'Église, corps mystique du Christ</td>
+        </tr>
+        <tr class="row" data-pape="Pie XII" data-search="mediator dei pie xii la liturgie et le culte divin">
+          <td class="c-titre">Mediator Dei</td><td class="c-pape">Pie XII</td>
+          <td class="c-annee">1947</td>
+          <td class="c-type"><span class="badge t-enc">Encyclique</span></td>
+          <td class="c-contenu">La liturgie et le culte divin</td>
+        </tr>
+        <tr class="row" data-pape="Paul VI" data-search="ecclesiam suam paul vi la mission de l'église dans le monde">
+          <td class="c-titre">Ecclesiam Suam</td><td class="c-pape">Paul VI</td>
+          <td class="c-annee">1964</td>
+          <td class="c-type"><span class="badge t-enc">Encyclique</span></td>
+          <td class="c-contenu">La mission de l'Église dans le monde</td>
+        </tr>
+        <tr class="row" data-pape="Jean-Paul II" data-search="ecclesia de eucharistia jean-paul ii l'eucharistie dans sa relation à l'église">
+          <td class="c-titre">Ecclesia de Eucharistia</td><td class="c-pape">Jean-Paul II</td>
+          <td class="c-annee">2003</td>
+          <td class="c-type"><span class="badge t-enc">Encyclique</span></td>
+          <td class="c-contenu">L'Eucharistie dans sa relation à l'Église</td>
+        </tr></tbody></table></div>
+      </div>
+      <div class="thematic" data-section>
+        <h3 class="sec-title"><span class="sec-emoji">🕊️</span><span class="sec-num">9</span>Œcuménisme et unité chrétienne</h3>
+        <div class="table-wrap"><table>
+          <thead><tr><th>Titre</th><th>Pape</th><th>Année</th><th>Type</th><th>Contenu</th></tr></thead>
+          <tbody>
+        <tr class="row" data-pape="Pie XI" data-search="mortalium animos pie xi sur l'unité religieuse (regard critique sur l'œcuménisme naissant)">
+          <td class="c-titre">Mortalium Animos</td><td class="c-pape">Pie XI</td>
+          <td class="c-annee">1928</td>
+          <td class="c-type"><span class="badge t-enc">Encyclique</span></td>
+          <td class="c-contenu">Sur l'unité religieuse (regard critique sur l'œcuménisme naissant)</td>
+        </tr>
+        <tr class="row" data-pape="Jean-Paul II" data-search="ut unum sint jean-paul ii l'engagement œcuménique">
+          <td class="c-titre">Ut Unum Sint</td><td class="c-pape">Jean-Paul II</td>
+          <td class="c-annee">1995</td>
+          <td class="c-type"><span class="badge t-enc">Encyclique</span></td>
+          <td class="c-contenu">L'engagement œcuménique</td>
+        </tr></tbody></table></div>
+      </div>
+      <div class="thematic" data-section>
+        <h3 class="sec-title"><span class="sec-emoji">🌏</span><span class="sec-num">10</span>Mission et évangelisation</h3>
+        <div class="table-wrap"><table>
+          <thead><tr><th>Titre</th><th>Pape</th><th>Année</th><th>Type</th><th>Contenu</th></tr></thead>
+          <tbody>
+        <tr class="row" data-pape="Benoît XV" data-search="maximum illud benoît xv les missions catholiques après la première guerre mondiale">
+          <td class="c-titre">Maximum Illud</td><td class="c-pape">Benoît XV</td>
+          <td class="c-annee">1919</td>
+          <td class="c-type"><span class="badge t-let">Lettre apostolique</span></td>
+          <td class="c-contenu">Les missions catholiques après la Première Guerre mondiale</td>
+        </tr>
+        <tr class="row" data-pape="Pie XII" data-search="evangelii praecones pie xii l'activité missionnaire">
+          <td class="c-titre">Evangelii Praecones</td><td class="c-pape">Pie XII</td>
+          <td class="c-annee">1951</td>
+          <td class="c-type"><span class="badge t-enc">Encyclique</span></td>
+          <td class="c-contenu">L'activité missionnaire</td>
+        </tr>
+        <tr class="row" data-pape="Jean-Paul II" data-search="redemptoris missio jean-paul ii la valeur permanente du précepte missionnaire">
+          <td class="c-titre">Redemptoris Missio</td><td class="c-pape">Jean-Paul II</td>
+          <td class="c-annee">1990</td>
+          <td class="c-type"><span class="badge t-enc">Encyclique</span></td>
+          <td class="c-contenu">La valeur permanente du précepte missionnaire</td>
+        </tr></tbody></table></div>
+      </div>
+      <div class="thematic" data-section>
+        <h3 class="sec-title"><span class="sec-emoji">🙏</span><span class="sec-num">11</span>Dévotion mariale et spiritualité</h3>
+        <div class="table-wrap"><table>
+          <thead><tr><th>Titre</th><th>Pape</th><th>Année</th><th>Type</th><th>Contenu</th></tr></thead>
+          <tbody>
+        <tr class="row" data-pape="Léon XIII" data-search="supremi apostolatus léon xiii le rosaire">
+          <td class="c-titre">Supremi Apostolatus</td><td class="c-pape">Léon XIII</td>
+          <td class="c-annee">1883</td>
+          <td class="c-type"><span class="badge t-enc">Encyclique</span></td>
+          <td class="c-contenu">Le Rosaire</td>
+        </tr>
+        <tr class="row" data-pape="Léon XIII" data-search="quamquam pluries léon xiii la dévotion à saint joseph">
+          <td class="c-titre">Quamquam Pluries</td><td class="c-pape">Léon XIII</td>
+          <td class="c-annee">1889</td>
+          <td class="c-type"><span class="badge t-enc">Encyclique</span></td>
+          <td class="c-contenu">La dévotion à saint Joseph</td>
+        </tr>
+        <tr class="row" data-pape="Pie X" data-search="ad diem illum laetissimum pie x la dévotion à la vierge marie (cinquantenaire de l'immaculée conception)">
+          <td class="c-titre">Ad Diem Illum Laetissimum</td><td class="c-pape">Pie X</td>
+          <td class="c-annee">1904</td>
+          <td class="c-type"><span class="badge t-enc">Encyclique</span></td>
+          <td class="c-contenu">La dévotion à la Vierge Marie (cinquantenaire de l'Immaculée Conception)</td>
+        </tr>
+        <tr class="row" data-pape="Benoît XVI" data-search="spe salvi benoît xvi l'espérance chrétienne">
+          <td class="c-titre">Spe Salvi</td><td class="c-pape">Benoît XVI</td>
+          <td class="c-annee">2007</td>
+          <td class="c-type"><span class="badge t-enc">Encyclique</span></td>
+          <td class="c-contenu">L'espérance chrétienne</td>
+        </tr></tbody></table></div>
+      </div>
+      <div class="thematic" data-section>
+        <h3 class="sec-title"><span class="sec-emoji">🏛️</span><span class="sec-num">12</span>Politique, État et liberté</h3>
+        <div class="table-wrap"><table>
+          <thead><tr><th>Titre</th><th>Pape</th><th>Année</th><th>Type</th><th>Contenu</th></tr></thead>
+          <tbody>
+        <tr class="row" data-pape="Léon XIII" data-search="diuturnum illud léon xiii l'origine du pouvoir civil">
+          <td class="c-titre">Diuturnum Illud</td><td class="c-pape">Léon XIII</td>
+          <td class="c-annee">1881</td>
+          <td class="c-type"><span class="badge t-enc">Encyclique</span></td>
+          <td class="c-contenu">L'origine du pouvoir civil</td>
+        </tr>
+        <tr class="row" data-pape="Léon XIII" data-search="immortale dei léon xiii la constitution chrétienne des états">
+          <td class="c-titre">Immortale Dei</td><td class="c-pape">Léon XIII</td>
+          <td class="c-annee">1885</td>
+          <td class="c-type"><span class="badge t-enc">Encyclique</span></td>
+          <td class="c-contenu">La constitution chrétienne des États</td>
+        </tr>
+        <tr class="row" data-pape="Léon XIII" data-search="libertas praestantissimum léon xiii la liberté humaine">
+          <td class="c-titre">Libertas Praestantissimum</td><td class="c-pape">Léon XIII</td>
+          <td class="c-annee">1888</td>
+          <td class="c-type"><span class="badge t-enc">Encyclique</span></td>
+          <td class="c-contenu">La liberté humaine</td>
+        </tr>
+        <tr class="row" data-pape="Pie XI" data-search="non abbiamo bisogno pie xi condamnation du fascisme italien">
+          <td class="c-titre">Non Abbiamo Bisogno</td><td class="c-pape">Pie XI</td>
+          <td class="c-annee">1931</td>
+          <td class="c-type"><span class="badge t-enc">Encyclique</span></td>
+          <td class="c-contenu">Condamnation du fascisme italien</td>
+        </tr>
+        <tr class="row" data-pape="Pie XI" data-search="mit brennender sorge pie xi condamnation du nazisme">
+          <td class="c-titre">Mit Brennender Sorge</td><td class="c-pape">Pie XI</td>
+          <td class="c-annee">1937</td>
+          <td class="c-type"><span class="badge t-enc">Encyclique</span></td>
+          <td class="c-contenu">Condamnation du nazisme</td>
+        </tr>
+        <tr class="row" data-pape="Pie XI" data-search="divini redemptoris pie xi condamnation du communisme athée">
+          <td class="c-titre">Divini Redemptoris</td><td class="c-pape">Pie XI</td>
+          <td class="c-annee">1937</td>
+          <td class="c-type"><span class="badge t-enc">Encyclique</span></td>
+          <td class="c-contenu">Condamnation du communisme athée</td>
+        </tr></tbody></table></div>
+      </div>
+      <div class="thematic" data-section>
+        <h3 class="sec-title"><span class="sec-emoji">📚</span><span class="sec-num">13</span>Éducation et culture</h3>
+        <div class="table-wrap"><table>
+          <thead><tr><th>Titre</th><th>Pape</th><th>Année</th><th>Type</th><th>Contenu</th></tr></thead>
+          <tbody>
+        <tr class="row" data-pape="Pie XI" data-search="divini illius magistri pie xi l'éducation chrétienne de la jeunesse">
+          <td class="c-titre">Divini Illius Magistri</td><td class="c-pape">Pie XI</td>
+          <td class="c-annee">1929</td>
+          <td class="c-type"><span class="badge t-enc">Encyclique</span></td>
+          <td class="c-contenu">L'éducation chrétienne de la jeunesse</td>
+        </tr></tbody></table></div>
+      </div>
+    <p class="corpus-note">Recensement des textes les plus significatifs, non exhaustif.</p>
+  </section>
+  <section class="corpus" data-corpus="exh">
+    <div class="corpus-head"><h2>Exhortations apostoliques</h2><p>Documents par lesquels le Pape exhorte et encourage, souvent à la suite d'un synode. Ton plus pastoral que les encycliques.</p></div>
     
-
+      <div class="thematic" data-section>
+        <h3 class="sec-title"><span class="sec-emoji">👨‍👩‍👧‍👦</span><span class="sec-num">1</span>Famille, mariage et amour</h3>
+        <div class="table-wrap"><table>
+          <thead><tr><th>Titre</th><th>Pape</th><th>Année</th><th>Contenu</th></tr></thead>
+          <tbody>
+        <tr class="row" data-pape="Jean-Paul II" data-search="familiaris consortio jean-paul ii les tâches de la famille chrétienne dans le monde d'aujourd'hui">
+          <td class="c-titre">Familiaris Consortio</td><td class="c-pape">Jean-Paul II</td>
+          <td class="c-annee">1981</td>
+          <td class="c-contenu">Les tâches de la famille chrétienne dans le monde d'aujourd'hui</td>
+        </tr>
+        <tr class="row" data-pape="François" data-search="amoris laetitia françois l'amour dans la famille">
+          <td class="c-titre">Amoris Laetitia</td><td class="c-pape">François</td>
+          <td class="c-annee">2016</td>
+          <td class="c-contenu">L'amour dans la famille</td>
+        </tr></tbody></table></div>
+      </div>
+      <div class="thematic" data-section>
+        <h3 class="sec-title"><span class="sec-emoji">📣</span><span class="sec-num">2</span>Évangélisation et mission</h3>
+        <div class="table-wrap"><table>
+          <thead><tr><th>Titre</th><th>Pape</th><th>Année</th><th>Contenu</th></tr></thead>
+          <tbody>
+        <tr class="row" data-pape="Paul VI" data-search="evangelii nuntiandi paul vi l'annonce de l'évangile dans le monde moderne">
+          <td class="c-titre">Evangelii Nuntiandi</td><td class="c-pape">Paul VI</td>
+          <td class="c-annee">1975</td>
+          <td class="c-contenu">L'annonce de l'Évangile dans le monde moderne</td>
+        </tr>
+        <tr class="row" data-pape="Jean-Paul II" data-search="catechesi tradendae jean-paul ii la catéchèse en notre temps">
+          <td class="c-titre">Catechesi Tradendae</td><td class="c-pape">Jean-Paul II</td>
+          <td class="c-annee">1979</td>
+          <td class="c-contenu">La catéchèse en notre temps</td>
+        </tr>
+        <tr class="row" data-pape="François" data-search="evangelii gaudium françois la joie de l'évangile — programme du pontificat">
+          <td class="c-titre">Evangelii Gaudium</td><td class="c-pape">François</td>
+          <td class="c-annee">2013</td>
+          <td class="c-contenu">La joie de l'Évangile — programme du pontificat</td>
+        </tr>
+        <tr class="row" data-pape="François" data-search="querida amazonia françois l'amazonie : église, culture, écologie et social">
+          <td class="c-titre">Querida Amazonia</td><td class="c-pape">François</td>
+          <td class="c-annee">2020</td>
+          <td class="c-contenu">L'Amazonie : Église, culture, écologie et social</td>
+        </tr></tbody></table></div>
+      </div>
+      <div class="thematic" data-section>
+        <h3 class="sec-title"><span class="sec-emoji">🌟</span><span class="sec-num">3</span>Sainteté et vie chrétienne</h3>
+        <div class="table-wrap"><table>
+          <thead><tr><th>Titre</th><th>Pape</th><th>Année</th><th>Contenu</th></tr></thead>
+          <tbody>
+        <tr class="row" data-pape="Paul VI" data-search="gaudete in domino paul vi la joie chrétienne">
+          <td class="c-titre">Gaudete in Domino</td><td class="c-pape">Paul VI</td>
+          <td class="c-annee">1975</td>
+          <td class="c-contenu">La joie chrétienne</td>
+        </tr>
+        <tr class="row" data-pape="François" data-search="gaudete et exsultate françois l'appel à la sainteté dans le monde actuel">
+          <td class="c-titre">Gaudete et Exsultate</td><td class="c-pape">François</td>
+          <td class="c-annee">2018</td>
+          <td class="c-contenu">L'appel à la sainteté dans le monde actuel</td>
+        </tr>
+        <tr class="row" data-pape="François" data-search="c'est la confiance françois la confiance en l'amour miséricordieux de dieu (sainte thérèse de lisieux)">
+          <td class="c-titre">C'est la confiance</td><td class="c-pape">François</td>
+          <td class="c-annee">2023</td>
+          <td class="c-contenu">La confiance en l'amour miséricordieux de Dieu (sainte Thérèse de Lisieux)</td>
+        </tr></tbody></table></div>
+      </div>
+      <div class="thematic" data-section>
+        <h3 class="sec-title"><span class="sec-emoji">🧑</span><span class="sec-num">4</span>Jeunesse et vocations</h3>
+        <div class="table-wrap"><table>
+          <thead><tr><th>Titre</th><th>Pape</th><th>Année</th><th>Contenu</th></tr></thead>
+          <tbody>
+        <tr class="row" data-pape="François" data-search="christus vivit françois aux jeunes et à tout le peuple de dieu">
+          <td class="c-titre">Christus Vivit</td><td class="c-pape">François</td>
+          <td class="c-annee">2019</td>
+          <td class="c-contenu">Aux jeunes et à tout le peuple de Dieu</td>
+        </tr>
+        <tr class="row" data-pape="Jean-Paul II" data-search="redemptionis donum jean-paul ii la vie consacrée à la lumière de la consécration">
+          <td class="c-titre">Redemptionis Donum</td><td class="c-pape">Jean-Paul II</td>
+          <td class="c-annee">1984</td>
+          <td class="c-contenu">La vie consacrée à la lumière de la consécration</td>
+        </tr></tbody></table></div>
+      </div>
+      <div class="thematic" data-section>
+        <h3 class="sec-title"><span class="sec-emoji">📖</span><span class="sec-num">5</span>Parole de Dieu et eucharistie</h3>
+        <div class="table-wrap"><table>
+          <thead><tr><th>Titre</th><th>Pape</th><th>Année</th><th>Contenu</th></tr></thead>
+          <tbody>
+        <tr class="row" data-pape="Benoît XVI" data-search="verbum domini benoît xvi la parole de dieu dans la vie et la mission de l'église">
+          <td class="c-titre">Verbum Domini</td><td class="c-pape">Benoît XVI</td>
+          <td class="c-annee">2010</td>
+          <td class="c-contenu">La Parole de Dieu dans la vie et la mission de l'Église</td>
+        </tr>
+        <tr class="row" data-pape="Benoît XVI" data-search="sacramentum caritatis benoît xvi l'eucharistie, source et sommet de la vie de l'église">
+          <td class="c-titre">Sacramentum Caritatis</td><td class="c-pape">Benoît XVI</td>
+          <td class="c-annee">2007</td>
+          <td class="c-contenu">L'Eucharistie, source et sommet de la vie de l'Église</td>
+        </tr></tbody></table></div>
+      </div>
+      <div class="thematic" data-section>
+        <h3 class="sec-title"><span class="sec-emoji">❤️‍🔥</span><span class="sec-num">6</span>Charité et amour des pauvres</h3>
+        <div class="table-wrap"><table>
+          <thead><tr><th>Titre</th><th>Pape</th><th>Année</th><th>Contenu</th></tr></thead>
+          <tbody>
+        <tr class="row" data-pape="Léon XIV" data-search="dilexi te léon xiv l'amour pour les pauvres">
+          <td class="c-titre">Dilexi Te</td><td class="c-pape">Léon XIV</td>
+          <td class="c-annee">2025</td>
+          <td class="c-contenu">L'amour pour les pauvres</td>
+        </tr></tbody></table></div>
+      </div>
+      <div class="thematic" data-section>
+        <h3 class="sec-title"><span class="sec-emoji">🌍</span><span class="sec-num">7</span>Écologie (exhortation)</h3>
+        <div class="table-wrap"><table>
+          <thead><tr><th>Titre</th><th>Pape</th><th>Année</th><th>Contenu</th></tr></thead>
+          <tbody>
+        <tr class="row" data-pape="François" data-search="laudate deum françois la crise climatique — suite de laudato si'">
+          <td class="c-titre">Laudate Deum</td><td class="c-pape">François</td>
+          <td class="c-annee">2023</td>
+          <td class="c-contenu">La crise climatique — suite de Laudato Si'</td>
+        </tr></tbody></table></div>
+      </div>
+  </section>
+  <section class="corpus" data-corpus="cat">
+    <div class="corpus-head"><h2>Catéchèses &amp; audiences générales</h2><p>Les grands cycles d'enseignement délivrés lors des audiences générales du mercredi, regroupés par thème.</p></div>
     
-    </div>
-  </section>
-
-  <!-- Section 07 : Le fondateur -->
-  <section class="content alt">
-    <div class="wrap-wide">
-      <span class="section-num">— L'humain derrière le projet</span>
-      <h2>Dr Wendnonghen Marc <em>Zongo</em></h2>
-      <p class="lead">Fondateur et directeur d'Encyclicum, professeur d'administration à l'Université de Hearst, et directeur général de MetanoIA Stratégie.</p>
-
-      <div style="background: var(--white); border-left: 4px solid var(--gold); padding: 1.8rem 2rem; border-radius: 4px; margin-top: 1.5rem;">
-        <p>Passionné par le dialogue entre la foi, la pensée sociale catholique et les grands défis contemporains — notamment ceux de l'intelligence artificielle — Marc a fondé Encyclicum pour rendre cette pensée accessible au plus grand nombre.</p>
-        <p>Il dirige par ailleurs <strong>MetanoIA Stratégie</strong>, un cabinet de conseil et de formation en intelligence artificielle, gouvernance, développement organisationnel et marketing digital, au service des organisations du Québec et de la francophonie.</p>
-        <p style="margin-top: 1rem;"><a href="https://metanoia-strategie.ca" target="_blank" rel="noopener" style="color: var(--navy); font-weight: 600;">Découvrir MetanoIA Stratégie →</a></p>
+      <div class="thematic" data-section>
+        <h3 class="sec-title"><span class="sec-emoji">🙏</span><span class="sec-num">1</span>Prière et vie spirituelle</h3>
+        <div class="table-wrap"><table>
+          <thead><tr><th>Titre</th><th>Pape</th><th>Période</th><th>Contenu</th></tr></thead>
+          <tbody>
+        <tr class="row" data-pape="Benoît XVI" data-search="école de la prière benoît xvi cycle sur la prière chrétienne, des psaumes à jésus et aux saints">
+          <td class="c-titre">École de la prière</td><td class="c-pape">Benoît XVI</td>
+          <td class="c-annee">2011–2012</td>
+          <td class="c-contenu">Cycle sur la prière chrétienne, des Psaumes à Jésus et aux saints</td>
+        </tr>
+        <tr class="row" data-pape="François" data-search="la prière (cycle) françois 38 catéchèses sur la prière chrétienne">
+          <td class="c-titre">La prière (cycle)</td><td class="c-pape">François</td>
+          <td class="c-annee">2020–2021</td>
+          <td class="c-contenu">38 catéchèses sur la prière chrétienne</td>
+        </tr></tbody></table></div>
       </div>
-    </div>
-  </section>
-
-  <!-- Section 08 : Contact -->
-  <section class="content" id="contact">
-    <div class="wrap-wide">
-      <span class="section-num">— Nous écrire</span>
-      <h2>Une <em>question</em>, une <em>suggestion</em>, un <em>partenariat</em> ?</h2>
-      <p class="lead">Écrivez-nous via ce formulaire. Réponse personnalisée dans les jours qui suivent.</p>
-
-      <form class="form-block" action="https://formspree.io/f/mzdylvag" method="POST">
-        <input type="hidden" name="_subject" value="Encyclicum — Contact général">
-        <input type="hidden" name="_origin" value="index.html#contact">
-
-        <div class="form-field">
-          <label for="c_nom">Nom complet *</label>
-          <input type="text" id="c_nom" name="nom" required>
-        </div>
-
-        <div class="form-field">
-          <label for="c_email">Courriel *</label>
-          <input type="email" id="c_email" name="email" required>
-        </div>
-
-        <div class="form-field">
-          <label for="c_sujet">Sujet *</label>
-          <select id="c_sujet" name="sujet" required>
-            <option value="">Sélectionner…</option>
-            <option>Question générale</option>
-            <option>Suggestion d'un texte à ajouter</option>
-            <option>Inscription aux nouveautés</option>
-            <option>Inscription au webinaire d'automne 2026</option>
-            <option>Faire un don / partenariat</option>
-            <option>Autre</option>
-          </select>
-        </div>
-
-        <div class="form-field">
-          <label for="c_message">Message *</label>
-          <textarea id="c_message" name="message" required></textarea>
-        </div>
-
-        <div class="form-field form-field-inline">
-          <input type="checkbox" id="c_news" name="newsletter" value="oui">
-          <label for="c_news" style="font-weight: 400;">Je souhaite être informé(e) des nouveaux contenus publiés sur Encyclicum.</label>
-        </div>
-
-        <button type="submit" class="form-submit">Envoyer le message</button>
-      </form>
-    </div>
-  </section>
-
-  <!-- Section 09 : Recherche -->
-  
-  <section class="search-section">
-    <div class="wrap-wide">
-      <span class="section-num">— Rechercher sur le site</span>
-      <h2>Une <em>question</em>, un <em>texte</em>, un <em>continent</em> ?</h2>
-      <div class="search-box">
-        <input type="search" id="site-search" placeholder="Tapez un mot-clé…" autocomplete="off">
+      <div class="thematic" data-section>
+        <h3 class="sec-title"><span class="sec-emoji">💑</span><span class="sec-num">2</span>Corps, amour humain et mariage</h3>
+        <div class="table-wrap"><table>
+          <thead><tr><th>Titre</th><th>Pape</th><th>Période</th><th>Contenu</th></tr></thead>
+          <tbody>
+        <tr class="row" data-pape="Jean-Paul II" data-search="théologie du corps jean-paul ii 129 catéchèses sur l'amour humain dans le plan divin">
+          <td class="c-titre">Théologie du corps</td><td class="c-pape">Jean-Paul II</td>
+          <td class="c-annee">1979–1984</td>
+          <td class="c-contenu">129 catéchèses sur l'amour humain dans le plan divin</td>
+        </tr>
+        <tr class="row" data-pape="François" data-search="la famille (cycle) françois catéchèses sur la famille, en lien avec le synode">
+          <td class="c-titre">La famille (cycle)</td><td class="c-pape">François</td>
+          <td class="c-annee">2014–2015</td>
+          <td class="c-contenu">Catéchèses sur la famille, en lien avec le Synode</td>
+        </tr></tbody></table></div>
       </div>
-      <p class="search-suggestions">
-        Essayez :
-        <a href="/syntheses.html">doctrine sociale</a>
-        <a href="/webinaires.html">webinaire</a>
-        <a href="/eglise-afrique.html">Afrique</a>
-        <a href="/eglise-quebec.html">Québec</a>
-        <a href="/formations.html">formation</a>
-        <a href="/mission-vision-valeurs.html">valeurs</a>
-      </p>
-      <div id="search-results" class="search-results"></div>
-    </div>
+      <div class="thematic" data-section>
+        <h3 class="sec-title"><span class="sec-emoji">⛪</span><span class="sec-num">3</span>Église, foi et credo</h3>
+        <div class="table-wrap"><table>
+          <thead><tr><th>Titre</th><th>Pape</th><th>Période</th><th>Contenu</th></tr></thead>
+          <tbody>
+        <tr class="row" data-pape="Benoît XVI" data-search="les pères de l'église benoît xvi les grandes figures de la tradition, des apôtres au moyen âge">
+          <td class="c-titre">Les Pères de l'Église</td><td class="c-pape">Benoît XVI</td>
+          <td class="c-annee">2007–2009</td>
+          <td class="c-contenu">Les grandes figures de la Tradition, des Apôtres au Moyen Âge</td>
+        </tr>
+        <tr class="row" data-pape="Benoît XVI" data-search="année de la foi benoît xvi catéchèses sur le credo et la foi">
+          <td class="c-titre">Année de la foi</td><td class="c-pape">Benoît XVI</td>
+          <td class="c-annee">2012–2013</td>
+          <td class="c-contenu">Catéchèses sur le Credo et la foi</td>
+        </tr>
+        <tr class="row" data-pape="François" data-search="le credo (cycle) françois catéchèses sur la profession de foi">
+          <td class="c-titre">Le Credo (cycle)</td><td class="c-pape">François</td>
+          <td class="c-annee">2013</td>
+          <td class="c-contenu">Catéchèses sur la profession de foi</td>
+        </tr></tbody></table></div>
+      </div>
+      <div class="thematic" data-section>
+        <h3 class="sec-title"><span class="sec-emoji">🕊️</span><span class="sec-num">4</span>Vertus, vices et discernement</h3>
+        <div class="table-wrap"><table>
+          <thead><tr><th>Titre</th><th>Pape</th><th>Période</th><th>Contenu</th></tr></thead>
+          <tbody>
+        <tr class="row" data-pape="François" data-search="le discernement françois cycle sur le discernement spirituel">
+          <td class="c-titre">Le discernement</td><td class="c-pape">François</td>
+          <td class="c-annee">2022–2023</td>
+          <td class="c-contenu">Cycle sur le discernement spirituel</td>
+        </tr>
+        <tr class="row" data-pape="François" data-search="les vices et les vertus françois 21 catéchèses sur les vertus cardinales, théologales et les vices">
+          <td class="c-titre">Les vices et les vertus</td><td class="c-pape">François</td>
+          <td class="c-annee">2023–2024</td>
+          <td class="c-contenu">21 catéchèses sur les vertus cardinales, théologales et les vices</td>
+        </tr></tbody></table></div>
+      </div>
+      <div class="thematic" data-section>
+        <h3 class="sec-title"><span class="sec-emoji">👴</span><span class="sec-num">5</span>Âges de la vie et société</h3>
+        <div class="table-wrap"><table>
+          <thead><tr><th>Titre</th><th>Pape</th><th>Période</th><th>Contenu</th></tr></thead>
+          <tbody>
+        <tr class="row" data-pape="François" data-search="la vieillesse françois le sens et la valeur de la vieillesse">
+          <td class="c-titre">La vieillesse</td><td class="c-pape">François</td>
+          <td class="c-annee">2022</td>
+          <td class="c-contenu">Le sens et la valeur de la vieillesse</td>
+        </tr>
+        <tr class="row" data-pape="François" data-search="les œuvres de miséricorde françois catéchèses du jubilé de la miséricorde">
+          <td class="c-titre">Les œuvres de miséricorde</td><td class="c-pape">François</td>
+          <td class="c-annee">2016</td>
+          <td class="c-contenu">Catéchèses du Jubilé de la miséricorde</td>
+        </tr></tbody></table></div>
+      </div>
+      <div class="thematic" data-section>
+        <h3 class="sec-title"><span class="sec-emoji">✝️</span><span class="sec-num">6</span>Jésus-Christ et l'espérance</h3>
+        <div class="table-wrap"><table>
+          <thead><tr><th>Titre</th><th>Pape</th><th>Période</th><th>Contenu</th></tr></thead>
+          <tbody>
+        <tr class="row" data-pape="François / Léon XIV" data-search="jésus-christ notre espérance françois / léon xiv cycle jubilaire ouvert par françois, poursuivi par léon xiv">
+          <td class="c-titre">Jésus-Christ notre espérance</td><td class="c-pape">François / Léon XIV</td>
+          <td class="c-annee">2024–2025</td>
+          <td class="c-contenu">Cycle jubilaire ouvert par François, poursuivi par Léon XIV</td>
+        </tr>
+        <tr class="row" data-pape="Jean-Paul II" data-search="catéchèses christologiques jean-paul ii sur jésus-christ, le saint-esprit et la trinité">
+          <td class="c-titre">Catéchèses christologiques</td><td class="c-pape">Jean-Paul II</td>
+          <td class="c-annee">1987–1989</td>
+          <td class="c-contenu">Sur Jésus-Christ, le Saint-Esprit et la Trinité</td>
+        </tr></tbody></table></div>
+      </div>
+    <p class="corpus-note">La catéchèse hebdomadaire systématique s'est surtout développée à partir de Paul VI ; ce tableau recense les principaux cycles thématiques des pontificats récents.</p>
   </section>
-
-
-
-
-  <footer class="site">
-    <div class="wrap-wide">
-      <div class="footer-grid">
-
-        <div class="footer-col footer-brand">
-          <h4 class="brand-h">Encyclicum <span class="cross">✝</span></h4>
-          <p>Vulgarisation francophone de la doctrine sociale de l'Église, pour toutes les personnes de bonne volonté.</p>
-          <p class="footer-slogan">Comprendre · Discerner · Agir</p>
-        </div>
-
-        <div class="footer-col">
-          <h4>Navigation</h4>
-          <ul>
-            <li><a href="/index.html">Accueil</a></li>
-            <li><a href="/syntheses.html">Synthèses</a></li>
-            <li><a href="/webinaires.html">Webinaires</a></li>
-            <li><a href="/formations.html">Formations</a></li>
-            <li><a href="/mission-vision-valeurs.html">À propos</a></li>
-            <li><a href="/index.html#contact">Nous écrire</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-col">
-          <h4>L'Église par continent</h4>
-          <ul>
-            <li><a href="/eglise-canada.html">Canada</a></li>
-            <li><a href="/eglise-quebec.html">Québec</a></li>
-            <li><a href="/eglise-amerique.html">Amérique</a></li>
-            <li><a href="/eglise-afrique.html">Afrique (SCEAM)</a></li>
-            <li><a href="/eglise-europe.html">Europe</a></li>
-            <li><a href="/eglise-asie.html">Asie</a></li>
-            <li><a href="/eglise-oceanie.html">Océanie</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-col">
-          <h4>Afrique francophone</h4>
-          <ul>
-            <li><a href="/eglise-afrique-rdc.html">RDC (CENCO)</a></li>
-            <li><a href="/eglise-afrique-burkina-niger.html">Burkina-Niger (CEBN)</a></li>
-            <li><a href="/eglise-afrique-cote-ivoire.html">Côte d'Ivoire (CECI)</a></li>
-            <li><a href="/eglise-afrique-senegal.html">Sénégal & Ouest atl.</a></li>
-            <li><a href="/eglise-afrique-cameroun.html">Cameroun (CENC)</a></li>
-            <li><a href="/eglise-afrique-madagascar.html">Madagascar (CEM)</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-col">
-          <h4>Contact</h4>
-          <ul>
-            <li><a href="/index.html#contact">✉ Formulaire de contact</a></li>
-            <li><a href="/formations.html#demande">★ Demande de formation</a></li>
-            <li><a href="/webinaires.html">🎙️ S'inscrire au webinaire</a></li>
-            <li><a href="/">🌐 encyclicum.ca</a></li>
-          </ul>
-        </div>
-
+  <section class="corpus" data-corpus="hom">
+    <div class="corpus-head"><h2>Homélies marquantes</h2><p>Une sélection d'homélies historiques prononcées lors de grands moments liturgiques et événements du pontificat.</p></div>
+    
+      <div class="thematic" data-section>
+        <h3 class="sec-title"><span class="sec-emoji">👑</span><span class="sec-num">1</span>Inaugurations de pontificat</h3>
+        <div class="table-wrap"><table>
+          <thead><tr><th>Titre</th><th>Pape</th><th>Période</th><th>Contenu</th></tr></thead>
+          <tbody>
+        <tr class="row" data-pape="Jean-Paul II" data-search="homélie d'inauguration jean-paul ii « n'ayez pas peur ! ouvrez tout grand les portes au christ »">
+          <td class="c-titre">Homélie d'inauguration</td><td class="c-pape">Jean-Paul II</td>
+          <td class="c-annee">1978</td>
+          <td class="c-contenu">« N'ayez pas peur ! Ouvrez tout grand les portes au Christ »</td>
+        </tr>
+        <tr class="row" data-pape="Benoît XVI" data-search="homélie d'inauguration benoît xvi sur le ministère de pierre et l'unité de l'église">
+          <td class="c-titre">Homélie d'inauguration</td><td class="c-pape">Benoît XVI</td>
+          <td class="c-annee">2005</td>
+          <td class="c-contenu">Sur le ministère de Pierre et l'unité de l'Église</td>
+        </tr>
+        <tr class="row" data-pape="François" data-search="homélie d'inauguration françois sur la garde de la création et la tendresse">
+          <td class="c-titre">Homélie d'inauguration</td><td class="c-pape">François</td>
+          <td class="c-annee">2013</td>
+          <td class="c-contenu">Sur la garde de la création et la tendresse</td>
+        </tr>
+        <tr class="row" data-pape="Léon XIV" data-search="homélie d'inauguration léon xiv sur l'espérance et l'unité au début du pontificat">
+          <td class="c-titre">Homélie d'inauguration</td><td class="c-pape">Léon XIV</td>
+          <td class="c-annee">2025</td>
+          <td class="c-contenu">Sur l'espérance et l'unité au début du pontificat</td>
+        </tr></tbody></table></div>
       </div>
-
-      <div class="footer-bottom">
-        <span>© 2026 Encyclicum ✝ — Tous droits réservés</span>
-        <span>Québec, Canada</span>
+      <div class="thematic" data-section>
+        <h3 class="sec-title"><span class="sec-emoji">🌍</span><span class="sec-num">2</span>Paix, justice et grands rassemblements</h3>
+        <div class="table-wrap"><table>
+          <thead><tr><th>Titre</th><th>Pape</th><th>Période</th><th>Contenu</th></tr></thead>
+          <tbody>
+        <tr class="row" data-pape="François" data-search="homélie de lampedusa françois sur les migrants et « la mondialisation de l'indifférence »">
+          <td class="c-titre">Homélie de Lampedusa</td><td class="c-pape">François</td>
+          <td class="c-annee">2013</td>
+          <td class="c-contenu">Sur les migrants et « la mondialisation de l'indifférence »</td>
+        </tr>
+        <tr class="row" data-pape="Jean-Paul II" data-search="jmj — homélies jean-paul ii homélies des journées mondiales de la jeunesse">
+          <td class="c-titre">JMJ — homélies</td><td class="c-pape">Jean-Paul II</td>
+          <td class="c-annee">1984–2002</td>
+          <td class="c-contenu">Homélies des Journées mondiales de la jeunesse</td>
+        </tr></tbody></table></div>
       </div>
+      <div class="thematic" data-section>
+        <h3 class="sec-title"><span class="sec-emoji">🕯️</span><span class="sec-num">3</span>Grandes fêtes liturgiques</h3>
+        <div class="table-wrap"><table>
+          <thead><tr><th>Titre</th><th>Pape</th><th>Période</th><th>Contenu</th></tr></thead>
+          <tbody>
+        <tr class="row" data-pape="Benoît XVI" data-search="veillée pascale (homélies) benoît xvi sur la lumière du christ ressuscité">
+          <td class="c-titre">Veillée pascale (homélies)</td><td class="c-pape">Benoît XVI</td>
+          <td class="c-annee">2005–2013</td>
+          <td class="c-contenu">Sur la lumière du Christ ressuscité</td>
+        </tr>
+        <tr class="row" data-pape="Divers papes" data-search="nativité (homélies de noël) divers papes méditations sur l'incarnation à la messe de la nuit">
+          <td class="c-titre">Nativité (homélies de Noël)</td><td class="c-pape">Divers papes</td>
+          <td class="c-annee">—</td>
+          <td class="c-contenu">Méditations sur l'Incarnation à la messe de la nuit</td>
+        </tr></tbody></table></div>
+      </div>
+  </section>
+  <div class="no-results" id="noResults">Aucun document ne correspond à votre recherche.</div>
+</main>
+
+<section class="don" id="don">
+  <div class="don-inner">
+    <div class="eyebrow">Soutenir le projet</div>
+    <h2>Soutenir Encyclicum</h2>
+    <p>Encyclicum est un service gratuit et bénévole qui a besoin de votre appui pour continuer à rendre la sagesse sociale de l'Église accessible à tous, sans publicité ni frais d'accès.</p>
+    <p>Chaque don, même modeste, permet de maintenir ce site, l'enrichir de nouvelles synthèses et faire grandir cette bibliothèque vivante de la pensée sociale chrétienne.</p>
+    <div class="don-amounts">
+    <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=metanoia_strategie@hotmail.com&currency_code=CAD&item_name=Don%20Encyclicum&amount=5" target="_blank" rel="noopener">5 $</a>
+    <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=metanoia_strategie@hotmail.com&currency_code=CAD&item_name=Don%20Encyclicum&amount=10" target="_blank" rel="noopener">10 $</a>
+    <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=metanoia_strategie@hotmail.com&currency_code=CAD&item_name=Don%20Encyclicum&amount=15" target="_blank" rel="noopener">15 $</a>
+    <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=metanoia_strategie@hotmail.com&currency_code=CAD&item_name=Don%20Encyclicum&amount=50" target="_blank" rel="noopener">50 $</a>
+    <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=metanoia_strategie@hotmail.com&currency_code=CAD&item_name=Don%20Encyclicum&amount=100" target="_blank" rel="noopener">100 $</a>
+    <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=metanoia_strategie@hotmail.com&currency_code=CAD&item_name=Don%20Encyclicum" target="_blank" rel="noopener" class="other">Autre montant</a>
     </div>
-  </footer>
+    <p class="small">Dons sécurisés par PayPal, en dollars canadiens (CAD). Vous serez redirigé vers PayPal pour compléter votre don.</p>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="contact-head"><div class="eyebrow">Restons en lien</div><h2>Nous écrire</h2><p>Une question, une suggestion de texte à ajouter, ou l'envie d'être informé des nouveautés ? Écrivez-nous.</p></div>
+  <form action="https://formspree.io/f/mzdylvag" method="POST" id="contactForm">
+    <div class="field"><label for="nom">Nom complet</label><input type="text" id="nom" name="nom" required placeholder="Votre nom"></div>
+    <div class="field"><label for="email">Courriel</label><input type="email" id="email" name="email" required placeholder="vous@exemple.com"></div>
+    <div class="field"><label for="sujet">Sujet</label><select id="sujet" name="sujet"><option>Question générale</option><option>Suggestion d'un texte à ajouter</option><option>Inscription aux nouveautés</option><option>Faire un don / partenariat</option><option>Autre</option></select></div>
+    <div class="field"><label for="message">Message</label><textarea id="message" name="message" required placeholder="Votre message…"></textarea></div>
+    <div class="check"><input type="checkbox" id="newsletter" name="newsletter" value="Oui"><label for="newsletter">Je souhaite être informé(e) des nouveaux contenus publiés sur Encyclicum.</label></div>
+    <input type="hidden" name="_subject" value="Nouveau message depuis Encyclicum">
+    <button type="submit" class="submit-btn">Envoyer le message</button>
+    <p class="form-status" id="formStatus"></p>
+  </form>
+</section>
+
+<section class="founder" id="fondateur">
+  <div class="founder-card">
+    <div class="founder-avatar">MZ</div>
+    <div class="founder-body">
+      <div class="eyebrow">Le fondateur</div>
+      <h2>Dr Wendnonghen Marc Zongo</h2>
+      <p class="role">Directeur général de MetanoIA Stratégie</p>
+      <p>Passionné par le dialogue entre la foi, la pensée sociale de l'Église et les grands défis contemporains — notamment ceux de l'intelligence artificielle — il a fondé Encyclicum pour rendre la sagesse des papes accessible au plus grand nombre.</p>
+      <p>Il dirige par ailleurs MetanoIA Stratégie, un cabinet de conseil et de formation en intelligence artificielle, développement organisationnel, gouvernance et marketing digital, au service des organisations du Québec et de la francophonie.</p>
+      <a href="https://www.metanoia-strategie.ca" target="_blank" rel="noopener" class="founder-link">Découvrir MetanoIA Stratégie &rarr;</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="f-mark">Encyclicum<span class="cross"> &#10013;</span></div>
+  <div class="f-links">
+    <a href="index.html">Accueil</a><a href="syntheses.html">Synthèses</a><a href="#contact">Contact</a><a href="#don">Faire un don</a><a href="https://www.metanoia-strategie.ca" target="_blank" rel="noopener">MetanoIA Stratégie</a>
+  </div>
+  <p class="note">La sagesse des papes, enfin accessible. Recensement non exhaustif des textes du magistère pontifical, de Léon XIII à Léon XIV.</p>
+  <div class="copy">www.encyclicum.ca — Mise à jour : mai 2026</div>
+</footer>
+
+<script>
+
+  const hBtn=document.getElementById('hamBtn'),hCl=document.getElementById('hamClose'),hOv=document.getElementById('hamOverlay'),hPa=document.getElementById('hamPanel');
+  function hOpen(){hPa.classList.add('open');hOv.classList.add('open');document.body.classList.add('ham-open');}
+  function hClose(){hPa.classList.remove('open');hOv.classList.remove('open');document.body.classList.remove('ham-open');}
+  hBtn.addEventListener('click',hOpen);
+  hCl.addEventListener('click',hClose);
+  hOv.addEventListener('click',hClose);
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')hClose();});
+  // Fermer après clic sur un lien interne
+  document.querySelectorAll('.ham-links a, .ham-cta').forEach(a=>a.addEventListener('click',()=>{setTimeout(hClose,150);}));
 
 
-  <script>
-    function toggleMenu() {
-      const open = document.body.classList.toggle('menu-open');
-      const btn = document.querySelector('.hamburger');
-      if (btn) btn.setAttribute('aria-expanded', open);
-    }
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') {
-        document.body.classList.remove('menu-open');
-        const btn = document.querySelector('.hamburger');
-        if (btn) btn.setAttribute('aria-expanded', 'false');
-      }
+  const search=document.getElementById('search');
+  const fPape=document.getElementById('filter-pape');
+  const count=document.getElementById('count');
+  const noResults=document.getElementById('noResults');
+  const tabs=[...document.querySelectorAll('.tab')];
+  const corpora=[...document.querySelectorAll('.corpus')];
+  const papes=[...new Set([...document.querySelectorAll('.row')].map(r=>r.dataset.pape))].filter(p=>p && p!=='Divers papes' && !p.includes('/'));
+  papes.forEach(p=>{const o=document.createElement('option');o.value=p;o.textContent=p;fPape.appendChild(o);});
+  let activeCorpus='enc';
+  tabs.forEach(t=>t.addEventListener('click',()=>{
+    tabs.forEach(x=>x.classList.remove('active'));
+    t.classList.add('active');
+    activeCorpus=t.dataset.corpus;
+    corpora.forEach(c=>c.classList.toggle('active',c.dataset.corpus===activeCorpus));
+    apply();
+  }));
+  function apply(){
+    const q=search.value.trim().toLowerCase(),p=fPape.value;
+    const active=document.querySelector('.corpus.active');
+    let visible=0;
+    active.querySelectorAll('.row').forEach(r=>{
+      const okQ=!q||r.dataset.search.includes(q);
+      const okP=!p||r.dataset.pape===p||r.dataset.pape.includes(p);
+      const show=okQ&&okP;
+      r.classList.toggle('hidden',!show);
+      if(show)visible++;
     });
+    active.querySelectorAll('[data-section]').forEach(s=>{
+      const any=[...s.querySelectorAll('.row')].some(r=>!r.classList.contains('hidden'));
+      s.classList.toggle('hidden',!any);
+    });
+    noResults.style.display=visible?'none':'block';
+    count.textContent=visible+' document'+(visible>1?'s':'')+' affiché'+(visible>1?'s':'');
+  }
+  [search,fPape].forEach(el=>el.addEventListener('input',apply));
+  apply();
 
-    // Site search (filtre les liens du site)
-    const SITE_INDEX = [
-      {title: "Accueil", url: "/index.html", tags: ["accueil", "encyclicum", "doctrine sociale", "magistère"]},
-      {title: "Synthèses approfondies", url: "/syntheses.html", tags: ["synthèse", "encyclique", "doctrine sociale"]},
-      {title: "Webinaires", url: "/webinaires.html", tags: ["webinaire", "zoom", "automne 2026", "doctrine sociale", "magnifica humanitas"]},
-      {title: "Formations sur la DSE", url: "/formations.html", tags: ["formation", "groupe", "paroisse", "contributions volontaires"]},
-      {title: "À propos", url: "/mission-vision-valeurs.html", tags: ["mission", "vision", "valeurs", "à propos"]},
-      {title: "L'Église au Canada (CECC)", url: "/eglise-canada.html", tags: ["canada", "CECC", "réconciliation", "autochtones"]},
-      {title: "L'Église au Québec (AECQ)", url: "/eglise-quebec.html", tags: ["québec", "AECQ", "AMM", "fin de vie"]},
-      {title: "L'Église en Amérique (CELAM, USCCB)", url: "/eglise-amerique.html", tags: ["amérique", "CELAM", "USCCB", "Aparecida"]},
-      {title: "L'Église en Afrique (SCEAM)", url: "/eglise-afrique.html", tags: ["afrique", "SCEAM", "Kigali", "Église-Famille"]},
-      {title: "RDC (CENCO)", url: "/eglise-afrique-rdc.html", tags: ["RDC", "Congo", "CENCO", "rite zaïrois"]},
-      {title: "Burkina-Niger (CEBN)", url: "/eglise-afrique-burkina-niger.html", tags: ["burkina", "niger", "CEBN", "sahel", "paix"]},
-      {title: "Côte d'Ivoire (CECI)", url: "/eglise-afrique-cote-ivoire.html", tags: ["côte d'ivoire", "CECI", "Notre-Dame d'Afrique"]},
-      {title: "Sénégal et Ouest atlantique", url: "/eglise-afrique-senegal.html", tags: ["sénégal", "mauritanie", "cap-vert", "guinée-bissau"]},
-      {title: "Cameroun (CENC)", url: "/eglise-afrique-cameroun.html", tags: ["cameroun", "CENC", "ACADIR"]},
-      {title: "Madagascar (CEM)", url: "/eglise-afrique-madagascar.html", tags: ["madagascar", "CEM", "océan Indien"]},
-      {title: "L'Église en Europe (CCEE, COMECE)", url: "/eglise-europe.html", tags: ["europe", "CCEE", "COMECE", "Charta Oecumenica"]},
-      {title: "L'Église en Asie (FABC)", url: "/eglise-asie.html", tags: ["asie", "FABC", "triple dialogue"]},
-      {title: "L'Église en Océanie", url: "/eglise-oceanie.html", tags: ["océanie", "FCBCO", "pacifique"]},
-    ];
-    const searchInput = document.getElementById('site-search');
-    const searchResults = document.getElementById('search-results');
-    if (searchInput && searchResults) {
-      searchInput.addEventListener('input', (e) => {
-        const q = e.target.value.trim().toLowerCase();
-        if (!q) { searchResults.innerHTML = ''; return; }
-        const hits = SITE_INDEX.filter(p =>
-          p.title.toLowerCase().includes(q) ||
-          p.tags.some(t => t.toLowerCase().includes(q))
-        );
-        if (hits.length === 0) {
-          searchResults.innerHTML = '<p class="search-empty">Aucun résultat. Essayez un autre mot-clé.</p>';
-        } else {
-          searchResults.innerHTML = hits.map(h =>
-            `<div class="result"><a href="${h.url}">${h.title}</a><div class="result-meta">${h.tags.slice(0,4).join(' · ')}</div></div>`
-          ).join('');
-        }
-      });
-    }
-  </script>
-
+  const form=document.getElementById('contactForm'),status=document.getElementById('formStatus');
+  form.addEventListener('submit',async(e)=>{
+    e.preventDefault();
+    status.className='form-status';status.textContent='Envoi en cours…';status.style.display='block';
+    try{
+      const res=await fetch(form.action,{method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}});
+      if(res.ok){status.className='form-status ok';status.textContent='Merci ! Votre message a bien été envoyé.';form.reset();}
+      else{status.className='form-status err';status.textContent='Une erreur est survenue. Réessayez ou écrivez à zongomarcw@yahoo.fr.';}
+    }catch(err){status.className='form-status err';status.textContent='Une erreur est survenue. Réessayez ou écrivez à zongomarcw@yahoo.fr.';}
+  });
+</script>
 </body>
 </html>
