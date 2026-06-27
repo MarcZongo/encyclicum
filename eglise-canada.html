@@ -295,9 +295,14 @@
       </a>
       <nav class="main-nav">
         <a href="/index.html">Accueil</a>
-        <a href="/index.html#corpus">Corpus complet et synthèses approfondies</a>
-        <a href="/index.html#catecheses">Catéchèses</a>
-        <a href="/index.html#homelies">Homélies</a>
+        <div class="nav-item has-dropdown">
+          <a href="/index.html#corpus">Ressources</a>
+          <div class="nav-dropdown">
+            <a href="/index.html#corpus">Corpus complet et synthèses approfondies</a>
+            <a href="/index.html#catecheses">Catéchèses</a>
+            <a href="/index.html#homelies">Homélies</a>
+          </div>
+        </div>
         <a href="/webinaires.html">Webinaires</a>
         <a href="/formations.html">Formations</a>
         <a href="/mission-vision-valeurs.html">À propos</a>
@@ -328,9 +333,16 @@
     <button class="menu-close" onclick="toggleMenu()" aria-label="Fermer">×</button>
     <ul>
       <li><a href="/index.html">Accueil</a></li>
-      <li><a href="/index.html#corpus">Corpus complet et synthèses approfondies</a></li>
-      <li><a href="/index.html#catecheses">Catéchèses</a></li>
-      <li><a href="/index.html#homelies">Homélies</a></li>
+      <li>
+        <details>
+          <summary>Ressources</summary>
+          <ul>
+            <li><a href="/index.html#corpus">Corpus complet et synthèses approfondies</a></li>
+            <li><a href="/index.html#catecheses">Catéchèses</a></li>
+            <li><a href="/index.html#homelies">Homélies</a></li>
+          </ul>
+        </details>
+      </li>
       <li><a href="/webinaires.html">Webinaires</a></li>
       <li>
         <details>
@@ -483,9 +495,16 @@
           <h4>Navigation</h4>
           <ul>
             <li><a href="/index.html">Accueil</a></li>
+            <li>
+        <details>
+          <summary>Ressources</summary>
+          <ul>
             <li><a href="/index.html#corpus">Corpus complet et synthèses approfondies</a></li>
-      <li><a href="/index.html#catecheses">Catéchèses</a></li>
-      <li><a href="/index.html#homelies">Homélies</a></li>
+            <li><a href="/index.html#catecheses">Catéchèses</a></li>
+            <li><a href="/index.html#homelies">Homélies</a></li>
+          </ul>
+        </details>
+      </li>
             <li><a href="/webinaires.html">Webinaires</a></li>
             <li><a href="/formations.html">Formations</a></li>
             <li><a href="/mission-vision-valeurs.html">À propos</a></li>
