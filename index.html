@@ -64,12 +64,13 @@
   body.ham-open{overflow:hidden;}
 
   /* ============ HERO style MetanoIA ============ */
-  .hero { background: var(--navy-deep); color: var(--cream); padding: 4rem 0 5rem; position: relative; }
+  .hero { background: var(--navy-deep); color: var(--cream); padding: 4rem 0 5rem; position: relative; text-align: center; }
   .hero::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 3px; background: linear-gradient(90deg, transparent, var(--gold) 50%, transparent); }
-  .hero .eyebrow { color: var(--gold); text-transform: uppercase; letter-spacing: 0.18em; font-size: 0.82rem; font-weight: 600; margin-bottom: 1rem; }
-  .hero h1 { font-family: var(--serif); font-size: clamp(2.1rem, 5vw, 3.4rem); font-weight: 700; line-height: 1.1; margin: 0 0 1.2rem 0; letter-spacing: -0.015em; }
+  .hero .wrap { display: flex; flex-direction: column; align-items: center; }
+  .hero .eyebrow { display: none; }
+  .hero h1 { font-family: var(--serif); font-size: clamp(2.1rem, 5vw, 3.4rem); font-weight: 700; line-height: 1.1; margin: 0 0 1.2rem 0; letter-spacing: -0.015em; max-width: 820px; }
   .hero h1 em { font-style: italic; color: var(--gold); font-weight: 600; }
-  .hero .lede { font-size: 1.15rem; max-width: 720px; color: rgba(245, 241, 232, 0.92); margin: 0 0 1.8rem 0; line-height: 1.65; }
+  .hero .lede { font-size: 1.15rem; max-width: 720px; color: rgba(245, 241, 232, 0.92); margin: 0 auto 1.8rem; line-height: 1.65; text-align: center; }
   .hero-ctas { display: flex; gap: 0.8rem; flex-wrap: wrap; margin-top: 1.5rem; }
   .btn-primary, .btn-secondary { display: inline-block; padding: 0.85rem 1.7rem; border-radius: 4px; text-decoration: none; font-weight: 600; font-size: 0.98rem; transition: all 0.2s; }
   .btn-primary { background: var(--gold); color: var(--navy-deep); box-shadow: 0 4px 14px rgba(201, 165, 68, 0.3); }
@@ -303,7 +304,6 @@
 
   <section class="hero">
     <div class="wrap">
-      <p class="eyebrow">Vulgarisation francophone · Sept continents</p>
       <h1>La <em>doctrine sociale</em> de l'Église, rendue accessible.</h1>
       <p class="lede">De Léon XIII (1891) à Léon XIV (2026), des synthèses fidèles, des webinaires gratuits et des formations sur mesure — pour comprendre, discerner et agir à la lumière du Magistère.</p>
       <div class="hero-ctas"><a href="/webinaires.html" class="btn-primary">S'inscrire au prochain webinaire</a><a href="/syntheses.html" class="btn-secondary">Voir les synthèses</a></div>
@@ -351,24 +351,28 @@
     </div>
   </section>
 
-  <!-- Section 02 : Webinaire à venir -->
-  <section class="content alt">
+  <!-- Section 02 : Synthèse de la doctrine sociale de l'Église -->
+  <section class="content alt" id="synthese-dse">
     <div class="wrap-wide">
-      <span class="section-num">— Prochain rendez-vous</span>
-      <h2>Découvrir la doctrine <em>sociale</em> de l'Église</h2>
-      <p class="lead">Un webinaire gratuit, en ligne, pour saisir l'essentiel de la pensée sociale catholique — de <em>Rerum Novarum</em> à <em>Caritas in Veritate</em>.</p>
+      <span class="section-num">— L'essentiel en un coup d'œil</span>
+      <h2>La doctrine <em>sociale</em> de l'Église, en synthèse</h2>
+      <p class="lead">La doctrine sociale de l'Église (DSE) est l'ensemble des enseignements du Magistère catholique sur la dignité de la personne humaine, le bien commun et l'organisation juste de la société. Elle ne constitue ni une « troisième voie » entre capitalisme et socialisme, ni une idéologie politique : c'est un corps de réflexion théologique et morale qui se développe, de texte en texte, depuis 1891.</p>
 
-      <div style="background: var(--white); border-left: 4px solid var(--gold); padding: 1.8rem 2rem; border-radius: 4px; margin-top: 1.5rem;">
-        <p style="color: var(--gold); text-transform: uppercase; letter-spacing: 0.15em; font-size: 0.78rem; font-weight: 600; margin: 0 0 0.5rem 0;">★ Cycle automne 2026 · Gratuit</p>
-        <h3 style="font-family: var(--serif); color: var(--navy); font-size: 1.5rem; margin: 0 0 0.8rem 0;">Une formule éprouvée en trois temps</h3>
-        <p style="margin: 0 0 1rem 0;"><strong>Synthèse</strong> · <strong>Implications pour notre temps</strong> · <strong>Actions concrètes</strong></p>
-        <p style="color: var(--muted); margin: 0;"><strong>Automne 2026</strong> · Date à venir · Animé par Dr W. Marc Zongo</p>
-        <p style="margin: 1.2rem 0 0;">
-          <a href="/webinaires.html" class="btn-primary" style="font-size: 0.95rem; padding: 0.7rem 1.4rem;">M'inscrire au webinaire</a>
+      <div style="background: var(--white); border-left: 4px solid var(--gold); padding: 1.8rem 2rem; border-radius: 4px; margin-top: 1.8rem;">
+        <h3 style="font-family: var(--serif); color: var(--navy); font-size: 1.4rem; margin: 0 0 1rem 0;">Un arc de 135 ans</h3>
+        <p style="margin: 0 0 0.8rem;">Tout commence avec <strong>Rerum Novarum</strong> (Léon XIII, 1891), qui répond à la question ouvrière née de la révolution industrielle : juste salaire, droit d'association, dignité du travailleur. Quarante ans plus tard, <strong>Quadragesimo Anno</strong> (Pie XI, 1931) en tire les leçons après la crise économique de 1929. Le Concile Vatican II, avec <strong>Gaudium et Spes</strong> (1965), élargit la réflexion à l'Église dans le monde de ce temps tout entier. Suivent les grandes encycliques sociales de Jean XXIII, Paul VI et Jean-Paul II — jusqu'à <strong>Laudato Si'</strong> (François, 2015) et <strong>Fratelli Tutti</strong> (François, 2020), qui étendent la doctrine sociale à l'écologie intégrale et à la fraternité universelle. En 2026, <strong>Magnifica Humanitas</strong> (Léon XIV) l'applique à son tour au défi de l'intelligence artificielle.</p>
+        <h3 style="font-family: var(--serif); color: var(--navy); font-size: 1.4rem; margin: 1.6rem 0 1rem 0;">Quatre principes fondamentaux</h3>
+        <p style="margin: 0 0 0.6rem;"><strong>La dignité de la personne humaine</strong> — fondement et critère de tout le reste : chaque être humain a une valeur infinie, indépendante de ce qu'il produit ou possède.</p>
+        <p style="margin: 0 0 0.6rem;"><strong>Le bien commun</strong> — l'ensemble des conditions sociales qui permettent à chacun, et à tous, d'atteindre leur plein développement.</p>
+        <p style="margin: 0 0 0.6rem;"><strong>La subsidiarité</strong> — ce qui peut être accompli par une communauté plus petite ou plus proche ne doit pas être absorbé par un échelon supérieur.</p>
+        <p style="margin: 0;"><strong>La solidarité</strong> — la détermination ferme et persévérante de s'engager pour le bien d'autrui, au-delà des intérêts particuliers.</p>
+        <p style="margin: 1.4rem 0 0;">
+          <a href="/syntheses.html" class="btn-primary" style="font-size: 0.95rem; padding: 0.7rem 1.4rem;">Explorer les synthèses, texte par texte</a>
         </p>
       </div>
     </div>
   </section>
+
 
   <!-- Section 03 : Synthèses à la une -->
   <section class="content">
@@ -391,10 +395,10 @@
           <a href="/caritas-in-veritate.html" class="card-link">Lire la synthèse</a>
         </div>
         <div class="num-card">
-          <span class="card-num">🤖 Léon XIV · 2026</span>
+          <span class="card-num">Léon XIV · 2026</span>
           <h3>Magnifica Humanitas</h3>
-          <p>L'intelligence artificielle au regard de la dignité humaine. Synthèse en préparation ; webinaire du 14 juin disponible.</p>
-          <a href="/webinaires.html" class="card-link">Voir le webinaire</a>
+          <p>L'intelligence artificielle au regard de la dignité humaine. Première encyclique du pontificat de Léon XIV, signée pour le 135ᵉ anniversaire de Rerum Novarum.</p>
+          <a href="/magnifica-humanitas.html" class="card-link">Lire la synthèse</a>
         </div>
       </div>
 
@@ -403,15 +407,6 @@
   </section>
 
   <!-- Bandeau Formations -->
-  <section class="formations-cta">
-    <div class="wrap-wide">
-      <span class="section-num">— Pour les groupes</span>
-      <h2>Demandez une <em>formation</em> sur mesure</h2>
-      <p>Paroisses, diocèses, mouvements, écoles, universités, entreprises : Encyclicum conçoit et anime des sessions selon la méthode <em>Synthèse · Implications pour notre temps · Actions concrètes</em>.</p>
-      <p style="margin-top: 0.8rem; font-style: italic; color: var(--gold-soft);">Pas de tarif imposé — Encyclicum fonctionne par contributions volontaires, à la mesure de chaque groupe.</p>
-      <a href="/formations.html" class="btn-gold">Voir l'offre et faire une demande</a>
-    </div>
-  </section>
   <section class="don" id="don">
     <div class="wrap-wide">
       <span class="section-num">— Soutenir le projet</span>
@@ -476,12 +471,12 @@
       <h4 style="color: var(--gold); font-family: var(--sans); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.12em; margin-top: 2rem;">2. Écologie et environnement</h4>
       <ul style="line-height: 2;">
         <li><a href="/laudato-si.html" style="color:inherit;text-decoration:none;border-bottom:1px dotted var(--gold);"><strong>Laudato Si'</strong></a> — François, 2015 — <em>Sauvegarde de la maison commune</em></li>
-        <li><strong>Laudate Deum</strong> — François, 2023 — <em>Crise climatique, suite de Laudato Si'</em></li>
+        <li><a href="/laudate-deum.html" style="color:inherit;text-decoration:none;border-bottom:1px dotted var(--gold);"><strong>Laudate Deum</strong></a> — François, 2023 — <em>Crise climatique, suite de Laudato Si'</em></li>
       </ul>
 
       <h4 style="color: var(--gold); font-family: var(--sans); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.12em; margin-top: 2rem;">3. Intelligence artificielle et dignité humaine</h4>
       <ul style="line-height: 2;">
-        <li><strong>Magnifica Humanitas</strong> — Léon XIV, 2026 — <em>Protection de la personne humaine à l'ère de l'intelligence artificielle</em></li>
+        <li><a href="/magnifica-humanitas.html" style="color:inherit;text-decoration:none;border-bottom:1px dotted var(--gold);"><strong>Magnifica Humanitas</strong></a> — Léon XIV, 2026 — <em>Protection de la personne humaine à l'ère de l'intelligence artificielle</em></li>
       </ul>
 
       <h4 style="color: var(--gold); font-family: var(--sans); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.12em; margin-top: 2rem;">4. Foi, théologie et vérité</h4>
@@ -496,7 +491,7 @@
 
       <h4 style="color: var(--gold); font-family: var(--sans); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.12em; margin-top: 2rem;">5. Amour, charité et miséricorde</h4>
       <ul style="line-height: 2;">
-        <li><strong>Deus Caritas Est</strong> — Benoît XVI, 2006 — <em>L'amour chrétien et la charité</em></li>
+        <li><a href="/deus-caritas-est.html" style="color:inherit;text-decoration:none;border-bottom:1px dotted var(--gold);"><strong>Deus Caritas Est</strong></a> — Benoît XVI, 2006 — <em>L'amour chrétien et la charité</em></li>
         <li><strong>Dilexit Nos</strong> — François, 2024 — <em>Dévotion au Sacré-Cœur de Jésus</em></li>
         <li><strong>Dilexi Te</strong> — Léon XIV, 2025 — <em>Exhortation : L'amour pour les pauvres</em></li>
       </ul>
@@ -543,7 +538,7 @@
         <li><strong>Supremi Apostolatus</strong> — Léon XIII, 1883 — <em>Le Rosaire</em></li>
         <li><strong>Quamquam Pluries</strong> — Léon XIII, 1889 — <em>La dévotion à saint Joseph</em></li>
         <li><strong>Ad Diem Illum Laetissimum</strong> — Pie X, 1904 — <em>La dévotion à la Vierge Marie</em></li>
-        <li><strong>Spe Salvi</strong> — Benoît XVI, 2007 — <em>L'espérance chrétienne</em></li>
+        <li><a href="/spe-salvi.html" style="color:inherit;text-decoration:none;border-bottom:1px dotted var(--gold);"><strong>Spe Salvi</strong></a> — Benoît XVI, 2007 — <em>L'espérance chrétienne</em></li>
       </ul>
 
       <h4 style="color: var(--gold); font-family: var(--sans); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.12em; margin-top: 2rem;">12. Politique, État et liberté</h4>
@@ -565,8 +560,8 @@
 
       <h4 style="color: var(--gold); font-family: var(--sans); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.12em; margin-top: 2rem;">Famille, mariage et amour</h4>
       <ul style="line-height: 2;">
-        <li><strong>Familiaris Consortio</strong> — Jean-Paul II, 1981 — <em>Les tâches de la famille chrétienne dans le monde d'aujourd'hui</em></li>
-        <li><strong>Amoris Laetitia</strong> — François, 2016 — <em>L'amour dans la famille</em></li>
+        <li><a href="/familiaris-consortio.html" style="color:inherit;text-decoration:none;border-bottom:1px dotted var(--gold);"><strong>Familiaris Consortio</strong></a> — Jean-Paul II, 1981 — <em>Les tâches de la famille chrétienne dans le monde d'aujourd'hui</em></li>
+        <li><a href="/amoris-laetitia.html" style="color:inherit;text-decoration:none;border-bottom:1px dotted var(--gold);"><strong>Amoris Laetitia</strong></a> — François, 2016 — <em>L'amour dans la famille</em></li>
       </ul>
 
       <h4 style="color: var(--gold); font-family: var(--sans); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.12em; margin-top: 2rem;">Évangélisation et mission</h4>
@@ -574,7 +569,7 @@
         <li><a href="/evangelii-nuntiandi.html" style="color:inherit;text-decoration:none;border-bottom:1px dotted var(--gold);"><strong>Evangelii Nuntiandi</strong></a> — Paul VI, 1975 — <em>L'annonce de l'Évangile dans le monde moderne</em></li>
         <li><strong>Catechesi Tradendae</strong> — Jean-Paul II, 1979 — <em>La catéchèse en notre temps</em></li>
         <li><a href="/evangelii-gaudium.html" style="color:inherit;text-decoration:none;border-bottom:1px dotted var(--gold);"><strong>Evangelii Gaudium</strong></a> — François, 2013 — <em>La joie de l'Évangile — programme du pontificat</em></li>
-        <li><strong>Querida Amazonia</strong> — François, 2020 — <em>L'Amazonie : Église, culture, écologie et social</em></li>
+        <li><a href="/querida-amazonia.html" style="color:inherit;text-decoration:none;border-bottom:1px dotted var(--gold);"><strong>Querida Amazonia</strong></a> — François, 2020 — <em>L'Amazonie : Église, culture, écologie et social</em></li>
       </ul>
 
       <h4 style="color: var(--gold); font-family: var(--sans); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.12em; margin-top: 2rem;">Sainteté et vie chrétienne</h4>
@@ -603,7 +598,7 @@
 
       <h4 style="color: var(--gold); font-family: var(--sans); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.12em; margin-top: 2rem;">Écologie</h4>
       <ul style="line-height: 2;">
-        <li><strong>Laudate Deum</strong> — François, 2023 — <em>La crise climatique — suite de Laudato Si'</em></li>
+        <li><a href="/laudate-deum.html" style="color:inherit;text-decoration:none;border-bottom:1px dotted var(--gold);"><strong>Laudate Deum</strong></a> — François, 2023 — <em>La crise climatique — suite de Laudato Si'</em></li>
       </ul>
 
       <h3 style="margin-top: 3rem;">🎓 Catéchèses & audiences générales</h3>
