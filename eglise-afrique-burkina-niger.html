@@ -31,99 +31,37 @@
   .wrap { max-width: 920px; margin: 0 auto; padding: 0 1.5rem; }
   .wrap-wide { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
 
-  /* ============ HEADER STYLE METANOIA ============ */
-  header.site { background: var(--navy-deep); border-bottom: 1px solid rgba(201, 165, 68, 0.2); position: sticky; top: 0; z-index: 100; }
-  .brand-row { display: flex; align-items: center; gap: 2rem; padding: 1rem 0; }
-  .brand { color: var(--cream); text-decoration: none; display: flex; flex-direction: column; line-height: 1.15; flex-shrink: 0; }
-  .brand-name { font-family: var(--serif); font-size: 1.45rem; font-weight: 600; letter-spacing: -0.01em; }
-  .brand-name .cross { color: var(--gold); }
-  .brand-tagline { font-family: var(--serif); font-style: italic; font-size: 0.8rem; color: var(--gold-soft); letter-spacing: 0.05em; margin-top: 0.2rem; }
-
-  /* Nav horizontale style MetanoIA (visible sur desktop) */
-  .main-nav { display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; margin-left: auto; }
-  .main-nav a, .main-nav .nav-item > a { color: rgba(245, 241, 232, 0.82); text-decoration: none; font-size: 0.9rem; padding: 0.4rem 0.7rem; border-radius: 3px; transition: all 0.15s; display: inline-block; }
-  .main-nav a:hover, .main-nav .nav-item > a:hover { color: var(--gold-soft); background: rgba(255, 255, 255, 0.04); }
-  .main-nav a.active, .main-nav .nav-item > a.active { color: var(--gold); }
-  .main-nav a.cta {
-    background: linear-gradient(135deg, var(--gold) 0%, var(--gold-soft) 100%);
-    color: var(--navy-deep);
-    font-weight: 600;
-    padding: 0.5rem 1.1rem;
-    margin-left: 0.5rem;
-    border-radius: 4px;
-  }
-  .main-nav a.cta:hover { background: var(--gold-soft); transform: translateY(-1px); }
-  .main-nav a.cta::after { content: ' →'; }
-
-  /* Dropdown nav desktop pour L'Église par continent */
-  .nav-item.has-dropdown { position: relative; }
-  .nav-item.has-dropdown > a::after { content: ' ▾'; font-size: 0.7rem; opacity: 0.6; }
-  .nav-dropdown {
-    position: absolute; top: 100%; left: 0;
-    background: var(--navy-deep);
-    border: 1px solid rgba(201, 165, 68, 0.25);
-    border-radius: 6px;
-    min-width: 240px;
-    opacity: 0; visibility: hidden;
-    transform: translateY(-6px);
-    transition: all 0.2s;
-    z-index: 50;
-    padding: 0.5rem 0;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
-  }
-  .nav-item.has-dropdown:hover .nav-dropdown,
-  .nav-item.has-dropdown:focus-within .nav-dropdown { opacity: 1; visibility: visible; transform: translateY(0); }
-  .nav-dropdown a {
-    display: block;
-    padding: 0.5rem 1.1rem;
-    margin: 0;
-    border-radius: 0;
-    color: rgba(245, 241, 232, 0.85);
-    font-size: 0.88rem;
-  }
-  .nav-dropdown a:hover { background: rgba(201, 165, 68, 0.1); color: var(--gold-soft); }
-  .nav-dropdown a.sub { padding-left: 2rem; font-size: 0.82rem; opacity: 0.85; }
-  .nav-dropdown .dropdown-sep { border-top: 1px solid rgba(201, 165, 68, 0.15); margin: 0.4rem 0; }
-
-  /* Hamburger : caché sur desktop, visible sur mobile, à gauche */
-  .hamburger {
-    display: none;
-    background: transparent;
-    border: 1px solid rgba(201, 165, 68, 0.4);
-    border-radius: 4px;
-    width: 44px; height: 40px;
-    cursor: pointer; padding: 0;
-    flex-direction: column; justify-content: center; align-items: center; gap: 4px;
-    transition: all 0.2s;
-  }
-  .hamburger:hover { border-color: var(--gold); }
-  .hamburger span { display: block; width: 20px; height: 2px; background: var(--gold-soft); transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
-  body.menu-open .hamburger span:nth-child(1) { transform: translateY(6px) rotate(45deg); background: var(--gold); }
-  body.menu-open .hamburger span:nth-child(2) { opacity: 0; }
-  body.menu-open .hamburger span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); background: var(--gold); }
-
-  /* Menu mobile overlay */
-  .menu-overlay { position: fixed; inset: 0; background: rgba(26, 35, 54, 0.6); backdrop-filter: blur(2px); opacity: 0; pointer-events: none; transition: opacity 0.3s; z-index: 200; display: none; }
-  .menu-panel { position: fixed; top: 0; left: 0; bottom: 0; width: 100%; max-width: 380px; background: var(--navy-deep); color: var(--cream); transform: translateX(-100%); transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1); z-index: 201; overflow-y: auto; box-shadow: 10px 0 40px rgba(0, 0, 0, 0.3); padding: 2rem; display: none; }
-  body.menu-open .menu-overlay { opacity: 1; pointer-events: auto; }
-  body.menu-open .menu-panel { transform: translateX(0); }
-  .menu-panel ul { list-style: none; padding: 0; margin: 0; }
-  .menu-panel ul li { border-bottom: 1px solid rgba(201, 165, 68, 0.12); }
-  .menu-panel a { color: var(--cream); text-decoration: none; padding: 0.9rem 0; display: block; font-size: 0.95rem; }
-  .menu-panel a.active { color: var(--gold); font-weight: 600; }
-  .menu-panel a.cta { color: var(--gold); font-weight: 600; }
-  .menu-panel .menu-close { background: transparent; border: 1px solid rgba(201, 165, 68, 0.4); color: var(--gold-soft); font-size: 1.4rem; width: 40px; height: 40px; cursor: pointer; border-radius: 4px; line-height: 0; margin-bottom: 1.5rem; }
-  .menu-panel details summary { cursor: pointer; list-style: none; padding: 0.9rem 0; color: var(--cream); display: flex; justify-content: space-between; }
-  .menu-panel details summary::-webkit-details-marker { display: none; }
-  .menu-panel details summary::after { content: '+'; color: var(--gold); font-size: 1.3rem; transition: transform 0.2s; }
-  .menu-panel details[open] summary::after { transform: rotate(45deg); }
-  .menu-panel details > ul { padding-left: 0.8rem; border-left: 2px solid rgba(201, 165, 68, 0.2); }
-
-  @media (max-width: 920px) {
-    .main-nav { display: none; }
-    .hamburger { display: flex; }
-    .menu-overlay, .menu-panel { display: block; }
-  }
+  /* ============ MENU HAMBURGER UNIFIÉ (gauche, toutes tailles d'écran) ============ */
+  .ham-btn{position:fixed;top:18px;left:22px;z-index:300;width:48px;height:48px;border-radius:50%;background:var(--navy-deep);color:#fff;border:1.5px solid rgba(201,165,68,.45);cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(26,35,54,.35);transition:transform .2s,background .2s,opacity .2s;}
+  .ham-btn:hover{background:var(--gold);transform:scale(1.05);}
+  .ham-btn svg{width:22px;height:22px;}
+  body.ham-open .ham-btn{opacity:0;pointer-events:none;}
+  .ham-overlay{position:fixed;inset:0;background:rgba(26,35,54,.55);backdrop-filter:blur(3px);z-index:298;opacity:0;pointer-events:none;transition:opacity .25s;}
+  .ham-overlay.open{opacity:1;pointer-events:auto;}
+  .ham-panel{position:fixed;top:0;left:0;height:100%;width:340px;max-width:88vw;background:linear-gradient(170deg,var(--navy-deep),var(--navy));color:#fff;z-index:299;transform:translateX(-100%);transition:transform .32s cubic-bezier(.4,0,.2,1);box-shadow:12px 0 40px rgba(0,0,0,.3);overflow-y:auto;}
+  .ham-panel.open{transform:translateX(0);}
+  .ham-head{position:relative;padding:28px 26px 20px;border-bottom:1px solid rgba(201,165,68,.2);}
+  .ham-close{position:absolute;top:16px;right:16px;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.08);color:#fff;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s;}
+  .ham-close:hover{background:var(--gold);color:var(--navy-deep);}
+  .ham-close svg{width:18px;height:18px;}
+  .ham-brand-link{text-decoration:none;}
+  .ham-brand{font-family:var(--serif);font-size:26px;font-weight:600;color:#fff;letter-spacing:-0.01em;}
+  .ham-brand .cross{color:var(--gold-soft);}
+  .ham-tag{font-family:var(--serif);font-style:italic;font-size:12.5px;color:var(--gold-soft);letter-spacing:.04em;margin-top:4px;}
+  .ham-links{padding:14px 0 10px;list-style:none;margin:0;}
+  .ham-links li{margin:0;}
+  .ham-links li a{display:flex;align-items:center;gap:12px;padding:11px 26px;color:rgba(245,241,232,.85);text-decoration:none;font-family:var(--sans);font-size:15.5px;font-weight:500;border-left:3px solid transparent;transition:all .15s;}
+  .ham-links li a:hover{background:rgba(255,255,255,.06);color:#fff;border-left-color:var(--gold);}
+  .ham-links li a.active{background:rgba(201,165,68,.13);color:#fff;border-left-color:var(--gold);font-weight:600;}
+  .ham-links li a.ham-sub{padding-left:40px;font-size:14px;color:rgba(245,241,232,.7);}
+  .ham-links .em{font-size:17px;width:20px;text-align:center;}
+  .ham-section-label{padding:10px 26px 4px;font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--gold-soft);font-weight:600;}
+  .ham-divider{height:1px;background:rgba(201,165,68,.18);margin:6px 26px;}
+  .ham-cta{margin:16px 26px 24px;display:block;background:var(--gold);color:var(--navy-deep);text-align:center;padding:12px;border-radius:6px;font-weight:600;font-size:15px;text-decoration:none;transition:background .2s;}
+  .ham-cta:hover{background:var(--gold-soft);}
+  .ham-foot{padding:16px 26px 24px;font-size:12.5px;color:rgba(245,241,232,.55);text-align:center;border-top:1px solid rgba(201,165,68,.15);}
+  .ham-foot a{color:var(--gold-soft);text-decoration:none;}
+  body.ham-open{overflow:hidden;}
 
   /* ============ HERO style MetanoIA ============ */
   .hero { background: var(--navy-deep); color: var(--cream); padding: 4rem 0 5rem; position: relative; }
@@ -284,78 +222,46 @@
 </head>
 <body>
 
-  <header class="site">
-    <div class="wrap-wide brand-row">
-      <button class="hamburger" onclick="toggleMenu()" aria-label="Menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
-      <a href="/" class="brand">
-        <span class="brand-name">Encyclicum <span class="cross">✝</span></span>
-        <span class="brand-tagline">Comprendre · Discerner · Agir</span>
-      </a>
-      <nav class="main-nav">
-        <a href="/index.html">Accueil</a>
-        <a href="/syntheses.html">Synthèses</a>
-        <a href="/webinaires.html">Webinaires</a>
-        <a href="/formations.html">Formations</a>
-        <a href="/mission-vision-valeurs.html">À propos</a>
-        <div class="nav-item has-dropdown">
-          <a href="/eglise-canada.html" class="active">L'Église par continent</a>
-          <div class="nav-dropdown">
-            <a href="/eglise-canada.html">Canada</a>
-            <a href="/eglise-quebec.html">Québec</a>
-            <a href="/eglise-amerique.html">Amérique</a>
-            <a href="/eglise-afrique.html">Afrique (SCEAM)</a>
-            <a href="/eglise-afrique-rdc.html" class="sub">— RDC (CENCO)</a>
-            <a href="/eglise-afrique-burkina-niger.html" class="sub">— Burkina-Niger</a>
-            <a href="/eglise-afrique-cote-ivoire.html" class="sub">— Côte d'Ivoire</a>
-            <a href="/eglise-afrique-senegal.html" class="sub">— Sénégal & Ouest atl.</a>
-            <a href="/eglise-afrique-cameroun.html" class="sub">— Cameroun</a>
-            <a href="/eglise-afrique-madagascar.html" class="sub">— Madagascar</a>
-            <a href="/eglise-europe.html">Europe</a>
-            <a href="/eglise-asie.html">Asie</a>
-            <a href="/eglise-oceanie.html">Océanie</a>
-          </div>
-        </div>
-        <a href="/formations.html#demande" class="cta">Demander une formation</a>
-      </nav>
-    </div>
-  </header>
+<button class="ham-btn" id="hamBtn" aria-label="Ouvrir le menu">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+</button>
+<div class="ham-overlay" id="hamOverlay"></div>
+<aside class="ham-panel" id="hamPanel" aria-label="Menu principal">
+  <div class="ham-head">
+    <button class="ham-close" id="hamClose" aria-label="Fermer">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+    <a href="/index.html" class="ham-brand-link"><div class="ham-brand">Encyclicum<span class="cross"> ✝</span></div></a>
+    <div class="ham-tag">Comprendre · Discerner · Agir</div>
+  </div>
+  <ul class="ham-links">
+    <li><a href="/index.html"><span class="em">🏠</span>Accueil</a></li>
+    <li><a href="/syntheses.html"><span class="em">📖</span>Synthèses</a></li>
+    <li><a href="/webinaires.html"><span class="em">🎙️</span>Webinaires</a></li>
+    <li><a href="/formations.html"><span class="em">🎓</span>Formations</a></li>
+    <li><a href="/mission-vision-valeurs.html"><span class="em">👤</span>À propos</a></li>
+    <div class="ham-divider"></div>
+    <li class="ham-section-label">L'Église par continent</li>
+    <li><a href="/eglise-canada.html">Canada</a></li>
+    <li><a href="/eglise-quebec.html">Québec</a></li>
+    <li><a href="/eglise-amerique.html">Amérique</a></li>
+    <li><a href="/eglise-afrique.html">Afrique (SCEAM)</a></li>
+    <li><a href="/eglise-afrique-rdc.html" class="ham-sub">— RDC (CENCO)</a></li>
+    <li><a href="/eglise-afrique-burkina-niger.html" class="ham-sub active">— Burkina-Niger</a></li>
+    <li><a href="/eglise-afrique-cote-ivoire.html" class="ham-sub">— Côte d'Ivoire</a></li>
+    <li><a href="/eglise-afrique-senegal.html" class="ham-sub">— Sénégal & Ouest atl.</a></li>
+    <li><a href="/eglise-afrique-cameroun.html" class="ham-sub">— Cameroun</a></li>
+    <li><a href="/eglise-afrique-madagascar.html" class="ham-sub">— Madagascar</a></li>
+    <li><a href="/eglise-europe.html">Europe</a></li>
+    <li><a href="/eglise-asie.html">Asie</a></li>
+    <li><a href="/eglise-oceanie.html">Océanie</a></li>
+  </ul>
+  <a href="/formations.html#demande" class="ham-cta">Demander une formation &rarr;</a>
+  <div class="ham-foot">
+    <a href="/">encyclicum.ca</a>
+  </div>
+</aside>
 
-  <!-- Menu mobile -->
-  <nav class="menu-panel" id="menu" aria-label="Menu mobile">
-    <button class="menu-close" onclick="toggleMenu()" aria-label="Fermer">×</button>
-    <ul>
-      <li><a href="/index.html">Accueil</a></li>
-      <li><a href="/syntheses.html">Synthèses</a></li>
-      <li><a href="/webinaires.html">Webinaires</a></li>
-      <li>
-        <details open>
-          <summary>L'Église par continent et par région</summary>
-          <ul>
-            <li><a href="/eglise-canada.html">Canada</a></li>
-            <li><a href="/eglise-quebec.html">Québec</a></li>
-            <li><a href="/eglise-amerique.html">Amérique</a></li>
-            <li><details open><summary>Afrique</summary><ul>
-              <li><a href="/eglise-afrique.html">SCEAM</a></li>
-              <li><a href="/eglise-afrique-rdc.html">RDC</a></li>
-              <li><a href="/eglise-afrique-burkina-niger.html">Burkina-Niger</a></li>
-              <li><a href="/eglise-afrique-cote-ivoire.html">Côte d'Ivoire</a></li>
-              <li><a href="/eglise-afrique-senegal.html">Sénégal & Ouest atl.</a></li>
-              <li><a href="/eglise-afrique-cameroun.html">Cameroun</a></li>
-              <li><a href="/eglise-afrique-madagascar.html">Madagascar</a></li>
-            </ul></details></li>
-            <li><a href="/eglise-europe.html">Europe</a></li>
-            <li><a href="/eglise-asie.html">Asie</a></li>
-            <li><a href="/eglise-oceanie.html">Océanie</a></li>
-          </ul>
-        </details>
-      </li>
-      <li><a href="/formations.html" class="cta">Formations</a></li>
-      <li><a href="/mission-vision-valeurs.html">À propos</a></li>
-    </ul>
-  </nav>
-  <div class="menu-overlay" onclick="toggleMenu()" aria-hidden="true"></div>
 
 
   <section class="hero">
@@ -511,19 +417,14 @@
 
 
   <script>
-    function toggleMenu() {
-      const open = document.body.classList.toggle('menu-open');
-      const btn = document.querySelector('.hamburger');
-      if (btn) btn.setAttribute('aria-expanded', open);
-    }
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') {
-        document.body.classList.remove('menu-open');
-        const btn = document.querySelector('.hamburger');
-        if (btn) btn.setAttribute('aria-expanded', 'false');
-      }
-    });
-
+    const hBtn=document.getElementById('hamBtn'),hCl=document.getElementById('hamClose'),hOv=document.getElementById('hamOverlay'),hPa=document.getElementById('hamPanel');
+    function hOpen(){hPa.classList.add('open');hOv.classList.add('open');document.body.classList.add('ham-open');}
+    function hClose(){hPa.classList.remove('open');hOv.classList.remove('open');document.body.classList.remove('ham-open');}
+    hBtn.addEventListener('click',hOpen);
+    hCl.addEventListener('click',hClose);
+    hOv.addEventListener('click',hClose);
+    document.addEventListener('keydown',e=>{if(e.key==='Escape')hClose();});
+    document.querySelectorAll('.ham-links a, .ham-cta').forEach(a=>a.addEventListener('click',()=>{setTimeout(hClose,150);}));
     // Site search (filtre les liens du site)
     const SITE_INDEX = [
       {title: "Accueil", url: "/index.html", tags: ["accueil", "encyclicum", "doctrine sociale", "magistère"]},
