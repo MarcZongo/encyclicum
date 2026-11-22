@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Antiqua et Nova — Note sur l&#x27;intelligence artificielle (2025) | Encyclicum</title>
+<meta name="description" content="Synthèse approfondie d&#x27;Antiqua et Nova (2025), note du Dicastère pour la Doctrine de la Foi et du Dicastère pour la Culture et l&#x27;Éducation sur les relations entre l&#x27;intelligence artificielle et l&#x27;intelligence humaine. Contexte, thèses, implications et actions concrètes.">
+<link rel="canonical" href="https://www.encyclicum.ca/antiqua-et-nova.html">
+<meta property="og:title" content="Antiqua et Nova — Note sur l&#x27;intelligence artificielle (2025)">
+<meta property="og:description" content="Approuvée par le pape François, cette note distingue l&#x27;intelligence humaine de l&#x27;« intelligence » des machines et propose des repères éthiques pour la société, le travail, la santé, l&#x27;éducation, la guerre et la foi.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://www.encyclicum.ca/antiqua-et-nova.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#1B2A4A;--navy-deep:#141F38;--gold:#B8923E;--gold-light:#D4B468;
+    --cream:#FBF8F1;--paper:#FFFFFF;--ink:#23272E;--muted:#6B6356;
+    --line:#E5DDcc;--shadow:0 1px 3px rgba(27,42,74,.06),0 8px 30px rgba(27,42,74,.07);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'EB Garamond',Georgia,serif;background:var(--cream);color:var(--ink);line-height:1.6;font-size:18px;-webkit-font-smoothing:antialiased;}
+
+  /* ---- Menu hamburger (partagé) ---- */
+  .ham-btn{position:fixed;top:18px;left:22px;z-index:200;width:48px;height:48px;border-radius:50%;background:var(--navy);color:#fff;border:1.5px solid rgba(212,180,104,.45);cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(27,42,74,.25);transition:transform .2s,background .2s,opacity .2s;}
+  .ham-btn:hover{background:var(--gold);transform:scale(1.05);}
+  .ham-btn svg{width:22px;height:22px;}
+  body.ham-open .ham-btn{opacity:0;pointer-events:none;}
+  .ham-overlay{position:fixed;inset:0;background:rgba(20,31,56,.55);backdrop-filter:blur(3px);z-index:198;opacity:0;pointer-events:none;transition:opacity .25s;}
+  .ham-overlay.open{opacity:1;pointer-events:auto;}
+  .ham-panel{position:fixed;top:0;left:0;height:100%;width:340px;max-width:88vw;background:linear-gradient(170deg,var(--navy-deep),var(--navy));color:#fff;z-index:199;transform:translateX(-100%);transition:transform .32s cubic-bezier(.4,0,.2,1);box-shadow:12px 0 40px rgba(0,0,0,.3);overflow-y:auto;}
+  .ham-panel.open{transform:translateX(0);}
+  .ham-panel::before{content:"";position:absolute;inset:0;background-image:radial-gradient(circle at 1px 1px,rgba(212,180,104,.07) 1px,transparent 0);background-size:22px 22px;pointer-events:none;}
+  .ham-head{position:relative;padding:30px 28px 22px;border-bottom:1px solid rgba(212,180,104,.2);}
+  .ham-close{position:absolute;top:18px;right:18px;width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.08);color:#fff;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s;}
+  .ham-close:hover{background:var(--gold);color:var(--navy-deep);}
+  .ham-close svg{width:18px;height:18px;}
+  .ham-brand{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:600;letter-spacing:.04em;}
+  .ham-brand .cross{color:var(--gold-light);}
+  .ham-tag{font-size:13px;color:var(--gold-light);font-style:italic;letter-spacing:.04em;margin-top:4px;}
+  .ham-links{position:relative;padding:18px 0 14px;list-style:none;}
+  .ham-links li a{display:flex;align-items:center;gap:14px;padding:14px 28px;color:#D9DBE4;text-decoration:none;font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:500;border-left:3px solid transparent;transition:all .15s;}
+  .ham-links li a:hover{background:rgba(255,255,255,.06);color:#fff;border-left-color:var(--gold);}
+  .ham-links li a.current{background:rgba(184,146,62,.13);color:#fff;border-left-color:var(--gold);}
+  .ham-links .em{font-size:20px;width:24px;text-align:center;}
+  .ham-divider{height:1px;background:rgba(212,180,104,.18);margin:8px 28px;}
+  .ham-cta{position:relative;margin:18px 28px 26px;display:block;background:var(--gold);color:var(--navy-deep);text-align:center;padding:13px;border-radius:30px;font-family:'Cormorant Garamond',serif;font-weight:600;font-size:18px;text-decoration:none;transition:background .2s;}
+  .ham-cta:hover{background:var(--gold-light);}
+  .ham-foot{position:relative;padding:18px 28px 28px;font-size:13px;color:#9CA2B3;font-style:italic;text-align:center;border-top:1px solid rgba(212,180,104,.15);}
+  .ham-foot a{color:var(--gold-light);text-decoration:none;}
+  body.ham-open{overflow:hidden;}
+
+  header.art{position:relative;background:linear-gradient(160deg,var(--navy-deep),var(--navy));color:#fff;padding:80px 24px 50px;text-align:center;overflow:hidden;}
+  header.art::before{content:"";position:absolute;inset:0;background-image:radial-gradient(circle at 1px 1px,rgba(212,180,104,.10) 1px,transparent 0);background-size:26px 26px;opacity:.6;}
+  header.art::after{content:"";position:absolute;left:50%;bottom:0;width:150px;height:3px;background:linear-gradient(90deg,transparent,var(--gold),transparent);transform:translateX(-50%);}
+  .breadcrumb{position:relative;font-size:14px;color:#9CA2B3;margin-bottom:18px;}
+  .breadcrumb a{color:var(--gold-light);text-decoration:none;}
+  .breadcrumb a:hover{text-decoration:underline;}
+  .art-em{position:relative;font-size:54px;display:block;margin-bottom:10px;}
+  .art-h1{position:relative;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:600;font-size:clamp(38px,6.5vw,58px);line-height:1.05;}
+  .art-trad{position:relative;font-style:italic;color:var(--gold-light);font-size:19px;margin-top:8px;}
+  .art-meta{position:relative;color:#D9DBE4;font-size:16px;margin-top:14px;letter-spacing:.04em;}
+
+  main.art{max-width:760px;margin:0 auto;padding:50px 24px 70px;line-height:1.7;}
+
+  .one-line{background:linear-gradient(135deg,#FCF7EA,#F6EFDD);border-left:4px solid var(--gold);border-radius:0 10px 10px 0;padding:18px 24px;margin-bottom:28px;font-size:20px;font-style:italic;color:var(--navy);}
+  .idcard{background:var(--paper);border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);padding:22px 26px;margin-bottom:30px;}
+  .idcard dl{display:grid;grid-template-columns:auto 1fr;gap:7px 18px;font-size:16.5px;}
+  .idcard dt{font-family:'Cormorant Garamond',serif;font-weight:600;color:var(--gold);text-transform:uppercase;letter-spacing:.05em;font-size:13.5px;align-self:center;}
+  .idcard dd{color:var(--ink);}
+  h2.sec{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(24px,3.6vw,31px);color:var(--navy);margin:38px 0 14px;display:flex;align-items:center;gap:11px;}
+  h2.sec .n{font-size:.55em;color:#fff;background:var(--navy);width:30px;height:30px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-weight:500;flex-shrink:0;}
+  main.art p{margin-bottom:15px;}
+  .lead::first-letter{font-family:'Cormorant Garamond',serif;font-size:58px;float:left;line-height:.78;padding:7px 11px 0 0;color:var(--gold);font-weight:600;}
+  blockquote{margin:20px 0;padding:16px 26px;border-left:3px solid var(--gold);background:#FCFAF4;font-style:italic;font-size:18.5px;color:#3A3E46;border-radius:0 8px 8px 0;}
+  blockquote .src{display:block;margin-top:8px;font-style:normal;font-size:14.5px;color:var(--muted);}
+  ul.these{list-style:none;margin:8px 0 18px;}
+  ul.these li{position:relative;padding:14px 18px 14px 50px;margin-bottom:12px;background:var(--paper);border:1px solid var(--line);border-radius:10px;box-shadow:var(--shadow);}
+  ul.these li .num{position:absolute;left:16px;top:14px;font-family:'Cormorant Garamond',serif;font-weight:700;font-size:22px;color:var(--gold);}
+  ul.these li strong{color:var(--navy);font-family:'Cormorant Garamond',serif;font-size:19px;}
+  ul.action{list-style:none;margin:8px 0 18px;}
+  ul.action li{position:relative;padding:9px 0 9px 32px;}
+  ul.action li::before{content:"✦";position:absolute;left:6px;top:9px;color:var(--gold);font-size:15px;}
+  .action-group{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:18px;color:var(--gold);margin:18px 0 4px;text-transform:uppercase;letter-spacing:.04em;}
+  .links-out{background:var(--navy);color:#fff;border-radius:12px;padding:22px 26px;margin-top:24px;}
+  .links-out h3{font-family:'Cormorant Garamond',serif;font-size:20px;margin-bottom:10px;color:var(--gold-light);}
+  .links-out a{color:#fff;text-decoration:underline;text-decoration-color:rgba(212,180,104,.5);}
+  .links-out a:hover{text-decoration-color:var(--gold-light);}
+  .links-out p{margin-bottom:7px;font-size:16px;color:#D9DBE4;}
+
+  .back-to-list{text-align:center;margin-top:50px;}
+  .back-to-list a{display:inline-flex;align-items:center;gap:9px;background:var(--paper);color:var(--navy);text-decoration:none;font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:600;padding:11px 26px;border:1.5px solid var(--line);border-radius:30px;transition:all .2s;}
+  .back-to-list a:hover{border-color:var(--gold);background:#FCF7EA;}
+
+  footer{background:var(--navy-deep);color:#C6CAD6;padding:44px 24px;text-align:center;}
+  footer .f-mark{font-family:'Cormorant Garamond',serif;font-size:24px;color:#fff;margin-bottom:8px;}
+  footer .f-mark .cross{color:var(--gold-light);}
+  footer .note{max-width:640px;margin:10px auto 0;font-size:14px;color:#9CA2B3;font-style:italic;line-height:1.6;}
+  footer a{color:var(--gold-light);text-decoration:none;}
+
+  @media(max-width:680px){
+    body{font-size:16px;}
+    .idcard dl{grid-template-columns:1fr;gap:3px;}
+    .idcard dt{margin-top:10px;}
+  }
+</style>
+</head>
+<body>
+
+<button class="ham-btn" id="hamBtn" aria-label="Ouvrir le menu">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+</button>
+<div class="ham-overlay" id="hamOverlay"></div>
+<aside class="ham-panel" id="hamPanel" aria-label="Menu principal">
+  <div class="ham-head">
+    <button class="ham-close" id="hamClose" aria-label="Fermer">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+    <div class="ham-brand">Encyclicum<span class="cross"> &#10013;</span></div>
+    <div class="ham-tag">La sagesse des papes, accessible</div>
+  </div>
+  <ul class="ham-links">
+    <li><a href="index.html" class=""><span class="em">🏠</span>Accueil</a></li>
+    <li><a href="index.html#corpus" class=""><span class="em">📚</span>Corpus complet</a></li>
+    <li><a href="syntheses.html" class="current"><span class="em">📖</span>Synthèses approfondies</a></li>
+    <div class="ham-divider"></div>
+    <li><a href="index.html#fondateur" class=""><span class="em">👤</span>Le fondateur</a></li>
+    <li><a href="index.html#contact" class=""><span class="em">✉️</span>Nous écrire</a></li>
+  </ul>
+  <a href="index.html#don" class="ham-cta">&#10013;&nbsp; Soutenir Encyclicum</a>
+  <div class="ham-foot">
+    <a href="https://www.metanoia-strategie.ca" target="_blank" rel="noopener">MetanoIA Stratégie</a><br>
+    www.encyclicum.ca
+  </div>
+</aside>
+
+
+<header class="art">
+  <div class="breadcrumb"><a href="index.html">Accueil</a> &rsaquo; <a href="syntheses.html">Synthèses</a> &rsaquo; Antiqua et Nova</div>
+  <span class="art-em">🤖</span>
+  <h1 class="art-h1">Antiqua et Nova</h1>
+  <div class="art-trad">« Avec une sagesse ancienne et nouvelle » (cf. Mt 13, 52)</div>
+  <div class="art-meta">Dicastère pour la Doctrine de la Foi et Dicastère pour la Culture et l'Éducation · 2025 · Sur les relations entre l'intelligence artificielle et l'intelligence humaine</div>
+</header>
+<main class="art">
+
+  <div class="one-line">Premier document doctrinal du Saint-Siège entièrement consacré à l'intelligence artificielle, Antiqua et Nova rappelle que l'IA est un outil puissant mais qu'elle ne pense pas : seule la personne humaine est en relation avec la vérité et le bien, et elle reste seule responsable de l'usage de ses créations.</div>
+
+  <div class="idcard"><dl>
+    <dt>Titre</dt><dd><em>Antiqua et Nova</em> — Note sur les relations entre l'intelligence artificielle et l'intelligence humaine</dd>
+    <dt>Auteurs</dt><dd>Dicastère pour la Doctrine de la Foi et Dicastère pour la Culture et l'Éducation (Card. Víctor Manuel Fernández et Card. José Tolentino de Mendonça, préfets)</dd>
+    <dt>Approbation</dt><dd>Approuvée par le pape François lors de l'audience du 14 janvier 2025, qui en a ordonné la publication</dd>
+    <dt>Date</dt><dd>Donnée à Rome le 28 janvier 2025, mémoire de saint Thomas d'Aquin</dd>
+    <dt>Type</dt><dd>Note doctrinale de dicastères de la Curie romaine (ce n'est pas une encyclique)</dd>
+    <dt>Sujet</dt><dd>Questions anthropologiques et éthiques soulevées par l'IA</dd>
+  </dl></div>
+
+  <h2 class="sec"><span class="n">1</span>Contexte historique</h2>
+  <p class="lead">Depuis l'arrivée des grands modèles de langage dans le grand public, l'intelligence artificielle s'invite dans l'école, le travail, la santé, l'information et même la guerre. Le pape François l'avait abordée à plusieurs reprises, notamment dans ses messages de 2024 pour la Journée mondiale de la paix et pour la Journée mondiale des communications sociales, et devant le G7 en juin 2024.</p>
+  <p>Antiqua et Nova rassemble et approfondit ces enseignements. Le titre vient de l'Évangile : le scribe devenu disciple du Royaume tire de son trésor « du neuf et de l'ancien » (Mt 13, 52). La note veut regarder une réalité nouvelle avec la sagesse ancienne de l'Église. Le choix de la date — la mémoire de saint Thomas d'Aquin, docteur de l'intelligence — n'est pas anodin.</p>
+
+  <h2 class="sec"><span class="n">2</span>Structure du document</h2>
+  <p>La note compte 117 paragraphes répartis en six parties : I. Introduction (n° 1-6) ; II. Qu'est-ce que l'intelligence artificielle ? (n° 7-12) ; III. L'intelligence dans la tradition philosophique et théologique (n° 13-35), qui traite de la rationalité, de l'incarnation, de la relationalité, du rapport à la vérité, de la garde du monde et des limites de l'IA ; IV. Le rôle de l'éthique dans l'orientation du développement et de l'utilisation de l'IA (n° 36-48) ; V. Questions spécifiques (n° 49-107) ; VI. Réflexion finale (n° 108-117).</p>
+  <p>La cinquième partie passe en revue dix domaines : la société, les relations humaines, l'économie et le travail, la santé, l'éducation, la désinformation et les deepfakes, la vie privée et le contrôle, la protection de la maison commune, la guerre, et la relation de l'humanité avec Dieu.</p>
+
+  <h2 class="sec"><span class="n">3</span>Thèses principales</h2>
+  <ul class="these">
+    <li><span class="num">1</span><strong>L'« intelligence » de l'IA n'est pas l'intelligence humaine.</strong> Dans l'IA, le mot intelligence est compris dans un sens fonctionnel (n° 10) : la machine exécute des tâches de manière sophistiquée, mais elle ne pense pas (n° 12). L'intelligence humaine, elle, est incarnée, relationnelle, ouverte à la vérité et à Dieu.</li>
+    <li><span class="num">2</span><strong>Un outil, non une personne.</strong> La note met en garde contre l'anthropomorphisme : l'IA doit être considérée pour ce qu'elle est, un outil et non une personne (n° 59). Lui prêter des sentiments ou une conscience brouille les relations humaines.</li>
+    <li><span class="num">3</span><strong>La responsabilité morale reste humaine.</strong> Seul l'être humain est en relation avec la vérité et le bien (n° 39). Concepteurs, entreprises, États et usagers répondent des choix incorporés dans les systèmes et de leurs effets.</li>
+    <li><span class="num">4</span><strong>Assister, jamais remplacer le jugement.</strong> Au travail comme en médecine, l'IA devrait assister et non remplacer le jugement humain (n° 70). Les décisions concernant le traitement des patients ne doivent jamais être déléguées à l'IA (n° 74).</li>
+    <li><span class="num">5</span><strong>Vérité, vie privée, paix.</strong> Les contenus truqués font des dommages réels (n° 87) ; rien ne justifie l'usage de l'IA à des fins de contrôle et d'exploitation (n° 93) ; aucune machine ne devrait jamais choisir de prendre la vie d'un être humain (n° 100).</li>
+    <li><span class="num">6</span><strong>Le risque de l'idolâtrie.</strong> Prétendre remplacer Dieu par une œuvre de ses propres mains est une idolâtrie (n° 105). L'IA n'est ni un oracle ni un sauveur : elle reste le fruit, limité, de l'intelligence humaine.</li>
+  </ul>
+
+  <h2 class="sec"><span class="n">4</span>Citations marquantes</h2>
+  <blockquote>« Ses caractéristiques avancées confèrent à l'IA des capacités sophistiquées d'exécution de tâches, mais pas la capacité de penser »<span class="src">Antiqua et Nova, n° 12.</span></blockquote>
+  <blockquote>« Aucune machine ne devrait jamais choisir de prendre la vie d'un être humain »<span class="src">Antiqua et Nova, n° 100.</span></blockquote>
+  <blockquote>« La présence physique de l'enseignant crée une dynamique relationnelle que l'IA ne peut pas reproduire »<span class="src">Antiqua et Nova, n° 79.</span></blockquote>
+
+  <h2 class="sec"><span class="n">5</span>Portée et héritage</h2>
+  <p>Antiqua et Nova est devenue en très peu de temps le document de référence de l'Église sur l'IA. Son apport principal est anthropologique : avant de dire ce qu'il faut faire, elle précise ce qu'est l'être humain et ce que la machine n'est pas. Cela permet d'éviter deux pièges symétriques : la peur qui rejette la technique et la fascination qui la divinise.</p>
+  <p>Elle prépare directement l'encyclique <em>Magnifica Humanitas</em> de Léon XIV (2026), qui reprend ces fondements et les inscrit dans toute la tradition de la doctrine sociale.</p>
+
+  <h2 class="sec"><span class="n">6</span>Implications pour notre temps</h2>
+  <p>Pour un étudiant qui rédige avec un assistant conversationnel, un enseignant qui corrige, un médecin qui consulte un logiciel d'aide au diagnostic ou un fonctionnaire qui utilise un algorithme de tri, la note pose la même question : <strong>qui décide, et qui répond de la décision ?</strong> L'IA peut éclairer ; elle ne peut ni comprendre, ni aimer, ni porter la responsabilité.</p>
+  <p>Dans les pays où l'État et les institutions sont fragiles, ces repères comptent encore davantage : sans règles claires, les outils d'IA peuvent servir à la surveillance, à la désinformation ou à l'exclusion de ceux qui n'y ont pas accès.</p>
+
+  <h2 class="sec"><span class="n">7</span>Actions concrètes possibles</h2>
+  <div class="action-group">À l'échelle personnelle</div>
+  <ul class="action">
+    <li>Se rappeler, en utilisant un assistant d'IA, que l'on parle à un outil : vérifier ses réponses, ne pas lui confier ses décisions morales.</li>
+    <li>Garder du temps pour les relations réelles, surtout chez les jeunes et les personnes isolées.</li>
+  </ul>
+  <div class="action-group">À l'échelle communautaire et professionnelle</div>
+  <ul class="action">
+    <li>Dans l'école, la paroisse ou l'entreprise, rédiger une charte simple d'usage de l'IA : ce qu'on lui confie, ce qu'on ne lui confie jamais, qui vérifie.</li>
+    <li>Former les éducateurs et les catéchistes à expliquer aux jeunes ce qu'est réellement une IA.</li>
+  </ul>
+  <div class="action-group">À l'échelle sociale</div>
+  <ul class="action">
+    <li>Soutenir des règles publiques sur la transparence des algorithmes, la protection des données et l'interdiction des armes létales autonomes.</li>
+    <li>Promouvoir l'accès équitable aux outils numériques pour que l'IA ne creuse pas les inégalités entre régions et entre pays.</li>
+  </ul>
+
+  <div class="links-out">
+    <h3>Pour aller plus loin</h3>
+    <p>Texte intégral : <a href="https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_ddf_doc_20250128_antiqua-et-nova_fr.html" target="_blank" rel="noopener"><em>Antiqua et Nova</em> sur vatican.va</a></p>
+    <p>Textes liés : <a href="message-paix-2024-ia.html"><em>Intelligence artificielle et paix</em></a> (2024) · <a href="message-communications-2024-ia.html"><em>IA et sagesse du cœur</em></a> (2024) · <a href="magnifica-humanitas.html"><em>Magnifica Humanitas</em></a> (2026) · <a href="parcours-technique-dignite.html">Parcours « Technique et dignité humaine »</a></p>
+  </div>
+
+  <div class="back-to-list">
+    <a href="syntheses.html">&larr; Voir toutes les synthèses</a>
+  </div>
+</main>
+
+<footer>
+  <div class="f-mark">Encyclicum<span class="cross"> &#10013;</span></div>
+  <p class="note">Synthèse préparée à partir du texte officiel. Pour le texte intégral et faisant foi : <a href="https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_ddf_doc_20250128_antiqua-et-nova_fr.html" target="_blank" rel="noopener">vatican.va</a>. — <a href="index.html">www.encyclicum.ca</a></p>
+</footer>
+
+<script>
+  const hBtn=document.getElementById('hamBtn'),hCl=document.getElementById('hamClose'),hOv=document.getElementById('hamOverlay'),hPa=document.getElementById('hamPanel');
+  function hOpen(){hPa.classList.add('open');hOv.classList.add('open');document.body.classList.add('ham-open');}
+  function hClose(){hPa.classList.remove('open');hOv.classList.remove('open');document.body.classList.remove('ham-open');}
+  hBtn.addEventListener('click',hOpen);
+  hCl.addEventListener('click',hClose);
+  hOv.addEventListener('click',hClose);
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')hClose();});
+  // Fermer après clic sur un lien interne
+  document.querySelectorAll('.ham-links a, .ham-cta').forEach(a=>a.addEventListener('click',()=>{setTimeout(hClose,150);}));
+</script>
+</body>
+</html>
