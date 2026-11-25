@@ -371,7 +371,13 @@
         </div>
         <a href="/webinaires.html">Webinaires</a>
         <a href="/formations.html">Formations</a>
-        <a href="/mission-vision-valeurs.html">À propos</a>
+        <div class="nav-item has-dropdown">
+          <a href="/mission-vision-valeurs.html">À propos</a>
+          <div class="nav-dropdown">
+            <a href="/mission-vision-valeurs.html">Mission, vision et valeurs</a>
+            <a href="/index.html#equipe-editoriale">Équipe éditoriale</a>
+          </div>
+        </div>
         <div class="nav-item has-dropdown">
           <a href="/eglise-canada.html">L'Église par continent</a>
           <div class="nav-dropdown">
@@ -433,7 +439,15 @@
         </details>
       </li>
       <li><a href="/formations.html">Formations</a></li>
-      <li><a href="/mission-vision-valeurs.html">À propos</a></li>
+      <li>
+        <details>
+          <summary>À propos</summary>
+          <ul>
+            <li><a href="/mission-vision-valeurs.html">Mission, vision et valeurs</a></li>
+            <li><a href="/index.html#equipe-editoriale">Équipe éditoriale</a></li>
+          </ul>
+        </details>
+      </li>
     </ul>
   </nav>
   <div class="menu-overlay" onclick="toggleMenu()" aria-hidden="true"></div>
@@ -1529,7 +1543,7 @@
   <section class="content alt" id="fondateur">
     <div class="wrap-wide">
       <span class="section-num">— L'humain derrière le projet</span>
-      <h2>Dr Wendnonghen Marc <em>Zongo</em></h2>
+      <h2>Wendnonghen Marc <em>ZONGO</em>, PhD</h2>
       <p class="lead">Fondateur et directeur d'Encyclicum, professeur d'administration à l'Université de Hearst, et directeur général de MetanoIA Stratégie.</p>
 
       <div style="background: var(--white); border-left: 4px solid var(--gold); padding: 1.8rem 2rem; border-radius: 4px; margin-top: 1.5rem;">
@@ -1540,19 +1554,35 @@
     </div>
   </section>
 
-  <!-- Section : Les membres -->
-  <section class="content" id="membres">
+  <!-- Section : Équipe éditoriale -->
+  <section class="content" id="equipe-editoriale">
     <div class="wrap-wide">
-      <span class="section-num">— L'équipe</span>
-      <h2>Les membres d'<em>Encyclicum</em></h2>
-      <p class="lead">Encyclicum est porté par une équipe bénévole engagée pour rendre la pensée sociale de l'Église accessible à tous.</p>
-      <div style="display:flex;flex-wrap:wrap;gap:1.5rem;margin-top:1.8rem;">
-        <div style="background:var(--white);border:1px solid rgba(184,146,62,.35);border-top:4px solid var(--gold);border-radius:6px;padding:1.8rem 2rem;max-width:720px;display:flex;gap:1.8rem;align-items:center;flex-wrap:wrap;box-shadow:0 1px 3px rgba(27,42,74,.06),0 8px 30px rgba(27,42,74,.07);">
-          <img src="membre-georges-zabre.jpg" alt="Père Georges ZABRÉ" width="140" height="140" loading="lazy" style="width:140px;height:140px;border-radius:50%;object-fit:cover;border:3px solid var(--gold);flex-shrink:0;">
+      <span class="section-num">— Les personnes derrière Encyclicum</span>
+      <h2>Équipe <em>éditoriale</em></h2>
+      <p class="lead">Encyclicum est porté par une équipe bénévole qui prépare, vérifie et relit les synthèses, pour rendre la pensée de l'Église accessible à tous en restant fidèle aux textes.</p>
+      <div style="display:grid;grid-template-columns:1fr;gap:1.5rem;margin-top:1.8rem;max-width:760px;">
+        <div style="background:var(--white);border:1px solid rgba(184,146,62,.35);border-top:4px solid var(--gold);border-radius:6px;padding:1.8rem 2rem;display:flex;gap:1.8rem;align-items:center;flex-wrap:wrap;box-shadow:0 1px 3px rgba(27,42,74,.06),0 8px 30px rgba(27,42,74,.07);">
+          <div aria-hidden="true" style="width:140px;height:140px;border-radius:50%;border:3px solid var(--gold);flex-shrink:0;background:linear-gradient(160deg,var(--navy-deep),var(--navy));color:var(--gold);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:2.6rem;font-weight:700;letter-spacing:.04em;">MZ</div>
           <div style="flex:1;min-width:240px;">
-            <h3 style="margin:0;">Père Georges ZABRÉ</h3>
-            <p style="color:var(--gold);font-weight:600;font-size:.95rem;margin:.3rem 0 .8rem;">Bibliste · Membre d'Encyclicum</p>
-            <p style="margin:0;">Professeur au Grand Séminaire Saint Jean-Baptiste de Wayalghin (Burkina Faso), il fait également partie du corps professoral du Centre Cardinal Paul Zoungrana, où il donne des cours de Bible à des laïcs et à des religieux.</p>
+            <h3 style="margin:0;">Wendnonghen Marc ZONGO, PhD</h3>
+            <p style="color:var(--gold);font-weight:600;font-size:.95rem;margin:.3rem 0 .8rem;">Fondateur et directeur d'Encyclicum</p>
+            <p style="margin:0;">Professeur d'administration à l'Université de Hearst (Ontario, Canada) et directeur général de MetanoIA Stratégie, il a fondé Encyclicum pour rendre la pensée sociale de l'Église accessible au plus grand nombre.</p>
+          </div>
+        </div>
+        <div style="background:var(--white);border:1px solid rgba(184,146,62,.35);border-top:4px solid var(--gold);border-radius:6px;padding:1.8rem 2rem;display:flex;gap:1.8rem;align-items:center;flex-wrap:wrap;box-shadow:0 1px 3px rgba(27,42,74,.06),0 8px 30px rgba(27,42,74,.07);">
+          <img src="membre-georges-zabre.jpg" alt="Abbé Georges ZABRÉ" width="140" height="140" loading="lazy" style="width:140px;height:140px;border-radius:50%;border:3px solid var(--gold);flex-shrink:0;object-fit:cover;">
+          <div style="flex:1;min-width:240px;">
+            <h3 style="margin:0;">Abbé Georges ZABRÉ</h3>
+            <p style="color:var(--gold);font-weight:600;font-size:.95rem;margin:.3rem 0 .8rem;">Bibliste · Membre de l'équipe éditoriale</p>
+            <p style="margin:0;">Prêtre du diocèse de Kaya, ordonné le 5 juillet 2014, il est titulaire d'une licence canonique (Master II) en théologie biblique de l'Université Catholique de l'Afrique de l'Ouest – Unité Universitaire à Abidjan (UCAO-UUA). Formateur permanent au Grand Séminaire Saint Jean-Baptiste de Wayalghin, il est professeur d'Écriture sainte à l'Institut Théologique le Précurseur de Ouagadougou (ITPO) et enseigne à l'École de Formation Permanente des Laïcs (EFPL) du Centre National Cardinal Paul Zoungrana (CNCPZ).</p>
+          </div>
+        </div>
+        <div style="background:var(--white);border:1px solid rgba(184,146,62,.35);border-top:4px solid var(--gold);border-radius:6px;padding:1.8rem 2rem;display:flex;gap:1.8rem;align-items:center;flex-wrap:wrap;box-shadow:0 1px 3px rgba(27,42,74,.06),0 8px 30px rgba(27,42,74,.07);">
+          <div aria-hidden="true" style="width:140px;height:140px;border-radius:50%;border:3px solid var(--gold);flex-shrink:0;background:linear-gradient(160deg,var(--navy-deep),var(--navy));color:var(--gold);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:2.6rem;font-weight:700;letter-spacing:.04em;">RN</div>
+          <div style="flex:1;min-width:240px;">
+            <h3 style="margin:0;">Diacre Wend-Dolyâ Rock Marie Hyacinthe NAKOLINDOUSSÉ</h3>
+            <p style="color:var(--gold);font-weight:600;font-size:.95rem;margin:.3rem 0 .8rem;">Diacre de l'Église catholique · Membre de l'équipe éditoriale</p>
+            <p style="margin:0;">Titulaire d'une licence en philosophie (2022) de la Faculté des Lettres, des Arts et des Sciences humaines de l'Université Saint Thomas d'Aquin de Ouagadougou, il est étudiant en 4<sup>e</sup> année de théologie (baccalauréat en théologie) à l'Institut de Théologie Saint Pierre-Claver de Koumi (Burkina Faso). Il a soutenu avec la mention très bien un mémoire intitulé « L'évangélisation à l'ère de l'intelligence artificielle ». Il est également metteur en scène, dramaturge, slameur et coach en art oratoire.</p>
           </div>
         </div>
       </div>
@@ -1752,6 +1782,7 @@
       {title: "Webinaires", url: "/webinaires.html", tags: ["webinaire", "zoom", "automne 2026", "doctrine sociale", "magnifica humanitas"]},
       {title: "Formations sur la DSE", url: "/formations.html", tags: ["formation", "groupe", "paroisse", "contributions volontaires"]},
       {title: "À propos", url: "/mission-vision-valeurs.html", tags: ["mission", "vision", "valeurs", "à propos"]},
+      {title: "Équipe éditoriale", url: "/index.html#equipe-editoriale", tags: ["équipe", "éditoriale", "membres", "Zongo", "Zabré", "Nakolindoussé", "bibliste", "diacre"]},
       {title: "L'Église au Canada (CECC)", url: "/eglise-canada.html", tags: ["canada", "CECC", "réconciliation", "autochtones"]},
       {title: "L'Église au Québec (AECQ)", url: "/eglise-quebec.html", tags: ["québec", "AECQ", "AMM", "fin de vie"]},
       {title: "L'Église en Amérique (CELAM, USCCB)", url: "/eglise-amerique.html", tags: ["amérique", "CELAM", "USCCB", "Aparecida"]},
